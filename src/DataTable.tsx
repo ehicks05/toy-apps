@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 
-function DataTable() {
+// @ts-ignore
+function DataTable(props) {
 
     const [user, setUser] = useState({
         pushups:                0,
@@ -223,6 +224,8 @@ function DataTable() {
 
     ];
 
+    const inputClasses = props.theme === 'dark' ? 'has-text-light has-background-dark' : '';
+
     const dataRows = data.reverse().map(dataRow => {
         const dataRowEl = columns.map(column => {
 
@@ -237,7 +240,7 @@ function DataTable() {
                     // @ts-ignore
                     const value = user[column.key];
                     return <td className={'has-text-right'} key={dataRow.tier + ' ' + column.key}>
-                        <input className={'has-text-right'} inputMode={'number'} size={5} id={column.key} value={value}
+                        <input className={'input has-text-right ' + inputClasses} inputMode={'number'} size={5} id={column.key} value={value}
                                name={column.title}
                                onChange={e => {
                                    const val = e.target.value ? e.target.value : 0;
@@ -273,7 +276,7 @@ function DataTable() {
     });
 
     return (
-        <div style={{overflow: 'scroll'
+        <div style={{overflow: 'auto'
             // , height: '300px'
         }}>
             <table className="table is-narrow" style={{width: '100%'}}>
