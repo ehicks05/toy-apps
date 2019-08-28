@@ -14,8 +14,6 @@ function DataTable(props) {
         oneMileRun:           100,
     });
 
-    const test = 'test';
-
     const columns = [
         {
             title: 'Tier',
