@@ -7,18 +7,12 @@
     "@types/node": "12.7.2",
     "@types/react": "16.9.2",
     "@types/react-dom": "16.8.5",
-    "@types/react-table": "^6.8.5",
-    "@types/table": "^4.0.6",
     "bulma": "^0.7.5",
     "bulma-dark": "^0.0.2",
     "gh-pages": "^2.1.1",
-    "rc-table": "^6.7.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-scripts": "3.1.1",
-    "react-table": "^6.10.0",
-    "react-table-hoc-fixed-columns": "^2.1.1",
-    "table": "^5.4.6",
     "typescript": "3.5.3"
   },
   "scripts": {
