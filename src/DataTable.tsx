@@ -15,7 +15,7 @@ function DataTable(props) {
 
     const inputClasses = props.theme === 'dark' ? 'has-text-light has-background-dark' : '';
 
-    const dataRows = tableData.reverse().map(dataRow => {
+    const dataRows = tableData.slice().reverse().map(dataRow => {
         const dataRowEl = columns.map(column => {
 
             if (dataRow.tier === 'You')
@@ -29,7 +29,7 @@ function DataTable(props) {
                     // @ts-ignore
                     const value = user[column.key];
                     return <td className={'has-text-right'} key={dataRow.tier + ' ' + column.key}>
-                        <input className={'input has-text-right ' + inputClasses} inputMode={'number'} size={5} id={column.key} value={value}
+                        <input className={'input has-text-right ' + inputClasses} inputMode={'numeric'} size={5} id={column.key} value={value}
                                name={column.title}
                                onChange={e => {
                                    const val = e.target.value ? e.target.value : 0;
