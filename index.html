@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Hootch Wrangler</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/bulma-prefers-dark" />
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
     <style>
@@ -25,10 +26,17 @@
         ::-webkit-scrollbar-thumb:hover{
             background-color: #909090;
         }
+
+        @media(prefers-color-scheme: dark)
+        {
+            .rainbowText {color: #333333;}
+            .button {background-color: rgb(54, 54, 54) !important;}
+            .select select {border: rgb(54, 54, 54);color: #b5b5b5 !important; background-color: rgb(54, 54, 54) !important;}
+        }
     </style>
 </head>
 <body>
-<section class="hero is-primary">
+<section class="hero is-dark">
     <div class="hero-body">
         <div class="container">
             <h1 class="title">
@@ -143,7 +151,7 @@
 
                 <div class="field">
                     <p class="control">
-                        <button disabled class="button is-primary" id="addButton">
+                        <button disabled class="button" id="addButton">
                             Add
                         </button>
                     </p>
@@ -161,6 +169,7 @@
                                 <th class="has-text-right">ABV</th>
                                 <th class="has-text-right">Price</th>
                                 <th class="has-text-right">Total Volume</th>
+                                <th class="has-text-right">Volume / $</th>
                                 <th class="has-text-right">Total Alcohol</th>
                                 <th class="has-text-right">Alcohol / $</th>
                             </tr>
@@ -210,6 +219,7 @@
             if (this.containerVolumeUnit === 'L') result =  this.totalVolume() * 33.814;
             return round(result);
         }
+        volumePerDollar() {return round(this.totalVolumeInOunces() / this.price);}
         totalAlcohol() {return round(this.totalVolume() * (this.percentAlcohol / 100));}
         totalAlcoholInOunces() {return round(this.totalVolumeInOunces() * (this.percentAlcohol / 100));}
         alcoholPerDollar() {return round(this.totalAlcoholInOunces() / this.price);}
@@ -225,14 +235,17 @@
     tableData.push(new Product('Sierra Nevada Pale Ale', 12, 12, 'oz', 5.6, 16.99));
     tableData.push(new Product('Monkey Shoulder', 1, 750, 'ml', 43, 36.99));
     tableData.push(new Product('Ardbeg 10 The Ultimate', 1, 750, 'ml', 46, 46.99));
+    tableData.push(new Product('Laphroaig 10', 1, 750, 'ml', 40, 42.99));
     tableData.push(new Product('Lagavulin 16 Year', 1, 750, 'ml', 43, 66.99));
     tableData.push(new Product('Svedka Vodka', 1, 1.75, 'L', 40, 19.97));
     tableData.push(new Product('Everclear', 1, 1.75, 'L', 75.5, 35.99));
     tableData.push(new Product('Yellow Tail Cabernet', 1, 1.5, 'L', 13.5, 10.99));
+    tableData.push(new Product('Little Penguin Merlot', 1, 1.5, 'L', 13, 10.99));
     tableData.push(new Product('Chateau La Verriere Bordeaux', 1, 750, 'ml', 14, 12.99));
     tableData.push(new Product('Bud Light', 24, 12, 'oz', 5, 15.98));
     tableData.push(new Product('Stone Fear Movie Lions', 6, 16, 'oz', 8.5, 13.49));
-    tableData.push(new Product('Genesee Cream Ale', 1, 24, 'oz', 5.2, 1.29));
+    tableData.push(new Product('Genesee Cream Ale (bulk)', 12, 24, 'oz', 5.2, 11.99));
+    tableData.push(new Product('Genesee Cream Ale (bulk)', 24, 12, 'oz', 5.2, 16.99));
     tableData.push(new Product('Bell\'s Hopslam Ale', 6, 12, 'oz', 10, 19.99));
     tableData.sort((p1, p2) => {return p2.alcoholPerDollar() - p1.alcoholPerDollar();});
 
@@ -318,12 +331,17 @@
             cell.classList.add('has-text-right');
 
             cell = row.insertCell();
+            cell.innerText = product.volumePerDollar() + ' oz';
+            cell.classList.add('has-text-right');
+
+            cell = row.insertCell();
             cell.innerText = product.totalAlcoholInOunces() + ' oz';
             cell.classList.add('has-text-right');
 
             cell = row.insertCell();
-            cell.innerText = product.alcoholPerDollar();
+            cell.innerText = product.alcoholPerDollar() + ' oz';
             cell.classList.add('has-text-right');
+            cell.classList.add('rainbowText');
 
             const correctedStartValue = product.alcoholPerDollar() - minAlcoholPerDollar;
             const percentage = (correctedStartValue * 100) / range;
