@@ -9,6 +9,7 @@ Fill in these fields:
 * price
 
 And h.w. will tell you:
-* total volume in oz
-* total alcohol in oz
-* oz of alcohol per $
+* total volume
+* liquid / $
+* total alcohol
+* alcohol / $
