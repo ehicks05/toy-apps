@@ -310,7 +310,11 @@
 
         const minAlcoholPerDollar = _.minBy(tableData, (product => product.alcoholPerDollar())).alcoholPerDollar();
         const maxAlcoholPerDollar = _.maxBy(tableData, (product => product.alcoholPerDollar())).alcoholPerDollar();
-        const range = maxAlcoholPerDollar - minAlcoholPerDollar;
+        const rangeAlcoholPerDollar = maxAlcoholPerDollar - minAlcoholPerDollar;
+
+        const minVolumePerDollar = _.minBy(tableData, (product => product.volumePerDollar())).volumePerDollar();
+        const maxVolumePerDollar = _.maxBy(tableData, (product => product.volumePerDollar())).volumePerDollar();
+        const rangeVolumePerDollar = maxVolumePerDollar - minVolumePerDollar;
 
         tableData.forEach((product, i) => {
             let row = newTbody.insertRow();
@@ -341,6 +345,8 @@
             cell = row.insertCell();
             cell.innerText = product.volumePerDollar() + ' oz';
             cell.classList.add('has-text-right');
+            cell.classList.add('rainbowText');
+            cell.style.backgroundColor = getHSL(getPercentage(product.volumePerDollar(), minVolumePerDollar, rangeVolumePerDollar));
 
             cell = row.insertCell();
             cell.innerText = product.totalAlcoholInOunces() + ' oz';
