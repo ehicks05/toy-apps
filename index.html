@@ -350,21 +350,7 @@
             cell.innerText = product.alcoholPerDollar() + ' oz';
             cell.classList.add('has-text-right');
             cell.classList.add('rainbowText');
-
-            const correctedStartValue = product.alcoholPerDollar() - minAlcoholPerDollar;
-            const percentage = (correctedStartValue * 100) / range;
-
-            // green - white - red formula
-            // const hue = percentage > 50 ? 120 : 0;
-            // const saturation = Math.abs(50 - percentage) * 2;
-            // const lightness = 105 - Math.abs(50 - percentage);
-
-            // green - yellow - red formula
-            const hue = percentage * 1.2;
-            const saturation = 80;
-            const lightness = 70;
-
-            cell.style.backgroundColor = "hsl(" + hue + "," + saturation + "%," + lightness + "%)";
+            cell.style.backgroundColor = getHSL(getPercentage(product.alcoholPerDollar(), minAlcoholPerDollar, rangeAlcoholPerDollar));
 
             cell = row.insertCell();
             cell.innerHTML =
@@ -377,6 +363,25 @@
         });
 
         oldTbody.parentNode.replaceChild(newTbody, oldTbody)
+    }
+
+    function getPercentage(value, minimum, range) {
+        const correctedStartValue = value - minimum;
+        return (correctedStartValue * 100) / range;
+    }
+
+    function getHSL(percentage) {
+        // green - white - red formula
+        // const hue = percentage > 50 ? 120 : 0;
+        // const saturation = Math.abs(50 - percentage) * 2;
+        // const lightness = 105 - Math.abs(50 - percentage);
+
+        // green - yellow - red formula
+        const hue = percentage * 1.2;
+        const saturation = 80;
+        const lightness = 70;
+
+        return "hsl(" + hue + "," + saturation + "%," + lightness + "%)";
     }
 
     function removeItem(i) {
