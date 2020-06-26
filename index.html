@@ -8,6 +8,9 @@
     <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
     <style>
+
+        .pointer {cursor: pointer;}
+
         ::-webkit-scrollbar{
             width: 10px;
         }
@@ -169,9 +172,9 @@
                                 <th class="has-text-right">ABV</th>
                                 <th class="has-text-right">Price</th>
                                 <th class="has-text-right">Total Volume</th>
-                                <th class="has-text-right">Volume / $</th>
+                                <th class="has-text-right pointer" onclick="sort('volumePerDollar')">Volume / $</th>
                                 <th class="has-text-right">Total Alcohol</th>
-                                <th class="has-text-right">Alcohol / $</th>
+                                <th class="has-text-right pointer" onclick="sort('alcoholPerDollar')">Alcohol / $</th>
                             </tr>
                         </thead>
                         <tbody id="myTbody"></tbody>
@@ -255,7 +258,8 @@
     tableData.push(new Product('Elijah Craig 12', 1, 750, 'ml', 47, 31.99));
     tableData.push(new Product('Caol Ila 12', 1, 750, 'ml', 43, 64.99));
 
-    tableData.sort((p1, p2) => {return p2.alcoholPerDollar() - p1.alcoholPerDollar();});
+    sortColumn = '';
+    sort('alcoholPerDollar');
 
     function updateForm() {
         const product = new Product(
@@ -392,6 +396,23 @@
 
     function removeItem(i) {
         tableData.splice(i, 1);
+        replaceTableBody();
+    }
+
+    function sort(column) {
+        if (column === sortColumn) {
+            tableData.reverse();
+        }
+        else {
+            if (column === 'alcoholPerDollar') {
+                tableData.sort((p1, p2) => {return p2.alcoholPerDollar() - p1.alcoholPerDollar();});
+            }
+            if (column === 'volumePerDollar') {
+                tableData.sort((p1, p2) => {return p2.volumePerDollar() - p1.volumePerDollar();});
+            }
+        }
+        sortColumn = column;
+
         replaceTableBody();
     }
 
