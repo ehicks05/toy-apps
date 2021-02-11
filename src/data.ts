@@ -1,14 +1,14 @@
-{
-  "initialUserState": {
-    "pushups": 0,
-    "pullups": 0,
-    "bicepCurl": 0,
-    "benchPress": 0,
-    "squats": 0,
-    "deadlift": 0,
-    "oneHundredMeterDash": 100,
-    "oneMileRun": 100
-  },
+const DEFAULT_USER: Record<string, number> = {
+  "pushups": 0,
+  "pullups": 0,
+  "bicepCurl": 0,
+  "benchPress": 0,
+  "squats": 0,
+  "deadlift": 0,
+  "oneHundredMeterDash": 100,
+  "oneMileRun": 100
+};
+const data = {
   "columns": [
     {
       "title": "Tier",
@@ -212,3 +212,5 @@
     }
   ]
 }
+
+export { DEFAULT_USER, data };

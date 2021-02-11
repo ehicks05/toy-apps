@@ -1,63 +1,31 @@
-import React, {useState} from 'react';
-import './App.css';
+import React from "react";
 import DataTable from "./DataTable";
-import 'bulma/css/bulma.css'
+import "./App.css";
 
 function App() {
-    const [theme, setTheme] = useState('light');
+  return (
+    <div className="min-h-screen font-sans text-gray-700 dark:text-gray-50 bg-gray-50 dark:bg-gray-800">
+      <div className="container mx-auto p-4 md:p-6">
+        <section className="p-12">
+          <div className="text-center space-y-1">
+            <div className="font-bold text-3xl">Logical Fitness</div>
+            <div className="text-xl">A Guide to Balanced Fitness</div>
+          </div>
+        </section>
 
-    const darkThemeUrl = 'https://unpkg.com/bulma-dark@0.0.2/dist/css/cyborg.css';
-    const themeLink = theme === 'dark' ? <link rel="stylesheet" type="text/css" href={darkThemeUrl} /> : null;
+        <section className="">
+          <DataTable />
+        </section>
 
-    const themeStyling = theme === 'dark' ? '                thead th, tbody th {\n' +
-        '                background: #363636;\n' +
-        '            }' : '';
-
-    return (
-        <div className="App">
-            {themeLink}
-
-            <style>
-                {themeStyling}
-            </style>
-
-            <section className="hero">
-                <div className="hero-body">
-                    <div className="container">
-                        <h1 className="title">
-                            Logical Fitness
-                        </h1>
-                        <h2 className="subtitle">
-                            A Guide to Balanced Fitness
-                        </h2>
-                    </div>
-                </div>
-            </section>
-
-            <section className="section">
-                <div className="container">
-                    <DataTable theme={theme}/>
-                </div>
-            </section>
-
-            <footer className={'footer'}>
-                <div className="content has-text-centered">
-                    <p>
-                        <strong>Logical Fitness</strong> by <a href="https://ehicks.net">Eric Hicks</a>
-                        <br />
-                        <button className="button" id="lightBulb" onClick={() => {
-                            setTheme(prevState => {
-                                return prevState === 'dark' ? 'light' : 'dark'
-                            });
-                        }}
-                        >
-                            &#x1F4A1;
-                        </button>
-                    </p>
-                </div>
-            </footer>
-        </div>
-    );
+        <footer className="p-12 pt-20">
+          <div className="text-center">
+            <strong>Logical Fitness</strong> by{" "}
+            <a href="https://ehicks.net">Eric Hicks</a>
+          </div>
+        </footer>
+      </div>
+    </div>
+  );
 }
 
 export default App;
