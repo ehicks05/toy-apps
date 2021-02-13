@@ -1,10 +1,19 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { DEFAULT_USER, data } from "./data";
 
+const loadUser = () => {
+  const storedUser = localStorage.getItem("user");
+  return storedUser ? JSON.parse(storedUser) : DEFAULT_USER;
+};
+
 function DataTable() {
-  const [user, setUser] = useState(DEFAULT_USER);
+  const [user, setUser] = useState(loadUser());
   const columns = data.columns;
   const tableData = data.tableData;
+
+  useEffect(() => {
+    localStorage.setItem("user", JSON.stringify(user));
+  }, [user]);
 
   const headerRow = columns.map((column) => {
     return (
@@ -93,7 +102,7 @@ function DataTable() {
   });
 
   return (
-    <div style={{ overflow: "auto" }}>
+    <div className="overflow-auto">
       <table className="w-full">
         <thead>
           <tr className="border-b-2">{headerRow}</tr>
