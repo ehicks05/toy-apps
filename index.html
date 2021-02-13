@@ -79,27 +79,44 @@
     </script>
 
     <style>
-        body {
-            padding: 0;
-            margin: 0;
-        }
-        html, body, #mapid {
-            height: 95%;
-            width: 95vw;
-            margin: auto;
-        }
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      html,
+      body,
+      #mapid {
+        height: 92%;
+        width: 95vw;
+        margin: auto;
+      }
+      a {
+        color: lightseagreen;
+      }
 
       .info {
         padding: 6px 8px;
         font: 14px/16px Arial, Helvetica, sans-serif;
-        background: white;
-        background: rgba(255, 255, 255, 0.8);
+        background-color: rgba(255, 255, 255, 0.8);
         box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
         border-radius: 5px;
       }
       .info h4 {
         margin: 0 0 5px;
         color: #777;
+      }
+
+      @media (prefers-color-scheme: dark) {
+        body {
+          background-color: #222;
+          color: #eee;
+        }
+        .info {
+          background-color: rgba(88, 88, 88, 0.8);
+        }
+        .info h4 {
+          color: #eee;
+        }
       }
     </style>
   </head>
@@ -110,11 +127,19 @@
     </div>
     <div id="mapid"></div>
     <footer>
-      <a href="https://www.github.com/ehicks05/united-states-of-food/" target="_blank">github</a>
+      <a
+        href="https://www.github.com/ehicks05/united-states-of-food/"
+        target="_blank"
+        >github</a
+      >
     </footer>
 
     <script>
-      var mymap = L.map("mapid").setView([39, -98], 4);
+      const mymap = L.map("mapid").setView([39, -98], 4);
+
+      const isPrefersDark = () =>
+        window.matchMedia("(prefers-color-scheme: dark)").matches;
+      let theme = isPrefersDark() ? "dark" : "light";
 
       L.tileLayer(
         "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
@@ -122,7 +147,7 @@
           attribution:
             'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
           maxZoom: 18,
-          id: "mapbox/light-v9",
+          id: `mapbox/${theme}-v9`,
           tileSize: 512,
           zoomOffset: -1,
           accessToken:
@@ -140,7 +165,7 @@
           fillColor: getColor(feature.properties.density),
           weight: 2,
           opacity: 1,
-          color: "white",
+          color: isPrefersDark() ? "#999" : "white",
           dashArray: "3",
           fillOpacity: 0.7,
         };
@@ -151,7 +176,7 @@
 
         layer.setStyle({
           weight: 5,
-          color: "#666",
+          color: isPrefersDark() ? "#aaa" : "#aaa",
           dashArray: "",
           fillOpacity: 0.7,
         });
