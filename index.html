@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>United States of Food</title>
+    <link rel="shortcut icon" href="favicon.ico" />
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+      integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+      crossorigin=""
+    />
+    <script
+      src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+      integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+      crossorigin=""
+    ></script>
+    <script
+      src="https://leafletjs.com/examples/choropleth/us-states.js"
+      crossorigin=""
+    ></script>
+    <script>
+      const statesDataFood = {
+        Alabama: { food: "Cheese Grits" },
+        Alaska: { food: "Salmon" },
+        Arizona: { food: "Mexican" },
+        Arkansas: { food: "Fried catfish" },
+        California: { food: "In N Out" },
+        Colorado: { food: "Beef Enchiladas" },
+        Connecticut: { food: "New Haven Style Pizza" },
+        Delaware: { food: "Chicken" },
+        "District of Columbia": { food: "Half-smokes" },
+        Florida: { food: "Grouper Sandwiches" },
+        Georgia: { food: "Fried Chicken" },
+        Hawaii: { food: "Poke" },
+        Idaho: { food: "Potatoes" },
+        Illinois: { food: "Deep Dish Pizza" },
+        Indiana: { food: "Pork Tenderloin" },
+        Iowa: { food: "Corn on the cob" },
+        Kansas: { food: "Bread" },
+        Kentucky: { food: "Fried Chicken" },
+        Louisiana: { food: "Gumbo" },
+        Maine: { food: "Lobster" },
+        Maryland: { food: "Crab" },
+        Massachusetts: { food: "Clam Chowder" },
+        Michigan: { food: "Coney Dogs" },
+        Minnesota: { food: "Walleye Sandwiches" },
+        Mississippi: { food: "Crawfish" },
+        Missouri: { food: "Toasted Ravioli" },
+        Montana: { food: "Rocky Mountain Oysters" },
+        Nebraska: { food: "Steak" },
+        Nevada: { food: "Cheeseburgers" },
+        "New Hampshire": { food: "Cider Doughnuts" },
+        "New Jersey": { food: "Pork Roll" },
+        "New Mexico": { food: "Chili Peppers" },
+        "New York": { food: "Bagels" },
+        "North Carolina": { food: "Pulled Pork" },
+        "North Dakota": { food: "Knoepfla Soup" },
+        Ohio: { food: "Pierogis" },
+        Oklahoma: { food: "Chicken Fried Steak" },
+        Oregon: { food: "Marionberry Pie" },
+        Pennsylvania: { food: "Cheesesteaks" },
+        "Puerto Rico": { food: "Tostones" },
+        "Rhode Island": { food: "Clam Cakes" },
+        "South Carolina": { food: "Shrimp and Grits" },
+        "South Dakota": { food: "Corn" },
+        Tennessee: { food: "Ribs" },
+        Texas: { food: "Tex Mex" },
+        Utah: { food: "Fry Sauce" },
+        Vermont: { food: "Maple Syrup" },
+        Virginia: { food: "Ham" },
+        Washington: { food: "Salmon" },
+        "West Virginia": { food: "Pepperoni Rolls" },
+        Wisconsin: { food: "Cheese" },
+        Wyoming: { food: "Elk" },
+      };
+    </script>
+
+    <style>
+      #mapid {
+        width: 800px;
+        height: 600px;
+      }
+
+      .info {
+        padding: 6px 8px;
+        font: 14px/16px Arial, Helvetica, sans-serif;
+        background: white;
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        border-radius: 5px;
+      }
+      .info h4 {
+        margin: 0 0 5px;
+        color: #777;
+      }
+    </style>
+  </head>
+
+  <body>
+    <section>
+      <div>
+        <h1 class="lesserScalingFont">United States of Food</h1>
+      </div>
+    </section>
+    <section>
+      <div id="mapid"></div>
+    </section>
+    <div style="flex-grow: 1"></div>
+    <footer>
+      <span style="display: flex; align-items: center">
+        <a
+          href="https://www.github.com/ehicks05/united-states-of-food/"
+          target="_blank"
+          >github</a
+        >
+      </span>
+    </footer>
+
+    <script>
+      var mymap = L.map("mapid").setView([39, -98], 4);
+
+      L.tileLayer(
+        "https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}",
+        {
+          attribution:
+            'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+          maxZoom: 18,
+          id: "mapbox/light-v9",
+          tileSize: 512,
+          zoomOffset: -1,
+          accessToken:
+            "pk.eyJ1IjoiZWhpY2tzMDUiLCJhIjoiY2tsM3dvMm9kMG14aTJ2bnI4djFudjNrOCJ9.5PiQFDsUzfVTRDaMPjahHg",
+        }
+      ).addTo(mymap);
+
+      var geojson;
+
+      function getColorOriginal(d) {
+        return d > 1000
+          ? "#800026"
+          : d > 500
+          ? "#BD0026"
+          : d > 200
+          ? "#E31A1C"
+          : d > 100
+          ? "#FC4E2A"
+          : d > 50
+          ? "#FD8D3C"
+          : d > 20
+          ? "#FEB24C"
+          : d > 10
+          ? "#FED976"
+          : "#FFEDA0";
+      }
+      function getColor(d) {
+        return "rgba(50, 200, 50, .5)";
+      }
+      function style(feature) {
+        return {
+          fillColor: getColor(feature.properties.density),
+          weight: 2,
+          opacity: 1,
+          color: "white",
+          dashArray: "3",
+          fillOpacity: 0.7,
+        };
+      }
+
+      function highlightFeature(e) {
+        var layer = e.target;
+
+        layer.setStyle({
+          weight: 5,
+          color: "#666",
+          dashArray: "",
+          fillOpacity: 0.7,
+        });
+
+        if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
+          layer.bringToFront();
+        }
+
+        info.update(layer.feature.properties);
+      }
+      function resetHighlight(e) {
+        geojson.resetStyle(e.target);
+        info.update();
+      }
+      function zoomToFeature(e) {
+        map.fitBounds(e.target.getBounds());
+      }
+      function onEachFeature(feature, layer) {
+        layer.on({
+          mouseover: highlightFeature,
+          mouseout: resetHighlight,
+          click: zoomToFeature,
+        });
+      }
+
+      geojson = L.geoJson(statesData, {
+        style: style,
+        onEachFeature: onEachFeature,
+      }).addTo(mymap);
+
+      // custom info control
+      var info = L.control();
+
+      info.onAdd = function (map) {
+        this._div = L.DomUtil.create("div", "info"); // create a div with a class "info"
+        this.update();
+        return this._div;
+      };
+
+      // method that we will use to update the control based on feature properties passed
+      info.update = function (props) {
+        this._div.innerHTML =
+          "<h4>US State Foods</h4>" +
+          (props
+            ? "<b>" +
+              props.name +
+              "</b><br />Their signature food is " +
+              (statesDataFood[props.name]?.food || "unknown") +
+              "!"
+            : "Hover over a state");
+      };
+
+      info.addTo(mymap);
+    </script>
+  </body>
+</html>
