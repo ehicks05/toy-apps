@@ -12,13 +12,13 @@ import {
   Legend,
 } from "recharts";
 
-import { usConfirmed, queryOptions } from "./constants";
+import { queryOptions } from "./constants";
 import { getData } from "./utils";
 
 function App() {
   const { isLoading, isError, data } = useQuery(
-    "usConfirmed",
-    () => getData(usConfirmed),
+    "usData",
+    () => getData(),
     queryOptions
   );
 
@@ -47,8 +47,10 @@ function App() {
         <YAxis dataKey="somersetConfirmed" />
         <Tooltip />
         <Legend />
-        <Line type="linear" dataKey="somersetConfirmed" stroke="#d88488" />
-        <Line type="linear" dataKey="hunterdonConfirmed" stroke="#8884d8" />
+        <Line dot={false} dataKey="somersetConfirmed" stroke="#d88488" />
+        <Line dot={false} dataKey="hunterdonConfirmed" stroke="#8884d8" />
+        <Line dot={false} dataKey="somersetDeaths" stroke="#88d488" />
+        <Line dot={false} dataKey="hunterdonDeaths" stroke="#2824d8" />
       </LineChart>
 
       <table {...getTableProps()} style={{ border: "solid 1px blue" }}>

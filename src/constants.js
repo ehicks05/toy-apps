@@ -6,4 +6,4 @@ const usDeaths =
 const oneDay = 1000 * 60 * 60 * 24;
 const queryOptions = { cacheTime: oneDay, staleTime: oneDay };
 
-export { usConfirmed, queryOptions };
+export { usConfirmed, usDeaths, queryOptions };
