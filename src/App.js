@@ -2,7 +2,15 @@ import React from "react";
 import "./App.css";
 import { useQuery } from "react-query";
 import { useTable } from "react-table";
-import { LineChart, Line, CartesianGrid, XAxis, YAxis } from "recharts";
+import {
+  LineChart,
+  Line,
+  CartesianGrid,
+  XAxis,
+  YAxis,
+  Tooltip,
+  Legend,
+} from "recharts";
 
 import { usConfirmed, queryOptions } from "./constants";
 import { getData } from "./utils";
@@ -14,47 +22,33 @@ function App() {
     queryOptions
   );
 
-  const filter = (key) => {
-    return ["Admin2", "Province_State"].includes(key) || !isNaN(key.charAt(0));
-  };
-
   const columns = React.useMemo(
-    () =>
-      Object.keys(data?.length > 0 ? data[0] : {})
-        .filter(filter)
-        .map((key) => ({
-          Header: key,
-          accessor: key,
-        })),
-    [data]
+    () => [
+      { Header: "Date", accessor: "date" },
+      { Header: "Somerset Confirmed", accessor: "somersetConfirmed" },
+      { Header: "Hunterdon Confirmed", accessor: "hunterdonConfirmed" },
+    ],
+    []
   );
 
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    useTable({ columns, data });
+    useTable({ columns, data: data || [] });
 
   if (isError) return <div>Error...</div>;
-  if (isLoading) return <div>Loading...</div>;
+  if (isLoading || data.length === 0) return <div>Loading...</div>;
 
   console.log(data);
 
   return (
     <div className="App">
-      <LineChart width={800} height={600}>
+      <LineChart width={800} height={600} data={data}>
         <CartesianGrid stroke="#ccc" />
         <XAxis dataKey="date" />
-        <YAxis dataKey="confirmed" />
-        <Line
-          data={data[0]}
-          type="linear"
-          dataKey="confirmed"
-          stroke="#8884d8"
-        />
-        <Line
-          data={data[1]}
-          type="linear"
-          dataKey="confirmed"
-          stroke="#8884d8"
-        />
+        <YAxis dataKey="somersetConfirmed" />
+        <Tooltip />
+        <Legend />
+        <Line type="linear" dataKey="somersetConfirmed" stroke="#d88488" />
+        <Line type="linear" dataKey="hunterdonConfirmed" stroke="#8884d8" />
       </LineChart>
 
       <table {...getTableProps()} style={{ border: "solid 1px blue" }}>
