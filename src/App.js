@@ -36,8 +36,9 @@ function App() {
     []
   );
 
+  const reversedData = data ? [...data].reverse() : [];
   const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    useTable({ columns, data: data || [] });
+    useTable({ columns, data: reversedData });
 
   if (isError) return <div>Error...</div>;
   if (isLoading || data.length === 0) return <div>Loading...</div>;
