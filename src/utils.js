@@ -1,6 +1,7 @@
 import Papa from "papaparse";
 import _ from "lodash";
-import { usConfirmed, usDeaths } from "./constants";
+import { subDays, format } from "date-fns";
+import { usConfirmed, usDeaths, INFECTION_DURATION } from "./constants";
 
 const filter = (row) =>
   row.Province_State === "New Jersey" &&
@@ -11,7 +12,12 @@ const mapConfirmed = (row) => {
 
   const result = Object.entries(row)
     .filter(([key, _val]) => !isNaN(key.charAt(0)))
-    .map(([date, confirmed]) => ({ Admin2, Province_State, date, confirmed }));
+    .map(([date, confirmed]) => ({
+      Admin2,
+      Province_State,
+      date,
+      confirmed: Number(confirmed),
+    }));
 
   return result;
 };
@@ -21,7 +27,12 @@ const mapDeaths = (row) => {
 
   const result = Object.entries(row)
     .filter(([key, _val]) => !isNaN(key.charAt(0)))
-    .map(([date, deaths]) => ({ Admin2, Province_State, date, deaths }));
+    .map(([date, deaths]) => ({
+      Admin2,
+      Province_State,
+      date,
+      deaths: Number(deaths),
+    }));
 
   return result;
 };
@@ -53,21 +64,28 @@ const getData = async () => {
 
   const result = Object.entries(usConfirmedGrouped).map(([date, data]) => ({
     date,
-    hunterdonConfirmed: Number(
-      data.find((row) => row.Admin2 === "Hunterdon").confirmed
-    ),
-    somersetConfirmed: Number(
-      data.find((row) => row.Admin2 === "Somerset").confirmed
-    ),
-    hunterdonDeaths: Number(
-      usDeathsGrouped[date].find((row) => row.Admin2 === "Hunterdon").deaths
-    ),
-    somersetDeaths: Number(
-      usDeathsGrouped[date].find((row) => row.Admin2 === "Somerset").deaths
-    ),
+    hunterdonConfirmed: data.find((r) => r.Admin2 === "Hunterdon").confirmed,
+    somersetConfirmed: data.find((r) => r.Admin2 === "Somerset").confirmed,
+    hunterdonDeaths: usDeathsGrouped[date].find((r) => r.Admin2 === "Hunterdon")
+      .deaths,
+    somersetDeaths: usDeathsGrouped[date].find((r) => r.Admin2 === "Somerset")
+      .deaths,
   }));
 
-  return result;
+  const resultsWithActiveCounts = result.map((row) => {
+    const date = subDays(new Date(row.date), INFECTION_DURATION);
+    const formatted = format(date, "M/d/yy");
+
+    console.log(`original: ${row.date}, new: ${formatted}`);
+
+    const casesToSubtract =
+      result.find((row) => row.date === formatted)?.somersetConfirmed || 0;
+    const somersetActive = row.somersetConfirmed - casesToSubtract;
+
+    return { ...row, somersetActive };
+  });
+
+  return resultsWithActiveCounts;
 };
 
 export { getData };

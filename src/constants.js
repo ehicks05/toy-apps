@@ -3,7 +3,9 @@ const usConfirmed =
 const usDeaths =
   "https://github.com/CSSEGISandData/COVID-19/raw/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_US.csv";
 
+const INFECTION_DURATION = 14;
+
 const oneDay = 1000 * 60 * 60 * 24;
 const queryOptions = { cacheTime: oneDay, staleTime: oneDay };
 
-export { usConfirmed, usDeaths, queryOptions };
+export { usConfirmed, usDeaths, INFECTION_DURATION, queryOptions };
