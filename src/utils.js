@@ -73,16 +73,18 @@ const getData = async () => {
   }));
 
   const resultsWithActiveCounts = result.map((row) => {
-    const date = subDays(new Date(row.date), INFECTION_DURATION);
-    const formatted = format(date, "M/d/yy");
+    const targetDate = subDays(new Date(row.date), INFECTION_DURATION);
+    const formattedDate = format(targetDate, "M/d/yy");
 
-    console.log(`original: ${row.date}, new: ${formatted}`);
+    const somersetCasesToSubtract =
+      result.find((row) => row.date === formattedDate)?.somersetConfirmed || 0;
+    const somersetActive = row.somersetConfirmed - somersetCasesToSubtract;
 
-    const casesToSubtract =
-      result.find((row) => row.date === formatted)?.somersetConfirmed || 0;
-    const somersetActive = row.somersetConfirmed - casesToSubtract;
+    const hunterdonCasesToSubtract =
+      result.find((row) => row.date === formattedDate)?.hunterdonConfirmed || 0;
+    const hunterdonActive = row.hunterdonConfirmed - hunterdonCasesToSubtract;
 
-    return { ...row, somersetActive };
+    return { ...row, somersetActive, hunterdonActive };
   });
 
   return resultsWithActiveCounts;

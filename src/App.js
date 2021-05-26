@@ -27,6 +27,10 @@ function App() {
       { Header: "Date", accessor: "date" },
       { Header: "Somerset Confirmed", accessor: "somersetConfirmed" },
       { Header: "Hunterdon Confirmed", accessor: "hunterdonConfirmed" },
+      { Header: "Somerset Active", accessor: "somersetActive" },
+      { Header: "Hunterdon Active", accessor: "hunterdonActive" },
+      { Header: "Somerset Deaths", accessor: "somersetDeaths" },
+      { Header: "Hunterdon Deaths", accessor: "hunterdonDeaths" },
     ],
     []
   );
