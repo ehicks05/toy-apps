@@ -32,6 +32,11 @@ function App() {
       { Header: "Hunterdon Active", accessor: "hunterdonActive" },
       { Header: "Somerset Deaths", accessor: "somersetDeaths" },
       { Header: "Hunterdon Deaths", accessor: "hunterdonDeaths" },
+      { Header: "Somerset Active Percent", accessor: "somersetActivePercent" },
+      {
+        Header: "Hunterdon Active Percent",
+        accessor: "hunterdonActivePercent",
+      },
     ],
     []
   );
@@ -42,8 +47,6 @@ function App() {
 
   if (isError) return <div>Error...</div>;
   if (isLoading || data.length === 0) return <div>Loading...</div>;
-
-  console.log(data);
 
   return (
     <div className="App">
@@ -65,13 +68,42 @@ function App() {
         <h1>Active Cases</h1>
         <ResponsiveContainer minHeight={300} width="100%">
           <LineChart data={data}>
-            <CartesianGrid stroke="#ccc" />
+            <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="date" />
-            <YAxis dataKey="somersetActive" />
+            <YAxis />
+            <YAxis dataKey="somersetActive" yAxisId="leftAxis" />
+            <YAxis
+              dataKey="somersetActivePercent"
+              yAxisId="rightAxis"
+              orientation="right"
+            />
             <Tooltip />
             <Legend />
-            <Line dot={false} dataKey="somersetActive" stroke="#d88488" />
-            <Line dot={false} dataKey="hunterdonActive" stroke="#8884d8" />
+            <Line
+              dot={false}
+              yAxisId="leftAxis"
+              dataKey="somersetActive"
+              stroke="#d88488"
+            />
+            <Line
+              dot={false}
+              yAxisId="leftAxis"
+              dataKey="hunterdonActive"
+              stroke="#8884d8"
+            />
+
+            <Line
+              dot={false}
+              yAxisId="rightAxis"
+              dataKey="somersetActivePercent"
+              stroke="#f8b4b8"
+            />
+            <Line
+              dot={false}
+              yAxisId="rightAxis"
+              dataKey="hunterdonActivePercent"
+              stroke="#b8b4f8"
+            />
           </LineChart>
         </ResponsiveContainer>
       </div>

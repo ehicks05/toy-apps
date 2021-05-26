@@ -1,7 +1,18 @@
 import Papa from "papaparse";
 import _ from "lodash";
 import { subDays, format } from "date-fns";
-import { usConfirmed, usDeaths, INFECTION_DURATION } from "./constants";
+import {
+  usConfirmed,
+  usDeaths,
+  INFECTION_DURATION,
+  POPULATIONS,
+} from "./constants";
+
+const pretty = (input) =>
+  Intl.NumberFormat("en-US", {
+    minimumFractionDigits: 2,
+    maximumFractionDigits: 2,
+  }).format(input);
 
 const filter = (row) =>
   row.Province_State === "New Jersey" &&
@@ -72,7 +83,7 @@ const getData = async () => {
       .deaths,
   }));
 
-  const resultsWithActiveCounts = result.map((row) => {
+  const resultsWithComputedData = result.map((row) => {
     const targetDate = subDays(new Date(row.date), INFECTION_DURATION);
     const formattedDate = format(targetDate, "M/d/yy");
 
@@ -84,10 +95,23 @@ const getData = async () => {
       result.find((row) => row.date === formattedDate)?.hunterdonConfirmed || 0;
     const hunterdonActive = row.hunterdonConfirmed - hunterdonCasesToSubtract;
 
-    return { ...row, somersetActive, hunterdonActive };
+    const somersetActivePercent = pretty(
+      (100 * somersetActive) / POPULATIONS.SOMERSET
+    );
+    const hunterdonActivePercent = pretty(
+      (100 * hunterdonActive) / POPULATIONS.HUNTERDON
+    );
+
+    return {
+      ...row,
+      somersetActive,
+      hunterdonActive,
+      somersetActivePercent,
+      hunterdonActivePercent,
+    };
   });
 
-  return resultsWithActiveCounts;
+  return resultsWithComputedData;
 };
 
 export { getData };
