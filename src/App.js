@@ -49,8 +49,8 @@ function App() {
   if (isLoading || data.length === 0) return <div>Loading...</div>;
 
   return (
-    <div className="App">
-      <div>
+    <div className="App" style={{ padding: "1rem" }}>
+      <div style={{ margin: "auto", maxWidth: "1024px" }}>
         <h1>Confirmed Cases</h1>
         <ResponsiveContainer minHeight={300} width="100%">
           <LineChart data={data}>
@@ -64,7 +64,7 @@ function App() {
           </LineChart>
         </ResponsiveContainer>
       </div>
-      <div>
+      <div style={{ margin: "auto", maxWidth: "1024px" }}>
         <h1>Active Cases</h1>
         <ResponsiveContainer minHeight={300} width="100%">
           <LineChart data={data}>
@@ -78,7 +78,7 @@ function App() {
           </LineChart>
         </ResponsiveContainer>
       </div>
-      <div>
+      <div style={{ margin: "auto", maxWidth: "1024px" }}>
         <h1>Active Cases Percent</h1>
         <ResponsiveContainer minHeight={300} width="100%">
           <LineChart data={data}>
@@ -100,7 +100,7 @@ function App() {
           </LineChart>
         </ResponsiveContainer>
       </div>
-      <div>
+      <div style={{ margin: "auto", maxWidth: "1024px" }}>
         <h1>Deaths</h1>
         <ResponsiveContainer minHeight={300} width="100%">
           <LineChart data={data}>
@@ -116,7 +116,7 @@ function App() {
       </div>
 
       <h1>Data</h1>
-      <table {...getTableProps()} style={{ width: "100%" }}>
+      <table {...getTableProps()} style={{ margin: "auto", fontSize: ".8rem" }}>
         <thead>
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
@@ -124,7 +124,7 @@ function App() {
                 <th
                   {...column.getHeaderProps()}
                   style={{
-                    padding: "10px",
+                    padding: "4px",
                     background: "lightgray",
                     color: "black",
                     fontWeight: "bold",
@@ -146,7 +146,7 @@ function App() {
                     <td
                       {...cell.getCellProps()}
                       style={{
-                        padding: "10px",
+                        padding: "4px",
                         background: "lightgray",
                       }}
                     >
