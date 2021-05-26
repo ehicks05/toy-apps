@@ -53,7 +53,7 @@ function App() {
         <h1 className="text-2xl">Confirmed Cases</h1>
         <ResponsiveContainer minHeight={300} width="100%">
           <LineChart data={data}>
-            <CartesianGrid stroke="#ccc" />
+            <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="date" />
             <YAxis dataKey="somersetConfirmed" />
             <Tooltip />
@@ -103,7 +103,7 @@ function App() {
         <h1 className="text-2xl">Deaths</h1>
         <ResponsiveContainer minHeight={300} width="100%">
           <LineChart data={data}>
-            <CartesianGrid stroke="#ccc" />
+            <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="date" />
             <YAxis dataKey="somersetDeaths" />
             <Tooltip />
