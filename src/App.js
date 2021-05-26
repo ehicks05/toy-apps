@@ -159,6 +159,11 @@ function App() {
           })}
         </tbody>
       </table>
+      <footer style={{ padding: "1rem" }}>
+        <a href="https://github.com/CSSEGISandData/COVID-19">
+          JHU CSSE COVID-19 Data
+        </a>
+      </footer>
     </div>
   );
 }
