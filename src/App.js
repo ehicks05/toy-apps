@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css";
 import { useQuery } from "react-query";
 import { useTable } from "react-table";
 import {
@@ -49,9 +48,9 @@ function App() {
   if (isLoading || data.length === 0) return <div>Loading...</div>;
 
   return (
-    <div className="App" style={{ padding: "1rem" }}>
-      <div style={{ margin: "auto", maxWidth: "1024px" }}>
-        <h1>Confirmed Cases</h1>
+    <div className="p-4 dark:text-white dark:bg-gray-800">
+      <div className="m-auto max-w-screen-xl">
+        <h1 className="text-2xl">Confirmed Cases</h1>
         <ResponsiveContainer minHeight={300} width="100%">
           <LineChart data={data}>
             <CartesianGrid stroke="#ccc" />
@@ -64,8 +63,8 @@ function App() {
           </LineChart>
         </ResponsiveContainer>
       </div>
-      <div style={{ margin: "auto", maxWidth: "1024px" }}>
-        <h1>Active Cases</h1>
+      <div className="m-auto max-w-screen-xl">
+        <h1 className="text-2xl">Active Cases</h1>
         <ResponsiveContainer minHeight={300} width="100%">
           <LineChart data={data}>
             <CartesianGrid strokeDasharray="3 3" />
@@ -78,8 +77,8 @@ function App() {
           </LineChart>
         </ResponsiveContainer>
       </div>
-      <div style={{ margin: "auto", maxWidth: "1024px" }}>
-        <h1>Active Cases Percent</h1>
+      <div className="m-auto max-w-screen-xl">
+        <h1 className="text-2xl">Active Cases Percent</h1>
         <ResponsiveContainer minHeight={300} width="100%">
           <LineChart data={data}>
             <CartesianGrid strokeDasharray="3 3" />
@@ -100,8 +99,8 @@ function App() {
           </LineChart>
         </ResponsiveContainer>
       </div>
-      <div style={{ margin: "auto", maxWidth: "1024px" }}>
-        <h1>Deaths</h1>
+      <div className="m-auto max-w-screen-xl">
+        <h1 className="text-2xl">Deaths</h1>
         <ResponsiveContainer minHeight={300} width="100%">
           <LineChart data={data}>
             <CartesianGrid stroke="#ccc" />
@@ -115,52 +114,43 @@ function App() {
         </ResponsiveContainer>
       </div>
 
-      <h1>Data</h1>
-      <table {...getTableProps()} style={{ margin: "auto", fontSize: ".8rem" }}>
-        <thead>
-          {headerGroups.map((headerGroup) => (
-            <tr {...headerGroup.getHeaderGroupProps()}>
-              {headerGroup.headers.map((column) => (
-                <th
-                  {...column.getHeaderProps()}
-                  style={{
-                    padding: "4px",
-                    background: "lightgray",
-                    color: "black",
-                    fontWeight: "bold",
-                  }}
-                >
-                  {column.render("Header")}
-                </th>
-              ))}
-            </tr>
-          ))}
-        </thead>
-        <tbody {...getTableBodyProps()}>
-          {rows.map((row) => {
-            prepareRow(row);
-            return (
-              <tr {...row.getRowProps()}>
-                {row.cells.map((cell) => {
-                  return (
-                    <td
-                      {...cell.getCellProps()}
-                      style={{
-                        padding: "4px",
-                        background: "lightgray",
-                      }}
-                    >
-                      {cell.render("Cell")}
-                    </td>
-                  );
-                })}
+      <div className="m-auto max-w-screen-xl overflow-x-auto">
+        <h1 className="text-2xl">Data</h1>
+        <table {...getTableProps()} className="text-xs">
+          <thead>
+            {headerGroups.map((headerGroup) => (
+              <tr {...headerGroup.getHeaderGroupProps()}>
+                {headerGroup.headers.map((column) => (
+                  <th {...column.getHeaderProps()} className="p-1 font-bold">
+                    {column.render("Header")}
+                  </th>
+                ))}
               </tr>
-            );
-          })}
-        </tbody>
-      </table>
-      <footer style={{ padding: "1rem" }}>
-        <a href="https://github.com/CSSEGISandData/COVID-19">
+            ))}
+          </thead>
+          <tbody {...getTableBodyProps()}>
+            {rows.map((row) => {
+              prepareRow(row);
+              return (
+                <tr {...row.getRowProps()}>
+                  {row.cells.map((cell) => {
+                    return (
+                      <td {...cell.getCellProps()} className="p-1">
+                        {cell.render("Cell")}
+                      </td>
+                    );
+                  })}
+                </tr>
+              );
+            })}
+          </tbody>
+        </table>
+      </div>
+      <footer className="p-1">
+        <a
+          className="text-blue-500 hover:underline"
+          href="https://github.com/CSSEGISandData/COVID-19"
+        >
           JHU CSSE COVID-19 Data
         </a>
       </footer>
