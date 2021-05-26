@@ -61,8 +61,6 @@ const getData = async () => {
     header: true,
   });
 
-  console.log(usDeathsData);
-
   const usConfirmedGrouped = _.groupBy(
     usConfirmedData.data.filter(filter).map(mapConfirmed).flat(),
     "date"
