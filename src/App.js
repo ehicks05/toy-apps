@@ -30,13 +30,13 @@ function App() {
       { Header: "Hunterdon Confirmed", accessor: "hunterdonConfirmed" },
       { Header: "Somerset Active", accessor: "somersetActive" },
       { Header: "Hunterdon Active", accessor: "hunterdonActive" },
-      { Header: "Somerset Deaths", accessor: "somersetDeaths" },
-      { Header: "Hunterdon Deaths", accessor: "hunterdonDeaths" },
       { Header: "Somerset Active Percent", accessor: "somersetActivePercent" },
       {
         Header: "Hunterdon Active Percent",
         accessor: "hunterdonActivePercent",
       },
+      { Header: "Somerset Deaths", accessor: "somersetDeaths" },
+      { Header: "Hunterdon Deaths", accessor: "hunterdonDeaths" },
     ],
     []
   );
@@ -70,39 +70,32 @@ function App() {
           <LineChart data={data}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="date" />
-            <YAxis />
-            <YAxis dataKey="somersetActive" yAxisId="leftAxis" />
-            <YAxis
-              dataKey="somersetActivePercent"
-              yAxisId="rightAxis"
-              orientation="right"
-            />
+            <YAxis dataKey="somersetActive" />
+            <Tooltip />
+            <Legend />
+            <Line dot={false} dataKey="somersetActive" stroke="#d88488" />
+            <Line dot={false} dataKey="hunterdonActive" stroke="#8884d8" />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+      <div>
+        <h1>Active Cases Percent</h1>
+        <ResponsiveContainer minHeight={300} width="100%">
+          <LineChart data={data}>
+            <CartesianGrid strokeDasharray="3 3" />
+            <XAxis dataKey="date" />
+            <YAxis dataKey="somersetActivePercent" />
             <Tooltip />
             <Legend />
             <Line
               dot={false}
-              yAxisId="leftAxis"
-              dataKey="somersetActive"
+              dataKey="somersetActivePercent"
               stroke="#d88488"
             />
             <Line
               dot={false}
-              yAxisId="leftAxis"
-              dataKey="hunterdonActive"
-              stroke="#8884d8"
-            />
-
-            <Line
-              dot={false}
-              yAxisId="rightAxis"
-              dataKey="somersetActivePercent"
-              stroke="#f8b4b8"
-            />
-            <Line
-              dot={false}
-              yAxisId="rightAxis"
               dataKey="hunterdonActivePercent"
-              stroke="#b8b4f8"
+              stroke="#8884d8"
             />
           </LineChart>
         </ResponsiveContainer>
@@ -122,7 +115,8 @@ function App() {
         </ResponsiveContainer>
       </div>
 
-      <table {...getTableProps()} style={{ border: "solid 1px blue" }}>
+      <h1>Data</h1>
+      <table {...getTableProps()} style={{ width: "100%" }}>
         <thead>
           {headerGroups.map((headerGroup) => (
             <tr {...headerGroup.getHeaderGroupProps()}>
@@ -130,8 +124,8 @@ function App() {
                 <th
                   {...column.getHeaderProps()}
                   style={{
-                    borderBottom: "solid 3px red",
-                    background: "aliceblue",
+                    padding: "10px",
+                    background: "lightgray",
                     color: "black",
                     fontWeight: "bold",
                   }}
@@ -153,8 +147,7 @@ function App() {
                       {...cell.getCellProps()}
                       style={{
                         padding: "10px",
-                        border: "solid 1px gray",
-                        background: "papayawhip",
+                        background: "lightgray",
                       }}
                     >
                       {cell.render("Cell")}

@@ -10,8 +10,8 @@ import {
 
 const pretty = (input) =>
   Intl.NumberFormat("en-US", {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
+    minimumFractionDigits: 3,
+    maximumFractionDigits: 3,
   }).format(input);
 
 const filter = (row) =>
