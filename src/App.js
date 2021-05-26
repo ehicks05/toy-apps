@@ -10,6 +10,7 @@ import {
   YAxis,
   Tooltip,
   Legend,
+  ResponsiveContainer,
 } from "recharts";
 
 import { queryOptions } from "./constants";
@@ -45,17 +46,48 @@ function App() {
 
   return (
     <div className="App">
-      <LineChart width={800} height={600} data={data}>
-        <CartesianGrid stroke="#ccc" />
-        <XAxis dataKey="date" />
-        <YAxis dataKey="somersetConfirmed" />
-        <Tooltip />
-        <Legend />
-        <Line dot={false} dataKey="somersetConfirmed" stroke="#d88488" />
-        <Line dot={false} dataKey="hunterdonConfirmed" stroke="#8884d8" />
-        <Line dot={false} dataKey="somersetDeaths" stroke="#88d488" />
-        <Line dot={false} dataKey="hunterdonDeaths" stroke="#2824d8" />
-      </LineChart>
+      <div>
+        <h1>Confirmed Cases</h1>
+        <ResponsiveContainer minHeight={300} width="100%">
+          <LineChart data={data}>
+            <CartesianGrid stroke="#ccc" />
+            <XAxis dataKey="date" />
+            <YAxis dataKey="somersetConfirmed" />
+            <Tooltip />
+            <Legend />
+            <Line dot={false} dataKey="somersetConfirmed" stroke="#d88488" />
+            <Line dot={false} dataKey="hunterdonConfirmed" stroke="#8884d8" />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+      <div>
+        <h1>Active Cases</h1>
+        <ResponsiveContainer minHeight={300} width="100%">
+          <LineChart data={data}>
+            <CartesianGrid stroke="#ccc" />
+            <XAxis dataKey="date" />
+            <YAxis dataKey="somersetActive" />
+            <Tooltip />
+            <Legend />
+            <Line dot={false} dataKey="somersetActive" stroke="#d88488" />
+            <Line dot={false} dataKey="hunterdonActive" stroke="#8884d8" />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
+      <div>
+        <h1>Deaths</h1>
+        <ResponsiveContainer minHeight={300} width="100%">
+          <LineChart data={data}>
+            <CartesianGrid stroke="#ccc" />
+            <XAxis dataKey="date" />
+            <YAxis dataKey="somersetDeaths" />
+            <Tooltip />
+            <Legend />
+            <Line dot={false} dataKey="somersetDeaths" stroke="#d88488" />
+            <Line dot={false} dataKey="hunterdonDeaths" stroke="#8884d8" />
+          </LineChart>
+        </ResponsiveContainer>
+      </div>
 
       <table {...getTableProps()} style={{ border: "solid 1px blue" }}>
         <thead>
