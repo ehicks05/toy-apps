@@ -48,7 +48,7 @@ function App() {
   if (isLoading || data.length === 0) return <div>Loading...</div>;
 
   return (
-    <div className="p-4 dark:text-white dark:bg-gray-800">
+    <div className="p-4">
       <div className="m-auto max-w-screen-xl">
         <h1 className="text-2xl">Confirmed Cases</h1>
         <ResponsiveContainer minHeight={300} width="100%">
