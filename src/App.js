@@ -25,15 +25,23 @@ function App() {
   const columns = React.useMemo(
     () => [
       { Header: "Date", accessor: "date" },
+
+      { Header: "NJ Confirmed", accessor: "njConfirmed" },
       { Header: "Somerset Confirmed", accessor: "somersetConfirmed" },
       { Header: "Hunterdon Confirmed", accessor: "hunterdonConfirmed" },
+
+      { Header: "NJ Active", accessor: "njActive" },
       { Header: "Somerset Active", accessor: "somersetActive" },
       { Header: "Hunterdon Active", accessor: "hunterdonActive" },
-      { Header: "Somerset Active Percent", accessor: "somersetActivePercent" },
+
+      { Header: "NJ Active %", accessor: "njActivePercent" },
+      { Header: "Somerset Active %", accessor: "somersetActivePercent" },
       {
-        Header: "Hunterdon Active Percent",
+        Header: "Hunterdon Active %",
         accessor: "hunterdonActivePercent",
       },
+
+      { Header: "NJ Deaths", accessor: "njDeaths" },
       { Header: "Somerset Deaths", accessor: "somersetDeaths" },
       { Header: "Hunterdon Deaths", accessor: "hunterdonDeaths" },
     ],
@@ -50,22 +58,33 @@ function App() {
   return (
     <div className="p-4">
       <div className="m-auto max-w-screen-xl">
-        <h1 className="text-2xl">Active Cases Percent</h1>
+        <h1 className="text-2xl">Active Cases %</h1>
         <ResponsiveContainer minHeight={300} width="100%">
           <LineChart data={data}>
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="date" />
-            <YAxis dataKey="somersetActivePercent" />
+            <YAxis dataKey="njActivePercent" />
             <Tooltip />
             <Legend />
             <Line
               dot={false}
+              name="NJ"
+              dataKey="njActivePercent"
+              unit="%"
+              stroke="#88d488"
+            />
+            <Line
+              dot={false}
+              name="Somerset"
               dataKey="somersetActivePercent"
+              unit="%"
               stroke="#d88488"
             />
             <Line
               dot={false}
+              name="Hunterdon"
               dataKey="hunterdonActivePercent"
+              unit="%"
               stroke="#8884d8"
             />
           </LineChart>
