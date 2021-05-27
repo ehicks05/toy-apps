@@ -50,34 +50,6 @@ function App() {
   return (
     <div className="p-4">
       <div className="m-auto max-w-screen-xl">
-        <h1 className="text-2xl">Confirmed Cases</h1>
-        <ResponsiveContainer minHeight={300} width="100%">
-          <LineChart data={data}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="date" />
-            <YAxis dataKey="somersetConfirmed" />
-            <Tooltip />
-            <Legend />
-            <Line dot={false} dataKey="somersetConfirmed" stroke="#d88488" />
-            <Line dot={false} dataKey="hunterdonConfirmed" stroke="#8884d8" />
-          </LineChart>
-        </ResponsiveContainer>
-      </div>
-      <div className="m-auto max-w-screen-xl">
-        <h1 className="text-2xl">Active Cases</h1>
-        <ResponsiveContainer minHeight={300} width="100%">
-          <LineChart data={data}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="date" />
-            <YAxis dataKey="somersetActive" />
-            <Tooltip />
-            <Legend />
-            <Line dot={false} dataKey="somersetActive" stroke="#d88488" />
-            <Line dot={false} dataKey="hunterdonActive" stroke="#8884d8" />
-          </LineChart>
-        </ResponsiveContainer>
-      </div>
-      <div className="m-auto max-w-screen-xl">
         <h1 className="text-2xl">Active Cases Percent</h1>
         <ResponsiveContainer minHeight={300} width="100%">
           <LineChart data={data}>
@@ -96,20 +68,6 @@ function App() {
               dataKey="hunterdonActivePercent"
               stroke="#8884d8"
             />
-          </LineChart>
-        </ResponsiveContainer>
-      </div>
-      <div className="m-auto max-w-screen-xl">
-        <h1 className="text-2xl">Deaths</h1>
-        <ResponsiveContainer minHeight={300} width="100%">
-          <LineChart data={data}>
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="date" />
-            <YAxis dataKey="somersetDeaths" />
-            <Tooltip />
-            <Legend />
-            <Line dot={false} dataKey="somersetDeaths" stroke="#d88488" />
-            <Line dot={false} dataKey="hunterdonDeaths" stroke="#8884d8" />
           </LineChart>
         </ResponsiveContainer>
       </div>
