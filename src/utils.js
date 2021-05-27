@@ -26,7 +26,7 @@ const mapConfirmed = (row) => {
     .map(([date, confirmed]) => ({
       Admin2,
       Province_State,
-      date,
+      date: format(new Date(date), "MM/dd/yy"),
       confirmed: Number(confirmed),
     }));
 
@@ -41,7 +41,7 @@ const mapDeaths = (row) => {
     .map(([date, deaths]) => ({
       Admin2,
       Province_State,
-      date,
+      date: format(new Date(date), "MM/dd/yy"),
       deaths: Number(deaths),
     }));
 
@@ -83,7 +83,7 @@ const getData = async () => {
 
   const resultsWithComputedData = result.map((row) => {
     const targetDate = subDays(new Date(row.date), INFECTION_DURATION);
-    const formattedDate = format(targetDate, "M/d/yy");
+    const formattedDate = format(targetDate, "MM/dd/yy");
 
     const somersetCasesToSubtract =
       result.find((row) => row.date === formattedDate)?.somersetConfirmed || 0;
