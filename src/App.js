@@ -15,6 +15,9 @@ import {
 import { queryOptions } from "./constants";
 import { getData } from "./utils";
 
+const NUMBER_FORMAT = Intl.NumberFormat("en-US");
+const formatNumber = (number) => NUMBER_FORMAT.format(number);
+
 function App() {
   const { isLoading, isError, data } = useQuery(
     "usData",
@@ -25,25 +28,86 @@ function App() {
   const columns = React.useMemo(
     () => [
       { Header: "Date", accessor: "date" },
-
-      { Header: "NJ Confirmed", accessor: "njConfirmed" },
-      { Header: "Somerset Confirmed", accessor: "somersetConfirmed" },
-      { Header: "Hunterdon Confirmed", accessor: "hunterdonConfirmed" },
-
-      { Header: "NJ Active", accessor: "njActive" },
-      { Header: "Somerset Active", accessor: "somersetActive" },
-      { Header: "Hunterdon Active", accessor: "hunterdonActive" },
-
-      { Header: "NJ Active %", accessor: "njActivePercent" },
-      { Header: "Somerset Active %", accessor: "somersetActivePercent" },
       {
-        Header: "Hunterdon Active %",
-        accessor: "hunterdonActivePercent",
+        Header: "Confirmed Cases",
+        columns: [
+          {
+            Header: "NJ",
+            id: "njConfirmed",
+            accessor: (row) => formatNumber(row.njConfirmed),
+          },
+          {
+            Header: "Somerset",
+            id: "somersetConfirmed",
+            accessor: (row) => formatNumber(row.somersetConfirmed),
+          },
+          {
+            Header: "Hunterdon",
+            id: "hunterdonConfirmed",
+            accessor: (row) => formatNumber(row.hunterdonConfirmed),
+          },
+        ],
       },
-
-      { Header: "NJ Deaths", accessor: "njDeaths" },
-      { Header: "Somerset Deaths", accessor: "somersetDeaths" },
-      { Header: "Hunterdon Deaths", accessor: "hunterdonDeaths" },
+      {
+        Header: "Active Cases",
+        columns: [
+          {
+            Header: "NJ",
+            id: "njActive",
+            accessor: (row) => formatNumber(row.njActive),
+          },
+          {
+            Header: "Somerset",
+            id: "somersetActive",
+            accessor: (row) => formatNumber(row.somersetActive),
+          },
+          {
+            Header: "Hunterdon",
+            id: "hunterdonActive",
+            accessor: (row) => formatNumber(row.hunterdonActive),
+          },
+        ],
+      },
+      {
+        Header: "Active Case %",
+        columns: [
+          {
+            Header: "NJ",
+            id: "njActivePercent",
+            accessor: (row) => formatNumber(row.njActivePercent),
+          },
+          {
+            Header: "Somerset",
+            id: "somersetActivePercent",
+            accessor: (row) => formatNumber(row.somersetActivePercent),
+          },
+          {
+            Header: "Hunterdon",
+            id: "hunterdonActivePercent",
+            accessor: (row) => formatNumber(row.hunterdonActivePercent),
+          },
+        ],
+      },
+      {
+        Header: "Deaths",
+        columns: [
+          {
+            Header: "NJ",
+            id: "njDeaths",
+            accessor: (row) => formatNumber(row.njDeaths),
+          },
+          {
+            Header: "Somerset",
+            id: "somersetDeaths",
+            accessor: (row) => formatNumber(row.somersetDeaths),
+          },
+          {
+            Header: "Hunterdon",
+            id: "hunterdonDeaths",
+            accessor: (row) => formatNumber(row.hunterdonDeaths),
+          },
+        ],
+      },
     ],
     []
   );
@@ -98,7 +162,10 @@ function App() {
             {headerGroups.map((headerGroup) => (
               <tr {...headerGroup.getHeaderGroupProps()}>
                 {headerGroup.headers.map((column) => (
-                  <th {...column.getHeaderProps()} className="p-1 font-bold">
+                  <th
+                    {...column.getHeaderProps()}
+                    className="p-1 border font-bold"
+                  >
                     {column.render("Header")}
                   </th>
                 ))}
@@ -112,7 +179,10 @@ function App() {
                 <tr {...row.getRowProps()}>
                   {row.cells.map((cell) => {
                     return (
-                      <td {...cell.getCellProps()} className="p-1">
+                      <td
+                        {...cell.getCellProps()}
+                        className="p-1 border text-right"
+                      >
                         {cell.render("Cell")}
                       </td>
                     );
