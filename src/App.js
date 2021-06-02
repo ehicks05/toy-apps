@@ -128,7 +128,7 @@ function App() {
             <CartesianGrid strokeDasharray="3 3" />
             <XAxis dataKey="date" />
             <YAxis dataKey="njActivePercent" />
-            <Tooltip />
+            <Tooltip contentStyle={{ backgroundColor: "#333" }} />
             <Legend />
             <Line
               dot={false}
