@@ -8,13 +8,15 @@ import {
   POPULATIONS,
 } from "./constants";
 
-const pretty = (input) =>
-  Intl.NumberFormat("en-US", {
-    minimumFractionDigits: 3,
-    maximumFractionDigits: 3,
-  }).format(input);
+const numberFormat = Intl.NumberFormat("en-US", {
+  minimumFractionDigits: 3,
+  maximumFractionDigits: 3,
+});
 
-const isNJ = (row) => row.Province_State === "New Jersey";
+const pretty = (input) =>
+  numberFormat.format(input);
+
+const isNJOrDe = (row) => row.Province_State === "New Jersey" || row.Province_State === "Delaware";
 
 const mapConfirmed = (row) => {
   const { Admin2, Province_State } = row;
@@ -60,12 +62,12 @@ const getData = async () => {
   });
 
   const usConfirmedGrouped = _.groupBy(
-    usConfirmedData.data.filter(isNJ).map(mapConfirmed).flat(),
+    usConfirmedData.data.filter(isNJOrDe).map(mapConfirmed).flat(),
     "date"
   );
 
   const usDeathsGrouped = _.groupBy(
-    usDeathsData.data.filter(isNJ).map(mapDeaths).flat(),
+    usDeathsData.data.filter(isNJOrDe).map(mapDeaths).flat(),
     "date"
   );
 
@@ -73,12 +75,18 @@ const getData = async () => {
     date,
     hunterdonConfirmed: data.find((r) => r.Admin2 === "Hunterdon").confirmed,
     somersetConfirmed: data.find((r) => r.Admin2 === "Somerset").confirmed,
-    njConfirmed: _.sumBy(data, (row) => row.confirmed),
+    njConfirmed: _.sumBy(data, (row) => row.Province_State === 'New Jersey' ? row.confirmed : 0),
     hunterdonDeaths: usDeathsGrouped[date].find((r) => r.Admin2 === "Hunterdon")
       .deaths,
     somersetDeaths: usDeathsGrouped[date].find((r) => r.Admin2 === "Somerset")
       .deaths,
-    njDeaths: _.sumBy(usDeathsGrouped[date], (row) => row.deaths),
+    njDeaths: _.sumBy(usDeathsGrouped[date], (row) => row.Province_State === 'New Jersey' ? row.deaths : 0),
+
+    sussexConfirmed: data.find((r) => r.Admin2 === "Sussex").confirmed,
+    deConfirmed: _.sumBy(data, (row) => row.Province_State === 'Delaware' ? row.confirmed : 0),
+    sussexDeaths: usDeathsGrouped[date].find((r) => r.Admin2 === "Sussex")
+      .deaths,
+    deDeaths: _.sumBy(usDeathsGrouped[date], (row) => row.Province_State === 'Delaware' ? row.deaths : 0),
   }));
 
   const resultsWithComputedData = result.map((row) => {
@@ -105,6 +113,20 @@ const getData = async () => {
     );
     const njActivePercent = pretty((100 * njActive) / POPULATIONS.NEW_JERSEY);
 
+    const sussexCasesToSubtract =
+    result.find((row) => row.date === formattedDate)?.sussexConfirmed || 0;
+    const sussexActive = row.sussexConfirmed - sussexCasesToSubtract;
+
+    const deCasesToSubtract =
+      result.find((row) => row.date === formattedDate)?.deConfirmed || 0;
+    const deActive = row.deConfirmed - deCasesToSubtract;
+
+    const sussexActivePercent = pretty(
+      (100 * sussexActive) / POPULATIONS.SUSSEX
+    );
+    const deActivePercent = pretty((100 * deActive) / POPULATIONS.DELAWARE);
+
+
     return {
       ...row,
       somersetActive,
@@ -113,6 +135,11 @@ const getData = async () => {
       somersetActivePercent,
       hunterdonActivePercent,
       njActivePercent,
+
+      sussexActive,
+      deActive,
+      sussexActivePercent,
+      deActivePercent,
     };
   });
 

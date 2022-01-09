@@ -46,6 +46,16 @@ function App() {
             id: "hunterdonConfirmed",
             accessor: (row) => formatNumber(row.hunterdonConfirmed),
           },
+          {
+            Header: "DE",
+            id: "deConfirmed",
+            accessor: (row) => formatNumber(row.deConfirmed),
+          },
+          {
+            Header: "Sussex",
+            id: "sussexConfirmed",
+            accessor: (row) => formatNumber(row.sussexConfirmed),
+          },
         ],
       },
       {
@@ -65,6 +75,16 @@ function App() {
             Header: "Hunterdon",
             id: "hunterdonActive",
             accessor: (row) => formatNumber(row.hunterdonActive),
+          },
+          {
+            Header: "DE",
+            id: "deActive",
+            accessor: (row) => formatNumber(row.deActive),
+          },
+          {
+            Header: "Sussex",
+            id: "sussexActive",
+            accessor: (row) => formatNumber(row.sussexActive),
           },
         ],
       },
@@ -86,6 +106,16 @@ function App() {
             id: "hunterdonActivePercent",
             accessor: (row) => formatNumber(row.hunterdonActivePercent),
           },
+          {
+            Header: "DE",
+            id: "deActivePercent",
+            accessor: (row) => formatNumber(row.deActivePercent),
+          },
+          {
+            Header: "Sussex",
+            id: "sussexActivePercent",
+            accessor: (row) => formatNumber(row.sussexActivePercent),
+          },
         ],
       },
       {
@@ -105,6 +135,16 @@ function App() {
             Header: "Hunterdon",
             id: "hunterdonDeaths",
             accessor: (row) => formatNumber(row.hunterdonDeaths),
+          },
+          {
+            Header: "DE",
+            id: "deDeaths",
+            accessor: (row) => formatNumber(row.deDeaths),
+          },
+          {
+            Header: "Sussex",
+            id: "sussexDeaths",
+            accessor: (row) => formatNumber(row.sussexDeaths),
           },
         ],
       },
@@ -150,6 +190,20 @@ function App() {
               dataKey="hunterdonActivePercent"
               unit="%"
               stroke="#8884d8"
+            />
+            <Line
+              dot={false}
+              name="DE"
+              dataKey="deActivePercent"
+              unit="%"
+              stroke="#88d488"
+            />
+            <Line
+              dot={false}
+              name="Sussex"
+              dataKey="sussexActivePercent"
+              unit="%"
+              stroke="#d88488"
             />
           </LineChart>
         </ResponsiveContainer>
