@@ -14,7 +14,9 @@ function App() {
     data: rawData,
   } = useQuery("usData", () => getData(), queryOptions);
 
-  const [UIDs] = useLocalStorageValue("UIDs", ["84034019"]);
+  const [UIDs] = useLocalStorageValue("UIDs", ["84034019"], {
+    storeDefaultValue: true,
+  });
 
   const data = useMemo(() => {
     return rawData && UIDs ? processData(rawData, UIDs) : [];
