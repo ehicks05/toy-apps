@@ -1,5 +1,5 @@
 import React from "react";
-import { useTable } from "react-table";
+import { usePagination, useTable } from "react-table";
 
 const NUMBER_FORMAT = Intl.NumberFormat("en-US");
 const formatNumber = (number) => NUMBER_FORMAT.format(number);
@@ -50,10 +50,23 @@ const Table = ({ data, counties, UIDs }) => {
     [UIDs, counties]
   );
 
-  console.log({ data });
-
-  const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =
-    useTable({ columns, data });
+  const {
+    getTableProps,
+    getTableBodyProps,
+    headerGroups,
+    prepareRow,
+    page,
+    // The rest of these things are super handy, too ;)
+    canPreviousPage,
+    canNextPage,
+    pageOptions,
+    pageCount,
+    gotoPage,
+    nextPage,
+    previousPage,
+    setPageSize,
+    state: { pageIndex, pageSize },
+  } = useTable({ columns, data }, usePagination);
 
   return (
     <div className="m-auto max-w-screen-xl overflow-x-auto">
@@ -74,7 +87,7 @@ const Table = ({ data, counties, UIDs }) => {
           ))}
         </thead>
         <tbody {...getTableBodyProps()}>
-          {rows.map((row) => {
+          {page.map((row) => {
             prepareRow(row);
             return (
               <tr {...row.getRowProps()}>
