@@ -1,39 +1,11 @@
-import React, { useMemo, useState } from "react";
+import React, { useMemo } from "react";
 import { useQuery } from "react-query";
-import Select, { createFilter, components } from "react-select";
-import { FixedSizeList as List } from "react-window";
-
+import { useLocalStorageValue } from "@react-hookz/web/esm"; // esm
 import { queryOptions } from "./constants";
 import { getData, processData } from "./utils";
 import Table from "./Table";
 import Chart from "./Chart";
-
-const MenuList = ({ options, children, maxHeight, getValue }) => {
-  const height = 35;
-  const [value] = getValue();
-  const initialOffset = options.indexOf(value) * height;
-
-  return (
-    <List
-      height={maxHeight}
-      itemCount={children.length}
-      itemSize={height}
-      initialScrollOffset={initialOffset}
-    >
-      {({ index, style }) => (
-        <div
-          key={index}
-          style={style}
-          className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200
-          hover:bg-gray-100 hover:dark:bg-gray-700 hover:text-gray-800 hover:dark:text-gray-200
-          "
-        >
-          {children[index]}
-        </div>
-      )}
-    </List>
-  );
-};
+import CountySelector from "./CountySelector";
 
 function App() {
   const {
@@ -42,101 +14,19 @@ function App() {
     data: rawData,
   } = useQuery("usData", () => getData(), queryOptions);
 
-  const [UIDs, setUIDs] = useState(["84034019"]); // hunterdon
-
-  const countyOptions = useMemo(() => {
-    return rawData
-      ? Object.values(rawData.counties).map((county) => ({
-          value: county.UID,
-          label: county.Combined_Key,
-        }))
-      : [];
-  }, [rawData]);
+  const [UIDs] = useLocalStorageValue("UIDs", ["84034019"]);
 
   const data = useMemo(() => {
-    return rawData ? processData(rawData, UIDs) : [];
+    return rawData && UIDs ? processData(rawData, UIDs) : [];
   }, [rawData, UIDs]);
 
   if (isError) return <div>Error...</div>;
-  if (isLoading || rawData.length === 0) return <div>Loading...</div>;
-
-  const Input = (props) => (
-    <components.Input
-      {...props}
-      inputClassName="bg-gray-700 text-gray-100"
-      className="bg-gray-700 text-gray-100"
-    />
-  );
-  const MultiValueContainer = (props) => (
-    <components.MultiValueContainer
-      {...props}
-      className="bg-gray-700 text-gray-100"
-    />
-  );
-  const MultiValue = (props) => (
-    <components.MultiValue {...props} className="bg-gray-700 text-gray-100" />
-  );
-  const MultiValueLabel = (props) => (
-    <components.MultiValueLabel
-      {...props}
-      className="bg-gray-600 text-gray-100"
-    />
-  );
-  const Control = (props) => (
-    <components.Control {...props} className="bg-gray-600 text-gray-100" />
-  );
-  const ValueContainer = (props) => (
-    <components.ValueContainer
-      {...props}
-      className="bg-gray-600 text-gray-100"
-    />
-  );
-  const IndicatorsContainer = (props) => (
-    <components.IndicatorsContainer
-      {...props}
-      className="bg-gray-600 text-gray-100"
-    />
-  );
+  if (isLoading || rawData.length === 0 || !UIDs) return <div>Loading...</div>;
 
   return (
     <div className="p-4">
       <Chart data={data} counties={rawData.counties} UIDs={UIDs} />
-      {/* <select
-        multiple
-        className="text-blue-800"
-        value={UIDs}
-        onChange={(e) => {
-          console.log(e.target.selectedOptions);
-          setUIDs([...e.target.selectedOptions].map((o) => o.value));
-        }}
-      >
-        {countyOptions.map((c) => (
-          <option key={c.value} value={c.value}>
-            {c.label}
-          </option>
-        ))}
-      </select> */}
-
-      <Select
-        isMulti
-        value={UIDs.map((uid) => countyOptions.find((co) => co.value === uid))}
-        options={countyOptions}
-        filterOption={createFilter({ ignoreAccents: false })}
-        components={{
-          MenuList,
-          Input,
-          MultiValueContainer,
-          MultiValue,
-          MultiValueLabel,
-          Control,
-          ValueContainer,
-          IndicatorsContainer,
-        }}
-        onChange={(newValue) => {
-          console.log(newValue);
-          setUIDs(newValue.map((v) => v.value || v));
-        }}
-      />
+      <CountySelector counties={rawData.counties} />
       <Table data={data} counties={rawData.counties} UIDs={UIDs} />
       <footer className="p-1">
         <a
