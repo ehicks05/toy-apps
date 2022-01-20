@@ -16,7 +16,7 @@ const MenuList = ({ options, children, maxHeight, getValue }) => {
       itemCount={children.length}
       itemSize={height}
       initialScrollOffset={initialOffset}
-      className="bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200"
+      className="bg-gray-100 dark:bg-gray-700"
     >
       {({ index, style }) => (
         <div
@@ -34,27 +34,26 @@ const MenuList = ({ options, children, maxHeight, getValue }) => {
 const Input = (props) => (
   <components.Input
     {...props}
-    inputClassName="bg-gray-700 text-gray-100"
-    className="bg-gray-700 text-gray-100"
+    className="dark:bg-gray-700 dark:text-gray-100"
   />
 );
-const MultiValueContainer = (props) => (
-  <components.MultiValueContainer
-    {...props}
-    className="bg-gray-700 text-gray-100"
-  />
-);
+// const MultiValueContainer = (props) => (
+//   <components.MultiValueContainer {...props} className="" />
+// );
 const MultiValue = (props) => (
-  <components.MultiValue {...props} className="bg-gray-700 text-gray-100" />
+  <components.MultiValue
+    {...props}
+    className="dark:bg-gray-700 dark:text-gray-100"
+  />
 );
 const MultiValueLabel = (props) => (
   <components.MultiValueLabel
     {...props}
-    className="bg-gray-600 text-gray-100"
+    className="dark:bg-gray-600 dark:text-gray-100"
   />
 );
 const Control = (props) => (
-  <components.Control {...props} className="bg-gray-600 text-gray-100" />
+  <components.Control {...props} className="dark:bg-gray-600" />
 );
 const ValueContainer = (props) => (
   <components.ValueContainer {...props} className="bg-gray-600 text-gray-100" />
@@ -62,7 +61,7 @@ const ValueContainer = (props) => (
 const IndicatorsContainer = (props) => (
   <components.IndicatorsContainer
     {...props}
-    className="bg-gray-600 text-gray-100"
+    className="dark:bg-gray-600 dark:text-gray-100"
   />
 );
 const Option = ({ children, ...props }) => {
@@ -71,8 +70,8 @@ const Option = ({ children, ...props }) => {
   return (
     <components.Option
       {...newProps}
-      className={`hover:bg-gray-600 focus:bg-gray-600 ${
-        props.isSelected ? "bg-gray-600" : ""
+      className={`hover:bg-gray-200 dark:hover:bg-gray-600 ${
+        props.isSelected ? "bg-gray-300 dark:bg-gray-500" : ""
       }`}
     >
       {children}
@@ -110,11 +109,11 @@ const CountySelector = ({ counties }) => {
       components={{
         MenuList,
         Input,
-        MultiValueContainer,
+        // MultiValueContainer,
         MultiValue,
-        MultiValueLabel,
+        // MultiValueLabel,
         Control,
-        ValueContainer,
+        // ValueContainer,
         IndicatorsContainer,
         Option,
       }}
