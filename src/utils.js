@@ -2,8 +2,8 @@ import Papa from "papaparse";
 import _ from "lodash";
 import { subDays, format } from "date-fns";
 import {
-  usConfirmed,
-  usDeaths,
+  usConfirmedUrl,
+  usDeathsUrl,
   INFECTION_DURATION,
   POPULATIONS,
 } from "./constants";
@@ -12,138 +12,125 @@ const numberFormat = Intl.NumberFormat("en-US", {
   minimumFractionDigits: 3,
   maximumFractionDigits: 3,
 });
+const pretty = (input) => numberFormat.format(input);
+const dateRegex = /\d+\/\d+\/\d+/g;
 
-const pretty = (input) =>
-  numberFormat.format(input);
+const mergeDatasets = (merged, UIDs) => {
+  // split each row into a row-per-date that includes the combined metadata from each file,
+  // along with the confirmed and deaths counts for that date.
+  const mergedAndSplit = merged
+    .filter((sets) => UIDs.includes(sets.confirmedRow.UID))
+    .map(({ confirmedRow, deathsRow }) => {
+      const [confirmedDates, confirmedRawMetadata] = _.partition(
+        Object.entries(confirmedRow),
+        (r) => r[0].match(dateRegex)
+      );
+      const confirmedMetadata = confirmedRawMetadata.reduce(
+        (acc, cur) => ({ ...acc, [cur[0]]: cur[1] }),
+        {}
+      );
 
-const isNJOrDe = (row) => row.Province_State === "New Jersey" || row.Province_State === "Delaware";
+      const [deathsDates, deathsRawMetadata] = _.partition(
+        Object.entries(deathsRow),
+        (r) => r[0].match(dateRegex)
+      );
+      const deathsMetadata = deathsRawMetadata.reduce(
+        (acc, cur) => ({ ...acc, [cur[0]]: cur[1] }),
+        {}
+      );
 
-const mapConfirmed = (row) => {
-  const { Admin2, Province_State } = row;
+      const mergedMetadata = _.merge(confirmedMetadata, deathsMetadata);
 
-  const result = Object.entries(row)
-    .filter(([key, _val]) => !isNaN(key.charAt(0)))
-    .map(([date, confirmed]) => ({
-      Admin2,
-      Province_State,
-      date: format(new Date(date), "MM/dd/yy"),
-      confirmed: Number(confirmed),
-    }));
+      const population = Number(deathsRow.Population);
 
-  return result;
+      return confirmedDates.map(([confirmedDate, confirmedValue]) => {
+        const [, deathsValue] = deathsDates.find(
+          ([k, v]) => k === confirmedDate
+        );
+
+        const prevDate = format(
+          subDays(new Date(confirmedDate), INFECTION_DURATION),
+          "M/d/yy"
+        );
+        const confirmedOnPrevDate = confirmedRow[prevDate] || 0;
+
+        const active = Number(confirmedValue) - Number(confirmedOnPrevDate);
+        const confirmed = Number(confirmedValue);
+        const deaths = Number(deathsValue);
+
+        return {
+          ...mergedMetadata,
+          active,
+          activePercent: pretty((active / population) * 100),
+          confirmed,
+          confirmedPercent: pretty((confirmed / population) * 100),
+          date: format(new Date(confirmedDate), "MM/dd/yy"),
+          deaths,
+          deathsPercent: pretty((deaths / population) * 100),
+        };
+      });
+    })
+    .flat();
+
+  // object keyed by date, each date points to an array
+  // with a row for each county
+  const byDate = _.groupBy(mergedAndSplit, "date");
+
+  const byDateByUID = Object.fromEntries(
+    Object.entries(byDate).map((entry) => [entry[0], _.keyBy(entry[1], "UID")])
+  );
+
+  const values = Object.values(Object.values(byDateByUID));
+
+  return values.reverse();
 };
 
-const mapDeaths = (row) => {
-  const { Admin2, Province_State } = row;
-
-  const result = Object.entries(row)
-    .filter(([key, _val]) => !isNaN(key.charAt(0)))
-    .map(([date, deaths]) => ({
-      Admin2,
-      Province_State,
-      date: format(new Date(date), "MM/dd/yy"),
-      deaths: Number(deaths),
-    }));
-
-  return result;
-};
-
-const getText = async (url) => {
+const fetchText = async (url) => {
   return await (await fetch(url)).text();
 };
 
 const getData = async () => {
-  const usConfirmedData = await Papa.parse(await getText(usConfirmed), {
+  const usConfirmed = Papa.parse(await fetchText(usConfirmedUrl), {
     header: true,
   });
-
-  const usDeathsData = await Papa.parse(await getText(usDeaths), {
+  const usDeaths = Papa.parse(await fetchText(usDeathsUrl), {
     header: true,
   });
+  console.log("CSVs fetched and parsed");
 
-  const usConfirmedGrouped = _.groupBy(
-    usConfirmedData.data.filter(isNJOrDe).map(mapConfirmed).flat(),
-    "date"
-  );
-
-  const usDeathsGrouped = _.groupBy(
-    usDeathsData.data.filter(isNJOrDe).map(mapDeaths).flat(),
-    "date"
-  );
-
-  const result = Object.entries(usConfirmedGrouped).map(([date, data]) => ({
-    date,
-    hunterdonConfirmed: data.find((r) => r.Admin2 === "Hunterdon").confirmed,
-    somersetConfirmed: data.find((r) => r.Admin2 === "Somerset").confirmed,
-    njConfirmed: _.sumBy(data, (row) => row.Province_State === 'New Jersey' ? row.confirmed : 0),
-    hunterdonDeaths: usDeathsGrouped[date].find((r) => r.Admin2 === "Hunterdon")
-      .deaths,
-    somersetDeaths: usDeathsGrouped[date].find((r) => r.Admin2 === "Somerset")
-      .deaths,
-    njDeaths: _.sumBy(usDeathsGrouped[date], (row) => row.Province_State === 'New Jersey' ? row.deaths : 0),
-
-    sussexConfirmed: data.find((r) => r.Admin2 === "Sussex").confirmed,
-    deConfirmed: _.sumBy(data, (row) => row.Province_State === 'Delaware' ? row.confirmed : 0),
-    sussexDeaths: usDeathsGrouped[date].find((r) => r.Admin2 === "Sussex")
-      .deaths,
-    deDeaths: _.sumBy(usDeathsGrouped[date], (row) => row.Province_State === 'Delaware' ? row.deaths : 0),
-  }));
-
-  const resultsWithComputedData = result.map((row) => {
-    const targetDate = subDays(new Date(row.date), INFECTION_DURATION);
-    const formattedDate = format(targetDate, "MM/dd/yy");
-
-    const somersetCasesToSubtract =
-      result.find((row) => row.date === formattedDate)?.somersetConfirmed || 0;
-    const somersetActive = row.somersetConfirmed - somersetCasesToSubtract;
-
-    const hunterdonCasesToSubtract =
-      result.find((row) => row.date === formattedDate)?.hunterdonConfirmed || 0;
-    const hunterdonActive = row.hunterdonConfirmed - hunterdonCasesToSubtract;
-
-    const njCasesToSubtract =
-      result.find((row) => row.date === formattedDate)?.njConfirmed || 0;
-    const njActive = row.njConfirmed - njCasesToSubtract;
-
-    const somersetActivePercent = pretty(
-      (100 * somersetActive) / POPULATIONS.SOMERSET
-    );
-    const hunterdonActivePercent = pretty(
-      (100 * hunterdonActive) / POPULATIONS.HUNTERDON
-    );
-    const njActivePercent = pretty((100 * njActive) / POPULATIONS.NEW_JERSEY);
-
-    const sussexCasesToSubtract =
-    result.find((row) => row.date === formattedDate)?.sussexConfirmed || 0;
-    const sussexActive = row.sussexConfirmed - sussexCasesToSubtract;
-
-    const deCasesToSubtract =
-      result.find((row) => row.date === formattedDate)?.deConfirmed || 0;
-    const deActive = row.deConfirmed - deCasesToSubtract;
-
-    const sussexActivePercent = pretty(
-      (100 * sussexActive) / POPULATIONS.SUSSEX
-    );
-    const deActivePercent = pretty((100 * deActive) / POPULATIONS.DELAWARE);
-
-
-    return {
-      ...row,
-      somersetActive,
-      hunterdonActive,
-      njActive,
-      somersetActivePercent,
-      hunterdonActivePercent,
-      njActivePercent,
-
-      sussexActive,
-      deActive,
-      sussexActivePercent,
-      deActivePercent,
-    };
+  const confirmedData = usConfirmed.data;
+  //   .filter(
+  //   (row) => row.Province_State === "New Jersey"
+  // )
+  const deathsData = usDeaths.data;
+  // .filter((row) => row.Province_State === "New Jersey")
+  // take each confirmed row and match it to the deaths row for the same municipality
+  const mergedData = confirmedData.map((confirmedRow) => {
+    const deathsRow = deathsData.find((d) => d.UID === confirmedRow.UID);
+    if (!deathsRow) return confirmedRow;
+    return { confirmedRow, deathsRow };
   });
 
-  return resultsWithComputedData;
+  const mergedMetadata = mergedData.map(({ confirmedRow, deathsRow }) => {
+    const confirmedMetadata = Object.entries(confirmedRow)
+      .filter((r) => !r[0].match(dateRegex))
+      .reduce((acc, cur) => ({ ...acc, [cur[0]]: cur[1] }), {});
+    const deathsMetadata = Object.entries(deathsRow)
+      .filter((r) => !r[0].match(dateRegex))
+      .reduce((acc, cur) => ({ ...acc, [cur[0]]: cur[1] }), {});
+
+    return _.merge(confirmedMetadata, deathsMetadata);
+  });
+
+  const counties = _.keyBy(mergedMetadata, "UID");
+  return { mergedData, counties };
 };
 
-export { getData };
+const processData = (data, UIDs) => {
+  const mergedDatasets = mergeDatasets(data.mergedData, UIDs);
+  // console.log({ mergedDatasets });
+
+  return mergedDatasets;
+};
+
+export { getData, processData };
