@@ -17,7 +17,7 @@ const Chart = ({ data, counties, UIDs }) => {
 
   return (
     <div className="">
-      <h1 className="text-2xl">Active Cases %</h1>
+      <h1 className="text-xl">Active Cases %</h1>
       <ResponsiveContainer minHeight={400} width="100%">
         <LineChart data={d}>
           <CartesianGrid strokeDasharray={"3 3"} />

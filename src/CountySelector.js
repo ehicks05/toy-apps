@@ -37,26 +37,14 @@ const Input = (props) => (
     className="dark:bg-gray-700 dark:text-gray-100"
   />
 );
-// const MultiValueContainer = (props) => (
-//   <components.MultiValueContainer {...props} className="" />
-// );
 const MultiValue = (props) => (
   <components.MultiValue
     {...props}
     className="dark:bg-gray-700 dark:text-gray-100"
   />
 );
-const MultiValueLabel = (props) => (
-  <components.MultiValueLabel
-    {...props}
-    className="dark:bg-gray-600 dark:text-gray-100"
-  />
-);
 const Control = (props) => (
   <components.Control {...props} className="dark:bg-gray-600" />
-);
-const ValueContainer = (props) => (
-  <components.ValueContainer {...props} className="bg-gray-600 text-gray-100" />
 );
 const IndicatorsContainer = (props) => (
   <components.IndicatorsContainer
@@ -101,26 +89,26 @@ const CountySelector = ({ counties }) => {
   )(Object.values(counties));
 
   return (
-    <Select
-      isMulti
-      value={UIDs.map((uid) => countyOptions.find((co) => co.value === uid))}
-      options={countyOptions}
-      filterOption={createFilter({ ignoreAccents: false })}
-      components={{
-        MenuList,
-        Input,
-        // MultiValueContainer,
-        MultiValue,
-        // MultiValueLabel,
-        Control,
-        // ValueContainer,
-        IndicatorsContainer,
-        Option,
-      }}
-      onChange={(newValue) => {
-        setUIDs(newValue.map((v) => v.value || v));
-      }}
-    />
+    <div>
+      <h1 className="text-xl">Select Counties</h1>
+      <Select
+        isMulti
+        value={UIDs.map((uid) => countyOptions.find((co) => co.value === uid))}
+        options={countyOptions}
+        filterOption={createFilter({ ignoreAccents: false })}
+        components={{
+          MenuList,
+          Input,
+          MultiValue,
+          Control,
+          IndicatorsContainer,
+          Option,
+        }}
+        onChange={(newValue) => {
+          setUIDs(newValue.map((v) => v.value || v));
+        }}
+      />
+    </div>
   );
 };
 

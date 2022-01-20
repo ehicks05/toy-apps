@@ -65,8 +65,8 @@ const Table = ({ data, counties, UIDs }) => {
   );
 
   return (
-    <div className="m-auto max-w-screen-xl overflow-x-auto">
-      <h1 className="text-2xl">Data</h1>
+    <div className="m-auto overflow-x-auto">
+      <h1 className="text-xl">Data</h1>
       <table {...getTableProps()} className="text-xs">
         <thead>
           {headerGroups.map((headerGroup) => (
