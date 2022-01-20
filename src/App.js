@@ -24,7 +24,7 @@ function App() {
   if (isLoading || rawData.length === 0 || !UIDs) return <div>Loading...</div>;
 
   return (
-    <div className="p-4">
+    <div className="max-w-screen-xl m-auto flex flex-col gap-4 p-4">
       <Chart data={data} counties={rawData.counties} UIDs={UIDs} />
       <CountySelector counties={rawData.counties} />
       <Table data={data} counties={rawData.counties} UIDs={UIDs} />

@@ -9,13 +9,14 @@ import {
   Legend,
   ResponsiveContainer,
 } from "recharts";
+import { getLocationDisplayName } from "./utils";
 
 const Chart = ({ data, counties, UIDs }) => {
   const d = [...data].reverse();
   const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
   return (
-    <div className="m-auto max-w-screen-xl">
+    <div className="">
       <h1 className="text-2xl">Active Cases %</h1>
       <ResponsiveContainer minHeight={400} width="100%">
         <LineChart data={d}>
@@ -28,16 +29,18 @@ const Chart = ({ data, counties, UIDs }) => {
           />
           <Tooltip contentStyle={{ backgroundColor: "#333" }} />
           <Legend />
-          {UIDs.map((uid, i) => (
-            <Line
-              key={uid}
-              dot={false}
-              name={counties[uid].Admin2}
-              dataKey={`${uid}.activePercent`}
-              unit="%"
-              stroke={COLORS[i % UIDs.length]}
-            />
-          ))}
+          {UIDs.map((uid, i) => {
+            return (
+              <Line
+                key={uid}
+                dot={false}
+                name={getLocationDisplayName(counties[uid])}
+                dataKey={`${uid}.activePercent`}
+                unit="%"
+                stroke={COLORS[i % UIDs.length]}
+              />
+            );
+          })}
         </LineChart>
       </ResponsiveContainer>
     </div>

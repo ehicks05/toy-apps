@@ -1,5 +1,6 @@
 import React from "react";
 import { usePagination, useTable } from "react-table";
+import { getLocationDisplayName } from "./utils";
 
 const NUMBER_FORMAT = Intl.NumberFormat("en-US");
 const formatNumber = (number) => NUMBER_FORMAT.format(number);
@@ -17,7 +18,7 @@ const Table = ({ data, counties, UIDs }) => {
       {
         Header: "Confirmed Cases",
         columns: UIDs.map((uid) => ({
-          Header: `${counties[uid].Admin2}`,
+          Header: `${getLocationDisplayName(counties[uid])}`,
           id: `${uid}-confirmed`,
           accessor: (row) => formatNumber(row[uid].confirmed),
         })),
@@ -25,7 +26,7 @@ const Table = ({ data, counties, UIDs }) => {
       {
         Header: "Active Cases",
         columns: UIDs.map((uid) => ({
-          Header: `${counties[uid].Admin2}`,
+          Header: `${getLocationDisplayName(counties[uid])}`,
           id: `${uid}-active`,
           accessor: (row) => formatNumber(row[uid].active),
         })),
@@ -33,7 +34,7 @@ const Table = ({ data, counties, UIDs }) => {
       {
         Header: "Active Case %",
         columns: UIDs.map((uid) => ({
-          Header: `${counties[uid].Admin2}`,
+          Header: `${getLocationDisplayName(counties[uid])}`,
           id: `${uid}-active-%`,
           accessor: (row) => formatNumber(row[uid].activePercent),
         })),
@@ -41,7 +42,7 @@ const Table = ({ data, counties, UIDs }) => {
       {
         Header: "Deaths",
         columns: UIDs.map((uid) => ({
-          Header: `${counties[uid].Admin2}`,
+          Header: `${getLocationDisplayName(counties[uid])}`,
           id: `${uid}-deaths`,
           accessor: (row) => formatNumber(row[uid].deaths),
         })),
@@ -56,17 +57,12 @@ const Table = ({ data, counties, UIDs }) => {
     headerGroups,
     prepareRow,
     page,
-    // The rest of these things are super handy, too ;)
-    canPreviousPage,
-    canNextPage,
-    pageOptions,
-    pageCount,
-    gotoPage,
-    nextPage,
-    previousPage,
     setPageSize,
-    state: { pageIndex, pageSize },
-  } = useTable({ columns, data }, usePagination);
+    state: { pageSize },
+  } = useTable(
+    { columns, data, initialState: { pageSize: 20 } },
+    usePagination
+  );
 
   return (
     <div className="m-auto max-w-screen-xl overflow-x-auto">
@@ -106,6 +102,9 @@ const Table = ({ data, counties, UIDs }) => {
           })}
         </tbody>
       </table>
+      {pageSize !== -1 && (
+        <button onClick={() => setPageSize(-1)}>Show All</button>
+      )}
     </div>
   );
 };

@@ -1,12 +1,12 @@
 import Papa from "papaparse";
 import _ from "lodash";
 import { subDays, format } from "date-fns";
-import {
-  usConfirmedUrl,
-  usDeathsUrl,
-  INFECTION_DURATION,
-  POPULATIONS,
-} from "./constants";
+import { usConfirmedUrl, usDeathsUrl, INFECTION_DURATION } from "./constants";
+
+export const getLocationDisplayName = ({ Admin2, Province_State }) => {
+  if (!Admin2 && !Province_State) return undefined;
+  return `${Admin2 ? `${Admin2}, ` : ""}${Province_State}`;
+};
 
 const numberFormat = Intl.NumberFormat("en-US", {
   minimumFractionDigits: 3,
@@ -99,11 +99,8 @@ const getData = async () => {
   console.log("CSVs fetched and parsed");
 
   const confirmedData = usConfirmed.data;
-  //   .filter(
-  //   (row) => row.Province_State === "New Jersey"
-  // )
   const deathsData = usDeaths.data;
-  // .filter((row) => row.Province_State === "New Jersey")
+
   // take each confirmed row and match it to the deaths row for the same municipality
   const mergedData = confirmedData.map((confirmedRow) => {
     const deathsRow = deathsData.find((d) => d.UID === confirmedRow.UID);
@@ -128,8 +125,6 @@ const getData = async () => {
 
 const processData = (data, UIDs) => {
   const mergedDatasets = mergeDatasets(data.mergedData, UIDs);
-  // console.log({ mergedDatasets });
-
   return mergedDatasets;
 };
 
