@@ -1,4 +1,7 @@
+import { useLocalStorageValue } from "@react-hookz/web/esm";
 import React from "react";
+import * as R from "ramda";
+import _ from "lodash";
 import {
   LineChart,
   Line,
@@ -12,20 +15,47 @@ import {
 import { getLocationDisplayName } from "./utils";
 
 const Chart = ({ data, counties, UIDs }) => {
+  const [chartScale, setChartScale] = useLocalStorageValue(
+    "chartScale",
+    "auto",
+    { storeDefaultValue: true }
+  );
   const d = [...data].reverse();
   const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
+  const uidToMaxActivePercent = R.map((uid) => {
+    const activePercentsByDay = data?.map((dateRow) => {
+      return Number(dateRow[uid]?.activePercent);
+    });
+    const maxActivePercent = _.max(activePercentsByDay);
+    return { uid, maxActivePercent };
+  })(UIDs);
+
+  const uidWithGreatestY = _.maxBy(
+    uidToMaxActivePercent,
+    (i) => i.maxActivePercent
+  ).uid;
+  const uidIndexWithGreatestY = UIDs.indexOf(uidWithGreatestY);
+
   return (
-    <div className="">
-      <h1 className="text-xl">Active Cases %</h1>
+    <div>
+      <div className="flex justify-between items-end">
+        <h1 className="text-xl">Active Cases %</h1>
+        <button
+          onClick={() => setChartScale(chartScale === "auto" ? "log" : "auto")}
+          className="text-xs"
+        >
+          current scale: {chartScale}
+        </button>
+      </div>
       <ResponsiveContainer minHeight={400} width="100%">
         <LineChart data={d}>
           <CartesianGrid strokeDasharray={"3 3"} />
           <XAxis dataKey={`${UIDs[0]}.date`} />
           <YAxis
-            dataKey={`${UIDs[0]}.activePercent`}
-            // scale={"log"}
-            // domain={[0, "dataMax"]}
+            dataKey={`${UIDs[uidIndexWithGreatestY]}.activePercent`}
+            scale={chartScale}
+            domain={chartScale === "auto" ? [0, "dataMax"] : [("auto", "auto")]}
           />
           <Tooltip contentStyle={{ backgroundColor: "#333" }} />
           <Legend />
