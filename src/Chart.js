@@ -86,7 +86,7 @@ const Chart = ({ data, counties, UIDs = [] }) => {
                 dot={false}
                 name={getLocationDisplayName(counties[uid])}
                 dataKey={`${uid}.${chartDataKey}`}
-                unit="%"
+                unit={chartDataKey.includes('Percent') ? "%" : ''}
                 stroke={COLORS[i % UIDs.length]}
               />
             );
