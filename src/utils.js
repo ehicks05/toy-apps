@@ -2,10 +2,14 @@ import Papa from "papaparse";
 import _ from "lodash";
 import { subDays, format } from "date-fns";
 import { usConfirmedUrl, usDeathsUrl, INFECTION_DURATION } from "./constants";
+import {UsaStates} from 'usa-states'
+
+const usaStates = _.keyBy(new UsaStates().states, 'name');
 
 export const getLocationDisplayName = ({ Admin2, Province_State }) => {
   if (!Admin2 && !Province_State) return undefined;
-  return `${Admin2 ? `${Admin2}, ` : ""}${Province_State}`;
+  const state = usaStates[Province_State]?.abbreviation || Province_State;
+  return `${Admin2 ? `${Admin2}, ` : ""}${state}`;
 };
 
 const numberFormat = Intl.NumberFormat("en-US", {
