@@ -16,7 +16,7 @@ const numberFormat = Intl.NumberFormat("en-US", {
   minimumFractionDigits: 2,
   maximumFractionDigits: 2,
 });
-const pretty = (input) => numberFormat.format(input);
+export const pretty = (input) => numberFormat.format(input);
 const dateRegex = /\d+\/\d+\/\d+/g;
 
 const mergeDatasets = (merged, UIDs) => {

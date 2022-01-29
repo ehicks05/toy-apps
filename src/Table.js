@@ -1,6 +1,6 @@
 import React from "react";
 import { usePagination, useTable } from "react-table";
-import { getLocationDisplayName } from "./utils";
+import { getLocationDisplayName, pretty } from "./utils";
 
 const NUMBER_FORMAT = Intl.NumberFormat("en-US");
 const formatNumber = (number) => NUMBER_FORMAT.format(number);
@@ -37,6 +37,7 @@ const Table = ({ data, counties, UIDs }) => {
           Header: `${getLocationDisplayName(counties[uid])}`,
           id: `${uid}-active-%`,
           accessor: (row) => formatNumber(row[uid].activePercent),
+          Cell: props => <React.Fragment>{pretty(props.value)}</React.Fragment>
         })),
       },
       {
