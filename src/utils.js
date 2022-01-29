@@ -13,8 +13,8 @@ export const getLocationDisplayName = ({ Admin2, Province_State }) => {
 };
 
 const numberFormat = Intl.NumberFormat("en-US", {
-  minimumFractionDigits: 3,
-  maximumFractionDigits: 3,
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2,
 });
 const pretty = (input) => numberFormat.format(input);
 const dateRegex = /\d+\/\d+\/\d+/g;
@@ -59,18 +59,21 @@ const mergeDatasets = (merged, UIDs) => {
         const confirmedOnPrevDate = confirmedRow[prevDate] || 0;
 
         const active = Number(confirmedValue) - Number(confirmedOnPrevDate);
+        const activePercent = Number(pretty((active / population) * 100));
         const confirmed = Number(confirmedValue);
+        const confirmedPercent = Number(pretty((confirmed / population) * 100));
         const deaths = Number(deathsValue);
+        const deathsPercent = Number(pretty((deaths / population) * 100));
 
         return {
           ...mergedMetadata,
-          active,
-          activePercent: pretty((active / population) * 100),
-          confirmed,
-          confirmedPercent: pretty((confirmed / population) * 100),
           date: format(new Date(confirmedDate), "MM/dd/yy"),
-          deaths,
-          deathsPercent: pretty((deaths / population) * 100),
+          active: active === 0 ? null : active,
+          activePercent: activePercent === 0 ? null : activePercent,
+          confirmed: confirmed === 0 ? null : confirmed,
+          confirmedPercent: confirmedPercent === 0 ? null : confirmedPercent,
+          deaths: deaths === 0 ? null : deaths,
+          deathsPercent: deathsPercent === 0 ? null : deathsPercent,
         };
       });
     })

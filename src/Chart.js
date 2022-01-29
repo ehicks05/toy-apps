@@ -59,7 +59,7 @@ const Chart = ({ data, counties, UIDs = [] }) => {
     <div>
       <div className="flex justify-between items-end">
         <select className="text-xl dark:text-white dark:bg-gray-700" value={chartDataKey} onChange={(e) => setChartDataKey(e.target.value)}>
-          {Object.entries(DATA_KEY_TO_LABEL).map(([key, label]) => <option value={key}>{label}</option>)}
+          {Object.entries(DATA_KEY_TO_LABEL).map(([key, label]) => <option key={key} value={key}>{label}</option>)}
         </select>
         <button
           onClick={() => setChartScale(chartScale === "auto" ? "log" : "auto")}
@@ -75,7 +75,7 @@ const Chart = ({ data, counties, UIDs = [] }) => {
           <YAxis
             dataKey={`${UIDs[uidIndexWithGreatestY]}.${chartDataKey}`}
             scale={chartScale}
-            domain={chartScale === "auto" ? [0, "dataMax"] : [("auto", "auto")]}
+            domain={[chartDataKey.includes('Percent') ? .01 : 'auto', "auto"]}
           />
           <Tooltip contentStyle={{ backgroundColor: "#333" }} />
           <Legend />
