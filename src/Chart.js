@@ -14,16 +14,10 @@ import {
 } from "recharts";
 import { getLocationDisplayName } from "./utils";
 
-const Chart = ({ data, counties, UIDs }) => {
-  const [chartScale, setChartScale] = useLocalStorageValue(
-    "chartScale",
-    "auto",
-    { storeDefaultValue: true }
-  );
-  const d = [...data].reverse();
-  const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
+const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
-  const uidToMaxActivePercent = R.map((uid) => {
+const findUidIndexWithGreatestY = (data, UIDs) => {
+    const uidToMaxActivePercent = R.map((uid) => {
     const activePercentsByDay = data?.map((dateRow) => {
       return Number(dateRow[uid]?.activePercent);
     });
@@ -35,7 +29,17 @@ const Chart = ({ data, counties, UIDs }) => {
     uidToMaxActivePercent,
     (i) => i.maxActivePercent
   ).uid;
-  const uidIndexWithGreatestY = UIDs.indexOf(uidWithGreatestY);
+  return UIDs.indexOf(uidWithGreatestY);
+}
+
+const Chart = ({ data, counties, UIDs = [] }) => {
+  const [chartScale, setChartScale] = useLocalStorageValue(
+    "chartScale",
+    "auto",
+    { storeDefaultValue: true }
+  );
+
+  const uidIndexWithGreatestY = UIDs.length ? findUidIndexWithGreatestY(data, UIDs) : 0;
 
   return (
     <div>
@@ -49,7 +53,7 @@ const Chart = ({ data, counties, UIDs }) => {
         </button>
       </div>
       <ResponsiveContainer minHeight={400} width="100%">
-        <LineChart data={d}>
+        <LineChart data={[...data].reverse()}>
           <CartesianGrid strokeDasharray={"3 3"} />
           <XAxis dataKey={`${UIDs[0]}.date`} />
           <YAxis
