@@ -58,7 +58,7 @@ const Chart = ({ data, counties, UIDs = [] }) => {
   return (
     <div>
       <div className="flex justify-between items-end">
-        <select className="text-xl" value={chartDataKey} onChange={(e) => setChartDataKey(e.target.value)}>
+        <select className="text-xl dark:text-white dark:bg-gray-700" value={chartDataKey} onChange={(e) => setChartDataKey(e.target.value)}>
           {Object.entries(DATA_KEY_TO_LABEL).map(([key, label]) => <option value={key}>{label}</option>)}
         </select>
         <button
