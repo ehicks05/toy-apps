@@ -1,5 +1,5 @@
 import React from "react";
-import { usePagination, useTable } from "react-table";
+import { usePagination, useSortBy, useTable } from "react-table";
 import { getLocationDisplayName, pretty } from "./utils";
 
 const NUMBER_FORMAT = Intl.NumberFormat("en-US");
@@ -14,6 +14,7 @@ const Table = ({ data, counties, UIDs }) => {
         accessor: (row) => {
           return Object.values(row)[0].date;
         },
+        disableSortBy: true,
       },
       {
         Header: "Confirmed Cases",
@@ -37,7 +38,9 @@ const Table = ({ data, counties, UIDs }) => {
           Header: `${getLocationDisplayName(counties[uid])}`,
           id: `${uid}-active-%`,
           accessor: (row) => formatNumber(row[uid].activePercent),
-          Cell: props => <React.Fragment>{pretty(props.value)}</React.Fragment>
+          Cell: (props) => (
+            <React.Fragment>{pretty(props.value)}</React.Fragment>
+          ),
         })),
       },
       {
@@ -62,6 +65,7 @@ const Table = ({ data, counties, UIDs }) => {
     state: { pageSize },
   } = useTable(
     { columns, data, initialState: { pageSize: 20 } },
+    useSortBy,
     usePagination
   );
 
@@ -74,10 +78,17 @@ const Table = ({ data, counties, UIDs }) => {
             <tr {...headerGroup.getHeaderGroupProps()}>
               {headerGroup.headers.map((column) => (
                 <th
-                  {...column.getHeaderProps()}
+                  {...column.getHeaderProps(column.getSortByToggleProps())}
                   className="p-1 border font-bold"
                 >
                   {column.render("Header")}
+                  <span>
+                    {column.isSorted
+                      ? column.isSortedDesc
+                        ? " 🔽"
+                        : " 🔼"
+                      : ""}
+                  </span>
                 </th>
               ))}
             </tr>
