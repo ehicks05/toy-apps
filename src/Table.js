@@ -21,7 +21,8 @@ const Table = ({ data, counties, UIDs }) => {
         columns: UIDs.map((uid) => ({
           Header: `${getLocationDisplayName(counties[uid])}`,
           id: `${uid}-confirmed`,
-          accessor: (row) => formatNumber(row[uid].confirmed),
+          accessor: (row) => row[uid].confirmed,
+          Cell: ({ value }) => formatNumber(value),
         })),
       },
       {
@@ -29,7 +30,8 @@ const Table = ({ data, counties, UIDs }) => {
         columns: UIDs.map((uid) => ({
           Header: `${getLocationDisplayName(counties[uid])}`,
           id: `${uid}-active`,
-          accessor: (row) => formatNumber(row[uid].active),
+          accessor: (row) => row[uid].active,
+          Cell: ({ value }) => formatNumber(value),
         })),
       },
       {
@@ -37,10 +39,8 @@ const Table = ({ data, counties, UIDs }) => {
         columns: UIDs.map((uid) => ({
           Header: `${getLocationDisplayName(counties[uid])}`,
           id: `${uid}-active-%`,
-          accessor: (row) => formatNumber(row[uid].activePercent),
-          Cell: (props) => (
-            <React.Fragment>{pretty(props.value)}</React.Fragment>
-          ),
+          accessor: (row) => row[uid].activePercent,
+          Cell: ({ value }) => pretty(value),
         })),
       },
       {
@@ -48,7 +48,8 @@ const Table = ({ data, counties, UIDs }) => {
         columns: UIDs.map((uid) => ({
           Header: `${getLocationDisplayName(counties[uid])}`,
           id: `${uid}-deaths`,
-          accessor: (row) => formatNumber(row[uid].deaths),
+          accessor: (row) => row[uid].deaths,
+          Cell: ({ value }) => formatNumber(value),
         })),
       },
     ],
