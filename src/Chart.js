@@ -1,4 +1,5 @@
 import { useLocalStorageValue } from "@react-hookz/web/esm";
+import { useWindowSize } from "react-use";
 import React from "react";
 import * as R from "ramda";
 import _ from "lodash";
@@ -39,6 +40,8 @@ const findUidIndexWithGreatestY = (data, UIDs, dataKey) => {
 };
 
 const Chart = ({ data, counties, UIDs = [] }) => {
+  const { height } = useWindowSize();
+
   const [chartScale, setChartScale] = useLocalStorageValue(
     "chartScale",
     "auto",
@@ -75,7 +78,7 @@ const Chart = ({ data, counties, UIDs = [] }) => {
           current scale: {chartScale}
         </button>
       </div>
-      <ResponsiveContainer minHeight={400} width="100%">
+      <ResponsiveContainer minHeight={height - 128} width="100%">
         <LineChart data={[...data].reverse()}>
           <CartesianGrid strokeDasharray={"3 3"} />
           <XAxis dataKey={`${UIDs[0]}.date`} />
