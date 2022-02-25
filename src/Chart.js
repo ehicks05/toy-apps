@@ -17,16 +17,16 @@ import { getLocationDisplayName } from "./utils";
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
 const DATA_KEY_TO_LABEL = {
-  active: 'Active',
-  activePercent: 'Active %',
-  confirmed: 'Confirmed',
-  confirmedPercent: 'Confirmed %',
-  deaths: 'Deaths',
-  deathsPercent: 'Deaths %',
-}
+  active: "Active",
+  activePercent: "Active %",
+  confirmed: "Confirmed",
+  confirmedPercent: "Confirmed %",
+  deaths: "Deaths",
+  deathsPercent: "Deaths %",
+};
 
 const findUidIndexWithGreatestY = (data, UIDs, dataKey) => {
-    const uidToMaxValue = R.map((uid) => {
+  const uidToMaxValue = R.map((uid) => {
     const valueByDay = data?.map((dateRow) => {
       return Number(dateRow[uid]?.[dataKey]);
     });
@@ -34,12 +34,9 @@ const findUidIndexWithGreatestY = (data, UIDs, dataKey) => {
     return { uid, maxValue };
   })(UIDs);
 
-  const uidWithGreatestY = _.maxBy(
-    uidToMaxValue,
-    (i) => i.maxValue
-  ).uid;
+  const uidWithGreatestY = _.maxBy(uidToMaxValue, (i) => i.maxValue).uid;
   return UIDs.indexOf(uidWithGreatestY);
-}
+};
 
 const Chart = ({ data, counties, UIDs = [] }) => {
   const [chartScale, setChartScale] = useLocalStorageValue(
@@ -53,13 +50,23 @@ const Chart = ({ data, counties, UIDs = [] }) => {
     { storeDefaultValue: true }
   );
 
-  const uidIndexWithGreatestY = UIDs.length ? findUidIndexWithGreatestY(data, UIDs, chartDataKey) : 0;
+  const uidIndexWithGreatestY = UIDs.length
+    ? findUidIndexWithGreatestY(data, UIDs, chartDataKey)
+    : 0;
 
   return (
     <div>
       <div className="flex justify-between items-end">
-        <select className="text-xl dark:text-white dark:bg-gray-700" value={chartDataKey} onChange={(e) => setChartDataKey(e.target.value)}>
-          {Object.entries(DATA_KEY_TO_LABEL).map(([key, label]) => <option key={key} value={key}>{label}</option>)}
+        <select
+          className="text-xl dark:text-white dark:bg-gray-700"
+          value={chartDataKey}
+          onChange={(e) => setChartDataKey(e.target.value)}
+        >
+          {Object.entries(DATA_KEY_TO_LABEL).map(([key, label]) => (
+            <option key={key} value={key}>
+              {label}
+            </option>
+          ))}
         </select>
         <button
           onClick={() => setChartScale(chartScale === "auto" ? "log" : "auto")}
@@ -75,7 +82,7 @@ const Chart = ({ data, counties, UIDs = [] }) => {
           <YAxis
             dataKey={`${UIDs[uidIndexWithGreatestY]}.${chartDataKey}`}
             scale={chartScale}
-            domain={[chartDataKey.includes('Percent') ? .01 : 'auto', "auto"]}
+            domain={[chartDataKey.includes("Percent") ? 0.01 : "auto", "auto"]}
           />
           <Tooltip contentStyle={{ backgroundColor: "#333" }} />
           <Legend />
@@ -86,7 +93,7 @@ const Chart = ({ data, counties, UIDs = [] }) => {
                 dot={false}
                 name={getLocationDisplayName(counties[uid])}
                 dataKey={`${uid}.${chartDataKey}`}
-                unit={chartDataKey.includes('Percent') ? "%" : ''}
+                unit={chartDataKey.includes("Percent") ? "%" : ""}
                 stroke={COLORS[i % UIDs.length]}
               />
             );
