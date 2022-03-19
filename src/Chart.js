@@ -1,6 +1,6 @@
 import { useLocalStorageValue } from "@react-hookz/web/esm";
 import { useWindowSize } from "react-use";
-import React from "react";
+import React, { useRef } from "react";
 import * as R from "ramda";
 import _ from "lodash";
 import {
@@ -12,9 +12,9 @@ import {
   Tooltip,
   Legend,
   ResponsiveContainer,
+  Brush,
 } from "recharts";
 import { getLocationDisplayName } from "./utils";
-import { isAfter, isBefore, isSameDay, isValid, parse } from "date-fns";
 
 const COLORS = ["#0088FE", "#00C49F", "#FFBB28", "#FF8042"];
 
@@ -40,7 +40,7 @@ const findUidIndexWithGreatestY = (data, UIDs, dataKey) => {
   return UIDs.indexOf(uidWithGreatestY);
 };
 
-const Chart = ({ data: nonTimeFilteredData, counties, UIDs = [] }) => {
+const Chart = ({ data, counties, UIDs = [] }) => {
   const { height } = useWindowSize();
 
   const [chartScale, setChartScale] = useLocalStorageValue(
@@ -53,34 +53,11 @@ const Chart = ({ data: nonTimeFilteredData, counties, UIDs = [] }) => {
     "activePercent",
     { storeDefaultValue: true }
   );
-  const [chartMinDate, setChartMinDate] = useLocalStorageValue(
-    "chartMinDate",
-    ""
-  );
-  const [chartMaxDate, setChartMaxDate] = useLocalStorageValue(
-    "chartMaxDate",
-    ""
-  );
-  const minDate = parse(chartMinDate, "yyyy-MM-dd", new Date());
-  const maxDate = parse(chartMaxDate, "yyyy-MM-dd", new Date());
-  const isInvalidDateFilter = isBefore(maxDate, minDate);
 
-  const dateFilter = (dateString) => {
-    const date = parse(dateString, "MM/dd/yy", new Date());
-
-    if (isInvalidDateFilter) return true;
-
-    return (
-      (!isValid(maxDate) ||
-        isBefore(date, maxDate) ||
-        isSameDay(date, maxDate)) &&
-      (!isValid(minDate) || isAfter(date, minDate) || isSameDay(date, minDate))
-    );
+  const brushRange = useRef({ startIndex: 0, endIndex: data.length - 1 });
+  const handleBrushChange = (e) => {
+    brushRange.current = e;
   };
-
-  const data = nonTimeFilteredData.filter((d) =>
-    dateFilter(d[Object.keys(d)[0]].date)
-  );
 
   const uidIndexWithGreatestY = UIDs.length
     ? findUidIndexWithGreatestY(data, UIDs, chartDataKey)
@@ -114,9 +91,17 @@ const Chart = ({ data: nonTimeFilteredData, counties, UIDs = [] }) => {
           <YAxis
             dataKey={`${UIDs[uidIndexWithGreatestY]}.${chartDataKey}`}
             scale={chartScale}
-            domain={[chartDataKey.includes("Percent") ? 0.01 : "auto", "auto"]}
+            domain={["dataMin", "dataMax"]}
           />
           <Tooltip contentStyle={{ backgroundColor: "#333" }} />
+          <Brush
+            dataKey={`${UIDs[0]}.date`}
+            height={30}
+            stroke="#8884d8"
+            startIndex={brushRange.current.startIndex}
+            endIndex={brushRange.current.endIndex}
+            onChange={(e) => handleBrushChange(e)}
+          />
           <Legend />
           {UIDs.map((uid, i) => {
             return (
@@ -132,23 +117,6 @@ const Chart = ({ data: nonTimeFilteredData, counties, UIDs = [] }) => {
           })}
         </LineChart>
       </ResponsiveContainer>
-      <div className="flex justify-between">
-        <input
-          className="bg-gray-700"
-          type={"date"}
-          value={chartMinDate}
-          onChange={(e) => setChartMinDate(e.target.value)}
-        />
-        {isInvalidDateFilter && (
-          <div className="px-4 bg-red-800">Invalid Date Filter</div>
-        )}
-        <input
-          className="bg-gray-700"
-          type={"date"}
-          value={chartMaxDate}
-          onChange={(e) => setChartMaxDate(e.target.value)}
-        />
-      </div>
     </div>
   );
 };
