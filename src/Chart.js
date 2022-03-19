@@ -1,8 +1,6 @@
 import { useLocalStorageValue } from "@react-hookz/web/esm";
 import { useWindowSize } from "react-use";
 import React, { useRef } from "react";
-import * as R from "ramda";
-import _ from "lodash";
 import {
   LineChart,
   Line,
@@ -27,19 +25,6 @@ const DATA_KEY_TO_LABEL = {
   deathsPercent: "Deaths %",
 };
 
-const findUidIndexWithGreatestY = (data, UIDs, dataKey) => {
-  const uidToMaxValue = R.map((uid) => {
-    const valueByDay = data?.map((dateRow) => {
-      return Number(dateRow[uid]?.[dataKey]);
-    });
-    const maxValue = _.max(valueByDay);
-    return { uid, maxValue };
-  })(UIDs);
-
-  const uidWithGreatestY = _.maxBy(uidToMaxValue, (i) => i.maxValue).uid;
-  return UIDs.indexOf(uidWithGreatestY);
-};
-
 const Chart = ({ data, counties, UIDs = [] }) => {
   const { height } = useWindowSize();
 
@@ -58,10 +43,6 @@ const Chart = ({ data, counties, UIDs = [] }) => {
   const handleBrushChange = (e) => {
     brushRange.current = e;
   };
-
-  const uidIndexWithGreatestY = UIDs.length
-    ? findUidIndexWithGreatestY(data, UIDs, chartDataKey)
-    : 0;
 
   return (
     <div>
@@ -88,11 +69,7 @@ const Chart = ({ data, counties, UIDs = [] }) => {
         <LineChart data={[...data].reverse()}>
           <CartesianGrid strokeDasharray={"3 3"} />
           <XAxis dataKey={`${UIDs[0]}.date`} />
-          <YAxis
-            dataKey={`${UIDs[uidIndexWithGreatestY]}.${chartDataKey}`}
-            scale={chartScale}
-            domain={["dataMin", "dataMax"]}
-          />
+          <YAxis scale={chartScale} domain={["dataMin", "dataMax"]} />
           <Tooltip contentStyle={{ backgroundColor: "#333" }} />
           <Brush
             dataKey={`${UIDs[0]}.date`}
