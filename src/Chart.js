@@ -71,7 +71,10 @@ const Chart = ({ data, counties, UIDs = [] }) => {
         <LineChart data={[...data].reverse()}>
           <CartesianGrid strokeDasharray={"3 3"} />
           <XAxis dataKey={`${UIDs[0]}.date`} />
-          <YAxis scale={chartScale} domain={["dataMin", "dataMax"]} />
+          <YAxis
+            scale={chartScale}
+            domain={chartScale === "log" ? ["dataMin", "dataMax"] : undefined}
+          />
           <Tooltip contentStyle={{ backgroundColor: "#333" }} />
           <Brush
             dataKey={`${UIDs[0]}.date`}
