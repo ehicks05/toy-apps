@@ -25,6 +25,8 @@ const DATA_KEY_TO_LABEL = {
   deathsPercent: "Deaths %",
 };
 
+const DATA_SCALE_TO_LABEL = { auto: "linear" };
+
 const Chart = ({ data, counties, UIDs = [] }) => {
   const { height } = useWindowSize();
 
@@ -62,7 +64,7 @@ const Chart = ({ data, counties, UIDs = [] }) => {
           onClick={() => setChartScale(chartScale === "auto" ? "log" : "auto")}
           className="text-xs"
         >
-          current scale: {chartScale}
+          current scale: {DATA_SCALE_TO_LABEL[chartScale] || chartScale}
         </button>
       </div>
       <ResponsiveContainer minHeight={height - 128} width="100%">
