@@ -11,6 +11,7 @@ const DEFAULT_BOARD = [...new Array(6)].map(() => [...DEFAULT_ROW]);
 const App = () => {
   const [word, setWord] = useState(getWord());
   const [board, setBoard] = useState(DEFAULT_BOARD);
+  const [boardEffects, setBoardEffects] = useState(['', '', '', '', '', '']);
   const [i, setI] = useState(0);
   const [j, setJ] = useState(0);
 
@@ -70,6 +71,8 @@ const App = () => {
         setJ(0);
       } else {
         // report this
+        setBoardEffects(boardEffects => boardEffects.map((cell, ii) => ii === i ? 'animate-shake' : cell ))
+        setTimeout(() => setBoardEffects(boardEffects => boardEffects.map((cell, ii) => ii === i ? '' : cell )), 830);
       }
     } else if (key === 'Backspace' && j > 0) {
       setBoard(updateLetter('', j - 1));
@@ -82,9 +85,12 @@ const App = () => {
 
   useKeyboardEvent(true, handleKey);
 
-  const newGame = () => {
+  const newGame = (e) => {
+    e.target.blur();
     setBoard(DEFAULT_BOARD);
     setWord(getWord());
+    setI(0);
+    setJ(0);
   };
 
   return (
@@ -93,7 +99,7 @@ const App = () => {
 
       <div className="flex flex-col gap-2">
         {board.map((row, a) => (
-          <div key={a} className="flex gap-2">
+          <div key={a} className={`flex gap-2 ${boardEffects[a]}`}>
             {row.map((letter, b) => (
               <Letter key={b} letter={letter.letter} result={letter.result} />
             ))}
@@ -103,13 +109,13 @@ const App = () => {
 
       <button
         type="button"
-        onClick={() => newGame()}
+        onClick={(e) => newGame(e)}
         className="px-4 py-2 bg-green-500 text-xl rounded"
       >
         New Game
       </button>
       <Debug state={{
-        word, i, j, board,
+        word, i, j, boardEffects, board,
       }}
       />
     </div>
