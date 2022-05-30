@@ -1,4 +1,4 @@
-export const WORDS = [
+export const ALLOWED_WORDS = [
   'aback',
   'abase',
   'abate',
