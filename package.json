@@ -11,6 +11,7 @@
     "lint": "eslint --ignore-path .gitignore \"**/*.+(js|jsx)\""
   },
   "dependencies": {
+    "@react-hookz/web": "^14.2.2",
     "lodash": "^4.17.21",
     "react": "^18.1.0",
     "react-dom": "^18.1.0"
