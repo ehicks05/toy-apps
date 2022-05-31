@@ -2,10 +2,11 @@ import React, { useState } from 'react';
 import { IKeyboardEventHandler, useKeyboardEvent } from '@react-hookz/web';
 import { getWord, isAllowedGuess } from './api';
 
-const DEFAULT_ROW = [...new Array(5)].map(() => ({
+const DEFAULT_CELL = {
   letter: '',
   result: 'unknown' as Result,
-}));
+};
+const DEFAULT_ROW = [...new Array(5)].map(() => ({ ...DEFAULT_CELL }));
 const DEFAULT_BOARD = [...new Array(6)].map(() => [...DEFAULT_ROW]);
 
 const App = () => {
@@ -97,8 +98,8 @@ const App = () => {
 
   useKeyboardEvent(true, handleKey);
 
-  const newGame = (e) => {
-    e.target.blur();
+  const newGame = (e: React.MouseEvent<HTMLButtonElement>) => {
+    e.currentTarget.blur();
     setBoard(DEFAULT_BOARD);
     setWord(getWord());
     setI(0);
@@ -126,29 +127,13 @@ const App = () => {
       >
         New Game
       </button>
-      <Debug
-        state={{
-          word,
-          i,
-          j,
-          boardEffects,
-          board,
-        }}
-      />
+      <Debug state={{ word, i, j, boardEffects, board }} />
     </div>
   );
 };
 
 const Debug = ({ state }: { state: any }) => (
-  <pre className="text-xs">
-    {JSON.stringify(
-      {
-        state,
-      },
-      null,
-      2
-    )}
-  </pre>
+  <pre className="text-xs">{JSON.stringify({ state }, null, 2)}</pre>
 );
 
 type Result = 'unknown' | 'correct' | 'wrong_location' | 'not_present';
