@@ -15,47 +15,51 @@ const App = () => {
   const [i, setI] = useState(0);
   const [j, setJ] = useState(0);
 
-  const updateLetter = (val: string, letterIndex: number) => board.map((guess, ii) => guess.map((letter, jj) => {
-    if (ii === i && jj === letterIndex) return { ...letter, letter: val };
-    return letter;
-  }));
-
-  const checkRow = (rowIndex: number) => board.map((row, ii) => {
-    if (ii !== rowIndex) return row;
-    // check each letter
-    const w = word.split('');
-    return row
-      .map((letter, jj) => {
-        let result: Result = 'unknown';
-        if (!w.includes(letter.letter)) result = 'not_present';
-        else if (w[jj] === letter.letter) {
-          result = 'correct';
-          w[jj] = '';
-        }
-
-        console.log(`working on ${letter.letter}: ${result}`);
-        return {
-          ...letter,
-          result,
-        };
+  const updateLetter = (val: string, letterIndex: number) =>
+    board.map((guess, ii) =>
+      guess.map((letter, jj) => {
+        if (ii === i && jj === letterIndex) return { ...letter, letter: val };
+        return letter;
       })
-      .map((letter) => {
-        if (letter.result !== 'unknown') return letter;
-        let result: Result;
-        if (w.includes(letter.letter)) {
-          result = 'wrong_location';
-          const firstIndex = w.indexOf(letter.letter);
-          w[firstIndex] = '';
-        } else {
-          result = 'not_present';
-        }
-        console.log(`working on ${letter.letter}: ${result}`);
-        return {
-          ...letter,
-          result,
-        };
-      });
-  });
+    );
+
+  const checkRow = (rowIndex: number) =>
+    board.map((row, ii) => {
+      if (ii !== rowIndex) return row;
+      // check each letter
+      const w = word.split('');
+      return row
+        .map((letter, jj) => {
+          let result: Result = 'unknown';
+          if (!w.includes(letter.letter)) result = 'not_present';
+          else if (w[jj] === letter.letter) {
+            result = 'correct';
+            w[jj] = '';
+          }
+
+          console.log(`working on ${letter.letter}: ${result}`);
+          return {
+            ...letter,
+            result,
+          };
+        })
+        .map((letter) => {
+          if (letter.result !== 'unknown') return letter;
+          let result: Result;
+          if (w.includes(letter.letter)) {
+            result = 'wrong_location';
+            const firstIndex = w.indexOf(letter.letter);
+            w[firstIndex] = '';
+          } else {
+            result = 'not_present';
+          }
+          console.log(`working on ${letter.letter}: ${result}`);
+          return {
+            ...letter,
+            result,
+          };
+        });
+    });
 
   const handleKey: IKeyboardEventHandler<EventTarget> = (e: KeyboardEvent) => {
     const { key } = e;
@@ -71,8 +75,16 @@ const App = () => {
         setJ(0);
       } else {
         // report this
-        setBoardEffects(boardEffects => boardEffects.map((cell, ii) => ii === i ? 'animate-shake' : cell ))
-        setTimeout(() => setBoardEffects(boardEffects => boardEffects.map((cell, ii) => ii === i ? '' : cell )), 830);
+        setBoardEffects((boardEffects) =>
+          boardEffects.map((cell, ii) => (ii === i ? 'animate-shake' : cell))
+        );
+        setTimeout(
+          () =>
+            setBoardEffects((boardEffects) =>
+              boardEffects.map((cell, ii) => (ii === i ? '' : cell))
+            ),
+          830
+        );
       }
     } else if (key === 'Backspace' && j > 0) {
       setBoard(updateLetter('', j - 1));
@@ -114,22 +126,27 @@ const App = () => {
       >
         New Game
       </button>
-      <Debug state={{
-        word, i, j, boardEffects, board,
-      }}
+      <Debug
+        state={{
+          word,
+          i,
+          j,
+          boardEffects,
+          board,
+        }}
       />
     </div>
   );
 };
 
-const Debug = ({ state }: {state: any}) => (
+const Debug = ({ state }: { state: any }) => (
   <pre className="text-xs">
     {JSON.stringify(
       {
         state,
       },
       null,
-      2,
+      2
     )}
   </pre>
 );
@@ -140,7 +157,8 @@ interface LetterProps {
   result: Result;
 }
 const Letter = ({ letter, result }: LetterProps) => {
-  const base = 'flex items-center justify-center w-10 h-10 rounded-sm text-xl font-bold';
+  const base =
+    'flex items-center justify-center w-10 h-10 rounded-sm text-xl font-bold';
   const conditional = {
     unknown: 'bg-neutral-900 border border-neutral-500',
     correct: 'bg-green-500',
