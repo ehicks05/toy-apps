@@ -215,7 +215,7 @@ const Keyboard = ({ handleKey }: KeyboardProps) => {
         ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
         ['Enter', 'z', 'x', 'c', 'v', 'b', 'n', 'm', 'Backspace'],
       ].map((row) => (
-        <div className="flex flex-wrap justify-center gap-1.5">
+        <div className="flex justify-center gap-1.5">
           {row.map((key) => {
             const renderKey =
               key === 'Backspace' ? (
@@ -227,7 +227,7 @@ const Keyboard = ({ handleKey }: KeyboardProps) => {
             return (
               <button
                 type="button"
-                className={`flex items-center justify-center ${width} h-10 rounded text-sm font-bold bg-neutral-700`}
+                className="flex items-center justify-center px-2 h-10 rounded text-sm font-bold bg-neutral-700"
                 onClick={(e) => {
                   e.currentTarget.blur();
                   handleKey(key);
