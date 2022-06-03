@@ -46,13 +46,12 @@ const App = () => {
         })
         .map((cell) => {
           if (cell.result !== 'unknown') return cell;
-          let result: Result;
-          if (w.includes(cell.letter)) {
-            result = 'wrong_location';
-            const firstIndex = w.indexOf(cell.letter);
-            w[firstIndex] = '';
-          } else {
-            result = 'not_present';
+
+          const result: Result = w.includes(cell.letter)
+            ? 'wrong_location'
+            : 'not_present';
+          if (result === 'wrong_location') {
+            w[w.indexOf(cell.letter)] = '';
           }
 
           return {
