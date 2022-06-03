@@ -126,7 +126,11 @@ const App = () => {
     <div className="flex flex-col items-center gap-4 p-4">
       <h1 className="text-4xl mb-4">Eordle</h1>
 
-      {!gameStatus.active && <h2>{gameStatus.gameOverMessage}</h2>}
+      {!gameStatus.active && (
+        <div className="absolute top-24 p-4 rounded-lg text-2xl bg-neutral-600 shadow-2xl">
+          {gameStatus.gameOverMessage}
+        </div>
+      )}
 
       <div className="flex flex-col gap-2">
         {board.map((row, a) => (
@@ -159,19 +163,11 @@ const App = () => {
   );
 };
 
-const Debug = ({ state }: { state: any }) => {
-  const { board, ...rest } = state;
-  return (
-    <div className="p-2 bg-neutral-800">
-      <pre className="text-xs">{JSON.stringify(rest, null, 2)}</pre>
-      {board.map((row, i) => (
-        <pre key={i} className="text-xs">
-          {JSON.stringify(row)}
-        </pre>
-      ))}
-    </div>
-  );
-};
+const Debug = ({ state }: { state: any }) => (
+  <div className="flex p-4 bg-neutral-800 text-xs">
+    <pre className="text-xs">{JSON.stringify(state, null, 2)}</pre>
+  </div>
+);
 
 interface CellProps {
   letter: string;
@@ -183,7 +179,7 @@ const Cell = ({ letter, result, index }: CellProps) => {
   const resultMap = {
     unknown: 'bg-neutral-900 border border-neutral-600',
     correct: 'bg-green-500 duration-1000',
-    wrong_location: 'bg-yellow-500 duration-700',
+    wrong_location: 'bg-yellow-500 duration-1000',
     not_present: 'bg-neutral-700 duration-700',
   };
   return (
