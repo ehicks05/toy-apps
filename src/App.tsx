@@ -61,32 +61,32 @@ const App = () => {
         });
     });
 
+  const handleInvalidGuess = () => {
+    setBoardEffects((boardEffects) =>
+      boardEffects.map((cell, i) => (i === rowIndex ? 'animate-shake' : cell))
+    );
+    setTimeout(
+      () =>
+        setBoardEffects((boardEffects) =>
+          boardEffects.map((cell, i) => (i === rowIndex ? '' : cell))
+        ),
+      830
+    );
+  };
+
   const handleKey: IKeyboardEventHandler<EventTarget> = (e: KeyboardEvent) => {
     const { key } = e;
     console.log(key);
 
     if (key === 'Enter' && colIndex === 5) {
-      // submit guess. todo check a word library
-      const guess = board[rowIndex].map((l) => l.letter).join('');
+      const guess = board[rowIndex].map((cell) => cell.letter).join('');
       const isValidGuess = isAllowedGuess(guess);
       if (isValidGuess) {
         setBoard(checkRow(rowIndex));
         setRowIndex((i) => i + 1);
         setColIndex(0);
       } else {
-        // report this
-        setBoardEffects((boardEffects) =>
-          boardEffects.map((cell, i) =>
-            i === rowIndex ? 'animate-shake' : cell
-          )
-        );
-        setTimeout(
-          () =>
-            setBoardEffects((boardEffects) =>
-              boardEffects.map((cell, i) => (i === rowIndex ? '' : cell))
-            ),
-          830
-        );
+        handleInvalidGuess();
       }
     } else if (key === 'Backspace' && colIndex > 0) {
       setBoard(updateLetter('', colIndex - 1));
