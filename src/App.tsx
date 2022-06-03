@@ -13,50 +13,50 @@ const App = () => {
   const [word, setWord] = useState(getWord());
   const [board, setBoard] = useState(DEFAULT_BOARD);
   const [boardEffects, setBoardEffects] = useState(['', '', '', '', '', '']);
-  const [i, setI] = useState(0);
-  const [j, setJ] = useState(0);
+  const [rowIndex, setRowIndex] = useState(0);
+  const [colIndex, setColIndex] = useState(0);
 
   const updateLetter = (val: string, letterIndex: number) =>
-    board.map((guess, ii) =>
-      guess.map((letter, jj) => {
-        if (ii === i && jj === letterIndex) return { ...letter, letter: val };
+    board.map((guess, i) =>
+      guess.map((letter, j) => {
+        if (i === rowIndex && j === letterIndex)
+          return { ...letter, letter: val };
         return letter;
       })
     );
 
   const checkRow = (rowIndex: number) =>
-    board.map((row, ii) => {
-      if (ii !== rowIndex) return row;
+    board.map((row, i) => {
+      if (i !== rowIndex) return row;
       // check each letter
       const w = word.split('');
       return row
-        .map((letter, jj) => {
+        .map((cell, j) => {
           let result: Result = 'unknown';
-          if (!w.includes(letter.letter)) result = 'not_present';
-          else if (w[jj] === letter.letter) {
+          if (!w.includes(cell.letter)) result = 'not_present';
+          else if (w[j] === cell.letter) {
             result = 'correct';
-            w[jj] = '';
+            w[j] = '';
           }
 
-          console.log(`working on ${letter.letter}: ${result}`);
           return {
-            ...letter,
+            ...cell,
             result,
           };
         })
-        .map((letter) => {
-          if (letter.result !== 'unknown') return letter;
+        .map((cell) => {
+          if (cell.result !== 'unknown') return cell;
           let result: Result;
-          if (w.includes(letter.letter)) {
+          if (w.includes(cell.letter)) {
             result = 'wrong_location';
-            const firstIndex = w.indexOf(letter.letter);
+            const firstIndex = w.indexOf(cell.letter);
             w[firstIndex] = '';
           } else {
             result = 'not_present';
           }
-          console.log(`working on ${letter.letter}: ${result}`);
+
           return {
-            ...letter,
+            ...cell,
             result,
           };
         });
@@ -66,33 +66,35 @@ const App = () => {
     const { key } = e;
     console.log(key);
 
-    if (key === 'Enter' && j === 5) {
+    if (key === 'Enter' && colIndex === 5) {
       // submit guess. todo check a word library
-      const guess = board[i].map((l) => l.letter).join('');
+      const guess = board[rowIndex].map((l) => l.letter).join('');
       const isValidGuess = isAllowedGuess(guess);
       if (isValidGuess) {
-        setBoard(checkRow(i));
-        setI((i) => i + 1);
-        setJ(0);
+        setBoard(checkRow(rowIndex));
+        setRowIndex((i) => i + 1);
+        setColIndex(0);
       } else {
         // report this
         setBoardEffects((boardEffects) =>
-          boardEffects.map((cell, ii) => (ii === i ? 'animate-shake' : cell))
+          boardEffects.map((cell, i) =>
+            i === rowIndex ? 'animate-shake' : cell
+          )
         );
         setTimeout(
           () =>
             setBoardEffects((boardEffects) =>
-              boardEffects.map((cell, ii) => (ii === i ? '' : cell))
+              boardEffects.map((cell, i) => (i === rowIndex ? '' : cell))
             ),
           830
         );
       }
-    } else if (key === 'Backspace' && j > 0) {
-      setBoard(updateLetter('', j - 1));
-      setJ((j) => j - 1);
-    } else if (/^[a-zA-Z]$/.test(key) && j < 5) {
-      setBoard(updateLetter(key.toLowerCase(), j));
-      setJ((j) => j + 1);
+    } else if (key === 'Backspace' && colIndex > 0) {
+      setBoard(updateLetter('', colIndex - 1));
+      setColIndex((j) => j - 1);
+    } else if (/^[a-zA-Z]$/.test(key) && colIndex < 5) {
+      setBoard(updateLetter(key.toLowerCase(), colIndex));
+      setColIndex((j) => j + 1);
     }
   };
 
@@ -102,8 +104,8 @@ const App = () => {
     e.currentTarget.blur();
     setBoard(DEFAULT_BOARD);
     setWord(getWord());
-    setI(0);
-    setJ(0);
+    setRowIndex(0);
+    setColIndex(0);
   };
 
   return (
@@ -127,13 +129,13 @@ const App = () => {
       >
         New Game
       </button>
-      <Debug state={{ word, i, j, boardEffects, board }} />
+      <Debug state={{ word, rowIndex, colIndex, boardEffects, board }} />
     </div>
   );
 };
 
 const Debug = ({ state }: { state: any }) => (
-  <pre className="text-xs">{JSON.stringify({ state }, null, 2)}</pre>
+  <pre className="text-xs">{JSON.stringify(state, null, 2)}</pre>
 );
 
 type Result = 'unknown' | 'correct' | 'wrong_location' | 'not_present';
