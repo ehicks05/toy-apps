@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { IKeyboardEventHandler, useKeyboardEvent } from '@react-hookz/web';
 import _ from 'lodash';
-import { HiOutlineBackspace } from 'react-icons/hi';
+import { HiOutlineBackspace, HiOutlineCode } from 'react-icons/hi';
 import { getWord, isAllowedGuess } from './api';
-import { DEFAULT_BOARD, Result } from './constants';
+import { Board, DEFAULT_BOARD, Result } from './constants';
 
 const App = () => {
   const [gameStatus, setGameStatus] = useState({
@@ -15,6 +15,7 @@ const App = () => {
   const [boardEffects, setBoardEffects] = useState(['', '', '', '', '', '']);
   const [rowIndex, setRowIndex] = useState(0);
   const [colIndex, setColIndex] = useState(0);
+  const [debug, setDebug] = useState(false);
 
   const updateLetter = (val: string, letterIndex: number) =>
     board.map((guess, i) =>
@@ -129,7 +130,7 @@ const App = () => {
   };
 
   return (
-    <div className="flex flex-col items-center gap-4 p-4">
+    <div className="flex flex-col items-center h-screen gap-4 p-4">
       <h1 className="text-4xl mb-4">Eordle</h1>
 
       {!gameStatus.active && (
@@ -138,7 +139,7 @@ const App = () => {
         </div>
       )}
 
-      <div className="flex flex-col gap-2">
+      <div className="flex flex-col h-full justify-center gap-2">
         {board.map((row, a) => (
           <div key={a} className={`flex gap-2 ${boardEffects[a]}`}>
             {row.map((cell, b) => (
@@ -162,10 +163,21 @@ const App = () => {
           New Game
         </button>
       )}
-      <Keyboard handleKey={handleKey} />
-      {/* <Debug
-        state={{ word, rowIndex, colIndex, boardEffects, gameStatus, board }}
-      /> */}
+      <div className="flex-grow" />
+      <Keyboard board={board} handleKey={handleKey} />
+
+      <button
+        type="button"
+        onClick={() => setDebug((debug) => !debug)}
+        className="px-4 py-2 bg-neutral-500 text-xl rounded"
+      >
+        <HiOutlineCode />
+      </button>
+      {debug && (
+        <Debug
+          state={{ word, rowIndex, colIndex, boardEffects, gameStatus, board }}
+        />
+      )}
     </div>
   );
 };
@@ -175,6 +187,13 @@ const Debug = ({ state }: { state: any }) => (
     <pre className="text-xs">{JSON.stringify(state, null, 2)}</pre>
   </div>
 );
+
+const resultMap = {
+  unknown: `bg-neutral-900 border border-neutral-600 transition`,
+  correct: 'bg-green-500 duration-1000',
+  wrong_location: 'bg-yellow-500 duration-1000',
+  not_present: 'bg-neutral-700 duration-700',
+};
 
 interface CellProps {
   letter: string;
@@ -187,12 +206,6 @@ const Cell = ({ letter, result, index }: CellProps) => {
   const unknownBorder = letter ? 'bg-neutral-500' : 'bg-neutral-600';
 
   // TODO: transitions work with guess result feedback but not unknown border change
-  const resultMap = {
-    unknown: `bg-neutral-900 border border-neutral-600 transition`,
-    correct: 'bg-green-500 duration-1000',
-    wrong_location: 'bg-yellow-500 duration-1000',
-    not_present: 'bg-neutral-700 duration-700',
-  };
   return (
     <div
       className={`${base} ${resultMap[result]}`}
@@ -203,11 +216,29 @@ const Cell = ({ letter, result, index }: CellProps) => {
   );
 };
 
+const RESULT_PRIORITIES: Record<Result, number> = {
+  correct: 0,
+  wrong_location: 1,
+  not_present: Number.MAX_VALUE,
+  unknown: Number.MAX_VALUE,
+};
+
 interface KeyboardProps {
+  board: Board;
   handleKey: (key: string) => void;
 }
-const Keyboard = ({ handleKey }: KeyboardProps) => {
-  const a = 1;
+const Keyboard = ({ board, handleKey }: KeyboardProps) => {
+  const letterResults = board
+    .flat()
+    .filter((cell) => ['correct', 'wrong_location'].includes(cell.result))
+    .sort(
+      ({ result: r1 }, { result: r2 }) =>
+        RESULT_PRIORITIES[r2] - RESULT_PRIORITIES[r1]
+    )
+    .reduce(
+      (agg, curr) => ({ ...agg, [curr.letter]: curr.result }),
+      {} as Record<string, Result>
+    );
   return (
     <div className="flex flex-col gap-1.5">
       {[
@@ -223,11 +254,12 @@ const Keyboard = ({ handleKey }: KeyboardProps) => {
               ) : (
                 key.toUpperCase()
               );
-            const width = key === 'Enter' ? 'w-16' : 'w-10';
+            const letterResult = letterResults[key] || 'not_present';
+            const resultStyle = resultMap[letterResult];
             return (
               <button
                 type="button"
-                className="flex items-center justify-center px-2 h-10 rounded text-sm font-bold bg-neutral-700"
+                className={`flex items-center justify-center px-2 h-10 rounded text-sm font-bold ${resultStyle}`}
                 onClick={(e) => {
                   e.currentTarget.blur();
                   handleKey(key);

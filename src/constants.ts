@@ -1,4 +1,5 @@
 export type Result = 'unknown' | 'correct' | 'wrong_location' | 'not_present';
+export type Board = typeof DEFAULT_BOARD;
 
 const DEFAULT_CELL = {
   letter: '',
