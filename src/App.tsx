@@ -132,7 +132,12 @@ const App = () => {
         {board.map((row, a) => (
           <div key={a} className={`flex gap-2 ${boardEffects[a]}`}>
             {row.map((cell, b) => (
-              <Cell key={b} letter={cell.letter} result={cell.result} />
+              <Cell
+                key={b}
+                letter={cell.letter}
+                result={cell.result}
+                index={b}
+              />
             ))}
           </div>
         ))}
@@ -171,18 +176,21 @@ const Debug = ({ state }: { state: any }) => {
 interface CellProps {
   letter: string;
   result: Result;
+  index: number;
 }
-const Cell = ({ letter, result }: CellProps) => {
-  const base =
-    'flex items-center justify-center w-10 h-10 rounded-sm text-xl font-bold';
-  const conditional = {
-    unknown: 'bg-neutral-900 border border-neutral-500',
-    correct: 'bg-green-500',
-    wrong_location: 'bg-yellow-500',
-    not_present: 'bg-neutral-700',
+const Cell = ({ letter, result, index }: CellProps) => {
+  const base = `flex items-center justify-center w-10 h-10 rounded-sm text-xl font-bold transition`;
+  const resultMap = {
+    unknown: 'bg-neutral-900 border border-neutral-600',
+    correct: 'bg-green-500 duration-1000',
+    wrong_location: 'bg-yellow-500 duration-700',
+    not_present: 'bg-neutral-700 duration-700',
   };
   return (
-    <div className={`${base} ${conditional[result]}`}>
+    <div
+      className={`${base} ${resultMap[result]}`}
+      style={{ transitionDelay: `${400 + index * 400}ms` }}
+    >
       {letter.toUpperCase()}
     </div>
   );
