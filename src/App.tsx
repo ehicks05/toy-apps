@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { IKeyboardEventHandler, useKeyboardEvent } from '@react-hookz/web';
 import _ from 'lodash';
+import { HiOutlineBackspace } from 'react-icons/hi';
 import { getWord, isAllowedGuess } from './api';
 import { DEFAULT_BOARD, Result } from './constants';
 
@@ -73,10 +74,15 @@ const App = () => {
     );
   };
 
-  const handleKey: IKeyboardEventHandler<EventTarget> = (e: KeyboardEvent) => {
-    if (!gameStatus.active) return;
-
+  const handleKeyboardEvent: IKeyboardEventHandler<EventTarget> = (
+    e: KeyboardEvent
+  ) => {
     const { key } = e;
+    handleKey(key);
+  };
+
+  const handleKey = (key: string) => {
+    if (!gameStatus.active) return;
     console.log(key);
 
     if (key === 'Enter' && colIndex === 5) {
@@ -111,7 +117,7 @@ const App = () => {
     }
   };
 
-  useKeyboardEvent(true, handleKey);
+  useKeyboardEvent(true, handleKeyboardEvent);
 
   const newGame = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.currentTarget.blur();
@@ -156,6 +162,7 @@ const App = () => {
           New Game
         </button>
       )}
+      <Keyboard handleKey={handleKey} />
       <Debug
         state={{ word, rowIndex, colIndex, boardEffects, gameStatus, board }}
       />
@@ -172,12 +179,16 @@ const Debug = ({ state }: { state: any }) => (
 interface CellProps {
   letter: string;
   result: Result;
-  index: number;
+  index?: number;
 }
 const Cell = ({ letter, result, index }: CellProps) => {
-  const base = `flex items-center justify-center w-10 h-10 rounded-sm text-xl font-bold transition`;
+  const base = `flex items-center justify-center w-10 h-10 rounded-sm text-xl font-bold`;
+
+  const unknownBorder = letter ? 'bg-neutral-500' : 'bg-neutral-600';
+
+  // TODO: transitions work with guess result feedback but not unknown border change
   const resultMap = {
-    unknown: 'bg-neutral-900 border border-neutral-600',
+    unknown: `bg-neutral-900 border border-neutral-600 transition`,
     correct: 'bg-green-500 duration-1000',
     wrong_location: 'bg-yellow-500 duration-1000',
     not_present: 'bg-neutral-700 duration-700',
@@ -185,9 +196,49 @@ const Cell = ({ letter, result, index }: CellProps) => {
   return (
     <div
       className={`${base} ${resultMap[result]}`}
-      style={{ transitionDelay: `${400 + index * 400}ms` }}
+      style={{ transitionDelay: `${(index || 0) * 400}ms` }}
     >
       {letter.toUpperCase()}
+    </div>
+  );
+};
+
+interface KeyboardProps {
+  handleKey: (key: string) => void;
+}
+const Keyboard = ({ handleKey }: KeyboardProps) => {
+  const a = 1;
+  return (
+    <div className="flex flex-col gap-1.5">
+      {[
+        ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
+        ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
+        ['Enter', 'z', 'x', 'c', 'v', 'b', 'n', 'm', 'Backspace'],
+      ].map((row) => (
+        <div className="flex flex-wrap justify-center gap-1.5">
+          {row.map((key) => {
+            const renderKey =
+              key === 'Backspace' ? (
+                <HiOutlineBackspace size={24} />
+              ) : (
+                key.toUpperCase()
+              );
+            const width = key === 'Enter' ? 'w-16' : 'w-10';
+            return (
+              <button
+                type="button"
+                className={`flex items-center justify-center ${width} h-10 rounded text-sm font-bold bg-neutral-700`}
+                onClick={(e) => {
+                  e.currentTarget.blur();
+                  handleKey(key);
+                }}
+              >
+                {renderKey}
+              </button>
+            );
+          })}
+        </div>
+      ))}
     </div>
   );
 };
