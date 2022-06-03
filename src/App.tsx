@@ -163,9 +163,9 @@ const App = () => {
         </button>
       )}
       <Keyboard handleKey={handleKey} />
-      <Debug
+      {/* <Debug
         state={{ word, rowIndex, colIndex, boardEffects, gameStatus, board }}
-      />
+      /> */}
     </div>
   );
 };
