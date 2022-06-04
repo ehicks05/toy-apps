@@ -166,13 +166,15 @@ const App = () => {
       <div className="flex-grow" />
       <Keyboard board={board} handleKey={handleKey} />
 
-      <button
+      { import.meta.env.DEV && 
+        <button
         type="button"
         onClick={() => setDebug((debug) => !debug)}
         className="px-4 py-2 bg-neutral-500 text-xl rounded"
-      >
-        <HiOutlineCode />
-      </button>
+        >
+          <HiOutlineCode />
+        </button>
+      }
       {debug && (
         <Debug
           state={{ word, rowIndex, colIndex, boardEffects, gameStatus, board }}
