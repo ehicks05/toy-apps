@@ -42,9 +42,9 @@ interface BoardProps {
   boardEffects: string[];
 }
 const Board = ({ board, boardEffects }: BoardProps) => (
-  <div className="flex flex-col h-full justify-center gap-2">
+  <div className="flex flex-col h-full justify-center gap-1">
     {board.map((row, a) => (
-      <div key={a} className={`flex gap-2 ${boardEffects[a]}`}>
+      <div key={a} className={`flex gap-1 ${boardEffects[a]}`}>
         {row.map((cell, b) => (
           <Cell key={b} letter={cell.letter} result={cell.result} index={b} />
         ))}
