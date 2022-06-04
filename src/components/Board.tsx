@@ -3,7 +3,7 @@ import { IBoard, Result } from '../constants';
 
 const resultMap = {
   unknown: `bg-neutral-900 border-neutral-600`,
-  correct: 'bg-green-500 border-neutral-900 duration-1000',
+  correct: 'bg-green-600 border-neutral-900 duration-1000',
   wrong_location: 'bg-yellow-500 border-neutral-900 duration-1000',
   not_present: 'bg-neutral-700 border-neutral-900 duration-700',
 };

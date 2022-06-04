@@ -22,7 +22,7 @@ const getLetterResults = (board: IBoard) =>
 
 const kbResultMap = {
   not_present: `bg-neutral-700`,
-  correct: 'bg-green-500 duration-1000',
+  correct: 'bg-green-600 duration-1000',
   wrong_location: 'bg-yellow-500 duration-1000',
   unknown: 'bg-neutral-500 duration-700',
 };
