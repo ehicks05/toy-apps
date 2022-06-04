@@ -1,6 +1,6 @@
 import React from 'react';
 import { HiOutlineBackspace } from 'react-icons/hi';
-import { Result, Board } from '../constants';
+import { Result, IBoard } from '../constants';
 
 const KEYS = [
   ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
@@ -8,7 +8,7 @@ const KEYS = [
   ['Enter', 'z', 'x', 'c', 'v', 'b', 'n', 'm', 'Backspace'],
 ];
 
-const getLetterResults = (board: Board) =>
+const getLetterResults = (board: IBoard) =>
   board
     .flat()
     .sort(
@@ -60,7 +60,7 @@ const KbKey = ({ kbKey, letterResult, handleKey }: KbKeyProps) => {
 };
 
 interface KeyboardProps {
-  board: Board;
+  board: IBoard;
   handleKey: (key: string) => void;
 }
 const Keyboard = ({ board, handleKey }: KeyboardProps) => {
