@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { IKeyboardEventHandler, useKeyboardEvent, useLocalStorageValue } from '@react-hookz/web';
 import _ from 'lodash';
-import { HiOutlineBackspace, HiOutlineCode } from 'react-icons/hi';
+import { HiOutlineBackspace } from 'react-icons/hi';
 import { getWord, isAllowedGuess } from './api';
 import { Board, DEFAULT_BOARD, Result } from './constants';
+import Debug from './Debug';
 
 const App = () => {
   const [gameStatus, setGameStatus] = useLocalStorageValue('gameStatus',{
@@ -15,7 +16,6 @@ const App = () => {
   const [boardEffects, setBoardEffects] = useState(['', '', '', '', '', '']);
   const [rowIndex, setRowIndex] = useLocalStorageValue('rowIndex', 0);
   const [colIndex, setColIndex] = useLocalStorageValue('colIndex', 0);
-  const [debug, setDebug] = useLocalStorageValue('debug', false);
 
   const updateLetter = (val: string, letterIndex: number) =>
     board.map((guess, i) =>
@@ -130,7 +130,7 @@ const App = () => {
   };
 
   return (
-    <div className="flex flex-col items-center min-h-screen gap-4 p-2">
+    <div className="flex flex-col items-center h-screen gap-4 p-2">
       <h1 className="text-4xl my-4">Eordle</h1>
 
       {!gameStatus.active && (
@@ -166,29 +166,10 @@ const App = () => {
       <div className="flex-grow" />
       <Keyboard board={board} handleKey={handleKey} />
 
-      { import.meta.env.DEV && 
-        <button
-        type="button"
-        onClick={() => setDebug((debug) => !debug)}
-        className="px-4 py-2 bg-neutral-500 text-xl rounded"
-        >
-          <HiOutlineCode />
-        </button>
-      }
-      {debug && (
-        <Debug
-          state={{ word, rowIndex, colIndex, boardEffects, gameStatus, board }}
-        />
-      )}
+      <Debug state={{ word, rowIndex, colIndex, boardEffects, gameStatus, board }} />
     </div>
   );
 };
-
-const Debug = ({ state }: { state: any }) => (
-  <div className="flex p-4 bg-neutral-800 text-xs">
-    <pre className="text-xs">{JSON.stringify(state, null, 2)}</pre>
-  </div>
-);
 
 const resultMap = {
   unknown: `bg-neutral-900 border-neutral-600`,
