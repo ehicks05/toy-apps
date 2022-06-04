@@ -6,7 +6,7 @@ import { DEFAULT_BOARD, Result } from './constants';
 import { Board, Button, Debug, Keyboard } from './components';
 
 const App = () => {
-  const [gameStatus, setGameStatus] = useLocalStorageValue('gameStatus',{
+  const [gameStatus, setGameStatus] = useLocalStorageValue('gameStatus', {
     active: true,
     gameOverMessage: '',
   });
@@ -133,10 +133,14 @@ const App = () => {
         </div>
       )}
       <Board board={board} boardEffects={boardEffects} />
-      <Button disabled={gameStatus.active} onClick={(e) => newGame(e)}>New Game</Button>
+      <Button disabled={gameStatus.active} onClick={(e) => newGame(e)}>
+        New Game
+      </Button>
       <div className="flex-grow" />
       <Keyboard board={board} handleKey={handleKey} />
-      <Debug state={{ word, rowIndex, colIndex, boardEffects, gameStatus, board }} />
+      <Debug
+        state={{ word, rowIndex, colIndex, boardEffects, gameStatus, board }}
+      />
     </div>
   );
 };

@@ -41,7 +41,11 @@ interface KbKeyProps {
 }
 const KbKey = ({ kbKey, letterResult, handleKey }: KbKeyProps) => {
   const renderKey =
-    kbKey === 'Backspace' ? <HiOutlineBackspace size={24} /> : kbKey.toUpperCase();
+    kbKey === 'Backspace' ? (
+      <HiOutlineBackspace size={24} />
+    ) : (
+      kbKey.toUpperCase()
+    );
   const base =
     'flex items-center justify-center p-3 h-full rounded text-sm font-bold';
   const resultStyle = kbResultMap[letterResult || 'unknown'];

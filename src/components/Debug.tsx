@@ -2,7 +2,7 @@ import React from 'react';
 import { useLocalStorageValue } from '@react-hookz/web';
 import { HiOutlineCode } from 'react-icons/hi';
 
-const Debug = ({state}: {state: any}) => {
+const Debug = ({ state }: { state: any }) => {
   const [debug, setDebug] = useLocalStorageValue('debug', false);
 
   return (
