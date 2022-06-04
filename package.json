@@ -2,7 +2,7 @@
   "name": "eordle",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite",
+    "dev": "vite --host=0.0.0.0",
     "build": "tsc && vite build",
     "serve": "vite preview",
     "prettier": "prettier --ignore-path .gitignore \"**/*.+(ts|tsx|js|jsx|json|css|md|mdx|html)\"",
