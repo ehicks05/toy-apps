@@ -216,11 +216,18 @@ const Cell = ({ letter, result, index }: CellProps) => {
   );
 };
 
+const kbResultMap = {
+  not_present: `bg-neutral-700`,
+  correct: 'bg-green-500 duration-1000',
+  wrong_location: 'bg-yellow-500 duration-1000',
+  unknown: 'bg-neutral-500 duration-700',
+};
+
 const RESULT_PRIORITIES: Record<Result, number> = {
   correct: 0,
   wrong_location: 1,
-  not_present: Number.MAX_VALUE,
-  unknown: Number.MAX_VALUE,
+  not_present: 2,
+  unknown: 3,
 };
 
 interface KeyboardProps {
@@ -230,7 +237,6 @@ interface KeyboardProps {
 const Keyboard = ({ board, handleKey }: KeyboardProps) => {
   const letterResults = board
     .flat()
-    .filter((cell) => ['correct', 'wrong_location'].includes(cell.result))
     .sort(
       ({ result: r1 }, { result: r2 }) =>
         RESULT_PRIORITIES[r2] - RESULT_PRIORITIES[r1]
@@ -254,12 +260,13 @@ const Keyboard = ({ board, handleKey }: KeyboardProps) => {
               ) : (
                 key.toUpperCase()
               );
-            const letterResult = letterResults[key] || 'not_present';
-            const resultStyle = resultMap[letterResult];
+            const base ='flex items-center justify-center px-2 h-10 rounded text-sm font-bold';
+            const letterResult = letterResults[key] || 'unknown';
+            const resultStyle = kbResultMap[letterResult];
             return (
               <button
                 type="button"
-                className={`flex items-center justify-center px-2 h-10 rounded text-sm font-bold ${resultStyle}`}
+                className={`${base} ${resultStyle}`}
                 onClick={(e) => {
                   e.currentTarget.blur();
                   handleKey(key);
