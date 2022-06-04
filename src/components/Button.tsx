@@ -6,7 +6,7 @@ const Button = ({
 }: React.ButtonHTMLAttributes<HTMLButtonElement>) => (
   <button
     type="button"
-    className="px-4 py-2 bg-green-500 disabled:bg-neutral-800 disabled:text-neutral-500 text-xl rounded"
+    className="px-3 py-1.5 bg-green-500 disabled:bg-neutral-800 disabled:text-neutral-500 rounded"
     {...props}
   >
     {children}

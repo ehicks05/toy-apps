@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useKeyboardEvent, useLocalStorageValue } from '@react-hookz/web';
 import _ from 'lodash';
+import { HiChartBar, HiRefresh } from 'react-icons/hi';
 import { getWord, isAllowedGuess } from './api';
 import { DEFAULT_BOARD, Result } from './constants';
 import { Board, Button, Debug, Keyboard } from './components';
@@ -126,16 +127,24 @@ const App = () => {
 
   return (
     <div className="flex flex-col items-center h-screen gap-4 p-2">
-      <h1 className="text-4xl my-4">Eordle</h1>
+      <nav className='flex justify-center items-center w-screen max-w-full p-4'>
+        <div className='w-1/3 flex justify-start'></div>
+        <div className='w-1/3 flex justify-center'><h1 className="text-4xl">Eordle</h1></div>
+        <div className='w-1/3 flex justify-end gap-2'>
+          <Button disabled onClick={(e) => newGame(e)}>
+            <HiChartBar />
+          </Button>
+          <Button disabled={gameStatus.active} onClick={(e) => newGame(e)}>
+            <HiRefresh />
+          </Button>
+        </div>
+      </nav>
       {!gameStatus.active && (
         <div className="absolute top-24 p-4 rounded-lg text-2xl bg-neutral-600 shadow-2xl">
           {gameStatus.gameOverMessage}
         </div>
       )}
       <Board board={board} boardEffects={boardEffects} />
-      <Button disabled={gameStatus.active} onClick={(e) => newGame(e)}>
-        New Game
-      </Button>
       <div className="flex-grow" />
       <Keyboard board={board} handleKey={handleKey} />
       <Debug
