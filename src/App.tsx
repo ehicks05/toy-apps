@@ -4,7 +4,7 @@ import _ from 'lodash';
 import { HiChartBar, HiRefresh } from 'react-icons/hi';
 import { getWord, isAllowedGuess } from './api';
 import { DEFAULT_BOARD, Result } from './constants';
-import { Board, Button, Debug, Keyboard } from './components';
+import { Board, Button, Debug, DebugButton, Keyboard } from './components';
 
 const App = () => {
   const [gameStatus, setGameStatus] = useLocalStorageValue('gameStatus', {
@@ -127,8 +127,10 @@ const App = () => {
 
   return (
     <div className="flex flex-col items-center h-screen gap-4 p-2">
-      <nav className='flex justify-center items-center w-screen max-w-full p-4'>
-        <div className='w-1/3 flex justify-start'></div>
+      <nav className='flex justify-center items-center w-screen max-w-full mb-4'>
+        <div className='w-1/3 flex justify-start'>
+          <DebugButton />
+        </div>
         <div className='w-1/3 flex justify-center'><h1 className="text-4xl">Eordle</h1></div>
         <div className='w-1/3 flex justify-end gap-2'>
           <Button disabled onClick={(e) => newGame(e)}>
