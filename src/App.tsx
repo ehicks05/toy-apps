@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import { IKeyboardEventHandler, useKeyboardEvent, useLocalStorageValue } from '@react-hookz/web';
+import { useKeyboardEvent, useLocalStorageValue } from '@react-hookz/web';
 import _ from 'lodash';
 import { HiOutlineBackspace } from 'react-icons/hi';
 import { getWord, isAllowedGuess } from './api';
 import { Board, DEFAULT_BOARD, Result } from './constants';
-import Debug from './Debug';
+import { Button, Debug } from './components';
 
 const App = () => {
   const [gameStatus, setGameStatus] = useLocalStorageValue('gameStatus',{
@@ -75,13 +75,6 @@ const App = () => {
     );
   };
 
-  const handleKeyboardEvent: IKeyboardEventHandler<EventTarget> = (
-    e: KeyboardEvent
-  ) => {
-    const { key } = e;
-    handleKey(key);
-  };
-
   const handleKey = (key: string) => {
     if (!gameStatus.active) return;
     console.log(key);
@@ -118,7 +111,10 @@ const App = () => {
     }
   };
 
-  useKeyboardEvent(true, handleKeyboardEvent);
+  useKeyboardEvent(true, (e) => {
+    const { key } = e;
+    handleKey(key);
+  });
 
   const newGame = (e: React.MouseEvent<HTMLButtonElement>) => {
     e.currentTarget.blur();
@@ -155,13 +151,7 @@ const App = () => {
       </div>
 
       {!gameStatus.active && (
-        <button
-          type="button"
-          onClick={(e) => newGame(e)}
-          className="px-4 py-2 bg-green-500 text-xl rounded"
-        >
-          New Game
-        </button>
+        <Button onClick={(e) => newGame(e)}>New Game</Button>
       )}
       <div className="flex-grow" />
       <Keyboard board={board} handleKey={handleKey} />
