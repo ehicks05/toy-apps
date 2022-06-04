@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import { useKeyboardEvent, useLocalStorageValue } from '@react-hookz/web';
 import _ from 'lodash';
-import { HiOutlineBackspace } from 'react-icons/hi';
 import { getWord, isAllowedGuess } from './api';
-import { Board, DEFAULT_BOARD, Result } from './constants';
-import { Button, Debug } from './components';
+import { DEFAULT_BOARD, Result } from './constants';
+import { Button, Debug, Keyboard } from './components';
 
 const App = () => {
   const [gameStatus, setGameStatus] = useLocalStorageValue('gameStatus',{
@@ -189,72 +188,6 @@ const Cell = ({ letter, result, index }: CellProps) => {
       }}
     >
       {letter.toUpperCase()}
-    </div>
-  );
-};
-
-const kbResultMap = {
-  not_present: `bg-neutral-700`,
-  correct: 'bg-green-500 duration-1000',
-  wrong_location: 'bg-yellow-500 duration-1000',
-  unknown: 'bg-neutral-500 duration-700',
-};
-
-const RESULT_PRIORITIES: Record<Result, number> = {
-  correct: 0,
-  wrong_location: 1,
-  not_present: 2,
-  unknown: 3,
-};
-
-interface KeyboardProps {
-  board: Board;
-  handleKey: (key: string) => void;
-}
-const Keyboard = ({ board, handleKey }: KeyboardProps) => {
-  const letterResults = board
-    .flat()
-    .sort(
-      ({ result: r1 }, { result: r2 }) =>
-        RESULT_PRIORITIES[r2] - RESULT_PRIORITIES[r1]
-    )
-    .reduce(
-      (agg, curr) => ({ ...agg, [curr.letter]: curr.result }),
-      {} as Record<string, Result>
-    );
-  return (
-    <div className="flex flex-col gap-1.5 w-screen max-w-full h-52">
-      {[
-        ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
-        ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
-        ['Enter', 'z', 'x', 'c', 'v', 'b', 'n', 'm', 'Backspace'],
-      ].map((row) => (
-        <div className="flex justify-center gap-1.5 h-full">
-          {row.map((key) => {
-            const renderKey =
-              key === 'Backspace' ? (
-                <HiOutlineBackspace size={24} />
-              ) : (
-                key.toUpperCase()
-              );
-            const base ='flex items-center justify-center p-3 h-full rounded text-sm font-bold';
-            const letterResult = letterResults[key] || 'unknown';
-            const resultStyle = kbResultMap[letterResult];
-            return (
-              <button
-                type="button"
-                className={`${base} ${resultStyle}`}
-                onClick={(e) => {
-                  e.currentTarget.blur();
-                  handleKey(key);
-                }}
-              >
-                {renderKey}
-              </button>
-            );
-          })}
-        </div>
-      ))}
     </div>
   );
 };
