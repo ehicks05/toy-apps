@@ -130,8 +130,8 @@ const App = () => {
   };
 
   return (
-    <div className="flex flex-col items-center h-screen gap-4 p-4">
-      <h1 className="text-4xl mb-4">Eordle</h1>
+    <div className="flex flex-col items-center min-h-screen gap-4 p-2">
+      <h1 className="text-4xl my-4">Eordle</h1>
 
       {!gameStatus.active && (
         <div className="absolute top-24 p-4 rounded-lg text-2xl bg-neutral-600 shadow-2xl">
@@ -201,7 +201,7 @@ interface CellProps {
   index?: number;
 }
 const Cell = ({ letter, result, index }: CellProps) => {
-  const base = `flex items-center justify-center w-10 h-10 border rounded-sm text-xl font-bold`;
+  const base = `flex items-center justify-center w-14 h-14 border rounded-sm text-2xl font-bold`;
 
   const unknownBorder = letter ? 'border-neutral-500' : 'border-neutral-600';
 
@@ -250,13 +250,13 @@ const Keyboard = ({ board, handleKey }: KeyboardProps) => {
       {} as Record<string, Result>
     );
   return (
-    <div className="flex flex-col gap-1.5">
+    <div className="flex flex-col gap-1.5 w-screen max-w-full h-52">
       {[
         ['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
         ['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
         ['Enter', 'z', 'x', 'c', 'v', 'b', 'n', 'm', 'Backspace'],
       ].map((row) => (
-        <div className="flex justify-center gap-1.5">
+        <div className="flex justify-center gap-1.5 h-full">
           {row.map((key) => {
             const renderKey =
               key === 'Backspace' ? (
@@ -264,7 +264,7 @@ const Keyboard = ({ board, handleKey }: KeyboardProps) => {
               ) : (
                 key.toUpperCase()
               );
-            const base ='flex items-center justify-center px-2 h-10 rounded text-sm font-bold';
+            const base ='flex items-center justify-center p-3 h-full rounded text-sm font-bold';
             const letterResult = letterResults[key] || 'unknown';
             const resultStyle = kbResultMap[letterResult];
             return (
