@@ -189,10 +189,10 @@ const Debug = ({ state }: { state: any }) => (
 );
 
 const resultMap = {
-  unknown: `bg-neutral-900 border border-neutral-600 transition`,
-  correct: 'bg-green-500 duration-1000',
-  wrong_location: 'bg-yellow-500 duration-1000',
-  not_present: 'bg-neutral-700 duration-700',
+  unknown: `bg-neutral-900 border-neutral-600`,
+  correct: 'bg-green-500 border-neutral-900 duration-1000',
+  wrong_location: 'bg-yellow-500 border-neutral-900 duration-1000',
+  not_present: 'bg-neutral-700 border-neutral-900 duration-700',
 };
 
 interface CellProps {
@@ -201,15 +201,19 @@ interface CellProps {
   index?: number;
 }
 const Cell = ({ letter, result, index }: CellProps) => {
-  const base = `flex items-center justify-center w-10 h-10 rounded-sm text-xl font-bold`;
+  const base = `flex items-center justify-center w-10 h-10 border rounded-sm text-xl font-bold`;
 
-  const unknownBorder = letter ? 'bg-neutral-500' : 'bg-neutral-600';
+  const unknownBorder = letter ? 'border-neutral-500' : 'border-neutral-600';
 
   // TODO: transitions work with guess result feedback but not unknown border change
   return (
     <div
-      className={`${base} ${resultMap[result]}`}
-      style={{ transitionDelay: `${(index || 0) * 400}ms` }}
+      className={`${base} ${resultMap[result]} ${result === 'unknown' ? unknownBorder : ''}`}
+      style={{ transitionDelay: `${(index || 0) * 400}ms`,
+       transitionProperty: 'color, background-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter',
+       transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
+       transitionDuration: '150ms',
+      }}
     >
       {letter.toUpperCase()}
     </div>
