@@ -1,21 +1,21 @@
 import React, { useState } from 'react';
-import { IKeyboardEventHandler, useKeyboardEvent } from '@react-hookz/web';
+import { IKeyboardEventHandler, useKeyboardEvent, useLocalStorageValue } from '@react-hookz/web';
 import _ from 'lodash';
 import { HiOutlineBackspace, HiOutlineCode } from 'react-icons/hi';
 import { getWord, isAllowedGuess } from './api';
 import { Board, DEFAULT_BOARD, Result } from './constants';
 
 const App = () => {
-  const [gameStatus, setGameStatus] = useState({
+  const [gameStatus, setGameStatus] = useLocalStorageValue('gameStatus',{
     active: true,
     gameOverMessage: '',
   });
-  const [word, setWord] = useState(getWord());
-  const [board, setBoard] = useState(DEFAULT_BOARD);
+  const [word, setWord] = useLocalStorageValue('word', getWord());
+  const [board, setBoard] = useLocalStorageValue('board', DEFAULT_BOARD);
   const [boardEffects, setBoardEffects] = useState(['', '', '', '', '', '']);
-  const [rowIndex, setRowIndex] = useState(0);
-  const [colIndex, setColIndex] = useState(0);
-  const [debug, setDebug] = useState(false);
+  const [rowIndex, setRowIndex] = useLocalStorageValue('rowIndex', 0);
+  const [colIndex, setColIndex] = useLocalStorageValue('colIndex', 0);
+  const [debug, setDebug] = useLocalStorageValue('debug', false);
 
   const updateLetter = (val: string, letterIndex: number) =>
     board.map((guess, i) =>
