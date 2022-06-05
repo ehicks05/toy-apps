@@ -126,8 +126,8 @@ const App = () => {
   };
 
   return (
-    <div className="flex flex-col items-center h-screen gap-4 p-2">
-      <nav className='flex justify-center items-center w-screen max-w-full mb-4'>
+    <div className="flex flex-col items-center h-screen gap-2">
+      <nav className='flex justify-center items-center w-screen max-w-full px-2 mb-4'>
         <div className='w-1/3 flex justify-start'>
           <DebugButton />
         </div>
