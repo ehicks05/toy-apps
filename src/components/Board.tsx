@@ -3,9 +3,9 @@ import { IBoard, Result } from '../constants';
 
 const resultMap = {
   unknown: `bg-neutral-900 border-neutral-600`,
-  correct: 'bg-green-600 border-neutral-900 duration-1000',
-  wrong_location: 'bg-yellow-500 border-neutral-900 duration-1000',
-  not_present: 'bg-neutral-700 border-neutral-900 duration-700',
+  correct: 'bg-green-600 border-neutral-900',
+  wrong_location: 'bg-yellow-500 border-neutral-900',
+  not_present: 'bg-neutral-700 border-neutral-900',
 };
 
 interface CellProps {
@@ -25,11 +25,11 @@ const Cell = ({ letter, result, index }: CellProps) => {
         result === 'unknown' ? unknownBorder : ''
       }`}
       style={{
-        transitionDelay: `${(index || 0) * 400}ms`,
+        transitionDelay: `${(index || 0) * 250}ms`,
         transitionProperty:
           'color, background-color, text-decoration-color, fill, stroke, opacity, box-shadow, transform, filter, backdrop-filter',
         transitionTimingFunction: 'cubic-bezier(0.4, 0, 0.2, 1)',
-        transitionDuration: '150ms',
+        transitionDuration: '1000ms',
       }}
     >
       {letter.toUpperCase()}
