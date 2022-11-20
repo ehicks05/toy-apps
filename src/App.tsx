@@ -6,7 +6,7 @@ import { Home } from './app/index';
 
 function App() {
   return (
-    <div className="flex min-h-screen flex-col bg-gradient-to-tr from-indigo-900 to-green-900 text-gray-50">
+    <div className="flex min-h-screen flex-col bg-gradient-to-tr from-sky-900 to-emerald-900 text-gray-50">
       <Header />
       <div className="flex h-full flex-grow flex-col p-4 pt-0">
         <Routes>

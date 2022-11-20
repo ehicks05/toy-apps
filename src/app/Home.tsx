@@ -1,10 +1,11 @@
 import React from 'react';
-
+import { Demo } from './Demo';
 
 const Home = () => {
   return (
     <div className="flex flex-col gap-4">
-hi    </div>
+      <Demo />
+    </div>
   );
 };
 
