@@ -8,6 +8,7 @@ import {
   ConfirmedSignatureInfo,
   Keypair,
   LAMPORTS_PER_SOL,
+  ParsedTransactionWithMeta,
   SystemProgram,
   Transaction,
 } from '@solana/web3.js';
@@ -20,6 +21,13 @@ const shorten = (input: string) => `${input.slice(0, 4)}..${input.slice(-4)}`;
 
 const formatSol = (lamports: number) => nf.format(lamports / LAMPORTS_PER_SOL);
 
+const blockTimeToISO = (blockTime = 0) =>
+  new Date(blockTime * 1000).toISOString();
+
+interface SignatureWithTransaction extends ConfirmedSignatureInfo {
+  transaction: ParsedTransactionWithMeta;
+}
+
 export const Demo: FC = () => {
   const { connection } = useConnection();
   const { publicKey, sendTransaction } = useWallet();
@@ -27,6 +35,8 @@ export const Demo: FC = () => {
   const [signatures, setSignatures] = useState<
     ConfirmedSignatureInfo[] | null
   >();
+  const [parsedTransactions, setParsedTransactions] =
+    useState<(SignatureWithTransaction | null)[]>();
 
   const getBalance = async () => {
     if (!publicKey) return;
@@ -40,6 +50,19 @@ export const Demo: FC = () => {
     setSignatures(signatures);
   };
 
+  const getParsedTransactions = async () => {
+    if (!publicKey || !signatures) return;
+    const parsedTransactions = await connection.getParsedTransactions(
+      signatures.map((o) => o.signature),
+    );
+    setParsedTransactions(
+      signatures.map((signature, i) => ({
+        ...signature,
+        transaction: parsedTransactions[i]!,
+      })),
+    );
+  };
+
   useIntervalEffect(() => getBalance(), 30_000);
 
   useEffect(() => {
@@ -47,6 +70,11 @@ export const Demo: FC = () => {
     getBalance();
     getAccountInfo();
   }, [publicKey]);
+
+  useEffect(() => {
+    if (!publicKey) return;
+    getParsedTransactions();
+  }, [signatures]);
 
   const handleSendToRandomAddress = useCallback(async () => {
     if (!publicKey) throw new WalletNotConnectedError();
@@ -88,7 +116,7 @@ export const Demo: FC = () => {
   };
 
   return (
-    <div className="m-auto flex max-w-screen-lg flex-col gap-4">
+    <div className="m-auto flex max-w-screen-xl flex-col gap-4">
       <WalletMultiButton />
       <WalletDisconnectButton />
       <Button disabled={!publicKey} onClick={handleSendToRandomAddress}>
@@ -103,23 +131,53 @@ export const Demo: FC = () => {
             <th colSpan={5}>Transaction History</th>
           </tr>
           <tr>
-            <th>blockTime</th>
-            <th>slot</th>
+            <th>When</th>
             <th>signature</th>
-            <th>err</th>
-            <th>memo</th>
+            {/* <th>err</th> */}
+            {/* <th>memo</th> */}
+            <th>transaction</th>
           </tr>
         </thead>
         <tbody>
-          {signatures?.map((o) => (
-            <tr key={o.signature}>
-              <td>{new Date((o.blockTime || 0) * 1000).toISOString()}</td>
-              <td>{o.slot}</td>
-              <td className="font-mono">{shorten(o.signature)}</td>
-              <td>{o.err?.toString()}</td>
-              <td>{o.memo}</td>
-            </tr>
-          ))}
+          {parsedTransactions?.map((o) => {
+            if (!o) return 'missing';
+
+            return (
+              <tr key={o.signature}>
+                <td>
+                  <div>{blockTimeToISO(o.blockTime || 0).slice(0, 10)}</div>
+                  <div>{blockTimeToISO(o.blockTime || 0).slice(11)}</div>
+                  <div>{o.slot}</div>
+                </td>
+                <td className="font-mono">{shorten(o.signature)}</td>
+                {/* <td>{o.err?.toString()}</td> */}
+                {/* <td>{o.memo}</td> */}
+                <td>
+                  <div className="flex gap-2">
+                    <pre className="text-xs">
+                      {Object.entries(o.transaction.meta || {}).map(
+                        ([k, v]) => (
+                          <div key={k}>
+                            {k}: {JSON.stringify(v, null, 2)}
+                          </div>
+                        ),
+                      )}
+                    </pre>
+                    <pre className="text-xs">
+                      {Object.entries(o.transaction.transaction || {}).map(
+                        ([k, v]) => (
+                          <div key={k}>
+                            {k}: {JSON.stringify(v, null, 2)}
+                          </div>
+                        ),
+                      )}
+                    </pre>
+                    <div>{o.transaction.version}</div>
+                  </div>
+                </td>
+              </tr>
+            );
+          })}
         </tbody>
         <tfoot></tfoot>
       </table>
