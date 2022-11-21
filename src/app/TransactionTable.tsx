@@ -3,6 +3,10 @@ import TransactionMetaTable from './TransactionMetaTable';
 import Transaction from './Transaction';
 import { SignatureWithTransaction } from './types';
 import { blockTimeToISO } from './utils';
+import { Button } from '../core-components';
+import Accounts from './Accounts';
+
+const nf = Intl.NumberFormat('en-US', { notation: 'scientific' });
 
 interface Props {
   parsedTransactions: SignatureWithTransaction[];
@@ -37,10 +41,31 @@ const TransactionTable = ({ parsedTransactions }: Props) => {
                   </div>
                 </div>
                 <div>
-                  <div>Sig:</div>
+                  <div>Signature:</div>
                   <div>
                     <ByteString input={o.signature} />
                   </div>
+                </div>
+                {o.transaction.meta?.fee && (
+                  <div>
+                    <div>Fee:</div>
+                    <div>{nf.format(o.transaction.meta?.fee)}</div>
+                  </div>
+                )}
+                <div>
+                  <Button
+                    onClick={() =>
+                      alert(
+                        JSON.stringify(
+                          o.transaction.meta?.logMessages,
+                          null,
+                          2,
+                        ),
+                      )
+                    }
+                  >
+                    logMessages
+                  </Button>
                 </div>
                 {o.err && (
                   <div>
@@ -57,12 +82,11 @@ const TransactionTable = ({ parsedTransactions }: Props) => {
               </td>
               <td>
                 <div className="flex flex-col gap-2">
-                  <TransactionMetaTable
-                    accounts={o.transaction.transaction.message.accountKeys.map(
-                      (o) => o.pubkey,
-                    )}
+                  <Accounts
+                    accounts={o.transaction.transaction.message.accountKeys}
                     meta={o.transaction.meta}
                   />
+                  <TransactionMetaTable meta={o.transaction.meta} />
                   <Transaction transaction={o.transaction.transaction} />
                   <div>{o.transaction.version}</div>
                 </div>
