@@ -24,19 +24,23 @@ export const Demo: FC = () => {
     useState<SignatureWithTransaction[]>();
 
   const getBalance = async () => {
-    if (!publicKey) return;
-    const balance = await connection.getBalance(publicKey);
+    const balance = publicKey ? await connection.getBalance(publicKey) : 0;
     setBalance(balance);
   };
 
   const getAccountInfo = async () => {
-    if (!publicKey) return;
-    const signatures = await connection.getSignaturesForAddress(publicKey);
+    const signatures = publicKey
+      ? await connection.getSignaturesForAddress(publicKey)
+      : [];
     setSignatures(signatures);
   };
 
   const getParsedTransactions = async () => {
-    if (!publicKey || !signatures) return;
+    if (!publicKey || !signatures) {
+      setParsedTransactions([]);
+      return;
+    }
+
     const parsedTransactions = await connection.getParsedTransactions(
       signatures.map((o) => o.signature),
     );
@@ -54,13 +58,11 @@ export const Demo: FC = () => {
   }, 30_000);
 
   useEffect(() => {
-    if (!publicKey) return;
     getBalance();
     getAccountInfo();
   }, [publicKey]);
 
   useEffect(() => {
-    if (!publicKey) return;
     getParsedTransactions();
   }, [signatures]);
 
@@ -75,6 +77,7 @@ export const Demo: FC = () => {
       <WalletMultiButton />
       <WalletDisconnectButton />
       <Button
+        className="wallet-adapter-button wallet-adapter-button-trigger"
         disabled={!publicKey}
         onClick={() =>
           handleSendToRandomAddress(connection, publicKey, sendTransaction)
@@ -82,10 +85,19 @@ export const Demo: FC = () => {
       >
         Send SOL to a random address!
       </Button>
-      <Button disabled={!publicKey} onClick={handleRequestAirdrop}>
+      <Button
+        className="wallet-adapter-button wallet-adapter-button-trigger"
+        disabled={!publicKey}
+        onClick={handleRequestAirdrop}
+      >
         Request Airdrop
       </Button>
-      <div>Balance: {toSol(balance)} Sol</div>
+      <div className="bg-sky-800 p-4 font-bold">
+        PK: {publicKey?.toBase58()}
+      </div>
+      <div className="bg-sky-800 p-4 font-bold">
+        Balance: {toSol(balance)} Sol
+      </div>
 
       {parsedTransactions && (
         <TransactionHistory transactions={parsedTransactions} />
