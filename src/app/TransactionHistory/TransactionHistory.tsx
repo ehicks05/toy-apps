@@ -1,5 +1,5 @@
 import { ByteString } from '../../core-components';
-import { SignatureWithTransaction } from '../types';
+import { SignatureWithTransaction } from '../../types/types';
 import { blockTimeToISO, nf } from '../utils';
 import {
   Accounts,
@@ -28,7 +28,7 @@ const TransactionTable = ({ parsedTransactions }: Props) => {
 
           return (
             <div className="flex gap-2" key={o.signature}>
-              <td className="flex flex-col justify-items-start gap-2 bg-sky-800 p-2">
+              <div className="flex flex-col justify-items-start gap-2 bg-sky-800 p-2">
                 <div>
                   <div>
                     <div>{blockTimeToISO(o.blockTime || 0).slice(0, 10)}</div>
@@ -88,8 +88,8 @@ const TransactionTable = ({ parsedTransactions }: Props) => {
                     <div>{o.memo}</div>
                   </div>
                 )}
-              </td>
-              <td>
+              </div>
+              <div>
                 <div className="flex flex-col gap-2">
                   <Accounts accounts={message.accountKeys} meta={meta} />
                   <Instructions instructions={message.instructions} />
@@ -98,7 +98,7 @@ const TransactionTable = ({ parsedTransactions }: Props) => {
                   />
                   <TransactionMetaTable meta={meta} />
                 </div>
-              </td>
+              </div>
             </div>
           );
         })}

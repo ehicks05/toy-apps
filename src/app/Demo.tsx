@@ -8,9 +8,12 @@ import React, { FC, useEffect, useState } from 'react';
 import { Button } from '../core-components';
 import { useIntervalEffect } from '@react-hookz/web';
 import { toSol } from './utils';
-import { SignatureWithTransaction } from './types';
+import { SignatureWithTransaction } from '../types/types';
 import TransactionHistory from './TransactionHistory/TransactionHistory';
-import { handleSendToRandomAddress, requestAirdrop } from './solana-api';
+import {
+  handleSendToRandomAddress,
+  requestAirdrop,
+} from '../services/solana-web3-api';
 
 export const Demo: FC = () => {
   const { connection } = useConnection();

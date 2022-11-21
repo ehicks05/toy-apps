@@ -5,7 +5,7 @@ import { BrowserRouter } from 'react-router-dom';
 import { QueryParamProvider } from 'use-query-params';
 import { ReactRouter6Adapter } from 'use-query-params/adapters/react-router-6';
 import App from './App';
-import { Wallet } from './components/Wallet';
+import { Wallet as WalletProvider } from './components';
 import './index.css';
 
 const queryClient = new QueryClient({
@@ -20,9 +20,9 @@ createRoot(document.getElementById('root')!).render(
         options={{ removeDefaultsFromUrl: true }}
       >
         <QueryClientProvider client={queryClient}>
-          <Wallet>
+          <WalletProvider>
             <App />
-          </Wallet>
+          </WalletProvider>
         </QueryClientProvider>
       </QueryParamProvider>
     </BrowserRouter>

@@ -13,7 +13,7 @@ import { clusterApiUrl } from '@solana/web3.js';
 
 import('@solana/wallet-adapter-react-ui/styles.css');
 
-export const Wallet = ({ children }: { children: React.ReactNode }) => {
+const Wallet = ({ children }: { children: React.ReactNode }) => {
   const network = WalletAdapterNetwork.Devnet;
   const endpoint = useMemo(() => clusterApiUrl(network), [network]);
 
@@ -33,3 +33,5 @@ export const Wallet = ({ children }: { children: React.ReactNode }) => {
     </ConnectionProvider>
   );
 };
+
+export default Wallet;
