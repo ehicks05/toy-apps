@@ -45,7 +45,7 @@ interface InstructionsTableProps {
 const Instructions = ({ instructions }: InstructionsTableProps) => {
   const isAllParsed = instructions.every((o) => 'program' in o);
   return (
-    <table cellPadding={8} className="bg-sky-800">
+    <table cellPadding={8} className="bg-sky-900">
       <thead>
         <tr>
           <th colSpan={5}>Instructions</th>

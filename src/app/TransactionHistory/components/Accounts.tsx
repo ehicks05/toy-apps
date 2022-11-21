@@ -65,7 +65,7 @@ const Accounts = ({ accounts, meta }: AccountsProps) => {
   ].some((o) => o.uiTokenAmount);
 
   return (
-    <table cellPadding={8} className="bg-sky-800">
+    <table cellPadding={8} className="bg-sky-900">
       <thead>
         <tr>
           <th colSpan={10}>Accounts</th>

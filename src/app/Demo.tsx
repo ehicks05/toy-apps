@@ -82,11 +82,13 @@ export const Demo: FC = () => {
       >
         Send SOL to a random address!
       </Button>
-      <Button onClick={handleRequestAirdrop}>Request Airdrop</Button>
-      <Button disabled>Balance: {toSol(balance)} Sol</Button>
+      <Button disabled={!publicKey} onClick={handleRequestAirdrop}>
+        Request Airdrop
+      </Button>
+      <div>Balance: {toSol(balance)} Sol</div>
 
       {parsedTransactions && (
-        <TransactionHistory parsedTransactions={parsedTransactions} />
+        <TransactionHistory transactions={parsedTransactions} />
       )}
     </div>
   );
