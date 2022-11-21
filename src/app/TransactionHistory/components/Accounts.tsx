@@ -7,9 +7,10 @@ import {
   TbPencil,
   TbPencilOff,
 } from 'react-icons/tb';
-import { ByteString } from './ByteString';
+import { ByteString } from '../../../core-components';
 
 const nf = Intl.NumberFormat('en-US', { notation: 'scientific' });
+const ICON_SIZE = 28;
 
 interface AccountsProps {
   accounts: ParsedMessageAccount[];
@@ -19,23 +20,39 @@ interface AccountsProps {
 const Source = ({ source }: { source?: string }) => {
   if (!source) return null;
   return source === 'transaction' ? (
-    <TbArrowsLeftRight className="text-white" size={32} title={source} />
+    <TbArrowsLeftRight className="text-white" size={ICON_SIZE} title={source} />
   ) : (
-    <TbTable className="text-white" size={32} title={source} />
+    <TbTable className="text-white" size={ICON_SIZE} title={source} />
   );
 };
 const Signer = ({ signer }: { signer: boolean }) => {
   return signer ? (
-    <TbSignature className="text-green-500" size={32} title="signer: true" />
+    <TbSignature
+      className="text-green-500"
+      size={ICON_SIZE}
+      title="signer: true"
+    />
   ) : (
-    <TbSignatureOff className="text-gray-500" size={32} title="signer: false" />
+    <TbSignatureOff
+      className="text-gray-500"
+      size={ICON_SIZE}
+      title="signer: false"
+    />
   );
 };
 const Writable = ({ writable }: { writable: boolean }) => {
   return writable ? (
-    <TbPencil className="text-green-500" size={32} title="writable: true" />
+    <TbPencil
+      className="text-green-500"
+      size={ICON_SIZE}
+      title="writable: true"
+    />
   ) : (
-    <TbPencilOff className="text-gray-500" size={32} title="writable: false" />
+    <TbPencilOff
+      className="text-gray-500"
+      size={ICON_SIZE}
+      title="writable: false"
+    />
   );
 };
 
@@ -48,7 +65,7 @@ const Accounts = ({ accounts, meta }: AccountsProps) => {
   ].some((o) => o.uiTokenAmount);
 
   return (
-    <table cellPadding={8} className="bg-sky-900">
+    <table cellPadding={8} className="bg-sky-800">
       <thead>
         <tr>
           <th colSpan={10}>Accounts</th>

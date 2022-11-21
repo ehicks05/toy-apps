@@ -2,8 +2,7 @@ import {
   ParsedInstruction,
   PartiallyDecodedInstruction,
 } from '@solana/web3.js';
-import { ByteString } from './ByteString';
-import JsonTable from './JsonTable';
+import { ByteString, JsonTable } from '../../../core-components';
 
 interface InstructionProps {
   instruction: ParsedInstruction | PartiallyDecodedInstruction;
@@ -46,7 +45,7 @@ interface InstructionsTableProps {
 const Instructions = ({ instructions }: InstructionsTableProps) => {
   const isAllParsed = instructions.every((o) => 'program' in o);
   return (
-    <table cellPadding={16} className="bg-sky-900">
+    <table cellPadding={8} className="bg-sky-800">
       <thead>
         <tr>
           <th colSpan={5}>Instructions</th>

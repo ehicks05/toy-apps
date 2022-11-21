@@ -9,7 +9,7 @@ import { Button } from '../core-components';
 import { useIntervalEffect } from '@react-hookz/web';
 import { toSol } from './utils';
 import { SignatureWithTransaction } from './types';
-import TransactionTable from './TransactionTable';
+import TransactionHistory from './TransactionHistory/TransactionHistory';
 import { handleSendToRandomAddress, requestAirdrop } from './solana-api';
 
 export const Demo: FC = () => {
@@ -83,7 +83,7 @@ export const Demo: FC = () => {
       <Button disabled>Balance: {toSol(balance)} Sol</Button>
 
       {parsedTransactions && (
-        <TransactionTable parsedTransactions={parsedTransactions} />
+        <TransactionHistory parsedTransactions={parsedTransactions} />
       )}
     </div>
   );

@@ -1,8 +1,8 @@
 import { inRange } from 'lodash';
-import { ByteString } from './ByteString';
+import { ByteString } from './';
 
 const JsonTable = ({ rows }: { rows: any[] }) => {
-  if (rows.length === 0) return <table></table>;
+  if (rows.length === 0) return null;
 
   const keys = Object.keys(rows[0]);
   const header = keys.map((o) => <th key={o}>{o}</th>);
@@ -50,7 +50,7 @@ const JsonTable = ({ rows }: { rows: any[] }) => {
   ));
 
   return (
-    <table cellPadding={8} className="border border-white text-xs">
+    <table cellPadding={8} className="border border-white text-sm">
       <thead>
         <tr>{header}</tr>
       </thead>
