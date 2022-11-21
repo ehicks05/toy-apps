@@ -28,7 +28,7 @@ export const Demo: FC = () => {
     setBalance(balance);
   };
 
-  const getAccountInfo = async () => {
+  const getSignatures = async () => {
     const signatures = publicKey
       ? await connection.getSignaturesForAddress(publicKey)
       : [];
@@ -53,13 +53,18 @@ export const Demo: FC = () => {
   };
 
   useIntervalEffect(() => {
-    getBalance();
-    getParsedTransactions();
+    const doIt = async () => {
+      await getBalance();
+      await getSignatures();
+      await getParsedTransactions();
+    };
+
+    doIt();
   }, 30_000);
 
   useEffect(() => {
     getBalance();
-    getAccountInfo();
+    getSignatures();
   }, [publicKey]);
 
   useEffect(() => {
@@ -69,6 +74,7 @@ export const Demo: FC = () => {
   const handleRequestAirdrop = async () => {
     await requestAirdrop(connection, publicKey);
     await getBalance();
+    await getSignatures();
     await getParsedTransactions();
   };
 
