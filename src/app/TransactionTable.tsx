@@ -57,7 +57,12 @@ const TransactionTable = ({ parsedTransactions }: Props) => {
               </td>
               <td>
                 <div className="flex flex-col gap-2">
-                  <TransactionMetaTable meta={o.transaction.meta} />
+                  <TransactionMetaTable
+                    accounts={o.transaction.transaction.message.accountKeys.map(
+                      (o) => o.pubkey,
+                    )}
+                    meta={o.transaction.meta}
+                  />
                   <Transaction transaction={o.transaction.transaction} />
                   <div>{o.transaction.version}</div>
                 </div>

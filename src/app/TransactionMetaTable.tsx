@@ -52,10 +52,11 @@ const BalancesTable = ({ accounts, balances }: BalancesTableProps) => {
 };
 
 interface Props {
+  accounts: PublicKey[];
   meta: ParsedTransactionMeta | null;
 }
 
-const TransactionMetaTable = ({ meta }: Props) => {
+const TransactionMetaTable = ({ accounts, meta }: Props) => {
   return (
     <table cellPadding={16} className="bg-sky-800">
       <thead>
@@ -86,6 +87,7 @@ const TransactionMetaTable = ({ meta }: Props) => {
             </div>
           </td>
           <td>fee: {meta?.fee}</td>
+          <BalancesTable accounts={accounts} balances={} />
           <td>
             <Button
               onClick={() => alert(JSON.stringify(meta?.logMessages, null, 2))}

@@ -11,7 +11,7 @@ import {
   TbSignature,
   TbSignatureOff,
 } from 'react-icons/tb';
-import { HiOutlineArrowsRightLeft } from 'react-icons/hi2';
+import { HiOutlineArrowsRightLeft, HiTableCells } from 'react-icons/hi2';
 import JsonTable from './JsonTable';
 
 interface InstructionProps {
@@ -85,7 +85,7 @@ interface AccountKeysProps {
 
 const AccountKeysTable = ({ accountKeys }: AccountKeysProps) => {
   return (
-    <table cellPadding={16} className="bg-sky-900">
+    <table cellPadding={8} className="bg-sky-900">
       <thead>
         <tr>
           <th colSpan={5}>Account Keys</th>
@@ -101,7 +101,7 @@ const AccountKeysTable = ({ accountKeys }: AccountKeysProps) => {
               {accountKey.source === 'transaction' ? (
                 <HiOutlineArrowsRightLeft className="text-white" size={26} />
               ) : (
-                accountKey.source
+                <HiTableCells className="text-white" size={26} />
               )}
             </td>
             <td>
