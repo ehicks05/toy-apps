@@ -10,7 +10,7 @@ import {
 import { ByteString } from '../../../core-components';
 
 const nf = Intl.NumberFormat('en-US', { notation: 'scientific' });
-const ICON_SIZE = 28;
+const ICON_SIZE = 24;
 
 interface AccountsProps {
   accounts: ParsedMessageAccount[];
@@ -20,21 +20,25 @@ interface AccountsProps {
 const Source = ({ source }: { source?: string }) => {
   if (!source) return null;
   return source === 'transaction' ? (
-    <TbArrowsLeftRight className="text-white" size={ICON_SIZE} title={source} />
+    <TbArrowsLeftRight
+      className="w-full text-white"
+      size={ICON_SIZE}
+      title={source}
+    />
   ) : (
-    <TbTable className="text-white" size={ICON_SIZE} title={source} />
+    <TbTable className="w-full text-white" size={ICON_SIZE} title={source} />
   );
 };
 const Signer = ({ signer }: { signer: boolean }) => {
   return signer ? (
     <TbSignature
-      className="text-green-500"
+      className="w-full text-green-500"
       size={ICON_SIZE}
       title="signer: true"
     />
   ) : (
     <TbSignatureOff
-      className="text-gray-500"
+      className="w-full text-gray-500"
       size={ICON_SIZE}
       title="signer: false"
     />
@@ -43,13 +47,13 @@ const Signer = ({ signer }: { signer: boolean }) => {
 const Writable = ({ writable }: { writable: boolean }) => {
   return writable ? (
     <TbPencil
-      className="text-green-500"
+      className="w-full text-green-500"
       size={ICON_SIZE}
       title="writable: true"
     />
   ) : (
     <TbPencilOff
-      className="text-gray-500"
+      className="w-full text-gray-500"
       size={ICON_SIZE}
       title="writable: false"
     />
