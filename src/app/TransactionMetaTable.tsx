@@ -1,5 +1,6 @@
 import { ParsedTransactionMeta, PublicKey } from '@solana/web3.js';
 import { Button } from '../core-components';
+import { ByteString } from './ByteString';
 
 type Balances = Pick<
   ParsedTransactionMeta,
@@ -11,40 +12,55 @@ interface BalancesTableProps {
   balances: Balances;
 }
 
-const BalancesTable = ({ accounts, balances }: BalancesTableProps) => {
+const BalancesTable = ({
+  accounts,
+  balances: { preBalances, postBalances, preTokenBalances, postTokenBalances },
+}: BalancesTableProps) => {
+  const hasToken = [
+    ...(preTokenBalances ? preTokenBalances : []),
+    ...(postTokenBalances ? postTokenBalances : []),
+  ].some((o) => o.uiTokenAmount);
   return (
-    <table cellPadding={16} className="bg-sky-800">
+    <table cellPadding={8} className="bg-sky-800">
       <thead>
         <tr>
           <th colSpan={5}>Balances</th>
         </tr>
         <tr>
           <th>Account</th>
-          <th>Pre</th>
-          <th>Post</th>
-          <th>TokenPre</th>
-          <th>TokenPost</th>
+          <th className="text-right">Pre</th>
+          <th className="text-right">Post</th>
+          {hasToken && (
+            <>
+              <th className="text-right">PreToken</th>
+              <th className="text-right">PostToken</th>
+            </>
+          )}
         </tr>
       </thead>
       <tbody>
-        <tr>
-          <td>
-            <div className="flex flex-col gap-2">
-              misc:
-              {balances.preBalances && (
-                <div>computeUnitsConsumed: {meta?.computeUnitsConsumed}</div>
+        {accounts.map((account, i) => {
+          return (
+            <tr key={account.toBase58()}>
+              <td>
+                <ByteString input={account} />
+              </td>
+              <td className="text-right">{preBalances[i]}</td>
+              <td className="text-right">{postBalances[i]}</td>
+
+              {hasToken && (
+                <>
+                  <td className="text-right">
+                    {JSON.stringify(preTokenBalances?.[i], null, 2)}
+                  </td>
+                  <td className="text-right">
+                    {JSON.stringify(postTokenBalances?.[i], null, 2)}
+                  </td>
+                </>
               )}
-              {meta?.loadedAddresses && (
-                <div>loadedAddresses: {meta?.loadedAddresses.toString()}</div>
-              )}
-              {meta?.innerInstructions && (
-                <div>
-                  innerInstructions: {meta?.innerInstructions.toString()}
-                </div>
-              )}
-            </div>
-          </td>
-        </tr>
+            </tr>
+          );
+        })}
       </tbody>
       <tfoot></tfoot>
     </table>
@@ -60,9 +76,7 @@ const TransactionMetaTable = ({ accounts, meta }: Props) => {
   return (
     <table cellPadding={16} className="bg-sky-800">
       <thead>
-        <tr>
-          <th colSpan={5}>Meta</th>
-        </tr>
+        <tr>{/* <th colSpan={5}>Meta</th> */}</tr>
       </thead>
       <tbody>
         <tr>
@@ -87,7 +101,17 @@ const TransactionMetaTable = ({ accounts, meta }: Props) => {
             </div>
           </td>
           <td>fee: {meta?.fee}</td>
-          <BalancesTable accounts={accounts} balances={} />
+          <td>
+            <BalancesTable
+              accounts={accounts}
+              balances={{
+                postBalances: meta?.postBalances || [],
+                postTokenBalances: meta?.postTokenBalances,
+                preBalances: meta?.preBalances || [],
+                preTokenBalances: meta?.preTokenBalances,
+              }}
+            />
+          </td>
           <td>
             <Button
               onClick={() => alert(JSON.stringify(meta?.logMessages, null, 2))}

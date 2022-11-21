@@ -45,7 +45,10 @@ export const Demo: FC = () => {
     );
   };
 
-  useIntervalEffect(() => getBalance(), 30_000);
+  useIntervalEffect(() => {
+    getBalance();
+    getParsedTransactions();
+  }, 30_000);
 
   useEffect(() => {
     if (!publicKey) return;
@@ -57,6 +60,12 @@ export const Demo: FC = () => {
     if (!publicKey) return;
     getParsedTransactions();
   }, [signatures]);
+
+  const handleRequestAirdrop = async () => {
+    await requestAirdrop(connection, publicKey);
+    await getBalance();
+    await getParsedTransactions();
+  };
 
   return (
     <div className="m-auto flex max-w-screen-xl flex-col gap-4">
@@ -70,9 +79,7 @@ export const Demo: FC = () => {
       >
         Send SOL to a random address!
       </Button>
-      <Button onClick={() => requestAirdrop(connection, publicKey)}>
-        Request Airdrop
-      </Button>
+      <Button onClick={handleRequestAirdrop}>Request Airdrop</Button>
       <Button disabled>Balance: {toSol(balance)} Sol</Button>
 
       {parsedTransactions && (

@@ -48,7 +48,11 @@ export const requestAirdrop = async (
 ) => {
   if (!publicKey) return;
   try {
-    await connection.requestAirdrop(publicKey, LAMPORTS_PER_SOL);
+    const signature = await connection.requestAirdrop(
+      publicKey,
+      LAMPORTS_PER_SOL,
+    );
+    await connection.confirmTransaction(signature);
   } catch (e) {
     console.log(e);
   }

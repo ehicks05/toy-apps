@@ -6,12 +6,13 @@ import {
 } from '@solana/web3.js';
 import { ByteString } from './ByteString';
 import {
+  TbArrowsLeftRight,
   TbPencil,
   TbPencilOff,
   TbSignature,
   TbSignatureOff,
+  TbTable,
 } from 'react-icons/tb';
-import { HiOutlineArrowsRightLeft, HiTableCells } from 'react-icons/hi2';
 import JsonTable from './JsonTable';
 
 interface InstructionProps {
@@ -99,23 +100,47 @@ const AccountKeysTable = ({ accountKeys }: AccountKeysProps) => {
             </td>
             <td>
               {accountKey.source === 'transaction' ? (
-                <HiOutlineArrowsRightLeft className="text-white" size={26} />
+                <TbArrowsLeftRight
+                  className="text-white"
+                  size={32}
+                  title={accountKey.source}
+                />
               ) : (
-                <HiTableCells className="text-white" size={26} />
+                <TbTable
+                  className="text-white"
+                  size={32}
+                  title={accountKey.source}
+                />
               )}
             </td>
             <td>
               {accountKey.signer ? (
-                <TbSignature className="text-green-500" size={32} />
+                <TbSignature
+                  className="text-green-500"
+                  size={32}
+                  title="signer: true"
+                />
               ) : (
-                <TbSignatureOff className="text-gray-500" size={32} />
+                <TbSignatureOff
+                  className="text-gray-500"
+                  size={32}
+                  title="signer: false"
+                />
               )}
             </td>
             <td>
               {accountKey.writable ? (
-                <TbPencil className="text-green-500" size={32} />
+                <TbPencil
+                  className="text-green-500"
+                  size={32}
+                  title="writable: true"
+                />
               ) : (
-                <TbPencilOff className="text-gray-500" size={32} />
+                <TbPencilOff
+                  className="text-gray-500"
+                  size={32}
+                  title="writable: false"
+                />
               )}
             </td>
           </tr>
