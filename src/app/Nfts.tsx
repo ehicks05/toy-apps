@@ -1,41 +1,49 @@
-// import React, { useEffect, useState } from 'react';
-// import { useConnection } from '@solana/wallet-adapter-react';
-// import {
-//   JsonMetadata,
-//   Metadata,
-//   Metaplex,
-//   Nft,
-//   Sft,
-// } from '@metaplex-foundation/js';
-// import { PublicKey } from '@solana/web3.js';
+import React, { useEffect, useState } from 'react';
+import { useConnection } from '@solana/wallet-adapter-react';
+import { AccountInfo, ParsedAccountData, PublicKey } from '@solana/web3.js';
+import { TOKEN_PROGRAM_ID } from '@solana/spl-token';
 
-// interface Props {
-//   publicKey: PublicKey;
-// }
+interface Props {
+  publicKey: PublicKey;
+}
 
-// const Nfts = ({ publicKey }: Props) => {
-//   const { connection } = useConnection();
+const Nfts = ({ publicKey }: Props) => {
+  const { connection } = useConnection();
 
-//   const metaplex = new Metaplex(connection);
+  const [tokenAccounts, setTokenAccounts] = useState<
+    {
+      account: AccountInfo<Buffer | ParsedAccountData>;
+      pubkey: PublicKey;
+    }[]
+  >();
 
-//   const [nfts, setNfts] = useState<
-//     (Metadata<JsonMetadata<string>> | Nft | Sft)[] | undefined
-//   >();
+  useEffect(() => {
+    const doIt = async () => {
+      const tokenAccounts = await connection.getParsedProgramAccounts(
+        TOKEN_PROGRAM_ID,
+        {
+          filters: [
+            {
+              memcmp: {
+                bytes: publicKey.toBase58(),
+                offset: 32,
+              },
+            },
+          ],
+        },
+      );
+      setTokenAccounts(tokenAccounts);
+    };
 
-//   useEffect(() => {
-//     const doIt = async () => {
-//       const nfts = await metaplex.nfts().findAllByOwner({ owner: publicKey! });
-//       setNfts(nfts);
-//     };
+    if (publicKey) doIt();
+  }, []);
 
-//     if (publicKey) doIt();
-//   }, []);
+  return (
+    <div className="flex flex-col gap-2 bg-sky-800 p-2">
+      SPL TOKEN STUFF
+      <pre>{JSON.stringify(tokenAccounts, null, 2)}</pre>
+    </div>
+  );
+};
 
-//   return (
-//     <div>
-//       <pre>{JSON.stringify(nfts, null, 2)}</pre>
-//     </div>
-//   );
-// };
-
-// export default Nfts;
+export default Nfts;

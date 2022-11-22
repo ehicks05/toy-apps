@@ -14,6 +14,7 @@ import {
   handleSendToRandomAddress,
   requestAirdrop,
 } from '../services/solana-web3-api';
+import Nfts from './Nfts';
 
 export const Demo: FC = () => {
   const { connection } = useConnection();
@@ -104,6 +105,8 @@ export const Demo: FC = () => {
       <div className="bg-sky-800 p-4 font-bold">
         Balance: {toSol(balance)} Sol
       </div>
+
+      {publicKey && <Nfts publicKey={publicKey} />}
 
       {parsedTransactions && (
         <TransactionHistory transactions={parsedTransactions} />
