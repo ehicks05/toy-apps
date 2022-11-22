@@ -7,6 +7,7 @@ import {
   TbPencil,
   TbPencilOff,
 } from 'react-icons/tb';
+import { MdChangeHistory } from 'react-icons/md';
 import { ByteString } from '../../../core-components';
 
 const nf = Intl.NumberFormat('en-US', { notation: 'scientific' });
@@ -77,6 +78,9 @@ const Accounts = ({ accounts, meta }: AccountsProps) => {
         <tr>
           <th>Account</th>
           <th className="text-right">Pre</th>
+          <th>
+            <MdChangeHistory className="w-full" size={ICON_SIZE} />
+          </th>
           <th className="text-right">Post</th>
           {hasTokenBalances && (
             <>
@@ -97,6 +101,9 @@ const Accounts = ({ accounts, meta }: AccountsProps) => {
             </td>
 
             <td className="text-right">{nf.format(preBalances?.[i] || 0)}</td>
+            <td className="text-right">
+              {nf.format((preBalances?.[i] || 0) - (postBalances?.[i] || 0))}
+            </td>
             <td className="text-right">{nf.format(postBalances?.[i] || 0)}</td>
 
             {hasTokenBalances && (
