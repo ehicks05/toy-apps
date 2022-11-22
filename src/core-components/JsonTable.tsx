@@ -1,50 +1,58 @@
-import { inRange } from 'lodash';
+import { PublicKey } from '@solana/web3.js';
 import { ByteString } from './';
+import { isSolId } from './ByteString';
 
-const JsonTable = ({ rows }: { rows: any[] }) => {
-  if (rows.length === 0) return null;
+const determineType = (value: unknown) => {
+  if (!value) return 'falsy';
+
+  const isByteString =
+    (typeof value === 'object' && 'toBase58' in value) ||
+    (typeof value === 'string' && isSolId(value));
+
+  if (Array.isArray(value)) {
+    return 'array';
+  } else if (isByteString) {
+    return 'byteString';
+  } else if (['string', 'number', 'boolean'].includes(typeof value)) {
+    return 'scalar';
+  } else if (typeof value === 'object') {
+    return 'object';
+  }
+};
+
+const JsonTable = ({ rows }: { rows: unknown[] }) => {
+  if (!Array.isArray(rows) || rows.length === 0) return null;
 
   const keys = Object.keys(rows[0]);
   const header = keys.map((o) => <th key={o}>{o}</th>);
 
   const body = rows.map((row) => (
     <tr key={Math.random()}>
-      {Object.values(row).map((value) => {
-        if (Array.isArray(value))
-          return (
-            <td key={Math.random()}>
-              {typeof value}
-              <JsonTable rows={value} />
-            </td>
-          );
-
-        const isByteString =
-          (typeof value === 'object' && 'toBase58' in value!) ||
-          (typeof value === 'string' &&
-            inRange(value.length, 32, 45) &&
-            !value.includes(' '));
-
-        if (isByteString)
-          return (
-            <td key={Math.random()}>
-              <ByteString input={value} />
-            </td>
-          );
-
-        if (['string', 'number', 'boolean'].includes(typeof value))
-          return <td key={Math.random()}>{value as string}</td>;
-
+      {Object.values(row).map((value, i) => {
         if (!value) return <td>??</td>;
 
-        if (typeof value === 'object') {
-          return (
-            <td key={Math.random()}>
-              <JsonTable rows={[value]} />
-            </td>
-          );
+        const type = determineType(value);
+        let cellContents;
+
+        switch (type) {
+          case 'array':
+            cellContents = <JsonTable rows={value as []} />;
+            break;
+          case 'byteString':
+            cellContents = <ByteString input={value as string | PublicKey} />;
+            break;
+          case 'scalar':
+            cellContents = value as string;
+            break;
+          case 'object':
+            cellContents = <JsonTable rows={[value]} />;
+            break;
+          case 'falsy':
+          default:
+            cellContents = value as string;
         }
 
-        return <span key={Math.random()}>uh oh</span>;
+        return <td key={i}>{cellContents}</td>;
       })}
     </tr>
   ));
