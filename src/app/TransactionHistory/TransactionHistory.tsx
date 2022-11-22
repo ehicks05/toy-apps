@@ -25,7 +25,10 @@ const TransactionTable = ({ transactions }: Props) => {
           } = transaction.transaction;
 
           return (
-            <div className="flex gap-2" key={transaction.signature}>
+            <div
+              className="flex flex-col gap-2 sm:flex-row"
+              key={transaction.signature}
+            >
               <GeneralInfo transaction={transaction} />
               <div>
                 <div className="flex flex-col gap-2">

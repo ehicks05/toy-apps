@@ -2,37 +2,55 @@ import {
   ParsedInstruction,
   PartiallyDecodedInstruction,
 } from '@solana/web3.js';
+import { TbTable, TbTableOff } from 'react-icons/tb';
+import { useToggle } from 'react-use';
 import { ByteString, JsonTable } from '../../../core-components';
+import { shortenRecur } from '../../../core-components/ByteString';
 
 interface InstructionProps {
   instruction: ParsedInstruction | PartiallyDecodedInstruction;
 }
 
 const Instruction = ({ instruction }: InstructionProps) => {
+  const [isTableView, toggleIsTableView] = useToggle(false);
+  const icon = isTableView ? (
+    <TbTable className="text-green-500" onClick={toggleIsTableView} size={24} />
+  ) : (
+    <TbTableOff onClick={toggleIsTableView} size={24} />
+  );
   const isParsed = 'program' in instruction;
   return (
     <>
-      <td>
+      <div>
+        Program: <ByteString input={instruction.programId} /> [
+        {isParsed && instruction.program}]
+      </div>
+      {isParsed && (
         <div>
-          <ByteString input={instruction.programId} />
+          <div className="flex gap-2">
+            Parsed Ix:
+            {icon}
+          </div>
+          <pre>
+            {isTableView && <JsonTable rows={[instruction.parsed]} />}
+            {!isTableView &&
+              JSON.stringify(shortenRecur(instruction.parsed), null, 2)}
+          </pre>
         </div>
-        <div>{isParsed && instruction.program}</div>
-      </td>
-      <td>
-        <pre>{isParsed && <JsonTable rows={[instruction.parsed]} />}</pre>
-      </td>
-
+      )}
       {!isParsed && (
-        <td>
+        <div>
+          Accounts:
           {instruction.accounts.map((account) => (
             <ByteString input={account} key={account.toBase58()} />
           ))}
-        </td>
+        </div>
       )}
       {!isParsed && (
-        <td>
+        <div>
+          Data:
           <pre>{JSON.stringify(instruction.data, null, 2)}</pre>
-        </td>
+        </div>
       )}
     </>
   );
@@ -43,29 +61,17 @@ interface InstructionsTableProps {
 }
 
 const Instructions = ({ instructions }: InstructionsTableProps) => {
-  const isAllParsed = instructions.every((o) => 'program' in o);
   return (
-    <table cellPadding={8} className="bg-sky-900">
-      <thead>
-        <tr>
-          <th colSpan={5}>Instructions</th>
-        </tr>
-        <tr>
-          <th>Program</th>
-          <th>Parsed</th>
-          {!isAllParsed && <th>accounts</th>}
-          {!isAllParsed && <th>data</th>}
-        </tr>
-      </thead>
-      <tbody>
-        {instructions.map((instruction) => (
-          <tr key={Math.random()}>
+    <div className="bg-sky-900 p-2 text-sm sm:text-base">
+      <div className="pb-4 font-bold">Instructions</div>
+      <div>
+        {instructions.map((instruction, i) => (
+          <div key={i}>
             <Instruction instruction={instruction} />
-          </tr>
+          </div>
         ))}
-      </tbody>
-      <tfoot></tfoot>
-    </table>
+      </div>
+    </div>
   );
 };
 

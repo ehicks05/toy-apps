@@ -77,11 +77,11 @@ export const Demo: FC = () => {
 
   return (
     <div className="m-auto flex max-w-screen-xl flex-col gap-4">
-      <div className="flex gap-2">
+      <div className="flex flex-wrap gap-2">
         <WalletMultiButton />
         <WalletDisconnectButton />
       </div>
-      <div className="flex gap-2">
+      <div className="flex flex-wrap gap-2">
         <Button
           className="wallet-adapter-button wallet-adapter-button-trigger w-full whitespace-pre"
           disabled={!publicKey}
@@ -109,14 +109,14 @@ export const Demo: FC = () => {
           Request Airdrop
         </Button>
       </div>
-      <div className="bg-sky-800 p-4 font-bold">
+      {/* <div className="bg-sky-800 p-4 font-bold">
         PK: {publicKey?.toBase58()}
-      </div>
+      </div> */}
       <div className="bg-sky-800 p-4 font-bold">
         Balance: {toSol(balance)} Sol
       </div>
 
-      {publicKey && <Nfts publicKey={publicKey} />}
+      {/* {publicKey && <Nfts publicKey={publicKey} />} */}
 
       {parsedTransactions && (
         <TransactionHistory transactions={parsedTransactions} />

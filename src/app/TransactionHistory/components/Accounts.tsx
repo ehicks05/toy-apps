@@ -10,7 +10,10 @@ import {
 import { MdChangeHistory } from 'react-icons/md';
 import { ByteString } from '../../../core-components';
 
-const nf = Intl.NumberFormat('en-US', { notation: 'scientific' });
+const nf = Intl.NumberFormat('en-US', {
+  maximumFractionDigits: 2,
+  notation: 'scientific',
+});
 const ICON_SIZE = 24;
 
 interface AccountsProps {
@@ -70,7 +73,7 @@ const Accounts = ({ accounts, meta }: AccountsProps) => {
   ].some((o) => o.uiTokenAmount);
 
   return (
-    <table cellPadding={8} className="bg-sky-900">
+    <table cellPadding={4} className="bg-sky-900 text-sm sm:text-base">
       <thead>
         <tr>
           <th colSpan={10}>Accounts</th>
@@ -78,8 +81,10 @@ const Accounts = ({ accounts, meta }: AccountsProps) => {
         <tr>
           <th>Account</th>
           <th className="text-right">Pre</th>
-          <th>
-            <MdChangeHistory className="w-full" size={ICON_SIZE} />
+          <th className="hidden sm:table-cell">
+            <div className="flex w-full justify-end">
+              <MdChangeHistory size={ICON_SIZE} />
+            </div>
           </th>
           <th className="text-right">Post</th>
           {hasTokenBalances && (
@@ -88,9 +93,9 @@ const Accounts = ({ accounts, meta }: AccountsProps) => {
               <th className="text-right">PostToken</th>
             </>
           )}
-          <th>Source</th>
-          <th>Signer</th>
-          <th>Writable</th>
+          <th className="hidden sm:table-cell">Source</th>
+          <th className="hidden sm:table-cell">Signer</th>
+          <th className="hidden sm:table-cell">Writable</th>
         </tr>
       </thead>
       <tbody>
@@ -101,7 +106,7 @@ const Accounts = ({ accounts, meta }: AccountsProps) => {
             </td>
 
             <td className="text-right">{nf.format(preBalances?.[i] || 0)}</td>
-            <td className="text-right">
+            <td className="hidden text-right sm:table-cell">
               {nf.format((preBalances?.[i] || 0) - (postBalances?.[i] || 0))}
             </td>
             <td className="text-right">{nf.format(postBalances?.[i] || 0)}</td>
