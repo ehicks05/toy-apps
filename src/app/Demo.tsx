@@ -6,7 +6,6 @@ import {
 import { ConfirmedSignatureInfo } from '@solana/web3.js';
 import React, { FC, useEffect, useState } from 'react';
 import { Button } from '../core-components';
-import { toSol } from './utils';
 import { SignatureWithTransaction } from '../types/types';
 import TransactionHistory from './TransactionHistory/TransactionHistory';
 import {
@@ -15,6 +14,7 @@ import {
 } from '../services/solana-web3-api';
 import Nfts from './Nfts';
 import { TbRefresh } from 'react-icons/tb';
+import { toSol } from '../utils/utils';
 
 export const Demo: FC = () => {
   const { connection } = useConnection();
@@ -99,7 +99,7 @@ export const Demo: FC = () => {
             handleSendToRandomAddress(connection, publicKey, sendTransaction)
           }
         >
-          Send SOL to a random address!
+          Send SOL to a rand address
         </Button>
         <Button
           className="wallet-adapter-button wallet-adapter-button-trigger w-full whitespace-pre"
@@ -116,7 +116,7 @@ export const Demo: FC = () => {
         Balance: {toSol(balance)} Sol
       </div>
 
-      {/* {publicKey && <Nfts publicKey={publicKey} />} */}
+      {publicKey && <Nfts publicKey={publicKey} />}
 
       {parsedTransactions && (
         <TransactionHistory transactions={parsedTransactions} />

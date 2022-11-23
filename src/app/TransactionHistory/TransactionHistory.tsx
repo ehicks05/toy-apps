@@ -13,9 +13,11 @@ interface Props {
 
 const TransactionTable = ({ transactions }: Props) => {
   return (
-    <div className="bg-sky-800 p-4">
-      <div className="pb-4 text-center font-bold">Transaction History</div>
-      <div className="flex flex-col gap-4">
+    <div className="bg-sky-800 p-2">
+      <div className="pb-4 text-center text-lg font-bold">
+        Transaction History
+      </div>
+      <div className="flex flex-col gap-8">
         {transactions?.map((transaction) => {
           if (!transaction) return 'missing';
 

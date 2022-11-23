@@ -5,7 +5,7 @@ import {
 import { TbTable, TbTableOff } from 'react-icons/tb';
 import { useToggle } from 'react-use';
 import { ByteString, JsonTable } from '../../../core-components';
-import { shortenRecur } from '../../../core-components/ByteString';
+import { shortenRecur } from '../../../utils/utils';
 
 interface InstructionProps {
   instruction: ParsedInstruction | PartiallyDecodedInstruction;
@@ -34,7 +34,7 @@ const Instruction = ({ instruction }: InstructionProps) => {
           <pre>
             {isTableView && <JsonTable rows={[instruction.parsed]} />}
             {!isTableView &&
-              JSON.stringify(shortenRecur(instruction.parsed), null, 2)}
+              JSON.stringify(shortenRecur(instruction.parsed), null, 1)}
           </pre>
         </div>
       )}

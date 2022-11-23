@@ -3,6 +3,8 @@ import { useConnection } from '@solana/wallet-adapter-react';
 import { AccountInfo, ParsedAccountData, PublicKey } from '@solana/web3.js';
 import { TOKEN_PROGRAM_ID } from '@solana/spl-token';
 
+const TOKEN_ACCOUNT_SIZE = 165;
+
 interface Props {
   publicKey: PublicKey;
 }
@@ -19,18 +21,27 @@ const Nfts = ({ publicKey }: Props) => {
 
   useEffect(() => {
     const doIt = async () => {
+      const filters = {
+        filters: [
+          { dataSize: TOKEN_ACCOUNT_SIZE },
+          {
+            memcmp: {
+              bytes: publicKey.toBase58(),
+              offset: 32,
+            },
+          },
+          // GET A SPECIFIC MINT
+          // {
+          //   memcmp: {
+          //     bytes: MINT_TO_SEARCH, //base58 encoded string
+          //     offset: 0, //number of bytes
+          //   },
+          // },
+        ],
+      };
       const tokenAccounts = await connection.getParsedProgramAccounts(
         TOKEN_PROGRAM_ID,
-        {
-          filters: [
-            {
-              memcmp: {
-                bytes: publicKey.toBase58(),
-                offset: 32,
-              },
-            },
-          ],
-        },
+        filters,
       );
       setTokenAccounts(tokenAccounts);
     };

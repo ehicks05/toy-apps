@@ -18,7 +18,7 @@ const Footer = () => {
       {LINKS.map(({ url, icon: Icon }) => {
         return (
           <Link href={url} key={url}>
-            <Icon className="text-3xl text-green-500 hover:text-green-400" />
+            <Icon className="text-3xl text-amber-500 hover:text-green-400" />
           </Link>
         );
       })}

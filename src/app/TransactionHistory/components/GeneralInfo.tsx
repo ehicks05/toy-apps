@@ -1,7 +1,7 @@
 import { ByteString } from '../../../core-components';
 import { SignatureWithTransaction } from '../../../types/types';
-import { nf } from '../../utils';
 import { format } from 'date-fns';
+import { nf } from '../../../utils/utils';
 
 interface GeneralInfoProps {
   transaction: SignatureWithTransaction;
