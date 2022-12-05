@@ -15,6 +15,7 @@ const Nfts = ({ publicKey }: Props) => {
   const [tokenAccounts, setTokenAccounts] = useState<
     {
       account: AccountInfo<Buffer | ParsedAccountData>;
+      mintInfo?: any;
       pubkey: PublicKey;
     }[]
   >();
@@ -43,7 +44,24 @@ const Nfts = ({ publicKey }: Props) => {
         TOKEN_PROGRAM_ID,
         filters,
       );
-      setTokenAccounts(tokenAccounts);
+
+      const withMint = await Promise.all(
+        tokenAccounts.map(async (tokenAccount) => {
+          if ('parsed' in tokenAccount.account.data) {
+            const mint = tokenAccount.account.data.parsed.info.mint;
+            console.log(mint);
+            if (!mint) return tokenAccount;
+            const parsedMint = await connection.getParsedAccountInfo(
+              new PublicKey(mint),
+            );
+            return { ...tokenAccount, mintInfo: parsedMint };
+          } else {
+            return tokenAccount;
+          }
+        }),
+      );
+
+      setTokenAccounts(withMint);
     };
 
     if (publicKey) doIt();
