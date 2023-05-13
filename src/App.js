@@ -26,13 +26,12 @@ function App() {
     <div>
       <div className="w-full p-4 bg-neutral-700 text-neutral-200">
         On March 10, 2023, the Johns Hopkins Coronavirus Resource Center ceased
-        its collecting and reporting of global COVID-19 data. For more info, see
-        here:{" "}
+        its collecting and reporting of global COVID-19 data. For more info, see{" "}
         <a
           className="underline"
           href="https://github.com/CSSEGISandData/COVID-19"
         >
-          https://github.com/CSSEGISandData/COVID-19
+          here
         </a>
         .
       </div>
