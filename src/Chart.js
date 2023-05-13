@@ -29,6 +29,7 @@ const DATA_SCALE_TO_LABEL = { auto: "linear" };
 
 const Chart = ({ data, counties, UIDs = [] }) => {
   const { height } = useWindowSize();
+  console.log({counties})
 
   const [chartScale, setChartScale] = useLocalStorageValue(
     "chartScale",
