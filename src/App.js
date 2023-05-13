@@ -26,7 +26,7 @@ function App() {
 
   return (
     <div className="flex flex-col min-h-screen w-full">
-      <div className="w-full p-4 bg-neutral-700 text-neutral-200">
+      <div className="w-full p-4 text-center bg-neutral-700 text-neutral-200">
         On March 10, 2023, the Johns Hopkins Coronavirus Resource Center ceased
         its collecting and reporting of global COVID-19 data. For more info, see{" "}
         <a
