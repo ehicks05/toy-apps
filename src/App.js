@@ -23,7 +23,7 @@ function App() {
   }, [rawData, UIDs]);
 
   return (
-    <div>
+    <div className="flex flex-col min-h-screen w-full">
       <div className="w-full p-4 bg-neutral-700 text-neutral-200">
         On March 10, 2023, the Johns Hopkins Coronavirus Resource Center ceased
         its collecting and reporting of global COVID-19 data. For more info, see{" "}
@@ -43,20 +43,21 @@ function App() {
       )}
 
       {rawData?.mergedData?.length > 0 && Object.entries(data) !== 0 && (
-        <div className="max-w-screen-xl m-auto flex flex-col gap-4 p-4">
+        <div className="max-w-screen-xl w-full m-auto flex flex-col gap-4 p-4">
           <Chart data={data} counties={rawData.counties} UIDs={UIDs} />
           <CountySelector counties={rawData.counties} />
           <Table data={data} counties={rawData.counties} UIDs={UIDs} />
-          <footer className="p-1">
-            <a
-              className="text-blue-500 hover:underline"
-              href="https://github.com/CSSEGISandData/COVID-19"
-            >
-              JHU CSSE COVID-19 Data
-            </a>
-          </footer>
         </div>
       )}
+      <div className="flex-grow"></div>
+      <footer className="p-1">
+        <a
+          className="text-blue-500 hover:underline"
+          href="https://github.com/CSSEGISandData/COVID-19"
+        >
+          JHU CSSE COVID-19 Data
+        </a>
+      </footer>
     </div>
   );
 }
