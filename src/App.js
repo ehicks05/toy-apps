@@ -7,6 +7,8 @@ import Table from "./Table";
 import Chart from "./Chart";
 import CountySelector from "./CountySelector";
 
+const JHU_REPO = "https://github.com/CSSEGISandData/COVID-19";
+
 function App() {
   const {
     isLoading,
@@ -42,19 +44,18 @@ function App() {
         <div>Loading...</div>
       )}
 
-      {rawData?.mergedData?.length > 0 && Object.entries(rawData.counties).length > 0 && Object.entries(data) !== 0 && (
-        <div className="max-w-screen-xl w-full m-auto flex flex-col gap-4 p-4">
-          <Chart data={data} counties={rawData.counties} UIDs={UIDs} />
-          <CountySelector counties={rawData.counties} />
-          <Table data={data} counties={rawData.counties} UIDs={UIDs} />
-        </div>
-      )}
+      {rawData?.mergedData?.length > 0 &&
+        Object.entries(rawData.counties).length > 0 &&
+        Object.entries(data) !== 0 && (
+          <div className="max-w-screen-xl w-full m-auto flex flex-col gap-4 p-4">
+            <Chart data={data} counties={rawData.counties} UIDs={UIDs} />
+            <CountySelector counties={rawData.counties} />
+            <Table data={data} counties={rawData.counties} UIDs={UIDs} />
+          </div>
+        )}
       <div className="flex-grow"></div>
       <footer className="p-1">
-        <a
-          className="text-blue-500 hover:underline"
-          href="https://github.com/CSSEGISandData/COVID-19"
-        >
+        <a className="text-blue-500 hover:underline" href={JHU_REPO}>
           JHU CSSE COVID-19 Data
         </a>
       </footer>
