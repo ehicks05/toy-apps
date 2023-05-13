@@ -93,7 +93,7 @@ const mergeDatasets = (merged, UIDs) => {
 };
 
 const fetchText = async (url) => {
-  return await (await fetch(url)).text();
+  return await (await fetch(url, {headers: {Accept: 'text/plain'}})).text();
 };
 
 const getData = async () => {
