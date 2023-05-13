@@ -42,7 +42,7 @@ function App() {
         <div>Loading...</div>
       )}
 
-      {rawData?.mergedData?.length > 0 && Object.entries(data) !== 0 && (
+      {rawData?.mergedData?.length > 0 && Object.entries(rawData.counties).length > 0 && Object.entries(data) !== 0 && (
         <div className="max-w-screen-xl w-full m-auto flex flex-col gap-4 p-4">
           <Chart data={data} counties={rawData.counties} UIDs={UIDs} />
           <CountySelector counties={rawData.counties} />
