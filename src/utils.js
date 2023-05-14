@@ -2,10 +2,10 @@ import Papa from "papaparse";
 import _ from "lodash";
 import { subDays, format } from "date-fns";
 import { usConfirmedUrl, usDeathsUrl, INFECTION_DURATION } from "./constants";
-import { UsaStates } from 'usa-states'
-import axios from 'axios';
+import { UsaStates } from "usa-states";
+import axios from "axios";
 
-const usaStates = _.keyBy(new UsaStates().states, 'name');
+const usaStates = _.keyBy(new UsaStates().states, "name");
 
 export const getLocationDisplayName = ({ Admin2, Province_State }) => {
   if (!Admin2 && !Province_State) return undefined;
@@ -94,7 +94,11 @@ const mergeDatasets = (merged, UIDs) => {
 };
 
 const fetchText = async (url) => {
-  return (await axios.get(url)).data;
+  return (
+    await axios.get(url, {
+      headers: { Accept: "text/csv", "Accept-Encoding": "identity" },
+    })
+  ).data;
 };
 
 const getData = async () => {
