@@ -2,7 +2,8 @@ import Papa from "papaparse";
 import _ from "lodash";
 import { subDays, format } from "date-fns";
 import { usConfirmedUrl, usDeathsUrl, INFECTION_DURATION } from "./constants";
-import {UsaStates} from 'usa-states'
+import { UsaStates } from 'usa-states'
+import axios from 'axios';
 
 const usaStates = _.keyBy(new UsaStates().states, 'name');
 
@@ -93,7 +94,7 @@ const mergeDatasets = (merged, UIDs) => {
 };
 
 const fetchText = async (url) => {
-  return (await fetch(url)).text();
+  return (await axios.get(url)).data;
 };
 
 const getData = async () => {
