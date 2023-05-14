@@ -4,7 +4,6 @@ import { subDays, format } from "date-fns";
 import { usConfirmedUrl, usDeathsUrl, INFECTION_DURATION } from "./constants";
 import { UsaStates } from "usa-states";
 import axios from "axios";
-import pako from 'pako';
 
 const usaStates = _.keyBy(new UsaStates().states, "name");
 
@@ -101,13 +100,6 @@ const fetchText = async (url) => {
       headers: { Accept: "text/csv", "Accept-Encoding": "identity" },
     })
   ).data;
-
-  try {
-    const inflated = pako.inflate(data);
-    return inflated;
-  } catch (e) {
-    console.log(e);
-  }
 
   return data;
 };
