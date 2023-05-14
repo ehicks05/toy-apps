@@ -37,16 +37,16 @@ function App() {
         </a>
         .
       </div>
+      <div className="w-full p-4 text-center bg-neutral-800 text-neutral-200">
+        If you have issues loading this site in chrome, try firefox.
+      </div>
 
       {isError && <div>Error...</div>}
 
-      {(isLoading || rawData?.mergedData?.length === 0 || !UIDs) && (
-        <div>Loading...</div>
-      )}
+      {isLoading && <div>Loading...</div>}
 
-      {rawData?.mergedData?.length > 0 &&
-        Object.entries(rawData.counties).length > 0 &&
-        Object.entries(data) !== 0 && (
+      {Object.keys(rawData?.counties || {})?.includes("84034019") &&
+        Object.entries(data).length !== 0 && (
           <div className="max-w-screen-xl w-full m-auto flex flex-col gap-4 p-4">
             <Chart data={data} counties={rawData.counties} UIDs={UIDs} />
             <CountySelector counties={rawData.counties} />
