@@ -96,6 +96,7 @@ const mergeDatasets = (merged, UIDs) => {
 const fetchText = async (url) => {
   return (
     await axios.get(url, {
+      decompress: true,
       headers: { Accept: "text/csv", "Accept-Encoding": "identity" },
     })
   ).data;
