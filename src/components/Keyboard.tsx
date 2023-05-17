@@ -47,7 +47,7 @@ const KbKey = ({ kbKey, letterResult, handleKey }: KbKeyProps) => {
       kbKey.toUpperCase()
     );
   const base =
-    'flex items-center justify-center p-3 h-full rounded text-sm font-bold';
+    'flex items-center justify-center p-2 sm:p-3 md:p-4 h-full rounded text-sm font-bold';
   const resultStyle = kbResultMap[letterResult || 'unknown'];
   return (
     <button
