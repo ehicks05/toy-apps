@@ -4,7 +4,7 @@ import _ from 'lodash';
 import { HiChartBar, HiRefresh } from 'react-icons/hi';
 import { getWord, isAllowedGuess } from './api';
 import { DEFAULT_BOARD, Result } from './constants';
-import { Board, Button, Debug, DebugButton, Keyboard } from './components';
+import { Board, Button, Debug, DebugButton, Footer, Keyboard } from './components';
 
 const App = () => {
   const [gameStatus, setGameStatus] = useLocalStorageValue('gameStatus', {
@@ -152,6 +152,7 @@ const App = () => {
       <Debug
         state={{ word, rowIndex, colIndex, boardEffects, gameStatus, board }}
       />
+      <Footer />
     </div>
   );
 };
