@@ -5,7 +5,7 @@ export const DEFAULTS_NJ = {
   long: -74.7,
 } as const;
 export const DEFAULTS = {
-  lat: 44,
+  lat: 38,
   long: -97,
 } as const;
 
