@@ -1,16 +1,11 @@
-import { Disclosure } from '@headlessui/react';
-import {
-  HiOutlineBell,
-  HiOutlineMenu,
-  HiOutlineX,
-  HiPlus,
-} from 'react-icons/hi';
-import { Link, NavLink, useLocation } from 'react-router-dom';
+import { Disclosure } from "@headlessui/react";
+import { HiOutlineBell, HiOutlineMenu, HiOutlineX } from "react-icons/hi";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 const NAV_LINKS = [
-  { name: 'Clock', href: '/clock' },
-  { name: 'Timer', href: '/' },
-  { name: 'Stopwatch', href: '/stopwatch' },
+  { name: "Clock", href: "/clock" },
+  { name: "Timer", href: "/" },
+  { name: "Stopwatch", href: "/stopwatch" },
 ];
 
 const MobileMenuButton = ({ open }: { open: boolean }) => (
@@ -28,11 +23,7 @@ const Logo = () => (
   <div className="flex-shrink-0 flex items-center">
     <Link to="/">
       <img className="inline h-8 w-auto" src="/icon-color.svg" alt="logo" />
-      <img
-        className="hidden lg:inline h-8 w-auto"
-        src="/text.svg"
-        alt="logo"
-      />
+      <img className="hidden sm:inline h-8 w-auto" src="/text.svg" alt="logo" />
     </Link>
   </div>
 );
@@ -42,11 +33,11 @@ const NonMobileLinks = () => {
 
   return (
     <div className="hidden sm:ml-6 sm:flex space-x-4">
-      {NAV_LINKS.map(item => {
+      {NAV_LINKS.map((item) => {
         const isActive = location.pathname === item.href;
         const isActiveClasses = isActive
-          ? 'bg-neutral-200 text-black dark:bg-neutral-700 dark:text-white'
-          : 'text-neutral-600 bg-neutral-100 hover:bg-neutral-200 hover:text-black dark:text-neutral-300 dark:bg-neutral-900 dark:hover:bg-neutral-700 dark:hover:text-white';
+          ? "bg-neutral-200 text-black dark:bg-neutral-700 dark:text-white"
+          : "text-neutral-600 bg-neutral-100 hover:bg-neutral-200 hover:text-black dark:text-neutral-300 dark:bg-neutral-900 dark:hover:bg-neutral-700 dark:hover:text-white";
         const classes = `px-3 py-2 rounded-md text-sm font-medium ${isActiveClasses}`;
         return (
           <NavLink key={item.name} to={item.href} className={classes}>
@@ -72,9 +63,9 @@ export default function Header() {
               </div>
               <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
                 <Logo />
-                <NonMobileLinks />
               </div>
               <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0 gap-2">
+                <NonMobileLinks />
 
                 {/* <button className="dark:bg-neutral-800 p-1 rounded-full text-neutral-400 hover:text-black dark:hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white">
                   <span className="sr-only">View notifications</span>
@@ -86,15 +77,17 @@ export default function Header() {
 
           <Disclosure.Panel className="sm:hidden">
             <div className="px-2 pt-2 pb-3 space-y-1">
-              {NAV_LINKS.map(item => (
+              {NAV_LINKS.map((item) => (
                 <NavLink
                   end
                   key={item.name}
                   to={item.href}
                   className={`block px-3 py-2 rounded-md text-base font-medium
-                  ${location.pathname !== item.href ? 'text-neutral-300' : ''}
+                  ${location.pathname !== item.href ? "text-neutral-300" : ""}
                   `}
-                  aria-current={location.pathname === item.href ? 'page' : undefined}
+                  aria-current={
+                    location.pathname === item.href ? "page" : undefined
+                  }
                 >
                   {item.name}
                 </NavLink>
