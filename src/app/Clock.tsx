@@ -1,11 +1,7 @@
 import React from "react";
 import { useClock } from "@/hooks";
 import { format } from "date-fns";
-
-  const primaryFontSizes =
-    "text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-9xl";
-  const secondaryFontSizes =
-    "text-base sm:text-lg md:text-xl lg:text-2xl xl:text-4xl";
+import { FONT_SIZES } from "@/constants";
 
 const Clock = () => {
   const { date: _date } = useClock();
@@ -16,10 +12,10 @@ const Clock = () => {
   return (
     <div className="flex flex-col flex-grow items-center justify-center gap-4">
       <div className={`flex items-baseline gap-2`}>
-        <div className={primaryFontSizes}>{time}</div>
-        <div className={secondaryFontSizes}>{ampm}</div>
+        <div className={FONT_SIZES.PRIMARY}>{time}</div>
+        <div className={FONT_SIZES.SECONDARY}>{ampm}</div>
       </div>
-      <div className={secondaryFontSizes}>{date}</div>
+      <div className={FONT_SIZES.SECONDARY}>{date}</div>
     </div>
   );
 }

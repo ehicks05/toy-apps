@@ -13,7 +13,7 @@ const Button = ({ className, disabled, onClick, children }: Props) => (
     disabled={disabled}
     onClick={onClick}
     className={clsx(
-      'px-3 py-1.5 border',
+      'px-3 py-1.5 border rounded-lg',
       'text-black bg-white',
       'dark:border-gray-800 dark:text-white dark:bg-neutral-950',
       { 'opacity-50 cursor-default': disabled },

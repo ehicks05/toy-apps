@@ -1,16 +1,18 @@
+import { round } from "lodash";
 import { useState, useRef, useEffect } from "react";
 
+const nf = Intl.NumberFormat('en-US', { minimumIntegerDigits: 2, minimumFractionDigits: 2, maximumFractionDigits: 2 })
 const DEFAULT_MS = 0;
-const TIME_STEP = 1;
+const TIME_STEP = 33;
 
 const formatTime = (ms: number) =>
   [
     Math.floor(ms / (1000 * 60 * 60)),
     Math.floor(ms / (1000 * 60)) % 60,
-    Math.floor(ms / 1000) % 60,
+    nf.format(ms / 1000 % 60),
   ]
     .map((x) => String(x).padStart(2, "0"))
-    .join(":") + `.${ms % 1000}`.padEnd(4, "0");
+    .join(":");
 
 interface Lap {
   lapNumber: number;

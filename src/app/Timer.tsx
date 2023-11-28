@@ -1,14 +1,11 @@
 import React from "react";
 import { Button } from "@/components";
-import clsx from "clsx";
 import { useTimer } from "@/hooks/useTimer";
-import { HiPlus } from "react-icons/hi";
+import { HiPause, HiPlay, HiPlus } from "react-icons/hi";
+import { BUTTON_SIZES, FONT_SIZES } from "@/constants";
+import { MdRestartAlt } from "react-icons/md";
 
-interface Props {
-  minutes: number;
-}
-
-function Timer({ minutes }: Props) {
+const Timer = () => {
   const {
     paused,
     expired,
@@ -18,40 +15,38 @@ function Timer({ minutes }: Props) {
     displayTime,
     updateMinutes,
   } = useTimer({ minutes: 5 });
-  const isShowResetButton = paused && hasTimeElapsed;
 
-  const textSize = "text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-8xl";
   return (
-    <div className="flex flex-grow items-center justify-center">
-      <div className={textSize}>
-        {displayTime}
+    <div className="flex flex-col gap-4 flex-grow items-center justify-center">
+      <div className={FONT_SIZES.PRIMARY}>{displayTime}</div>
+      <div className="flex gap-4">
+        {!expired && (
+          <>
+            {hasTimeElapsed && (
+              <Button className="flex items-center" onClick={() => updateMinutes(1)}>
+                <HiPlus className={BUTTON_SIZES.PRIMARY} />
+                <span className={FONT_SIZES.SECONDARY}>
+                1:00
+                </span>
+              </Button>
+            )}
+            <Button onClick={() => setPaused(!paused)}>
+              {paused ? (
+                <HiPlay className={BUTTON_SIZES.PRIMARY} />
+              ) : (
+                <HiPause className={BUTTON_SIZES.PRIMARY} />
+              )}
+            </Button>
+          </>
+        )}
+        {hasTimeElapsed && (
+          <Button onClick={() => reset()}>
+            <MdRestartAlt className={BUTTON_SIZES.SECONDARY} />
+          </Button>
+        )}
       </div>
-      {!expired && (
-        <>
-          <Button
-            className={`rounded-none` + textSize}
-            onClick={() => updateMinutes(1)}
-          >
-            <HiPlus />
-          </Button>
-          <Button
-            className={
-              `rounded-l-none ${isShowResetButton ? "rounded-r-none" : ""}` +
-              textSize
-            }
-            onClick={() => setPaused(!paused)}
-          >
-            {isShowResetButton ? "Resume" : paused ? "Start" : "Pause"}
-          </Button>
-        </>
-      )}
-      {isShowResetButton && (
-        <Button className={`rounded-l-none` + textSize} onClick={() => reset()}>
-          Reset
-        </Button>
-      )}
     </div>
   );
-}
+};
 
 export default Timer;

@@ -4,6 +4,7 @@ export const content = ["./src/**/*.{js,jsx,ts,tsx}", "./index.html"];
 export const theme = {
   fontFamily: {
     'sans': ['Fredoka', ...fontFamily.sans],
+    'mono': fontFamily.mono,
   },
   extend: {
     colors: {
