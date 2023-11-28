@@ -3,8 +3,8 @@ import { HiOutlineBell, HiOutlineMenu, HiOutlineX } from "react-icons/hi";
 import { Link, NavLink, useLocation } from "react-router-dom";
 
 const NAV_LINKS = [
-  { name: "Clock", href: "/clock" },
-  { name: "Timer", href: "/" },
+  { name: "Clock", href: "/" },
+  { name: "Timer", href: "/timer" },
   { name: "Stopwatch", href: "/stopwatch" },
 ];
 
