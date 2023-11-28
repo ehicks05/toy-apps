@@ -10,10 +10,10 @@ function MyApp() {
       <Header />
       <div className="flex-grow flex flex-col h-full sm:px-4">
         <Routes>
-          <Route path="/" element={<Timer />} />
+          <Route path="/" element={<Clock />} />
+          <Route path="/clock" element={<Clock />} />
           <Route path="/stopwatch" element={<Stopwatch />} />
           <Route path="/timer" element={<Timer />} />
-          <Route path="/clock" element={<Clock />} />
         </Routes>
       </div>
       <Footer />
