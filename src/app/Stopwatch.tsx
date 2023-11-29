@@ -1,26 +1,27 @@
 import React from "react";
 import { Button } from "@/components";
-import { HiPause, HiPlay } from "react-icons/hi";
+import { HiPause, HiPlay } from "react-icons/hi2";
 import { useStopwatch } from "@/hooks";
 import { BiStopwatch } from "react-icons/bi";
 import { FONT_SIZES, BUTTON_SIZES } from "@/constants";
-import { MdRestartAlt } from "react-icons/md";
+import { MdRestartAlt, MdPlayArrow, MdPause } from "react-icons/md";
 
 function Stopwatch() {
   const {
-    laps,
+    startedAt,
     paused,
-    setPaused,
-    hasTimeElapsed,
-    reset,
+    laps,
     displayTime,
+    togglePause,
+    reset,
     addLap,
     formatTime,
   } = useStopwatch();
 
   return (
     <div className="font-mono flex flex-col flex-grow items-center justify-center gap-4">
-      <div className="flex flex-col items-center justify-center flex-grow">
+      <div className="flex flex-col items-center flex-grow">
+        <div className="p-16"></div>
         <div className={FONT_SIZES.PRIMARY}>{displayTime}</div>
         <div className="max-h-96 overflow-auto">
           <table>
@@ -37,19 +38,19 @@ function Stopwatch() {
         </div>
       </div>
       <div className="flex items-center gap-8">
-        {hasTimeElapsed && (
+        {startedAt && (
           <Button onClick={reset}>
             <MdRestartAlt className={BUTTON_SIZES.SECONDARY} />
           </Button>
         )}
-        <Button onClick={() => setPaused(!paused)}>
+        <Button onClick={togglePause}>
           {paused ? (
-            <HiPlay className={BUTTON_SIZES.PRIMARY} />
+            <MdPlayArrow className={BUTTON_SIZES.PRIMARY} />
           ) : (
-            <HiPause className={BUTTON_SIZES.PRIMARY} />
+            <MdPause className={BUTTON_SIZES.PRIMARY} />
           )}
         </Button>
-        {hasTimeElapsed && (
+        {startedAt && (
           <Button onClick={addLap} disabled={paused}>
             <BiStopwatch className={BUTTON_SIZES.SECONDARY} />
           </Button>

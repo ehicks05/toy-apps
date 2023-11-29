@@ -1,18 +1,29 @@
-import { round } from "lodash";
+import { addMilliseconds, differenceInMilliseconds } from "date-fns";
 import { useState, useRef, useEffect } from "react";
 
-const nf = Intl.NumberFormat('en-US', { minimumIntegerDigits: 2, minimumFractionDigits: 2, maximumFractionDigits: 2 })
-const DEFAULT_MS = 0;
-const TIME_STEP = 33;
+const nf = Intl.NumberFormat("en-US", {
+  minimumIntegerDigits: 2,
+  minimumFractionDigits: 2,
+  maximumFractionDigits: 2,
+});
 
-const formatTime = (ms: number) =>
-  [
-    Math.floor(ms / (1000 * 60 * 60)),
-    Math.floor(ms / (1000 * 60)) % 60,
-    nf.format(ms / 1000 % 60),
+const formatTime = (
+  ms: number,
+  forceShowMinutes: boolean,
+  forceShowHours: boolean
+) => {
+  const hours = Math.floor(ms / (1000 * 60 * 60));
+  const minutes = Math.floor(ms / (1000 * 60)) % 60;
+  const seconds = nf.format((ms / 1000) % 60);
+  return [
+    ...(forceShowHours || hours ? [hours] : []),
+    ...(forceShowMinutes || hours || minutes ? [minutes] : []),
+    seconds,
   ]
     .map((x) => String(x).padStart(2, "0"))
     .join(":");
+};
+const TIME_STEP = 33;
 
 interface Lap {
   lapNumber: number;
@@ -21,52 +32,89 @@ interface Lap {
 }
 
 export const useStopwatch = () => {
-  const [ms, setMs] = useState(DEFAULT_MS);
-  const [laps, setLaps] = useState<Lap[]>([]);
+  const [startedAt, setStartedAt] = useState<Date | undefined>(undefined);
+  const [pausedAt, setPausedAt] = useState<Date | undefined>(undefined);
   const [paused, setPaused] = useState(true);
+  const [now, setNow] = useState<Date | undefined>(undefined);
+  const [laps, setLaps] = useState<Lap[]>([]);
   const interval = useRef(0);
 
-  /**
-   * Handle pause / unpause
-   */
+  // Handle start / pause / unpause
   useEffect(() => {
     function startTimer() {
       interval.current = window.setInterval(
-        () => setMs((ms) => ms + TIME_STEP),
+        () => setNow(new Date()),
         TIME_STEP
       );
     }
 
-    paused ? clearInterval(interval.current) : startTimer();
+    if (paused) {
+      // handle pause
+      clearInterval(interval.current);
+      if (startedAt) {
+        setPausedAt(new Date());
+      }
+    }
+    if (!paused) {
+      // handle initial start
+      if (!pausedAt) {
+        setStartedAt(new Date());
+        setNow(new Date());
+      }
+      // handle unpause
+      if (pausedAt) {
+        const delta = differenceInMilliseconds(new Date(), pausedAt);
+        setStartedAt((startedAt) => addMilliseconds(startedAt || 0, delta));
+      }
+      startTimer();
+    }
 
     return () => clearInterval(interval.current);
   }, [paused]);
 
   const reset = () => {
-    setMs(DEFAULT_MS);
+    setStartedAt(undefined);
+    setPausedAt(undefined);
     setPaused(true);
+    setNow(undefined);
     setLaps([]);
-  }
+    clearInterval(interval.current);
+  };
 
-  const addLap = () =>
+  const addLap = () => {
+    if (!startedAt) {
+      return;
+    }
+    const prevLap = laps?.[0] || undefined;
     setLaps([
       {
         lapNumber: laps.length + 1,
-        lapTime: ms - (laps.length > 0 ? laps[0].totalTime : 0),
-        totalTime: ms,
+        lapTime: differenceInMilliseconds(
+          new Date(),
+          addMilliseconds(startedAt, prevLap?.totalTime || 0)
+        ),
+        totalTime: differenceInMilliseconds(new Date(), startedAt),
       },
       ...laps,
     ]);
+  };
+
+  const totalTime =
+    now && startedAt ? differenceInMilliseconds(now, startedAt) : 0;
+  const forceShowMinutes = totalTime > 1000 * 60;
+  const forceShowHours = totalTime > 1000 * 60 * 60;
 
   return {
-    ms,
-    laps,
-    hasTimeElapsed: ms !== DEFAULT_MS,
-    displayTime: formatTime(ms),
+    startedAt,
+    pausedAt,
     paused,
-    setPaused,
+    now,
+    laps,
+    displayTime: formatTime(totalTime, forceShowMinutes, forceShowHours),
+    togglePause: () => setPaused((paused) => !paused),
     reset,
     addLap,
-    formatTime,
+    formatTime: (ms: number) =>
+      formatTime(ms, forceShowMinutes, forceShowHours),
   };
 };
