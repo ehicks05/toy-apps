@@ -6,8 +6,34 @@ interface Props {
   seconds?: number;
 }
 
+const nf = Intl.NumberFormat("en-US", {
+  // minimumIntegerDigits: 2,
+  minimumFractionDigits: 0,
+  maximumFractionDigits: 0,
+});
+
+const formatTime = (
+  _ms: number,
+) => {
+  const ms = Math.abs(_ms);
+  const hours = Math.floor(ms / (1000 * 60 * 60));
+  const minutes = Math.floor(ms / (1000 * 60)) % 60;
+  const seconds = nf.format((ms / 1000) % 60);
+  const joined = [
+    ...(hours ? [hours] : []),
+    ...(hours || minutes ? [minutes] : []),
+    seconds,
+  ]
+    .map((x) => String(x).padStart(2, "0"))
+    .join(":");
+  
+  return `${_ms < 0 ? "-" : ""}${joined}`;
+};
+
+const TIME_STEP = 16;
+
 export const useTimer = (props: Props) => {
-  const initialMs =
+  let initialMs =
     (props?.seconds || 0) * 1000 +
     (props?.minutes || 0) * 1000 * 60 +
     (props?.hours || 0) * 1000 * 60 * 60;
@@ -23,19 +49,17 @@ export const useTimer = (props: Props) => {
     msRef.current = ms;
 
     if (ms <= 0) {
-      setPaused(true);
       setExpired(true);
-      setMs(0);
     }
   }, [ms]);
 
   useEffect(() => {
     function startTimer() {
       function decrement() {
-        setMs(msRef.current - 100);
+        setMs(msRef.current - TIME_STEP * 100);
       }
 
-      interval.current = window.setInterval(decrement, 100);
+      interval.current = window.setInterval(decrement, TIME_STEP);
     }
 
     paused ? clearInterval(interval.current) : startTimer();
@@ -49,16 +73,10 @@ export const useTimer = (props: Props) => {
     setPaused(true);
   }
 
-  const displayTime = [
-    Math.floor(ms / (1000 * 60 * 60)),
-    Math.floor(ms / (1000 * 60)) % 60,
-    Math.floor(ms / 1000) % 60,
-  ]
-    .map((x) => String(x).padStart(2, "0"))
-    .join(":");
-
   function updateMinutes(amount: number) {
-    setMs(ms + amount * 60 * 1000);
+    const addedMs = amount * 60 * 1000;
+    initialMs += addedMs;
+    setMs(ms + addedMs);
   }
 
   const hasTimeElapsed = ms !== initialMs;
@@ -70,7 +88,8 @@ export const useTimer = (props: Props) => {
     setPaused,
     hasTimeElapsed,
     reset,
-    displayTime,
+    formattedTime: formatTime(ms),
+    percent: expired ? 0 : (ms / initialMs) * 100,
     updateMinutes,
   };
 };
