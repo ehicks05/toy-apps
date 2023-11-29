@@ -36,8 +36,8 @@ const NonMobileLinks = () => {
       {NAV_LINKS.map((item) => {
         const isActive = location.pathname === item.href;
         const isActiveClasses = isActive
-          ? "bg-neutral-200 text-black dark:bg-neutral-700 dark:text-white"
-          : "text-neutral-600 bg-neutral-100 hover:bg-neutral-200 hover:text-black dark:text-neutral-300 dark:bg-neutral-900 dark:hover:bg-neutral-700 dark:hover:text-white";
+          ? "bg-sky-800 text-white"
+          : "text-neutral-300 hover:bg-sky-800 hover:text-white";
         const classes = `px-3 py-2 rounded-md text-sm font-medium ${isActiveClasses}`;
         return (
           <NavLink key={item.name} to={item.href} className={classes}>
