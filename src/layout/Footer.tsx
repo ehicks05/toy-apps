@@ -1,6 +1,6 @@
 import React from 'react';
 
-const repoUrl = 'https://www.github.com/ehicks05/timer/';
+const repoUrl = 'https://www.github.com/ehicks05/jikan/';
 const siteUrl = 'https://ehicks.net';
 
 const Footer = () => (
