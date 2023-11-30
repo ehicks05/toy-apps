@@ -48,7 +48,7 @@ export const Clock = () => {
       </div>
       <div className={FONT_SIZES.SECONDARY}>{date}</div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 w-full">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-2 w-full">
         {selectedCities.map((city) => (
           <City key={city.geonameId} city={city} />
         ))}
