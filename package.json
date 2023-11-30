@@ -10,8 +10,10 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
+    "@tanstack/react-query": "^5.10.0",
     "clsx": "^2.0.0",
     "date-fns": "^2.30.0",
+    "date-fns-tz": "^2.0.0",
     "lodash": "^4.17.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
