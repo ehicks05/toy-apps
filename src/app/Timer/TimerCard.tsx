@@ -7,6 +7,8 @@ import { MdRestartAlt, MdPlayArrow, MdPause } from "react-icons/md";
 import ProgressBar from "@/components/ProgressBar";
 import { useLocalStorage, useWindowSize } from "usehooks-ts";
 
+const INNER_TEXT_SIZES = "text-2xl sm:text-3xl md:text-4xl";
+
 export const TimerCard = ({
   index,
   duration,
@@ -41,7 +43,7 @@ export const TimerCard = ({
       >
         <HiXMark />
       </Button>
-      <div className={FONT_SIZES.SECONDARY}>
+      <div className={INNER_TEXT_SIZES}>
         <ProgressBar
           size={width < 640 ? 200 : width < 768 ? 240 : 280}
           progress={percent}
