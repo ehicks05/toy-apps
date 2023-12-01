@@ -1,12 +1,11 @@
 import React from "react";
 import { Button } from "@/components";
-import { HiPause, HiPlay } from "react-icons/hi2";
 import { useStopwatch } from "@/hooks";
 import { BiStopwatch } from "react-icons/bi";
 import { FONT_SIZES, BUTTON_SIZES } from "@/constants";
 import { MdRestartAlt, MdPlayArrow, MdPause } from "react-icons/md";
 
-function Stopwatch() {
+export const Stopwatch = () => {
   const {
     startedAt,
     paused,
@@ -59,5 +58,3 @@ function Stopwatch() {
     </div>
   );
 }
-
-export default Stopwatch;

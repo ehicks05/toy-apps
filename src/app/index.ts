@@ -1,5 +1,3 @@
-import { Clock } from './Clock/Clock';
-import Stopwatch from './Stopwatch';
-import Timer from './Timer';
-
-export { Clock, Stopwatch, Timer };
+export { Clock } from './Clock';
+export { Stopwatch } from './Stopwatch';
+export { Timer } from './Timer';

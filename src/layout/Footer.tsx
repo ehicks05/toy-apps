@@ -17,7 +17,7 @@ interface LinkProps {
 const Link = ({ href, children }: LinkProps) => (
   <a
     href={href}
-    className="text-blue-400 hover:underline hover:text-blue-600 visited:text-purple-600"
+    className="text-blue-500 hover:underline hover:text-blue-400"
     target="_blank"
     rel="noreferrer"
   >

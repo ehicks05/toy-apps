@@ -56,7 +56,7 @@ export const useTimer = (props: Props) => {
   useEffect(() => {
     function startTimer() {
       function decrement() {
-        setMs(msRef.current - TIME_STEP * 100);
+        setMs(msRef.current - TIME_STEP);
       }
 
       interval.current = window.setInterval(decrement, TIME_STEP);

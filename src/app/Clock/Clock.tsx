@@ -16,7 +16,7 @@ const FONT_SIZES = {
 const City = ({ city }: { city: Geoname }) => {
   const { time, ampm, offset } = getTimeParts(new Date(), city.timeZoneId);
   return (
-    <div className="w-full flex justify-between items-center gap-4 p-4 bg-sky-900 rounded-lg">
+    <div className="w-full flex justify-between items-center gap-4 p-4 bg-slate-900 rounded-lg">
       <div className="flex flex-col">
         <div className="text-xl">{city.name}</div>
         <div className="text-sm">{offset}</div>
