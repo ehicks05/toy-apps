@@ -1,13 +1,19 @@
 import React from "react";
-import { Button, Card } from "@/components";
+import { Button } from "@/components";
 import { useTimer } from "@/hooks/useTimer";
-import { HiPause, HiPlay, HiPlus } from "react-icons/hi2";
+import { HiPlus, HiXMark } from "react-icons/hi2";
 import { BUTTON_SIZES, FONT_SIZES } from "@/constants";
 import { MdRestartAlt, MdPlayArrow, MdPause } from "react-icons/md";
 import ProgressBar from "@/components/ProgressBar";
-import { useWindowSize } from "usehooks-ts";
+import { useLocalStorage, useWindowSize } from "usehooks-ts";
 
-const Timer = () => {
+export const TimerCard = ({
+  index,
+  duration,
+}: {
+  index: number;
+  duration: number;
+}) => {
   const {
     paused,
     expired,
@@ -17,33 +23,27 @@ const Timer = () => {
     formattedTime,
     percent,
     updateMinutes,
-  } = useTimer({ seconds: 2 });
+  } = useTimer({ seconds: duration });
 
+  const [, setTimers] = useLocalStorage<number[]>("timers", []);
   const { width } = useWindowSize();
 
   return (
-    <div className="flex flex-col gap-4 flex-grow items-center justify-center font-mono">
-      <Card>
-        <div className="text-4xl">Under Construction</div>
-        Todo:
-        <ol className="list-decimal">
-          <li>Input</li>
-          <li>timer end sound and/or visuals</li>
-        </ol>
-      </Card>
-      <div className={FONT_SIZES.PRIMARY}>
+    <div className="relative flex flex-col gap-4 flex-grow items-center justify-center p-4 rounded-lg font-mono bg-slate-900">
+      <Button
+        className="absolute top-4 right-4"
+        onClick={() =>
+          setTimers((timers) => {
+            timers.splice(index, 1);
+            return timers;
+          })
+        }
+      >
+        <HiXMark />
+      </Button>
+      <div className={FONT_SIZES.SECONDARY}>
         <ProgressBar
-          size={
-            width < 640
-              ? 300
-              : width < 768
-                ? 350
-                : width < 1024
-                  ? 400
-                  : width < 1280
-                    ? 500
-                    : 600
-          }
+          size={width < 640 ? 200 : width < 768 ? 240 : 280}
           progress={percent}
           label={formattedTime}
         />
@@ -56,26 +56,24 @@ const Timer = () => {
                 className="flex items-center"
                 onClick={() => updateMinutes(1)}
               >
-                <HiPlus className={BUTTON_SIZES.PRIMARY} />
+                <HiPlus className={BUTTON_SIZES.SECONDARY} />
               </Button>
             )}
             <Button onClick={() => setPaused(!paused)}>
               {paused ? (
-                <MdPlayArrow className={BUTTON_SIZES.PRIMARY} />
+                <MdPlayArrow className={BUTTON_SIZES.SECONDARY} />
               ) : (
-                <MdPause className={BUTTON_SIZES.PRIMARY} />
+                <MdPause className={BUTTON_SIZES.SECONDARY} />
               )}
             </Button>
           </>
         )}
         {hasTimeElapsed && (
           <Button onClick={() => reset()}>
-            <MdRestartAlt className={BUTTON_SIZES.PRIMARY} />
+            <MdRestartAlt className={BUTTON_SIZES.SECONDARY} />
           </Button>
         )}
       </div>
     </div>
   );
 };
-
-export default Timer;
