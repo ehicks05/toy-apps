@@ -21,7 +21,7 @@ const getRelativeOffset = (timeZoneId: string) => {
     getTimezoneOffset(Intl.DateTimeFormat().resolvedOptions().timeZone);
   const hour = Math.floor(offsetMillis / 1000 / 60 / 60);
   const minute = (offsetMillis / 1000 / 60) % 60;
-  const offset = `${offsetMillis > 0 ? "+" : "-"}${hour + "h"}${
+  const offset = `${offsetMillis > 0 ? "+" : ""}${hour + "h"}${
     minute ? " " + minute + "m" : ""
   }`;
 
