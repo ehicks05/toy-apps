@@ -20,7 +20,7 @@ export const Timer = () => {
         </div>
 
         {timers.length === 0 && (
-          <Card className="text-neutral-400">
+          <Card className="bg-slate-900 text-neutral-400">
             <HiOutlineClock size={96} /> Add a timer
           </Card>
         )}
