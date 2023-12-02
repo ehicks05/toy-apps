@@ -6,33 +6,36 @@ interface Props {
   seconds?: number;
 }
 
-const nf = Intl.NumberFormat("en-US", {
-  // minimumIntegerDigits: 2,
-  minimumFractionDigits: 0,
-  maximumFractionDigits: 0,
-});
-
-const formatTime = (
-  _ms: number,
-) => {
+/**
+ * While counting down, we want 0 to appear exactly when time is up.
+ * So we'll round up. After time is up we can round down.
+ */
+const formatTime = (_ms: number) => {
   const ms = Math.abs(_ms);
-  let hours = Math.floor(ms / (1000 * 60 * 60));
-  let minutes = Math.floor(ms / (1000 * 60)) % 60;
-  let seconds = nf.format((ms / 1000) % 60);
+  const secondRound = _ms >= 0 ? Math.ceil : Math.floor;
+  const totalSeconds = secondRound(ms / 1000);
+  let seconds = totalSeconds % 60;
 
-  // avoid times like 00:60:60
-  // if (seconds === 60) {
-  //   seconds = 0
-  // }
+  const minuteRound =
+    _ms > 0 && totalSeconds > 0 && totalSeconds % 60 === 0 ? Math.ceil : Math.floor;
+  const totalMinutes = minuteRound(ms / (1000 * 60));
+  let minutes = totalMinutes % 60;
 
-  const joined = [
-    ...(hours ? [hours] : []),
-    ...(hours || minutes ? [minutes] : []),
-    seconds,
-  ]
+  const hourRound =
+    _ms > 0 && totalMinutes > 0 && totalMinutes % 60 === 0 ? Math.ceil : Math.floor;
+  let hours = hourRound(ms / (1000 * 60 * 60));
+
+  hours = Math.floor(hours);
+  minutes = Math.floor(minutes);
+
+  let joined = [hours, minutes, seconds]
     .map((x) => String(x).padStart(2, "0"))
     .join(":");
   
+  while (joined.startsWith("00:")) {
+    joined = joined.slice(3);
+  }
+
   return `${_ms < 0 ? "-" : ""}${joined}`;
 };
 
