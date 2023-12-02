@@ -16,9 +16,15 @@ const formatTime = (
   _ms: number,
 ) => {
   const ms = Math.abs(_ms);
-  const hours = Math.floor(ms / (1000 * 60 * 60));
-  const minutes = Math.floor(ms / (1000 * 60)) % 60;
-  const seconds = nf.format((ms / 1000) % 60);
+  let hours = Math.floor(ms / (1000 * 60 * 60));
+  let minutes = Math.floor(ms / (1000 * 60)) % 60;
+  let seconds = nf.format((ms / 1000) % 60);
+
+  // avoid times like 00:60:60
+  // if (seconds === 60) {
+  //   seconds = 0
+  // }
+
   const joined = [
     ...(hours ? [hours] : []),
     ...(hours || minutes ? [minutes] : []),
