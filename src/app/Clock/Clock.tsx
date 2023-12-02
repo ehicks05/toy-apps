@@ -19,10 +19,10 @@ const getRelativeOffset = (timeZoneId: string) => {
   const offsetMillis =
     getTimezoneOffset(timeZoneId) -
     getTimezoneOffset(Intl.DateTimeFormat().resolvedOptions().timeZone);
-  const hour = offsetMillis / 1000 / 60 / 60;
+  const hour = Math.floor(offsetMillis / 1000 / 60 / 60);
   const minute = (offsetMillis / 1000 / 60) % 60;
   const offset = `${offsetMillis > 0 ? "+" : "-"}${hour + "h"}${
-    minute ? ":" + minute : ""
+    minute ? " " + minute + "m" : ""
   }`;
 
   const localDate = format(new Date(), "dd");
@@ -45,7 +45,8 @@ const City = ({ city }: { city: Geoname }) => {
       <div className="flex flex-col">
         <div className="text-xl">{city.name}</div>
         <div className="text-sm" title={`utc offset: ${offset}`}>
-          {getRelativeOffset(city.timeZoneId)}</div>
+          {getRelativeOffset(city.timeZoneId)}
+        </div>
       </div>
       <div className="flex items-baseline gap-1">
         <div className={FONT_SIZES.SECONDARY}>{time}</div>
