@@ -28,12 +28,10 @@ export const CreateTimerDialog = () => {
 
   return (
     <div className="flex flex-col gap-4">
-      <input
-        className="p-2 rounded-lg text-center text-xl"
-        value={inputToLabel(input)}
-        readOnly
-      />
-      <div className="grid grid-cols-3 gap-2 w-full">
+      <span className="font-mono px-8 rounded-lg text-center text-4xl">
+        {inputToLabel(input)}
+      </span>
+      <div className="px-4 grid grid-cols-3 gap-2 w-full">
         {Array.from(Array(12)).map((_, i) => {
           const label =
             i < 9 ? (
@@ -43,7 +41,7 @@ export const CreateTimerDialog = () => {
             ) : i === 10 ? (
               "0"
             ) : i === 11 ? (
-              <HiOutlineBackspace size={28} />
+              <HiOutlineBackspace size={24} />
             ) : (
               "0"
             );
@@ -58,7 +56,7 @@ export const CreateTimerDialog = () => {
           return (
             <button
               key={label.toString()}
-              className="flex items-center justify-center aspect-square w-full rounded-full bg-sky-900 hover:bg-sky-800"
+              className="flex items-center justify-center aspect-square w-full rounded-full bg-neutral-700 hover:bg-neutral-600 text-xl"
               onClick={onClick}
             >
               {label}
