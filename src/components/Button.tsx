@@ -1,10 +1,10 @@
 import clsx from 'clsx';
-import React from 'react';
+import React, { MouseEvent } from "react";
 
 interface Props {
   className?: string;
   disabled?: boolean;
-  onClick?: () => void;
+  onClick?: (event: MouseEvent<HTMLButtonElement>) => void;
   children: React.ReactNode;
 }
 
