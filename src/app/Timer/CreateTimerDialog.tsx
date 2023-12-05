@@ -22,7 +22,7 @@ export const CreateTimerDialog = () => {
       .join(":");
 
   const handleAddTimer = () => {
-    setTimers((timers) => [...timers, inputToSeconds(input)]);
+    setTimers((timers) => [...timers, inputToSeconds(input)].sort((t1, t2) => t1 - t2));
     setInput(DEFAULT_INPUT);
   };
 
