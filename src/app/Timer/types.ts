@@ -1,4 +1,4 @@
 export interface Timer {
-  index: number;
+  id: string;
   seconds: number;
 }

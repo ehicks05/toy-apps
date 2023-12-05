@@ -2,10 +2,11 @@ import React from "react";
 import { Button } from "@/components";
 import { useTimer } from "@/hooks/useTimer";
 import { HiPlus, HiXMark } from "react-icons/hi2";
-import { BUTTON_SIZES, FONT_SIZES } from "@/constants";
+import { BUTTON_SIZES } from "@/constants";
 import { MdRestartAlt, MdPlayArrow, MdPause } from "react-icons/md";
 import ProgressBar from "@/components/ProgressBar";
 import { useLocalStorage, useWindowSize } from "usehooks-ts";
+import { secondsToHms } from "./utils";
 
 const INNER_TEXT_SIZES = "text-2xl sm:text-3xl md:text-4xl";
 
@@ -30,8 +31,11 @@ export const TimerCard = ({
   const [, setTimers] = useLocalStorage<number[]>("timers", []);
   const { width } = useWindowSize();
 
+  const { hms } = secondsToHms(duration);
+
   return (
     <div className="relative flex flex-col gap-4 flex-grow items-center justify-center p-4 rounded-lg font-mono bg-slate-900">
+      <div className="absolute top-4 left-4">{hms}</div>
       <Button
         className="absolute top-4 right-4"
         onClick={() =>
