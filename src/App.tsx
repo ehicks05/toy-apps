@@ -1,5 +1,4 @@
 import { useKeyboardEvent, useLocalStorageValue } from '@react-hookz/web';
-import _ from 'lodash';
 import React, { useState } from 'react';
 import { HiChartBar, HiRefresh } from 'react-icons/hi';
 import {
@@ -10,63 +9,9 @@ import {
 	Footer,
 	Keyboard,
 } from './components';
-import { DEFAULT_BOARD, DEFAULT_GAME, DEFAULT_STATUS } from './constants';
-import { Board, Cell, Row } from './types';
+import { DEFAULT_GAME } from './constants';
 import { getRandomWord, isAllowedGuess } from './wordService';
-
-const getCell = (board: Board, rowIndex: number, cellIndex: number) =>
-	board.rows[rowIndex].cells[cellIndex];
-
-const updateCell = (
-	board: Board,
-	rowIndex: number,
-	cellIndex: number,
-	updatedCell: Cell,
-) => {
-	return {
-		...board,
-		rows: board.rows.map((row, i) =>
-			i === rowIndex
-				? {
-						...row,
-						cells: row.cells.map((cell, j) =>
-							j === cellIndex ? updatedCell : cell,
-						),
-				  }
-				: row,
-		),
-	};
-};
-
-// note that finding `correct` is higher priority
-// and that `correct` and `wrong_location` matches cause us to
-//  eliminate that letter from `w` so it can't be matched again
-const checkRow = (row: Row, word: string) => {
-	const w = word.split('');
-	const checkedCells: Cell[] = row.cells
-		.map((cell, i): Cell => {
-			if (w[i] === cell.letter) {
-				w[i] = '';
-				return { ...cell, result: 'correct' };
-			}
-
-			return cell;
-		})
-		.map((cell): Cell => {
-			if (cell.result === 'correct') return cell;
-
-			const matchIndex = w.indexOf(cell.letter);
-			if (matchIndex === -1) {
-				return { ...cell, result: 'not_present' };
-			}
-
-			// eliminate from future matches
-			w[matchIndex] = '';
-			return { ...cell, result: 'wrong_location' };
-		});
-
-	return { ...row, cells: checkedCells };
-};
+import { checkRow, getCell, updateCell } from './boardService';
 
 const App = () => {
 	const [gameStatus, setGameStatus] = useLocalStorageValue(
@@ -149,11 +94,11 @@ const App = () => {
 	});
 
 	const resetGame = () => {
-		setGameStatus(DEFAULT_STATUS);
-		setBoard(DEFAULT_BOARD);
+		setGameStatus(DEFAULT_GAME.status);
+		setBoard(DEFAULT_GAME.board);
+		setRowIndex(DEFAULT_GAME.rowIndex);
+		setColIndex(DEFAULT_GAME.colIndex);
 		setWord(getRandomWord());
-		setRowIndex(0);
-		setColIndex(0);
 	};
 
 	return (
