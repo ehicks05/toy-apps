@@ -1,6 +1,7 @@
 import { useKeyboardEvent, useLocalStorageValue } from '@react-hookz/web';
 import React, { useState } from 'react';
 import { HiChartBar, HiRefresh } from 'react-icons/hi';
+import { checkRow, getCell, updateCell } from './boardService';
 import {
 	BoardView,
 	Button,
@@ -11,7 +12,6 @@ import {
 } from './components';
 import { DEFAULT_GAME } from './constants';
 import { getRandomWord, isAllowedGuess } from './wordService';
-import { checkRow, getCell, updateCell } from './boardService';
 
 const App = () => {
 	const [gameStatus, setGameStatus] = useLocalStorageValue(
@@ -44,29 +44,28 @@ const App = () => {
 		if (key === 'Enter' && colIndex === 5) {
 			const guess = board.rows[rowIndex].cells.map((cell) => cell.letter).join('');
 			const isValidGuess = isAllowedGuess(guess);
-			if (isValidGuess) {
-				const checkedRow = checkRow(board.rows[rowIndex], word);
-				setBoard({
-					...board,
-					rows: board.rows.map((row, i) => (i === rowIndex ? checkedRow : row)),
-				});
-
-				const isCorrect = checkedRow.cells.every(
-					(cell) => cell.result === 'correct',
-				);
-
-				if (isCorrect) {
-					setGameStatus({ active: false, gameOverMessage: 'Great job!' });
-				}
-				if (!isCorrect && rowIndex === 5) {
-					setGameStatus({ active: false, gameOverMessage: 'Sorry!' });
-				}
-
-				setRowIndex((i) => i + 1);
-				setColIndex(0);
-			} else {
+			if (!isValidGuess) {
 				handleInvalidGuess();
+				return;
 			}
+
+			const checkedRow = checkRow(board.rows[rowIndex], word);
+			setBoard({
+				...board,
+				rows: board.rows.map((row, i) => (i === rowIndex ? checkedRow : row)),
+			});
+
+			const isCorrect = checkedRow.cells.every((cell) => cell.result === 'correct');
+
+			if (isCorrect) {
+				setGameStatus({ active: false, gameOverMessage: 'Great job!' });
+			}
+			if (!isCorrect && rowIndex === 5) {
+				setGameStatus({ active: false, gameOverMessage: 'Sorry!' });
+			}
+
+			setRowIndex((i) => i + 1);
+			setColIndex(0);
 		} else if (key === 'Backspace' && colIndex > 0) {
 			const cell = getCell(board, rowIndex, colIndex - 1);
 			setBoard(
