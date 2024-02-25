@@ -11,7 +11,7 @@ import {
 	Keyboard,
 } from './components';
 import { DEFAULT_BOARD, DEFAULT_GAME, DEFAULT_STATUS } from './constants';
-import { Board, Cell, GuessResult, Row } from './types';
+import { Board, Cell, Row } from './types';
 import { getRandomWord, isAllowedGuess } from './wordService';
 
 const getCell = (board: Board, rowIndex: number, cellIndex: number) =>
@@ -50,32 +50,30 @@ const App = () => {
 	const [colIndex, setColIndex] = useLocalStorageValue('colIndex', 0);
 
 	const checkRow = (row: Row) => {
-		// check each letter
 		const w = word.split('');
+		// note that finding `correct` is higher priority
+		// and that `correct` and `wrong_location` matches cause us to
+		//  eliminate that letter from `w` so it can't be matched again
 		const checkedCells: Cell[] = row.cells
-			// first check for `not_present` and `correct`
-			// `correct` matches eliminate that letter from `w` so it can't be matched again
-			.map((cell, i) => {
-				let result: GuessResult = 'unknown';
-				if (!w.includes(cell.letter)) result = 'not_present';
-				else if (w[i] === cell.letter) {
-					result = 'correct';
+			.map((cell, i): Cell => {
+				if (w[i] === cell.letter) {
 					w[i] = '';
+					return { ...cell, result: 'correct' };
 				}
 
-				return { ...cell, result };
+				return cell;
 			})
-			.map((cell) => {
-				if (cell.result !== 'unknown') return cell;
+			.map((cell): Cell => {
+				if (cell.result === 'correct') return cell;
 
-				const result: GuessResult = w.includes(cell.letter)
-					? 'wrong_location'
-					: 'not_present';
-				if (result === 'wrong_location') {
-					w[w.indexOf(cell.letter)] = '';
+				const matchIndex = w.indexOf(cell.letter);
+				if (matchIndex === -1) {
+					return { ...cell, result: 'not_present' };
 				}
 
-				return { ...cell, result };
+				// eliminate from future matches
+				w[matchIndex] = '';
+				return { ...cell, result: 'wrong_location' };
 			});
 
 		return { ...row, cells: checkedCells };
