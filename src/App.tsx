@@ -2,16 +2,16 @@ import { useKeyboardEvent, useLocalStorageValue } from '@react-hookz/web';
 import _ from 'lodash';
 import React, { useState } from 'react';
 import { HiChartBar, HiRefresh } from 'react-icons/hi';
-import { getWord, isAllowedGuess } from './api';
 import { Board, Button, Debug, DebugButton, Footer, Keyboard } from './components';
 import { DEFAULT_BOARD, Result } from './constants';
+import { getRandomWord, isAllowedGuess } from './wordService';
 
 const App = () => {
 	const [gameStatus, setGameStatus] = useLocalStorageValue('gameStatus', {
 		active: true,
 		gameOverMessage: '',
 	});
-	const [word, setWord] = useLocalStorageValue('word', getWord());
+	const [word, setWord] = useLocalStorageValue('word', getRandomWord());
 	const [board, setBoard] = useLocalStorageValue('board', DEFAULT_BOARD);
 	const [boardEffects, setBoardEffects] = useState(['', '', '', '', '', '']);
 	const [rowIndex, setRowIndex] = useLocalStorageValue('rowIndex', 0);
@@ -119,7 +119,7 @@ const App = () => {
 		e.currentTarget.blur();
 		setGameStatus({ active: true, gameOverMessage: '' });
 		setBoard(DEFAULT_BOARD);
-		setWord(getWord());
+		setWord(getRandomWord());
 		setRowIndex(0);
 		setColIndex(0);
 	};
