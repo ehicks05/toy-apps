@@ -1,9 +1,8 @@
-import React from 'react';
 import { useLocalStorageValue } from '@react-hookz/web';
+import React from 'react';
 import { HiCode } from 'react-icons/hi';
+import { Board, GameStatus } from '../types';
 import Button from './Button';
-import { IBoard } from '../constants';
-import { GameStatus } from '../App';
 
 interface GameState {
 	word: string;
@@ -11,7 +10,7 @@ interface GameState {
 	colIndex: number;
 	boardEffects: string[];
 	gameStatus: GameStatus;
-	board: IBoard;
+	board: Board;
 }
 
 const Debug = ({ state }: { state: GameState }) => {

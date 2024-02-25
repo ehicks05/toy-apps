@@ -2,71 +2,84 @@ import { useKeyboardEvent, useLocalStorageValue } from '@react-hookz/web';
 import _ from 'lodash';
 import React, { useState } from 'react';
 import { HiChartBar, HiRefresh } from 'react-icons/hi';
-import { Board, Button, Debug, DebugButton, Footer, Keyboard } from './components';
-import { DEFAULT_BOARD, GuessResult } from './constants';
+import {
+	BoardView,
+	Button,
+	Debug,
+	DebugButton,
+	Footer,
+	Keyboard,
+} from './components';
+import { DEFAULT_BOARD, DEFAULT_GAME, DEFAULT_STATUS } from './constants';
+import { Board, Cell, GuessResult, Row } from './types';
 import { getRandomWord, isAllowedGuess } from './wordService';
 
-export interface GameStatus {
-	active: boolean;
-	gameOverMessage: string;
-}
+const getCell = (board: Board, rowIndex: number, cellIndex: number) =>
+	board.rows[rowIndex].cells[cellIndex];
 
-const DEFAULT_GAME_STATUS: GameStatus = { active: true, gameOverMessage: '' };
+const updateCell = (
+	board: Board,
+	rowIndex: number,
+	cellIndex: number,
+	updatedCell: Cell,
+) => {
+	return {
+		...board,
+		rows: board.rows.map((row, i) =>
+			i === rowIndex
+				? {
+						...row,
+						cells: row.cells.map((cell, j) =>
+							j === cellIndex ? updatedCell : cell,
+						),
+				  }
+				: row,
+		),
+	};
+};
 
 const App = () => {
 	const [gameStatus, setGameStatus] = useLocalStorageValue(
 		'gameStatus',
-		DEFAULT_GAME_STATUS,
+		DEFAULT_GAME.status,
 	);
 	const [word, setWord] = useLocalStorageValue('word', getRandomWord());
-	const [board, setBoard] = useLocalStorageValue('board', DEFAULT_BOARD);
+	const [board, setBoard] = useLocalStorageValue('board', DEFAULT_GAME.board);
 	const [boardEffects, setBoardEffects] = useState(['', '', '', '', '', '']);
 	const [rowIndex, setRowIndex] = useLocalStorageValue('rowIndex', 0);
 	const [colIndex, setColIndex] = useLocalStorageValue('colIndex', 0);
 
-	const updateLetter = (val: string, letterIndex: number) =>
-		board.map((guess, i) =>
-			guess.map((letter, j) => {
-				if (i === rowIndex && j === letterIndex) return { ...letter, letter: val };
-				return letter;
-			}),
-		);
+	const checkRow = (row: Row) => {
+		// check each letter
+		const w = word.split('');
+		const checkedCells: Cell[] = row.cells
+			// first check for `not_present` and `correct`
+			// `correct` matches eliminate that letter from `w` so it can't be matched again
+			.map((cell, i) => {
+				let result: GuessResult = 'unknown';
+				if (!w.includes(cell.letter)) result = 'not_present';
+				else if (w[i] === cell.letter) {
+					result = 'correct';
+					w[i] = '';
+				}
 
-	const checkRow = (rowIndex: number) =>
-		board.map((row, i) => {
-			if (i !== rowIndex) return row;
-			// check each letter
-			const w = word.split('');
-			return row
-				.map((cell, j) => {
-					let result: GuessResult = 'unknown';
-					if (!w.includes(cell.letter)) result = 'not_present';
-					else if (w[j] === cell.letter) {
-						result = 'correct';
-						w[j] = '';
-					}
+				return { ...cell, result };
+			})
+			.map((cell) => {
+				if (cell.result !== 'unknown') return cell;
 
-					return {
-						...cell,
-						result,
-					};
-				})
-				.map((cell) => {
-					if (cell.result !== 'unknown') return cell;
+				const result: GuessResult = w.includes(cell.letter)
+					? 'wrong_location'
+					: 'not_present';
+				if (result === 'wrong_location') {
+					w[w.indexOf(cell.letter)] = '';
+				}
 
-					const result: GuessResult = w.includes(cell.letter)
-						? 'wrong_location'
-						: 'not_present';
-					if (result === 'wrong_location') {
-						w[w.indexOf(cell.letter)] = '';
-					}
+				return { ...cell, result };
+			});
 
-					return {
-						...cell,
-						result,
-					};
-				});
-		});
+		return { ...row, cells: checkedCells };
+	};
 
 	const handleInvalidGuess = () => {
 		setBoardEffects((boardEffects) =>
@@ -86,16 +99,19 @@ const App = () => {
 		console.log(key);
 
 		if (key === 'Enter' && colIndex === 5) {
-			const guess = board[rowIndex].map((cell) => cell.letter).join('');
+			const guess = board.rows[rowIndex].cells.map((cell) => cell.letter).join('');
 			const isValidGuess = isAllowedGuess(guess);
 			if (isValidGuess) {
-				const updatedBoard = checkRow(rowIndex);
-				setBoard(updatedBoard);
+				const checkedRow = checkRow(board.rows[rowIndex]);
+				setBoard({
+					...board,
+					rows: board.rows.map((row, i) => (i === rowIndex ? checkedRow : row)),
+				});
 
-				const isCorrect = _.every(
-					updatedBoard[rowIndex],
-					({ result }) => result === 'correct',
+				const isCorrect = checkedRow.cells.every(
+					(cell) => cell.result === 'correct',
 				);
+
 				if (isCorrect) {
 					setGameStatus({ active: false, gameOverMessage: 'Great job!' });
 				}
@@ -109,10 +125,22 @@ const App = () => {
 				handleInvalidGuess();
 			}
 		} else if (key === 'Backspace' && colIndex > 0) {
-			setBoard(updateLetter('', colIndex - 1));
+			const cell = getCell(board, rowIndex, colIndex - 1);
+			setBoard(
+				updateCell(board, rowIndex, colIndex - 1, {
+					...cell,
+					letter: '',
+				}),
+			);
 			setColIndex((j) => j - 1);
 		} else if (/^[a-zA-Z]$/.test(key) && colIndex < 5) {
-			setBoard(updateLetter(key.toLowerCase(), colIndex));
+			const cell = getCell(board, rowIndex, colIndex);
+			setBoard(
+				updateCell(board, rowIndex, colIndex, {
+					...cell,
+					letter: key.toLowerCase(),
+				}),
+			);
 			setColIndex((j) => j + 1);
 		}
 	};
@@ -124,7 +152,7 @@ const App = () => {
 
 	const startNewGame = (e: React.MouseEvent<HTMLButtonElement>) => {
 		e.currentTarget.blur();
-		setGameStatus(DEFAULT_GAME_STATUS);
+		setGameStatus(DEFAULT_STATUS);
 		setBoard(DEFAULT_BOARD);
 		setWord(getRandomWord());
 		setRowIndex(0);
@@ -154,7 +182,7 @@ const App = () => {
 					{gameStatus.gameOverMessage}
 				</div>
 			)}
-			<Board board={board} boardEffects={boardEffects} />
+			<BoardView board={board} boardEffects={boardEffects} />
 			<div className="flex-grow" />
 			<Keyboard board={board} handleKey={handleKey} />
 			<Debug state={{ word, rowIndex, colIndex, boardEffects, gameStatus, board }} />

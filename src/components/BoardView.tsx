@@ -1,7 +1,7 @@
 import React from 'react';
-import { GuessResult, IBoard } from '../constants';
+import { Board, GuessResult } from '../types';
 
-const resultMap = {
+const GUESS_RESULT_STYLES = {
 	unknown: 'bg-neutral-900 border-neutral-600',
 	correct: 'bg-green-600 border-neutral-900',
 	wrong_location: 'bg-yellow-500 border-neutral-900',
@@ -22,7 +22,7 @@ const Cell = ({ letter, result, index }: CellProps) => {
 	// TODO: transitions work with guess result feedback but not unknown border change
 	return (
 		<div
-			className={`${base} ${resultMap[result]} ${
+			className={`${base} ${GUESS_RESULT_STYLES[result]} ${
 				result === 'unknown' ? unknownBorder : ''
 			}`}
 			style={{
@@ -37,16 +37,16 @@ const Cell = ({ letter, result, index }: CellProps) => {
 	);
 };
 
-interface BoardProps {
-	board: IBoard;
+interface BoardViewProps {
+	board: Board;
 	boardEffects: string[];
 }
-const Board = ({ board, boardEffects }: BoardProps) => (
+const BoardView = ({ board, boardEffects }: BoardViewProps) => (
 	<div className="flex flex-col h-full justify-center gap-1">
-		{board.map((row, a) => (
+		{board.rows.map((row, a) => (
 			// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 			<div key={a} className={`flex gap-1 ${boardEffects[a]}`}>
-				{row.map((cell, b) => (
+				{row.cells.map((cell, b) => (
 					// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 					<Cell key={b} letter={cell.letter} result={cell.result} index={b} />
 				))}
@@ -55,4 +55,4 @@ const Board = ({ board, boardEffects }: BoardProps) => (
 	</div>
 );
 
-export default Board;
+export default BoardView;

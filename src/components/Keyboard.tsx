@@ -1,6 +1,6 @@
 import React from 'react';
 import { HiOutlineBackspace } from 'react-icons/hi';
-import { GuessResult, IBoard } from '../constants';
+import { Board, GuessResult } from '../types';
 
 const KEYS = [
 	['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
@@ -22,9 +22,9 @@ const GUESS_RESULT_PRIORITIES: Record<GuessResult, number> = {
 	unknown: 3,
 };
 
-const getLetterResults = (board: IBoard) =>
-	board
-		.flat()
+const getLetterResults = (board: Board) =>
+	board.rows
+		.flatMap((row) => row.cells)
 		.sort(
 			({ result: r1 }, { result: r2 }) =>
 				GUESS_RESULT_PRIORITIES[r2] - GUESS_RESULT_PRIORITIES[r1],
@@ -61,7 +61,7 @@ const KbKey = ({ kbKey, letterResult, handleKey }: KbKeyProps) => {
 };
 
 interface KeyboardProps {
-	board: IBoard;
+	board: Board;
 	handleKey: (key: string) => void;
 }
 const Keyboard = ({ board, handleKey }: KeyboardProps) => {
