@@ -61,7 +61,10 @@ const App = () => {
 				setGameStatus({ active: false, gameOverMessage: 'Great job!' });
 			}
 			if (!isCorrect && rowIndex === 5) {
-				setGameStatus({ active: false, gameOverMessage: 'Sorry!' });
+				setGameStatus({
+					active: false,
+					gameOverMessage: `Sorry! The word was ${word}`,
+				});
 			}
 
 			setRowIndex((i) => i + 1);
