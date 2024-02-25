@@ -148,8 +148,7 @@ const App = () => {
 		handleKey(key);
 	});
 
-	const startNewGame = (e: React.MouseEvent<HTMLButtonElement>) => {
-		e.currentTarget.blur();
+	const resetGame = () => {
 		setGameStatus(DEFAULT_STATUS);
 		setBoard(DEFAULT_BOARD);
 		setWord(getRandomWord());
@@ -167,10 +166,16 @@ const App = () => {
 					<h1 className="text-4xl">Eordle</h1>
 				</div>
 				<div className="w-1/3 flex justify-end gap-2">
-					<Button disabled onClick={(e) => startNewGame(e)}>
+					<Button disabled>
 						<HiChartBar />
 					</Button>
-					<Button disabled={gameStatus.active} onClick={(e) => startNewGame(e)}>
+					<Button
+						disabled={gameStatus.active}
+						onClick={(e) => {
+							e.currentTarget.blur();
+							resetGame();
+						}}
+					>
 						<HiRefresh />
 					</Button>
 				</div>
