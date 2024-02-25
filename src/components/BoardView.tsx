@@ -1,5 +1,5 @@
 import React from 'react';
-import { Board, GuessResult } from '../types';
+import { Board, Cell } from '../types';
 
 const GUESS_RESULT_STYLES = {
 	unknown: 'bg-neutral-900 border-neutral-600',
@@ -9,11 +9,10 @@ const GUESS_RESULT_STYLES = {
 };
 
 interface CellProps {
-	letter: string;
-	result: GuessResult;
+	cell: Cell;
 	index?: number;
 }
-const Cell = ({ letter, result, index }: CellProps) => {
+const CellView = ({ cell: { letter, result }, index }: CellProps) => {
 	const base =
 		'flex items-center justify-center w-14 h-14 border rounded-sm text-2xl font-bold';
 
@@ -48,7 +47,7 @@ const BoardView = ({ board, boardEffects }: BoardViewProps) => (
 			<div key={a} className={`flex gap-1 ${boardEffects[a]}`}>
 				{row.cells.map((cell, b) => (
 					// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-					<Cell key={b} letter={cell.letter} result={cell.result} index={b} />
+					<CellView key={b} cell={cell} index={b} />
 				))}
 			</div>
 		))}

@@ -2,12 +2,6 @@ import React from 'react';
 import { HiOutlineBackspace } from 'react-icons/hi';
 import { Board, GuessResult } from '../types';
 
-const KEYS = [
-	['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
-	['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
-	['Enter', 'z', 'x', 'c', 'v', 'b', 'n', 'm', 'Backspace'],
-];
-
 const GUESS_RESULT_STYLES: Record<GuessResult, string> = {
 	not_present: 'bg-neutral-700',
 	correct: 'bg-green-600 duration-1000',
@@ -15,6 +9,9 @@ const GUESS_RESULT_STYLES: Record<GuessResult, string> = {
 	unknown: 'bg-neutral-500 duration-700',
 };
 
+// The game board may contain two of the same letter, one `correct`
+// and one `wrong_location`. we must pick one for the keyboard.
+// this is the priority order:
 const GUESS_RESULT_PRIORITIES: Record<GuessResult, number> = {
 	correct: 0,
 	wrong_location: 1,
@@ -59,6 +56,12 @@ const KbKey = ({ kbKey, letterResult, handleKey }: KbKeyProps) => {
 		</button>
 	);
 };
+
+const KEYS = [
+	['q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p'],
+	['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l'],
+	['Enter', 'z', 'x', 'c', 'v', 'b', 'n', 'm', 'Backspace'],
+];
 
 interface KeyboardProps {
 	board: Board;
