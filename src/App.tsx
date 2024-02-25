@@ -38,6 +38,36 @@ const updateCell = (
 	};
 };
 
+// note that finding `correct` is higher priority
+// and that `correct` and `wrong_location` matches cause us to
+//  eliminate that letter from `w` so it can't be matched again
+const checkRow = (row: Row, word: string) => {
+	const w = word.split('');
+	const checkedCells: Cell[] = row.cells
+		.map((cell, i): Cell => {
+			if (w[i] === cell.letter) {
+				w[i] = '';
+				return { ...cell, result: 'correct' };
+			}
+
+			return cell;
+		})
+		.map((cell): Cell => {
+			if (cell.result === 'correct') return cell;
+
+			const matchIndex = w.indexOf(cell.letter);
+			if (matchIndex === -1) {
+				return { ...cell, result: 'not_present' };
+			}
+
+			// eliminate from future matches
+			w[matchIndex] = '';
+			return { ...cell, result: 'wrong_location' };
+		});
+
+	return { ...row, cells: checkedCells };
+};
+
 const App = () => {
 	const [gameStatus, setGameStatus] = useLocalStorageValue(
 		'gameStatus',
@@ -48,36 +78,6 @@ const App = () => {
 	const [boardEffects, setBoardEffects] = useState(['', '', '', '', '', '']);
 	const [rowIndex, setRowIndex] = useLocalStorageValue('rowIndex', 0);
 	const [colIndex, setColIndex] = useLocalStorageValue('colIndex', 0);
-
-	const checkRow = (row: Row) => {
-		const w = word.split('');
-		// note that finding `correct` is higher priority
-		// and that `correct` and `wrong_location` matches cause us to
-		//  eliminate that letter from `w` so it can't be matched again
-		const checkedCells: Cell[] = row.cells
-			.map((cell, i): Cell => {
-				if (w[i] === cell.letter) {
-					w[i] = '';
-					return { ...cell, result: 'correct' };
-				}
-
-				return cell;
-			})
-			.map((cell): Cell => {
-				if (cell.result === 'correct') return cell;
-
-				const matchIndex = w.indexOf(cell.letter);
-				if (matchIndex === -1) {
-					return { ...cell, result: 'not_present' };
-				}
-
-				// eliminate from future matches
-				w[matchIndex] = '';
-				return { ...cell, result: 'wrong_location' };
-			});
-
-		return { ...row, cells: checkedCells };
-	};
 
 	const handleInvalidGuess = () => {
 		setBoardEffects((boardEffects) =>
@@ -100,7 +100,7 @@ const App = () => {
 			const guess = board.rows[rowIndex].cells.map((cell) => cell.letter).join('');
 			const isValidGuess = isAllowedGuess(guess);
 			if (isValidGuess) {
-				const checkedRow = checkRow(board.rows[rowIndex]);
+				const checkedRow = checkRow(board.rows[rowIndex], word);
 				setBoard({
 					...board,
 					rows: board.rows.map((row, i) => (i === rowIndex ? checkedRow : row)),
