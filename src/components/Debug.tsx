@@ -1,9 +1,20 @@
-import { useLocalStorageValue } from '@react-hookz/web';
 import React from 'react';
+import { useLocalStorageValue } from '@react-hookz/web';
 import { HiCode } from 'react-icons/hi';
 import Button from './Button';
+import { IBoard } from '../constants';
+import { GameStatus } from '../App';
 
-const Debug = ({ state }: { state: any }) => {
+interface GameState {
+	word: string;
+	rowIndex: number;
+	colIndex: number;
+	boardEffects: string[];
+	gameStatus: GameStatus;
+	board: IBoard;
+}
+
+const Debug = ({ state }: { state: GameState }) => {
 	const [debug] = useLocalStorageValue('debug', false);
 
 	return debug ? (

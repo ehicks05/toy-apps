@@ -3,14 +3,21 @@ import _ from 'lodash';
 import React, { useState } from 'react';
 import { HiChartBar, HiRefresh } from 'react-icons/hi';
 import { Board, Button, Debug, DebugButton, Footer, Keyboard } from './components';
-import { DEFAULT_BOARD, Result } from './constants';
+import { DEFAULT_BOARD, GuessResult } from './constants';
 import { getRandomWord, isAllowedGuess } from './wordService';
 
+export interface GameStatus {
+	active: boolean;
+	gameOverMessage: string;
+}
+
+const DEFAULT_GAME_STATUS: GameStatus = { active: true, gameOverMessage: '' };
+
 const App = () => {
-	const [gameStatus, setGameStatus] = useLocalStorageValue('gameStatus', {
-		active: true,
-		gameOverMessage: '',
-	});
+	const [gameStatus, setGameStatus] = useLocalStorageValue(
+		'gameStatus',
+		DEFAULT_GAME_STATUS,
+	);
 	const [word, setWord] = useLocalStorageValue('word', getRandomWord());
 	const [board, setBoard] = useLocalStorageValue('board', DEFAULT_BOARD);
 	const [boardEffects, setBoardEffects] = useState(['', '', '', '', '', '']);
@@ -32,7 +39,7 @@ const App = () => {
 			const w = word.split('');
 			return row
 				.map((cell, j) => {
-					let result: Result = 'unknown';
+					let result: GuessResult = 'unknown';
 					if (!w.includes(cell.letter)) result = 'not_present';
 					else if (w[j] === cell.letter) {
 						result = 'correct';
@@ -47,7 +54,7 @@ const App = () => {
 				.map((cell) => {
 					if (cell.result !== 'unknown') return cell;
 
-					const result: Result = w.includes(cell.letter)
+					const result: GuessResult = w.includes(cell.letter)
 						? 'wrong_location'
 						: 'not_present';
 					if (result === 'wrong_location') {
@@ -115,9 +122,9 @@ const App = () => {
 		handleKey(key);
 	});
 
-	const newGame = (e: React.MouseEvent<HTMLButtonElement>) => {
+	const startNewGame = (e: React.MouseEvent<HTMLButtonElement>) => {
 		e.currentTarget.blur();
-		setGameStatus({ active: true, gameOverMessage: '' });
+		setGameStatus(DEFAULT_GAME_STATUS);
 		setBoard(DEFAULT_BOARD);
 		setWord(getRandomWord());
 		setRowIndex(0);
@@ -134,10 +141,10 @@ const App = () => {
 					<h1 className="text-4xl">Eordle</h1>
 				</div>
 				<div className="w-1/3 flex justify-end gap-2">
-					<Button disabled onClick={(e) => newGame(e)}>
+					<Button disabled onClick={(e) => startNewGame(e)}>
 						<HiChartBar />
 					</Button>
-					<Button disabled={gameStatus.active} onClick={(e) => newGame(e)}>
+					<Button disabled={gameStatus.active} onClick={(e) => startNewGame(e)}>
 						<HiRefresh />
 					</Button>
 				</div>

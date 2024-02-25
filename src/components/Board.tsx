@@ -1,5 +1,5 @@
 import React from 'react';
-import { IBoard, Result } from '../constants';
+import { GuessResult, IBoard } from '../constants';
 
 const resultMap = {
 	unknown: 'bg-neutral-900 border-neutral-600',
@@ -10,7 +10,7 @@ const resultMap = {
 
 interface CellProps {
 	letter: string;
-	result: Result;
+	result: GuessResult;
 	index?: number;
 }
 const Cell = ({ letter, result, index }: CellProps) => {
@@ -44,8 +44,10 @@ interface BoardProps {
 const Board = ({ board, boardEffects }: BoardProps) => (
 	<div className="flex flex-col h-full justify-center gap-1">
 		{board.map((row, a) => (
+			// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 			<div key={a} className={`flex gap-1 ${boardEffects[a]}`}>
 				{row.map((cell, b) => (
+					// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 					<Cell key={b} letter={cell.letter} result={cell.result} index={b} />
 				))}
 			</div>
