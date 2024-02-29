@@ -25,8 +25,8 @@ export const updateCell = (
 };
 
 // note that finding `correct` is higher priority
-// and that `correct` and `wrong_location` matches cause us to
-//  eliminate that letter from `w` so it can't be matched again
+// and that for `correct` and `wrong_location` matches we
+// eliminate that letter from `w` so it can't be matched again
 export const checkRow = (row: Row, word: string) => {
 	const w = word.split('');
 	const checkedCells: Cell[] = row.cells
