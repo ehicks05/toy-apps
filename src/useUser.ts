@@ -1,17 +1,20 @@
 import { useEffect, useState } from 'react';
-import { DEFAULT_USER } from './data';
+import { type Benchmark, DEFAULT_USER } from './data';
+
+const KEY = 'user';
 
 const loadUser = () => {
-	const storedUser = localStorage.getItem('user');
-	return storedUser ? JSON.parse(storedUser) : DEFAULT_USER;
+	const user = localStorage.getItem(KEY);
+	return user ? JSON.parse(user) : DEFAULT_USER;
 };
 
 export const useUser = () => {
-	const [user, setUser] = useState(loadUser());
+	const userStateHook = useState<Benchmark>(loadUser());
+	const [user] = userStateHook;
 
 	useEffect(() => {
-		localStorage.setItem('user', JSON.stringify(user));
+		localStorage.setItem(KEY, JSON.stringify(user));
 	}, [user]);
 
-	return [user, setUser];
+	return userStateHook;
 };

@@ -1,4 +1,4 @@
-import DataTable from './DataTable';
+import Table from './Table';
 
 function App() {
 	return (
@@ -11,8 +11,8 @@ function App() {
 					</div>
 				</section>
 
-				<section className="">
-					<DataTable />
+				<section>
+					<Table />
 				</section>
 
 				<footer className="p-12 pt-20">
