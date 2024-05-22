@@ -2,6 +2,5 @@
 
 possible sources for standards:
 
-[strength standards](https://strengthlevel.com/strength-standards)
-
-[running level](https://runninglevel.com/)
+1. [strength standards](https://strengthlevel.com/strength-standards)
+2. [running level](https://runninglevel.com/)
