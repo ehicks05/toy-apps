@@ -1,0 +1,19 @@
+{
+	"$schema": "https://biomejs.dev/schemas/1.7.3/schema.json",
+	"organizeImports": {
+		"enabled": true
+	},
+	"linter": {
+		"enabled": true,
+		"include": ["./src/**/*.*"],
+		"rules": {
+			"recommended": true
+		}
+	},
+	"formatter": {
+		"include": ["./src/**/*.*"]
+	},
+	"javascript": {
+		"formatter": { "semicolons": "always", "quoteStyle": "single" }
+	}
+}

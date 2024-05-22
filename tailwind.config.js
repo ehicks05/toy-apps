@@ -1,16 +1,13 @@
-module.exports = {
-  purge: ["./src/**/*.{js,jsx,ts,tsx}", "./public/index.html"],
-  darkMode: "media", // or 'media' or 'class'
-  theme: {
-    extend: {},
-    fontFamily: {
-      sans: ["Lexend Deca", "ui-sans-serif", "system-ui"],
-      serif: ["ui-serif", "Georgia"],
-      mono: ["ui-monospace", "SFMono-Regular"],
-    },
-  },
-  variants: {
-    extend: {},
-  },
-  plugins: [],
+/** @type {import('tailwindcss').Config} */
+export default {
+	content: ['./src/**/*.tsx', './index.html'],
+	theme: {
+		extend: {},
+		fontFamily: {
+			sans: ['Lexend Deca', 'ui-sans-serif', 'system-ui'],
+			serif: ['ui-serif', 'Georgia'],
+			mono: ['ui-monospace', 'SFMono-Regular'],
+		},
+	},
+	plugins: [],
 };
