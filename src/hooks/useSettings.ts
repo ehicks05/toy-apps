@@ -1,7 +1,11 @@
 import { useLocalStorage } from '@uidotdev/usehooks';
 
+export const VIEWS = ['year', 'month', 'week', '4day', 'day', 'schedule'] as const;
+
+export type View = (typeof VIEWS)[number];
+
 export interface Settings {
-	view: 'year' | 'month' | 'week' | '4day' | 'day' | 'schedule';
+	view: View;
 	isShowWeekend: boolean;
 }
 
@@ -18,5 +22,7 @@ export const useSettings = () => {
 		setSettings,
 		isShowWeekend: settings.isShowWeekend,
 		setIsShowWeekend: (v: boolean) => setSettings({ ...settings, isShowWeekend: v }),
+		view: settings.view,
+		setView: (v: View) => setSettings({ ...settings, view: v }),
 	};
 };
