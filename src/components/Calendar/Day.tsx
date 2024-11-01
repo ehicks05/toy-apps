@@ -52,7 +52,7 @@ export const Day = ({ date, events, setActiveEventId }: DayProps) => {
 
 	return (
 		<div
-			className={`p-2 min-h-32 border-y ${border} hover:bg-neutral-800 transition-all`}
+			className={`p-2 min-h-32 border-y-2 ${border} hover:bg-neutral-800 transition-all`}
 		>
 			<div className="text-sm md:text-base mb-1">{dateLabel}</div>
 			{events.length > 0 && (

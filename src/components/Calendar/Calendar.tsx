@@ -33,7 +33,7 @@ export const Calendar = ({
 	const gridCols = cols === 7 ? 'grid-cols-7' : 'grid-cols-5';
 
 	return (
-		<div className="w-full border border-neutral-800">
+		<div className="w-full border-2 border-neutral-800">
 			<div className="p-2 border border-neutral-800 bg-neutral-800 font-semibold text-center">
 				<div className="flex justify-between items-center">
 					<div className="w-20" />
@@ -43,7 +43,7 @@ export const Calendar = ({
 					<MonthNav date={date} setDate={setDate} _date={_date} />
 				</div>
 			</div>
-			<div className={`grid ${gridCols}`}>
+			<div className={`w-full grid ${gridCols}`}>
 				{dayNames.map((dow) => (
 					<div key={dow} className="p-2 border border-neutral-800 bg-neutral-800">
 						{dow}

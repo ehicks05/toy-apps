@@ -10,7 +10,7 @@ export const Demo = () => {
 	const [activeEventId, setActiveEventId] = useState<string | undefined>(undefined);
 	const activeEvent = activeEventId && events.find((e) => e.id === activeEventId);
 
-	const date = new Date('2024-10-31T00:00:00');
+	const date = new Date();
 
 	return (
 		<div className="flex flex-col gap-4">
