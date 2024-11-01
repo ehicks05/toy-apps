@@ -22,6 +22,7 @@ export const CalendarSettingsMenu = () => {
 				<LucideSettings />
 			</DropdownMenuTrigger>
 			<DropdownMenuContent className="flex flex-col gap-2 p-2 bg-neutral-700">
+				{/* @ts-expect-error */}
 				<DropdownMenuRadioGroup value={view} onValueChange={setView}>
 					{VIEWS.map((view) => (
 						<DropdownMenuRadioItem
