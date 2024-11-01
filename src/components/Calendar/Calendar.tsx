@@ -1,34 +1,8 @@
 import { useState } from 'react';
-import { MdArrowBack, MdArrowForward, MdToday } from 'react-icons/md';
 import { Day } from './Day';
-import { addMonths, getCalendarDays, getDayNames } from './dates';
+import {  getCalendarDays, getDayNames } from './dates';
 import { type Event, isOverlapsDay } from './events';
-
-interface MonthNavProps {
-	date: Date;
-	setDate: React.Dispatch<React.SetStateAction<Date>>;
-	_date: Date;
-}
-
-const MonthNav = ({ date, setDate, _date }: MonthNavProps) => {
-	const handleReset = () => setDate(_date);
-	const handlePrev = () => setDate(addMonths(date, -1));
-	const handleNext = () => setDate(addMonths(date, 1));
-
-	return (
-		<div className="flex gap-2 w-20 justify-end">
-			<button type="button" onClick={handleReset}>
-				<MdToday size={20} />
-			</button>
-			<button type="button" onClick={handlePrev}>
-				<MdArrowBack size={20} />
-			</button>
-			<button type="button" onClick={handleNext}>
-				<MdArrowForward size={20} />
-			</button>
-		</div>
-	);
-};
+import { MonthNav } from './MonthNav';
 
 interface CalendarProps {
 	date?: Date;
