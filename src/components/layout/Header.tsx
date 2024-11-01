@@ -8,7 +8,7 @@ const Logo = () => (
 				alt="logo"
 			/>
 			<span className="mt-1 hidden sm:inline font-bold text-4xl font-logo text-white">
-				Vær
+				Calendar
 			</span>
 		</div>
 	</div>

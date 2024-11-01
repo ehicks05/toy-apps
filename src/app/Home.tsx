@@ -1,9 +1,13 @@
+import { CalendarDemo } from "@/components/Calendar/Calendar";
 
 
 export const Home = () => {
 	return (
-		<div className="p-2 max-w-screen-xl mx-auto grid grid-cols-1 md:grid-cols-3 items-start justify-center gap-4">
-			yo
-		</div>
+  <div className="max-w-screen-2xl mx-auto">
+    <div className="flex flex-col gap-4 p-2 md:p-4 mt-7">
+      <h3>Calendar</h3>
+      <CalendarDemo />
+    </div>
+  </div>
 	);
 };
