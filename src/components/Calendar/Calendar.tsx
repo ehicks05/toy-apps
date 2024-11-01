@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { MdArrowBack, MdArrowForward, MdToday } from 'react-icons/md';
 import { Day } from './Day';
-import { EventForm } from './EventForm';
-import { EVENTS } from './data';
 import { addMonths, getCalendarDays, getDayNames } from './dates';
 import { type Event, isOverlapsDay } from './events';
 
@@ -86,73 +84,6 @@ export const Calendar = ({
 					/>
 				))}
 			</div>
-			{/* <pre className="whitespace-pre-wrap text-xs">
-				{JSON.stringify({ date }, null, 2)}
-			</pre> */}
-		</div>
-	);
-};
-
-const ActiveEvent = ({ event }: { event: Event }) => {
-	const style = {
-		backgroundColor: event.color.startsWith('#') ? event.color : undefined,
-	};
-
-	const df = Intl.DateTimeFormat('en-US', {
-		month: 'numeric',
-		day: 'numeric',
-		year: 'numeric',
-	});
-	const dtf = Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: '2-digit' });
-
-	return (
-		<div className="flex flex-col gap-2">
-			<div className="flex items-center gap-2 text-lg">
-				<div className={`h-3 w-3 ${event.color} rounded-full`} style={style} />
-				{event.label}
-			</div>
-			<div className="text-sm">{event.description}</div>
-			<div className="text-sm">
-				from {`${df.format(event.start)} at ${dtf.format(event.start)}`} to{' '}
-				{`${df.format(event.end)} at ${dtf.format(event.end)}`}
-			</div>
-		</div>
-	);
-};
-
-export const CalendarDemo = () => {
-	const [isShowWeekend, setIsShowWeekend] = useState(true);
-	const [events, setEvents] = useState(EVENTS);
-	const [activeEventId, setActiveEventId] = useState<string | undefined>(undefined);
-	const activeEvent = activeEventId && events.find((e) => e.id === activeEventId);
-
-	const date = new Date('2024-10-31T00:00:00');
-
-	return (
-		<div className="flex flex-col gap-4">
-			<label className="flex gap-2 text-neutral-300">
-				<input
-					type="checkbox"
-					checked={isShowWeekend}
-					onChange={() => setIsShowWeekend(!isShowWeekend)}
-				/>
-				Show Weekend?
-			</label>
-			<Calendar
-				date={date}
-				events={events}
-				isShowWeekend={isShowWeekend}
-				setActiveEventId={setActiveEventId}
-			/>
-
-			<div className="flex gap-8">
-				<EventForm events={events} setEvents={setEvents} />
-				{activeEvent && <ActiveEvent event={activeEvent} />}
-			</div>
-
-			{/* <pre className="whitespace-pre-wrap text-xs">
-				{JSON.stringify({ events, activeEvent }, null, 2)}
-			</pre> */}
 		</div>
 	);
 };
