@@ -1,8 +1,9 @@
+import { useSettings } from '@/hooks';
 import { useState } from 'react';
 import { Day } from './Day';
-import {  getCalendarDays, getDayNames } from './dates';
-import { type Event, isOverlapsDay } from './events';
 import { MonthNav } from './MonthNav';
+import { getCalendarDays, getDayNames } from './dates';
+import { type Event, isOverlapsDay } from './events';
 
 interface CalendarProps {
 	date?: Date;
@@ -59,5 +60,36 @@ export const Calendar = ({
 				))}
 			</div>
 		</div>
+	);
+};
+
+interface ManagerProps {
+	date?: Date;
+	events: Event[];
+}
+
+export const Manager = ({
+	date = new Date(),
+	events: _events = [],
+}: ManagerProps) => {
+	const { isShowWeekend } = useSettings();
+	const [events, setEvents] = useState(_events);
+	const [activeEventId, setActiveEventId] = useState<string | undefined>(undefined);
+	const activeEvent = activeEventId && events.find((e) => e.id === activeEventId);
+
+	const days = getCalendarDays(date)
+		.filter((date) => isShowWeekend || ![0, 6].includes(date.getDay()))
+		.map((date) => ({
+			date,
+			events: events.filter((e) => isOverlapsDay(e, date)),
+		}));
+
+	return (
+		<Calendar
+			date={date}
+			events={events}
+			isShowWeekend={isShowWeekend}
+			setActiveEventId={setActiveEventId}
+		/>
 	);
 };

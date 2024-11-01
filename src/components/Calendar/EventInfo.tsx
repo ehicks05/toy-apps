@@ -1,4 +1,4 @@
-import { type Event } from './events';
+import type { Event } from './events';
 
 export const ActiveEvent = ({ event }: { event: Event }) => {
 	const style = {
