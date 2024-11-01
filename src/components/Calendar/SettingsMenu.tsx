@@ -21,25 +21,25 @@ export const CalendarSettingsMenu = () => {
 			<DropdownMenuTrigger>
 				<LucideSettings />
 			</DropdownMenuTrigger>
-			<DropdownMenuContent className="flex flex-col gap-2 p-2 bg-neutral-800">
+			<DropdownMenuContent className="flex flex-col gap-2 p-2 bg-neutral-700">
 				<DropdownMenuRadioGroup value={view} onValueChange={setView}>
 					{VIEWS.map((view) => (
 						<DropdownMenuRadioItem
 							key={view}
 							value={view}
-							className="hover:bg-neutral-700"
+							className="hover:bg-neutral-600"
 						>
-							{view}
+							{view.slice(0, 1).toUpperCase() + view.slice(1)}
 						</DropdownMenuRadioItem>
 					))}
 				</DropdownMenuRadioGroup>
-				<DropdownMenuSeparator className="border border-neutral-700" />
+				<DropdownMenuSeparator className="border border-neutral-600" />
 				<DropdownMenuCheckboxItem
 					checked={isShowWeekend}
 					onCheckedChange={(isShowWeekend) => setIsShowWeekend(isShowWeekend)}
-					className="hover:bg-neutral-700"
+					className="hover:bg-neutral-600"
 				>
-					Show Weekend?
+					Show Weekends
 				</DropdownMenuCheckboxItem>
 			</DropdownMenuContent>
 		</DropdownMenu>
