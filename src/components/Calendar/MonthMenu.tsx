@@ -14,7 +14,7 @@ export const MonthMenu = ({ date, setDate, _date }: Props) => {
 	const handleNext = () => setDate(addMonths(date, 1));
 
 	return (
-		<div className="flex gap-2 w-32 justify-end text-neutral-400">
+		<div className="flex gap-2 w-32 justify-end text-neutral-300">
 			<CalendarSettingsMenu />
 
 			<button type="button" onClick={handleReset}>
