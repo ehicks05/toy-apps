@@ -1,16 +1,10 @@
-import { Calendar, Manager } from './Calendar';
-import { CalendarSettingsMenu } from './SettingsMenu';
+import { useState } from 'react';
+import { Calendar } from './Calendar';
 import { EVENTS } from './data';
 
 export const Demo = () => {
 	const date = new Date();
+	const [events, setEvents] = useState(EVENTS);
 
-	return (
-		<div className="flex flex-col gap-4">
-			<div>
-				<CalendarSettingsMenu />
-			</div>
-			<Manager date={date} events={EVENTS} />
-		</div>
-	);
+	return <Calendar date={date} events={events} setEvents={setEvents} />;
 };

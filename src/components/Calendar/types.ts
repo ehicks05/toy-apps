@@ -5,6 +5,8 @@ export interface Interval {
 
 export interface Event {
 	id: string;
+	calendarId?: string;
+
 	label: string;
 	description: string;
 	color: string;

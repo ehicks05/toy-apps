@@ -1,7 +1,7 @@
 import { useSettings } from '@/hooks';
 import { useState } from 'react';
 import { Day } from './Day';
-import { MonthNav } from './MonthNav';
+import { MonthMenu } from './MonthMenu';
 import { getCalendarDays, getDayNames } from './dates';
 import { isOverlapsDay } from './events';
 import type { Event } from './types';
@@ -41,11 +41,11 @@ export const Calendar = ({
 		<div className="w-full border-2 border-neutral-800">
 			<div className="p-2 border border-neutral-800 bg-neutral-800 font-semibold text-center">
 				<div className="flex justify-between items-center">
-					<div className="w-20" />
+					<div className="w-32" />
 					{Intl.DateTimeFormat('en-US', { month: 'long', year: 'numeric' }).format(
 						date,
 					)}
-					<MonthNav date={date} setDate={setDate} _date={_date} />
+					<MonthMenu date={date} setDate={setDate} _date={_date} />
 				</div>
 			</div>
 			<div className={`w-full grid ${gridCols}`}>
@@ -65,18 +65,4 @@ export const Calendar = ({
 			</div>
 		</div>
 	);
-};
-
-interface ManagerProps {
-	date?: Date;
-	events: Event[];
-}
-
-export const Manager = ({
-	date = new Date(),
-	events: _events = [],
-}: ManagerProps) => {
-	const [events, setEvents] = useState(_events);
-
-	return <Calendar date={date} events={events} setEvents={setEvents} />;
 };
