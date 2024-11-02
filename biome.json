@@ -9,7 +9,8 @@
 			"recommended": true,
 			"performance": {
 				"noAccumulatingSpread": "off"
-			}
+			},
+			"complexity": { "noForEach": "off" }
 		}
 	},
 	"formatter": {

@@ -1,5 +1,5 @@
 import { useSettings } from '@/hooks';
-import { getWeek, getWeekOfMonth } from 'date-fns';
+import { getWeek } from 'date-fns';
 import { groupBy } from 'lodash-es';
 import { useState } from 'react';
 import { Day } from './Day';
@@ -36,7 +36,7 @@ export const Calendar = ({ date: _date = new Date(), events, setEvents }: Props)
 	const gridCols = cols === 7 ? 'grid-cols-7' : 'grid-cols-5';
 	const monthLabel = MMMMyyyy.format(date);
 
-	const weeks = groupBy(days, (day) => getWeek(day.date));
+	const weeks = Object.values(groupBy(days, (day) => getWeek(day.date)));
 
 	return (
 		<div className="w-full border-2 border-neutral-800">
@@ -53,14 +53,29 @@ export const Calendar = ({ date: _date = new Date(), events, setEvents }: Props)
 						{dow}
 					</div>
 				))}
-				{days.map(({ date, events }) => (
-					<Day
-						key={date.getTime()}
-						date={date}
-						events={events}
-						setEvents={setEvents}
-					/>
-				))}
+				{weeks.map((week) => {
+					// find each event's 'swimlane'
+					const eventLanes: Record<string, number> = {};
+
+					week.forEach((day) =>
+						day.events.forEach((event, i) => {
+							if (eventLanes[event.id]) {
+								return;
+							}
+							eventLanes[event.id] = i;
+						}),
+					);
+
+					return week.map(({ date, events }) => (
+						<Day
+							key={date.getTime()}
+							date={date}
+							events={events}
+							setEvents={setEvents}
+							eventLanes={eventLanes}
+						/>
+					));
+				})}
 			</div>
 		</div>
 	);
