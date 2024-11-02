@@ -1,4 +1,4 @@
-import type { Event } from './events';
+import type { Event } from './types';
 
 const COLORS = {
 	green: '#14532d',
@@ -16,47 +16,99 @@ export const EVENTS: Event[] = [
 		label: 'gone fishing',
 		description: 'at the lake',
 		color: COLORS.emerald,
-		start: new Date(2024, 10, 11),
-		end: new Date(2024, 10, 13),
+		dates: {
+			start: new Date(2024, 10, 11),
+			end: new Date(2024, 10, 13),
+		},
+		times: {
+			start: new Date(2024, 10, 11),
+			end: new Date(2024, 10, 13),
+		},
+		tz: '',
+		isAllDay: true,
 	},
 	{
 		id: 'med1',
 		label: 'meditate',
 		description: 'zen',
 		color: COLORS.blue,
-		start: new Date(2024, 10, 13, 12),
-		end: new Date(2024, 10, 13),
+		dates: {
+			start: new Date(2024, 10, 13, 12),
+			end: new Date(2024, 10, 13),
+		},
+		times: {
+			start: new Date(2024, 10, 13, 12),
+			end: new Date(2024, 10, 13),
+		},
+		tz: '',
+		isAllDay: true,
 	},
 	{
 		id: 'study',
 		label: 'study',
 		description: 'learn',
 		color: COLORS.violet,
-		start: new Date(2024, 10, 13),
-		end: new Date(2024, 10, 14),
+
+		dates: {
+			start: new Date(2024, 10, 13),
+			end: new Date(2024, 10, 14),
+		},
+		times: {
+			start: new Date(2024, 10, 13),
+			end: new Date(2024, 10, 14),
+		},
+		tz: '',
+		isAllDay: true,
 	},
 	{
 		id: 'med2',
 		label: 'meditate',
 		description: 'ohm',
 		color: COLORS.red,
-		start: new Date(2024, 10, 30),
-		end: new Date(2024, 10, 30),
+
+		dates: {
+			start: new Date(2024, 10, 30),
+			end: new Date(2024, 10, 30),
+		},
+		times: {
+			start: new Date(2024, 10, 30),
+			end: new Date(2024, 10, 30),
+		},
+		tz: '',
+		isAllDay: true,
 	},
 	{
 		id: 'work',
 		label: 'work out',
 		description: 'i work out in order to achieve and retain the gains',
 		color: COLORS.rose,
-		start: new Date(2024, 9, 30),
-		end: new Date(2024, 10, 4),
+
+		dates: {
+			start: new Date(2024, 9, 30),
+			end: new Date(2024, 10, 4),
+		},
+		times: {
+			start: new Date(2024, 9, 30),
+			end: new Date(2024, 10, 4),
+		},
+		tz: '',
+		isAllDay: true,
 	},
 	{
 		id: 'asdf',
 		label: 'this is a really long name for an event',
 		description: 'poop emoji',
 		color: COLORS.green,
-		start: new Date(2024, 10, 31),
-		end: new Date(2024, 10, 31),
+
+		dates: {
+			start: new Date(2024, 10, 31),
+			end: new Date(2024, 10, 31),
+		},
+		times: {
+			start: new Date(2024, 10, 31),
+			end: new Date(2024, 10, 31),
+		},
+		tz: '',
+		isAllDay: true,
 	},
 ];

@@ -3,22 +3,26 @@ import { useState } from 'react';
 import { Day } from './Day';
 import { MonthNav } from './MonthNav';
 import { getCalendarDays, getDayNames } from './dates';
-import { type Event, isOverlapsDay } from './events';
+import { isOverlapsDay } from './events';
+import type { Event } from './types';
 
 interface CalendarProps {
 	date?: Date;
 	events: Event[];
+	setEvents: React.Dispatch<React.SetStateAction<Event[]>>;
 	isShowWeekend?: boolean;
-	setActiveEventId: React.Dispatch<React.SetStateAction<string | undefined>>;
 }
 
 export const Calendar = ({
 	date: _date = new Date(),
 	events: _events = [],
-	isShowWeekend = true,
-	setActiveEventId,
+	setEvents,
 }: CalendarProps) => {
-	const events = _events.toSorted((a, b) => a.start.getTime() - b.start.getTime());
+	const { isShowWeekend } = useSettings();
+	// TODO: sort by time as well
+	const events = _events.toSorted(
+		(a, b) => a.dates.start.getTime() - b.dates.start.getTime(),
+	);
 	const cols = isShowWeekend ? 7 : 5;
 
 	const [date, setDate] = useState(_date);
@@ -27,7 +31,7 @@ export const Calendar = ({
 		.filter((date) => isShowWeekend || ![0, 6].includes(date.getDay()))
 		.map((date) => ({
 			date,
-			events: events.filter((e) => isOverlapsDay(e, date)),
+			events: events.filter((e) => isOverlapsDay(e.dates, date)),
 		}));
 
 	const dayNames = getDayNames().slice(cols === 7 ? 0 : 1, cols === 7 ? 7 : -1);
@@ -55,7 +59,7 @@ export const Calendar = ({
 						key={date.getTime()}
 						date={date}
 						events={events}
-						setActiveEventId={setActiveEventId}
+						setEvents={setEvents}
 					/>
 				))}
 			</div>
@@ -72,24 +76,7 @@ export const Manager = ({
 	date = new Date(),
 	events: _events = [],
 }: ManagerProps) => {
-	const { isShowWeekend } = useSettings();
 	const [events, setEvents] = useState(_events);
-	const [activeEventId, setActiveEventId] = useState<string | undefined>(undefined);
-	const activeEvent = activeEventId && events.find((e) => e.id === activeEventId);
 
-	const days = getCalendarDays(date)
-		.filter((date) => isShowWeekend || ![0, 6].includes(date.getDay()))
-		.map((date) => ({
-			date,
-			events: events.filter((e) => isOverlapsDay(e, date)),
-		}));
-
-	return (
-		<Calendar
-			date={date}
-			events={events}
-			isShowWeekend={isShowWeekend}
-			setActiveEventId={setActiveEventId}
-		/>
-	);
+	return <Calendar date={date} events={events} setEvents={setEvents} />;
 };

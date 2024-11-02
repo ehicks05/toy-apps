@@ -1,11 +1,15 @@
-import type { Event } from './events';
+import type { Event } from './types';
 
 export const EventInfo = ({ event }: { event: Event }) => {
 	const style = {
 		backgroundColor: event.color.startsWith('#') ? event.color : undefined,
 	};
 
+	const df = Intl.DateTimeFormat('en-US', { dateStyle: 'full' });
 	const dtf = Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: '2-digit' });
+
+	const from = `${df.format(event.dates.start)}${event.isAllDay ? '' : dtf.format(event.times.start)}`;
+	const to = `${df.format(event.dates.end)}${event.isAllDay ? '' : dtf.format(event.times.end)}`;
 
 	return (
 		<div className="flex flex-col gap-2">
@@ -14,10 +18,10 @@ export const EventInfo = ({ event }: { event: Event }) => {
 				{event.label}
 			</div>
 			<div className="text-sm">{event.description}</div>
-			<div className="text-sm">
-				{`${event.start.toDateString()} at ${dtf.format(event.start)}`}
+			<div className="text-sm text-center">
+				{from}
 				<div> - to - </div>
-				{`${event.end.toDateString()} at ${dtf.format(event.end)}`}
+				{to}
 			</div>
 		</div>
 	);

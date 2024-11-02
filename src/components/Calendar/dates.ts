@@ -7,6 +7,18 @@ export const getDayNames = () => {
 	});
 };
 
+export const toStartOfDay = (date: Date) => new Date(date.setHours(0, 0, 0, 0));
+
+export const toEndOfDay = (date: Date) =>
+	new Date(
+		new Date(new Date(date).setDate(new Date(date).getDate() + 1)).setHours(
+			0,
+			0,
+			0,
+			-1,
+		),
+	);
+
 export const getStartOfMonth = (date: Date) =>
 	new Date(date.getFullYear(), date.getMonth(), 1);
 export const getEndOfMonth = (date: Date) =>

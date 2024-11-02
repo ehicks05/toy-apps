@@ -1,14 +1,4 @@
-interface Interval {
-	start: Date;
-	end: Date;
-}
-
-export interface Event extends Interval {
-	id: string;
-	label: string;
-	description: string;
-	color: string;
-}
+import type { Interval } from './types';
 
 export const isOverlapsDay = ({ start, end }: Interval, date: Date) => {
 	const startOfDay = new Date(date.getFullYear(), date.getMonth(), date.getDate());
