@@ -1,10 +1,12 @@
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
+import { EventForm } from './EventForm';
 import { EventInfo } from './EventInfo';
 import type { Event } from './events';
 
 interface DayProps {
 	date: Date;
 	events: Event[];
+	setEvents: React.Dispatch<React.SetStateAction<Event[]>>;
 	setActiveEventId: React.Dispatch<React.SetStateAction<string | undefined>>;
 }
 
@@ -35,12 +37,16 @@ export const EventChip = ({
 
 	if (isFirstDay && isLastDay) {
 		return (
-			<Popover>
+			<Popover modal>
 				<PopoverTrigger
 					key={event.id}
 					type="button"
 					className={`p-1 pl-2 h-6 md:h-7 line-clamp-1 text-xs md:text-sm text-left cursor-pointer hover:brightness-110 hover:bg-neutral-800 transition-all`}
-					onClick={() => setActiveEventId(event.id)}
+					onClick={(e) => {
+						console.log('existing event popup');
+						setActiveEventId(event.id);
+						e.preventDefault();
+					}}
 				>
 					<div className="flex gap-2 items-center">
 						<div className={`h-3 w-3 rounded-full ${event.color}`} style={style} />
@@ -76,7 +82,7 @@ export const EventChip = ({
 	);
 };
 
-export const Day = ({ date, events, setActiveEventId }: DayProps) => {
+export const Day = ({ date, events, setEvents, setActiveEventId }: DayProps) => {
 	const isCurrentDay = date.toDateString() === new Date().toDateString();
 	const dateLabel = date.getDate() === 1 ? MMd.format(date) : date.getDate();
 
@@ -84,21 +90,32 @@ export const Day = ({ date, events, setActiveEventId }: DayProps) => {
 
 	return (
 		<div
-			className={`p-2 min-h-32 border-y-2 ${border} hover:bg-neutral-800 transition-all`}
+			className={`p-2 min-h-36 border-y-2 ${border} hover:bg-neutral-800 transition-all`}
 		>
-			<div className="text-sm md:text-base mb-1">{dateLabel}</div>
-			{events.length > 0 && (
-				<div className="flex flex-col gap-1">
-					{events.map((e) => (
-						<EventChip
-							key={e.id}
-							date={date}
-							event={e}
-							setActiveEventId={setActiveEventId}
-						/>
-					))}
-				</div>
-			)}
+			<div>
+				<div className="text-sm md:text-base mb-1">{dateLabel}</div>
+				{events.length > 0 && (
+					<div className="flex flex-col gap-1">
+						{events.map((e) => (
+							<EventChip
+								key={e.id}
+								date={date}
+								event={e}
+								setActiveEventId={setActiveEventId}
+							/>
+						))}
+					</div>
+				)}
+			</div>
+
+			<Popover>
+				<PopoverTrigger type="button" className="w-full h-full" />
+				<PopoverContent className="p-0 border-none">
+					<div className="p-2 rounded bg-neutral-700">
+						<EventForm events={events} setEvents={setEvents} />
+					</div>
+				</PopoverContent>
+			</Popover>
 		</div>
 	);
 };

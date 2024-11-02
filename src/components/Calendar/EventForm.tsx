@@ -33,8 +33,7 @@ export const EventForm = ({ events, setEvents }: EventFormProps) => {
 	};
 
 	return (
-		<div className="flex flex-col gap-4 items-start max-w-96">
-			<h3 className="text-lg">Add an Event</h3>
+		<div className="flex flex-col gap-2 items-start max-w-96 text-sm">
 			<label className="w-full flex items-center gap-1 text-neutral-300">
 				<span className="w-36">Label</span>
 				<input
@@ -75,7 +74,7 @@ export const EventForm = ({ events, setEvents }: EventFormProps) => {
 				<span className="w-36">Color {event.color} </span>
 				<input
 					type="color"
-					className="w-full h-12 bg-neutral-800"
+					className="w-full h-10 bg-transparent"
 					value={event.color}
 					onChange={(e) => handleChange('color', e.target.value)}
 				/>
