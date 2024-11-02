@@ -1,6 +1,6 @@
 import type { Event } from './events';
 
-export const ActiveEvent = ({ event }: { event: Event }) => {
+export const EventInfo = ({ event }: { event: Event }) => {
 	const style = {
 		backgroundColor: event.color.startsWith('#') ? event.color : undefined,
 	};
