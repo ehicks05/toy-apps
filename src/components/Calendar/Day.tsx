@@ -32,12 +32,9 @@ export const EventChip = ({
 				<PopoverTrigger
 					key={event.id}
 					type="button"
-					className={`p-1 pl-2 h-6 md:h-7 line-clamp-1 text-xs md:text-sm text-left cursor-pointer hover:brightness-110 hover:bg-neutral-800 transition-all`}
-					onClick={(e) => {
-						console.log('existing event popup');
-						setActiveEventId(event.id);
-						e.preventDefault();
-					}}
+					className={
+						'p-1 pl-2 h-6 md:h-7 line-clamp-1 text-xs md:text-sm text-left cursor-pointer hover:brightness-110 hover:bg-neutral-800 transition-all'
+					}
 				>
 					<div className="flex gap-2 items-center">
 						<div className={`h-3 w-3 rounded-full ${event.color}`} style={style} />
