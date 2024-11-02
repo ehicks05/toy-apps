@@ -20,8 +20,9 @@ export const EventInfo = ({ event }: { event: Event }) => {
 			</div>
 			<div className="text-sm">{event.description}</div>
 			<div className="text-sm">
-				from {`${df.format(event.start)} at ${dtf.format(event.start)}`} to{' '}
-				{`${df.format(event.end)} at ${dtf.format(event.end)}`}
+				{`${event.start.toDateString()} at ${dtf.format(event.start)}`}
+				<div> - to - </div>
+				{`${event.end.toDateString()} at ${dtf.format(event.end)}`}
 			</div>
 		</div>
 	);

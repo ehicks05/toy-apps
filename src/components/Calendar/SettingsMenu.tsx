@@ -19,7 +19,7 @@ export const CalendarSettingsMenu = () => {
 	return (
 		<DropdownMenu>
 			<DropdownMenuTrigger>
-				<LucideSettings />
+				<LucideSettings className="text-neutral-400 hover:text-neutral-300" />
 			</DropdownMenuTrigger>
 			<DropdownMenuContent className="flex flex-col gap-2 p-2 bg-neutral-700">
 				{/* @ts-expect-error */}

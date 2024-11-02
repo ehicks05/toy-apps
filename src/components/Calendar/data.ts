@@ -1,13 +1,13 @@
 import type { Event } from './events';
 
 const COLORS = {
-	green: 'bg-green-900',
-	blue: 'bg-blue-900',
-	violet: 'bg-violet-900',
-	red: 'bg-red-900',
-	rose: 'bg-rose-900',
-	amber: 'bg-amber-900',
-	emerald: 'bg-emerald-900',
+	green: '#14532d',
+	blue: '#1e3a8a',
+	violet: '#4c1d95',
+	red: '#7f1d1d',
+	rose: '#881337',
+	amber: '#78350f',
+	emerald: '#064e3b',
 };
 
 export const EVENTS: Event[] = [
@@ -46,7 +46,7 @@ export const EVENTS: Event[] = [
 	{
 		id: 'work',
 		label: 'work out',
-		description: 'i work out',
+		description: 'i work out in order to achieve and retain the gains',
 		color: COLORS.rose,
 		start: new Date(2024, 9, 30),
 		end: new Date(2024, 10, 4),

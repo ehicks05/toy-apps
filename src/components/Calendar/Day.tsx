@@ -1,3 +1,5 @@
+import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
+import { EventInfo } from './EventInfo';
 import type { Event } from './events';
 
 interface DayProps {
@@ -25,41 +27,52 @@ export const EventChip = ({
 	const left = isFirstDay ? 'rounded-l' : '-ml-2';
 	const right = isLastDay ? 'rounded-r' : '-mr-2';
 
-	const conditional = `${left} ${right} ${text} ${event.color.startsWith('#') ? undefined : event.color}`;
+	const conditional = `${left} ${right} ${text}`;
 
 	const style = {
-		backgroundColor: event.color.startsWith('#') ? event.color : undefined,
+		backgroundColor: event.color,
 	};
 
 	if (isFirstDay && isLastDay) {
 		return (
-			<div>
-				<button
+			<Popover>
+				<PopoverTrigger
 					key={event.id}
 					type="button"
-					className={`p-1 pl-2 h-6 md:h-7 line-clamp-1 text-xs md:text-sm text-left cursor-pointer hover:brightness-110 transition-all`}
-					style={style}
+					className={`p-1 pl-2 h-6 md:h-7 line-clamp-1 text-xs md:text-sm text-left cursor-pointer hover:brightness-110 hover:bg-neutral-800 transition-all`}
 					onClick={() => setActiveEventId(event.id)}
 				>
 					<div className="flex gap-2 items-center">
-						<div className={`h-4 w-4 rounded-full ${conditional}`} />
-						{isFirstDay && event.label}
+						<div className={`h-3 w-3 rounded-full ${event.color}`} style={style} />
+						{event.label}
 					</div>
-				</button>
-			</div>
+				</PopoverTrigger>
+				<PopoverContent className="p-0 border-none">
+					<div className="p-2 rounded bg-neutral-900">
+						<EventInfo event={event} />
+					</div>
+				</PopoverContent>
+			</Popover>
 		);
 	}
 
 	return (
-		<button
-			key={event.id}
-			type="button"
-			className={`p-1 pl-2 h-6 md:h-7 line-clamp-1 text-xs md:text-sm text-left cursor-pointer hover:brightness-110 transition-all ${conditional}`}
-			style={style}
-			onClick={() => setActiveEventId(event.id)}
-		>
-			{isFirstDay && event.label}
-		</button>
+		<Popover>
+			<PopoverTrigger
+				key={event.id}
+				type="button"
+				className={`p-1 pl-2 h-6 md:h-7 line-clamp-1 text-xs md:text-sm text-left cursor-pointer hover:brightness-110 transition-all ${conditional}`}
+				style={style}
+				onClick={() => setActiveEventId(event.id)}
+			>
+				{isFirstDay && event.label}
+			</PopoverTrigger>
+			<PopoverContent className="p-0 border-none">
+				<div className="p-2 rounded bg-neutral-900">
+					<EventInfo event={event} />
+				</div>
+			</PopoverContent>
+		</Popover>
 	);
 };
 
