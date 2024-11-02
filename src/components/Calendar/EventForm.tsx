@@ -38,7 +38,7 @@ const getDefaultEvent = (date: Date): Event => {
 			end: toNextQuarterHour(new Date(), 1),
 		},
 		isAllDay: true,
-		color: '#0a7b17',
+		color: '#3b82f6',
 		tz: '',
 	};
 };
@@ -180,7 +180,7 @@ export const EventForm = ({ date, events, setEvents }: EventFormProps) => {
 			<button
 				type="button"
 				onClick={handleSubmit}
-				className="text-neutral-300 py-1 px-3 bg-indigo-900 hover:bg-indigo-800 rounded transition-all"
+				className="text-neutral-300 py-1 px-3 bg-blue-900 hover:bg-blue-800 rounded transition-all"
 			>
 				Add
 			</button>

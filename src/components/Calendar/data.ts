@@ -12,6 +12,22 @@ const COLORS = {
 
 export const EVENTS: Event[] = [
 	{
+		id: 'running',
+		label: 'gone running',
+		description: 'at the mountain',
+		color: COLORS.emerald,
+		dates: {
+			start: new Date(2024, 9, 11),
+			end: new Date(2024, 9, 13),
+		},
+		times: {
+			start: new Date(2024, 9, 11),
+			end: new Date(2024, 9, 13),
+		},
+		tz: '',
+		isAllDay: true,
+	},
+	{
 		id: 'fish',
 		label: 'gone fishing',
 		description: 'at the lake',

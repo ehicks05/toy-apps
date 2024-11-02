@@ -20,7 +20,7 @@ export const Day = ({ date, events, setEvents, eventLanes }: DayProps) => {
 
 	return (
 		<div
-			className={`p-2 min-h-36 border-y-2 ${border} hover:bg-neutral-800 transition-all`}
+			className={`flex flex-col p-2 min-h-36 border-y-2 ${border} hover:bg-neutral-800 transition-all`}
 		>
 			<div>
 				<div className="text-sm md:text-base mb-1">{dateLabel}</div>
@@ -44,7 +44,7 @@ export const Day = ({ date, events, setEvents, eventLanes }: DayProps) => {
 			</div>
 
 			<Popover>
-				<PopoverTrigger type="button" className="w-full h-full" />
+				<PopoverTrigger type="button" className="w-full flex-grow" />
 				<PopoverContent className="p-0 border-none">
 					<div className="p-2 rounded bg-neutral-700">
 						<EventForm date={date} events={events} setEvents={setEvents} />

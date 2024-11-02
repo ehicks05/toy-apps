@@ -47,6 +47,10 @@ input {
   @apply outline-none;
 }
 
+::-webkit-color-swatch {
+  border: none;
+}
+
 /* @layer base {
   :root {
     --background: 0 0% 100%;
