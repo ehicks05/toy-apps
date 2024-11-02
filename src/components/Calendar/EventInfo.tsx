@@ -5,11 +5,6 @@ export const EventInfo = ({ event }: { event: Event }) => {
 		backgroundColor: event.color.startsWith('#') ? event.color : undefined,
 	};
 
-	const df = Intl.DateTimeFormat('en-US', {
-		month: 'numeric',
-		day: 'numeric',
-		year: 'numeric',
-	});
 	const dtf = Intl.DateTimeFormat('en-US', { hour: 'numeric', minute: '2-digit' });
 
 	return (
