@@ -1,4 +1,6 @@
 import { useSettings } from '@/hooks';
+import { getWeek, getWeekOfMonth } from 'date-fns';
+import { groupBy } from 'lodash-es';
 import { useState } from 'react';
 import { Day } from './Day';
 import { MonthMenu } from './MonthMenu';
@@ -33,6 +35,8 @@ export const Calendar = ({ date: _date = new Date(), events, setEvents }: Props)
 	const dayNames = getDayNames().slice(cols === 7 ? 0 : 1, cols === 7 ? 7 : -1);
 	const gridCols = cols === 7 ? 'grid-cols-7' : 'grid-cols-5';
 	const monthLabel = MMMMyyyy.format(date);
+
+	const weeks = groupBy(days, (day) => getWeek(day.date));
 
 	return (
 		<div className="w-full border-2 border-neutral-800">
