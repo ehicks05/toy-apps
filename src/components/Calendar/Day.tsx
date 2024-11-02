@@ -31,6 +31,25 @@ export const EventChip = ({
 		backgroundColor: event.color.startsWith('#') ? event.color : undefined,
 	};
 
+	if (isFirstDay && isLastDay) {
+		return (
+			<div>
+				<button
+					key={event.id}
+					type="button"
+					className={`p-1 pl-2 h-6 md:h-7 line-clamp-1 text-xs md:text-sm text-left cursor-pointer hover:brightness-110 transition-all`}
+					style={style}
+					onClick={() => setActiveEventId(event.id)}
+				>
+					<div className="flex gap-2 items-center">
+						<div className={`h-4 w-4 rounded-full ${conditional}`} />
+						{isFirstDay && event.label}
+					</div>
+				</button>
+			</div>
+		);
+	}
+
 	return (
 		<button
 			key={event.id}

@@ -18,7 +18,7 @@ const Link = ({ href, children }: LinkProps) => (
 
 const Footer = () => {
 	return (
-		<footer className="flex items-center justify-end gap-4 px-2 py-4 max-w-7xl mx-auto w-full">
+		<footer className="flex items-center justify-end gap-4 px-2 py-4 max-w-screen-2xl mx-auto w-full">
 			{LINKS.map((link) => (
 				<Link key={link.url} href={link.url}>
 					{link.label}
