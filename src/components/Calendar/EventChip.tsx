@@ -22,26 +22,21 @@ export const EventChip = ({ date, event, laneOffset }: Props) => {
 	const isLastDay = event.dates.end.toDateString() === date.toDateString();
 
 	const offsetMargin = LANE_OFFSETS[laneOffset];
-	const style =
-		isFirstDay && isLastDay ? undefined : { backgroundColor: event.color };
 
 	const left = isFirstDay ? 'rounded-l' : '-ml-2';
 	const right = isLastDay ? 'rounded-r' : '-mr-2';
-
 	const shared = `p-1 pl-2 ${offsetMargin} h-6 md:h-7 line-clamp-1 text-xs md:text-sm text-left ${textColor} cursor-pointer hover:brightness-110 transition-all`;
 	const classes =
 		isFirstDay && isLastDay
 			? `${shared} rounded hover:bg-neutral-700`
 			: `${shared} ${left} ${right}`;
+	const bgColor = { backgroundColor: event.color };
 
 	const innerContent =
 		isFirstDay && isLastDay ? (
 			<div className="flex gap-2 items-center">
-				<div
-					className={`h-3 w-3 rounded-full ${event.color}`}
-					style={{ backgroundColor: event.color }}
-				/>
-				{event.label}
+				<div className="h-3 w-3 rounded-full" style={bgColor} />
+				<span className="line-clamp-1">{event.label}</span>
 			</div>
 		) : isFirstDay ? (
 			event.label
@@ -49,7 +44,12 @@ export const EventChip = ({ date, event, laneOffset }: Props) => {
 
 	return (
 		<Popover>
-			<PopoverTrigger key={event.id} type="button" className={classes} style={style}>
+			<PopoverTrigger
+				key={event.id}
+				type="button"
+				className={classes}
+				style={isFirstDay && isLastDay ? undefined : bgColor}
+			>
 				{innerContent}
 			</PopoverTrigger>
 			<PopoverContent className="p-0 border-none">
