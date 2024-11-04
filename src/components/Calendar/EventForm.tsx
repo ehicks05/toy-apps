@@ -55,6 +55,11 @@ const toEventForm = (event: Event) => ({
 	},
 });
 
+const dateStringToDate = (input: string) => {
+	const [y, m, d] = input.split('-').map(Number);
+	return new Date(y, m - 1, d);
+};
+
 const getDefaultEventForm = (date: Date) => toEventForm(getDefaultEvent(date));
 
 interface EventFormProps {
@@ -65,25 +70,26 @@ interface EventFormProps {
 
 export const EventForm = ({ date, events, setEvents }: EventFormProps) => {
 	const [event, setEvent] = useState(getDefaultEventForm(date));
-
-	const handleChange = (name: string, value: string | boolean) =>
+	console.log(event);
+	const handleChange = (name: string, value: string | boolean) => {
+		console.log({ name, value });
 		setEvent({ ...event, [name]: value });
+	};
 
 	const handleSubmit = () => {
-		setEvents([
-			...events,
-			{
-				...event,
-				dates: {
-					start: new Date(event.dates.start),
-					end: new Date(event.dates.end),
-				},
-				times: {
-					start: new Date(event.times.start),
-					end: new Date(event.times.end),
-				},
+		const newEvent = {
+			...event,
+			dates: {
+				start: dateStringToDate(event.dates.start),
+				end: dateStringToDate(event.dates.end),
 			},
-		]);
+			times: {
+				start: new Date(event.times.start),
+				end: new Date(event.times.end),
+			},
+		};
+		console.log(newEvent);
+		setEvents([...events, newEvent]);
 		setEvent(getDefaultEventForm(date));
 	};
 

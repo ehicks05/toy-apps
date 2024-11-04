@@ -35,7 +35,7 @@ export const EventChip = ({ date, event, laneOffset }: Props) => {
 	const innerContent =
 		isFirstDay && isLastDay ? (
 			<div className="flex gap-2 items-center">
-				<div className="h-3 w-3 rounded-full" style={bgColor} />
+				<div className="h-3 w-3 shrink-0 rounded-full" style={bgColor} />
 				<span className="line-clamp-1">{event.label}</span>
 			</div>
 		) : isFirstDay ? (
