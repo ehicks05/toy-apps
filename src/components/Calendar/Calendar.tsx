@@ -1,39 +1,38 @@
 import { useSettings } from '@/hooks';
 import { chunk } from 'lodash-es';
 import { useState } from 'react';
+import type { Temporal } from 'temporal-polyfill';
 import { Day } from './Day';
 import { MonthMenu } from './MonthMenu';
 import { getCalendarDays, getDayNames } from './dates';
 import { isOverlapsDay } from './events';
 import type { Event } from './types';
 
-const MMMMyyyy = new Intl.DateTimeFormat('en-US', {
-	month: 'long',
-	year: 'numeric',
-});
-
 interface Props {
-	date?: Date;
+	date: Temporal.ZonedDateTime;
 	events: Event[];
 	setEvents: React.Dispatch<React.SetStateAction<Event[]>>;
 }
 
-export const Calendar = ({ date: _date = new Date(), events, setEvents }: Props) => {
+export const Calendar = ({ date: _date, events, setEvents }: Props) => {
 	const { isShowWeekend } = useSettings();
 	const cols = isShowWeekend ? 7 : 5;
 
 	const [date, setDate] = useState(_date);
 
 	const days = getCalendarDays(date)
-		.filter((date) => isShowWeekend || ![0, 6].includes(date.getDay()))
+		.filter((date) => isShowWeekend || ![0, 6].includes(date.dayOfWeek))
 		.map((date) => ({
 			date,
-			events: events.filter((e) => isOverlapsDay(e.dates, date)),
+			events: events.filter((e) => isOverlapsDay(e, date)),
 		}));
 
 	const dayNames = getDayNames().slice(cols === 7 ? 0 : 1, cols === 7 ? 7 : -1);
 	const gridCols = cols === 7 ? 'grid-cols-7' : 'grid-cols-5';
-	const monthLabel = MMMMyyyy.format(date);
+	const monthLabel = date.toLocaleString('en-US', {
+		month: 'long',
+		year: 'numeric',
+	});
 
 	const weeks = chunk(days, 7);
 
@@ -67,7 +66,7 @@ export const Calendar = ({ date: _date = new Date(), events, setEvents }: Props)
 
 					return week.map(({ date, events }) => (
 						<Day
-							key={date.getTime()}
+							key={date.toString()}
 							date={date}
 							events={events}
 							setEvents={setEvents}

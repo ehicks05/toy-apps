@@ -1,17 +1,17 @@
 import { MdArrowBack, MdArrowForward, MdToday } from 'react-icons/md';
+import type { Temporal } from 'temporal-polyfill';
 import { CalendarSettingsMenu } from './SettingsMenu';
-import { addMonths } from './dates';
 
 interface Props {
-	date: Date;
-	setDate: React.Dispatch<React.SetStateAction<Date>>;
-	_date: Date;
+	date: Temporal.ZonedDateTime;
+	setDate: React.Dispatch<React.SetStateAction<Temporal.ZonedDateTime>>;
+	_date: Temporal.ZonedDateTime;
 }
 
 export const MonthMenu = ({ date, setDate, _date }: Props) => {
 	const handleReset = () => setDate(_date);
-	const handlePrev = () => setDate(addMonths(date, -1));
-	const handleNext = () => setDate(addMonths(date, 1));
+	const handlePrev = () => setDate(date.subtract({ months: 1 }));
+	const handleNext = () => setDate(date.add({ months: 1 }));
 
 	return (
 		<div className="flex gap-2 w-32 justify-end text-neutral-300">

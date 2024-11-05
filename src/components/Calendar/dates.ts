@@ -1,67 +1,30 @@
+import { Temporal } from 'temporal-polyfill';
+
 export const getDayNames = () => {
-	const fmt = new Intl.DateTimeFormat('en-US', { weekday: 'short' });
-	const temp = new Date();
-	return [...new Array(7)].map((_, i) => {
-		temp.setDate(temp.getDate() - temp.getDay() + i);
-		return fmt.format(temp);
-	});
+	const temp = Temporal.Now.zonedDateTimeISO();
+	return [...new Array(7)].map((_, i) =>
+		temp
+			.with({ day: temp.day - temp.dayOfWeek + i })
+			.toLocaleString('en-US', { weekday: 'short' }),
+	);
 };
 
-export const toStartOfDay = (date: Date) => new Date(date.setHours(0, 0, 0, 0));
+export const getCalendarDays = (date: Temporal.ZonedDateTime) => {
+	const start = date.with({ day: 1 });
 
-export const toEndOfDay = (date: Date) =>
-	new Date(
-		new Date(new Date(date).setDate(new Date(date).getDate() + 1)).setHours(
-			0,
-			0,
-			0,
-			-1,
-		),
+	const currentMonthDays = [...new Array(date.daysInMonth)].map((_, i) =>
+		start.add({ days: i }),
 	);
 
-export const getStartOfMonth = (date: Date) =>
-	new Date(date.getFullYear(), date.getMonth(), 1);
-export const getEndOfMonth = (date: Date) =>
-	new Date(date.getFullYear(), date.getMonth() + 1, 0);
-
-export const addMonths = (_date: Date, n: number) => {
-	const originalDayOfMonth = _date.getDate();
-	const firstDayOfRequestdMonth = new Date(
-		new Date(_date).setMonth(_date.getMonth() + n, 1),
-	);
-	const lastDayOfRequestdMonth = new Date(
-		new Date(firstDayOfRequestdMonth).setMonth(
-			firstDayOfRequestdMonth.getMonth() + 1,
-			0,
-		),
-	).getDate();
-
-	// if the requested month has fewer days than the incoming dayOfMonth,
-	// reduce the new dayOfMonth to fit inside the requested month
-	const newDayOfMonth = Math.min(originalDayOfMonth, lastDayOfRequestdMonth);
-	return new Date(firstDayOfRequestdMonth.setDate(newDayOfMonth));
-};
-
-export const getCalendarDays = (date: Date) => {
-	const start = getStartOfMonth(date);
-	const end = getEndOfMonth(date);
-
-	const currentMonthDays = [...new Array(end.getDate())].map(
-		(_, i) => new Date(start.getFullYear(), start.getMonth(), start.getDate() + i),
-	);
-
-	const prevMonthDays = [...new Array(start.getDay())]
-		.map(
-			(_, i) =>
-				new Date(start.getFullYear(), start.getMonth(), start.getDate() - i - 1),
-		)
+	const prevMonthDays = [...new Array(start.dayOfWeek)]
+		.map((_, i) => start.subtract({ days: i + 1 }))
 		.toReversed();
 
 	const daysInLastRow = (prevMonthDays.length + currentMonthDays.length) % 7;
 	const additionalDaysNeeded = daysInLastRow ? 7 - daysInLastRow : 0;
-	const nextMonthDays = [...new Array(additionalDaysNeeded)].map((_, i) => {
-		return new Date(start.getFullYear(), start.getMonth() + 1, start.getDate() + i);
-	});
+	const nextMonthDays = [...new Array(additionalDaysNeeded)].map((_, i) =>
+		start.with({ month: start.month + 1, day: i + 1 }),
+	);
 
 	return [...prevMonthDays, ...currentMonthDays, ...nextMonthDays];
 };

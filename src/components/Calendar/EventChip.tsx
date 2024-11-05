@@ -1,3 +1,4 @@
+import { Temporal } from 'temporal-polyfill';
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
 import { EventInfo } from './EventInfo';
 import type { Event } from './types';
@@ -10,16 +11,17 @@ const LANE_OFFSETS: Record<number, string> = {
 };
 
 interface Props {
-	date: Date;
+	date: Temporal.ZonedDateTime;
 	event: Event;
 	laneOffset: number;
 }
 
 export const EventChip = ({ date, event, laneOffset }: Props) => {
-	const isPast = event.dates.end.getTime() < new Date().getTime();
+	const isPast =
+		Temporal.ZonedDateTime.compare(event.end, Temporal.Now.zonedDateTimeISO()) < 0;
 	const textColor = isPast ? 'text-neutral-300' : '';
-	const isFirstDay = event.dates.start.toDateString() === date.toDateString();
-	const isLastDay = event.dates.end.toDateString() === date.toDateString();
+	const isFirstDay = date.toPlainDate().equals(event.start.toPlainDate());
+	const isLastDay = date.toPlainDate().equals(event.end.toPlainDate());
 
 	const offsetMargin = LANE_OFFSETS[laneOffset];
 

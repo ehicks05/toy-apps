@@ -1,3 +1,4 @@
+import { Temporal } from 'temporal-polyfill';
 import type { Event } from './types';
 
 const COLORS = {
@@ -16,15 +17,8 @@ export const EVENTS: Event[] = [
 		label: 'gone running',
 		description: 'at the mountain',
 		color: COLORS.emerald,
-		dates: {
-			start: new Date(2024, 9, 11),
-			end: new Date(2024, 9, 13),
-		},
-		times: {
-			start: new Date(2024, 9, 11),
-			end: new Date(2024, 9, 13),
-		},
-		tz: '',
+		start: Temporal.ZonedDateTime.from('2024-10-11[America/New_York]'),
+		end: Temporal.ZonedDateTime.from('2024-10-13[America/New_York]'),
 		isAllDay: true,
 	},
 	{
@@ -32,15 +26,8 @@ export const EVENTS: Event[] = [
 		label: 'gone fishing',
 		description: 'at the lake',
 		color: COLORS.emerald,
-		dates: {
-			start: new Date(2024, 10, 11),
-			end: new Date(2024, 10, 13),
-		},
-		times: {
-			start: new Date(2024, 10, 11),
-			end: new Date(2024, 10, 13),
-		},
-		tz: '',
+		start: Temporal.ZonedDateTime.from('2024-11-11[America/New_York]'),
+		end: Temporal.ZonedDateTime.from('2024-11-13[America/New_York]'),
 		isAllDay: true,
 	},
 	{
@@ -48,15 +35,8 @@ export const EVENTS: Event[] = [
 		label: 'meditate',
 		description: 'zen',
 		color: COLORS.blue,
-		dates: {
-			start: new Date(2024, 10, 13, 12),
-			end: new Date(2024, 10, 13),
-		},
-		times: {
-			start: new Date(2024, 10, 13, 12),
-			end: new Date(2024, 10, 13),
-		},
-		tz: '',
+		start: Temporal.ZonedDateTime.from('2024-11-13[America/New_York]'),
+		end: Temporal.ZonedDateTime.from('2024-11-13[America/New_York]'),
 		isAllDay: true,
 	},
 	{
@@ -64,16 +44,8 @@ export const EVENTS: Event[] = [
 		label: 'study',
 		description: 'learn',
 		color: COLORS.violet,
-
-		dates: {
-			start: new Date(2024, 10, 13),
-			end: new Date(2024, 10, 14),
-		},
-		times: {
-			start: new Date(2024, 10, 13),
-			end: new Date(2024, 10, 14),
-		},
-		tz: '',
+		start: Temporal.ZonedDateTime.from('2024-11-13[America/New_York]'),
+		end: Temporal.ZonedDateTime.from('2024-11-14[America/New_York]'),
 		isAllDay: true,
 	},
 	{
@@ -81,16 +53,8 @@ export const EVENTS: Event[] = [
 		label: 'meditate',
 		description: 'ohm',
 		color: COLORS.red,
-
-		dates: {
-			start: new Date(2024, 10, 30),
-			end: new Date(2024, 10, 30),
-		},
-		times: {
-			start: new Date(2024, 10, 30),
-			end: new Date(2024, 10, 30),
-		},
-		tz: '',
+		start: Temporal.ZonedDateTime.from('2024-11-30[America/New_York]'),
+		end: Temporal.ZonedDateTime.from('2024-11-30[America/New_York]'),
 		isAllDay: true,
 	},
 	{
@@ -98,16 +62,8 @@ export const EVENTS: Event[] = [
 		label: 'work out',
 		description: 'i work out in order to achieve and retain the gains',
 		color: COLORS.rose,
-
-		dates: {
-			start: new Date(2024, 9, 30),
-			end: new Date(2024, 10, 4),
-		},
-		times: {
-			start: new Date(2024, 9, 30),
-			end: new Date(2024, 10, 4),
-		},
-		tz: '',
+		start: Temporal.ZonedDateTime.from('2024-10-30[America/New_York]'),
+		end: Temporal.ZonedDateTime.from('2024-11-04[America/New_York]'),
 		isAllDay: true,
 	},
 	{
@@ -115,16 +71,8 @@ export const EVENTS: Event[] = [
 		label: 'this is a really long name for an event',
 		description: 'poop emoji',
 		color: COLORS.green,
-
-		dates: {
-			start: new Date(2024, 10, 31),
-			end: new Date(2024, 10, 31),
-		},
-		times: {
-			start: new Date(2024, 10, 31),
-			end: new Date(2024, 10, 31),
-		},
-		tz: '',
+		start: Temporal.ZonedDateTime.from('2024-11-30[America/New_York]'),
+		end: Temporal.ZonedDateTime.from('2024-11-30[America/New_York]'),
 		isAllDay: true,
 	},
 ];

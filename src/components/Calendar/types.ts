@@ -1,6 +1,14 @@
+import type { Temporal } from 'temporal-polyfill';
+
 export interface Interval {
-	start: Date;
-	end: Date;
+	start: Temporal.ZonedDateTime;
+	end: Temporal.ZonedDateTime;
+}
+
+export interface Calendar {
+	id: string;
+	label: string;
+	color: string;
 }
 
 export interface Event {
@@ -11,8 +19,8 @@ export interface Event {
 	description: string;
 	color: string;
 
-	dates: Interval;
-	times: Interval;
+	start: Temporal.ZonedDateTime;
+	end: Temporal.ZonedDateTime;
 	isAllDay: boolean;
-	tz: string;
+	tz?: string;
 }

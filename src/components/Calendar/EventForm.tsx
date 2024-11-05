@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import type { Temporal } from 'temporal-polyfill';
 import type { Event } from './types';
 
 export const toDateInputValue = (date: Date) => {
@@ -63,7 +64,7 @@ const dateStringToDate = (input: string) => {
 const getDefaultEventForm = (date: Date) => toEventForm(getDefaultEvent(date));
 
 interface EventFormProps {
-	date: Date;
+	date: Temporal.ZonedDateTime;
 	events: Event[];
 	setEvents: React.Dispatch<React.SetStateAction<Event[]>>;
 }

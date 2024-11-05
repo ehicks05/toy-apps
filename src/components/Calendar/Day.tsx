@@ -1,20 +1,22 @@
+import { Temporal } from 'temporal-polyfill';
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
 import { EventChip } from './EventChip';
 import { EventForm } from './EventForm';
 import type { Event } from './types';
 
-const MMd = new Intl.DateTimeFormat('en-US', { month: 'short', day: 'numeric' });
-
 interface DayProps {
-	date: Date;
+	date: Temporal.ZonedDateTime;
 	events: Event[];
 	setEvents: React.Dispatch<React.SetStateAction<Event[]>>;
 	eventLanes: Record<string, number>;
 }
 
 export const Day = ({ date, events, setEvents, eventLanes }: DayProps) => {
-	const isCurrentDay = date.toDateString() === new Date().toDateString();
-	const dateLabel = date.getDate() === 1 ? MMd.format(date) : date.getDate();
+	const isCurrentDay = date.toPlainDate() === Temporal.Now.plainDateISO();
+	const dateLabel =
+		date.day === 1
+			? date.toLocaleString('en-US', { month: 'short', day: 'numeric' })
+			: date.day;
 
 	const border = isCurrentDay ? 'border-blue-800 border-y-2' : 'border-neutral-800';
 

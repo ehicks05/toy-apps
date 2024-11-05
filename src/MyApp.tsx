@@ -1,5 +1,5 @@
-import { Home } from '@/app';
 import { useIsRestoring } from '@tanstack/react-query';
+import { Demo } from './components/Calendar/Demo';
 import { Footer, Header } from './components/layout';
 
 function MyApp() {
@@ -13,7 +13,11 @@ function MyApp() {
 				<Header />
 			</div>
 			<div className="flex-grow flex flex-col h-full sm:px-4">
-				<Home />
+				<div className="w-full max-w-screen-2xl mx-auto">
+					<div className="flex flex-col gap-4 p-2 md:p-4 mt-7">
+						<Demo />
+					</div>
+				</div>
 			</div>
 			<Footer />
 		</div>
