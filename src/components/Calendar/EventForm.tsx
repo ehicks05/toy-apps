@@ -1,67 +1,30 @@
 import { useState } from 'react';
-import type { Temporal } from 'temporal-polyfill';
+import { Temporal } from 'temporal-polyfill';
 import type { Event } from './types';
 
-export const toDateInputValue = (date: Date) => {
-	const m = date.getMonth() + 1;
-	const d = date.getDate();
-	return `${date.getFullYear()}-${m < 10 ? `0${m}` : m}-${d < 10 ? `0${d}` : d}`;
-};
+// push forward to the next quarter hour, then add 0 or more quarter hours
+export const toNextQuarterHour = (
+	date: Temporal.ZonedDateTime,
+	additionalQuarterHours = 0,
+) =>
+	date
+		.round({
+			smallestUnit: 'minute',
+			roundingIncrement: 15,
+			roundingMode: 'ceil',
+		})
+		.add({ minutes: additionalQuarterHours * 15 });
 
-export const toTimeInputValue = (date: Date) => {
-	const h = date.getHours();
-	const m = date.getMinutes();
-	return `${h < 10 ? `0${h}` : h}:${m < 10 ? `0${m}` : m}`;
-};
-
-export const toNextQuarterHour = (date: Date, additionalQuarterHours = 0) => {
-	const minutesToMakeQuarterHour = 15 - (date.getMinutes() % 15);
-	const additionalMinutes = 15 * additionalQuarterHours;
-	const minutesToAdd = minutesToMakeQuarterHour + additionalMinutes;
-	if (minutesToAdd === 0) {
-		return date;
-	}
-
-	return new Date(new Date(date).setMinutes(date.getMinutes() + minutesToAdd));
-};
-
-const getDefaultEvent = (date: Date): Event => {
-	return {
-		id: String(Math.random()),
-		label: '',
-		description: '',
-		dates: {
-			start: date,
-			end: date,
-		},
-		times: {
-			start: toNextQuarterHour(new Date()),
-			end: toNextQuarterHour(new Date(), 1),
-		},
-		isAllDay: true,
-		color: '#3b82f6',
-		tz: '',
-	};
-};
-
-const toEventForm = (event: Event) => ({
-	...event,
-	dates: {
-		start: toDateInputValue(event.dates.start),
-		end: toDateInputValue(event.dates.end),
-	},
-	times: {
-		start: toTimeInputValue(event.times.start),
-		end: toTimeInputValue(event.times.end),
-	},
+const toDefaultEvent = (date: Temporal.ZonedDateTime): Event => ({
+	id: String(Math.random()),
+	label: '',
+	description: '',
+	isAllDay: true,
+	color: '#3b82f6',
+	tz: '',
+	start: toNextQuarterHour(date),
+	end: toNextQuarterHour(date, 1),
 });
-
-const dateStringToDate = (input: string) => {
-	const [y, m, d] = input.split('-').map(Number);
-	return new Date(y, m - 1, d);
-};
-
-const getDefaultEventForm = (date: Date) => toEventForm(getDefaultEvent(date));
 
 interface EventFormProps {
 	date: Temporal.ZonedDateTime;
@@ -70,28 +33,47 @@ interface EventFormProps {
 }
 
 export const EventForm = ({ date, events, setEvents }: EventFormProps) => {
-	const [event, setEvent] = useState(getDefaultEventForm(date));
-	console.log(event);
+	const [event, setEvent] = useState(toDefaultEvent(date));
+
 	const handleChange = (name: string, value: string | boolean) => {
-		console.log({ name, value });
 		setEvent({ ...event, [name]: value });
 	};
 
+	const handleChangeStartTime = (name: string, value: string) => {
+		const duration = event.start.until(event.end);
+
+		// patch event.start with the incoming time string
+		const start = event.start.withPlainTime(value);
+		// update event.end in a way that maintains the duration
+		const end = start.add(duration);
+
+		setEvent({ ...event, start, end });
+	};
+
+	const handleChangeStartDate = (name: string, value: string) => {
+		const duration = event.start.until(event.end);
+
+		// patch event.start with the incoming date string
+		const start = event.start.withPlainDate(value);
+		// update event.end in a way that maintains the duration
+		const end = start.add(duration);
+
+		setEvent({ ...event, start, end });
+	};
+
+	const handleChangeEndTime = (name: string, value: string) => {
+		const end = event.end.withPlainTime(value);
+		setEvent({ ...event, end });
+	};
+
+	const handleChangeEndDate = (name: string, value: string) => {
+		const end = event.end.withPlainDate(value);
+		setEvent({ ...event, end });
+	};
+
 	const handleSubmit = () => {
-		const newEvent = {
-			...event,
-			dates: {
-				start: dateStringToDate(event.dates.start),
-				end: dateStringToDate(event.dates.end),
-			},
-			times: {
-				start: new Date(event.times.start),
-				end: new Date(event.times.end),
-			},
-		};
-		console.log(newEvent);
-		setEvents([...events, newEvent]);
-		setEvent(getDefaultEventForm(date));
+		setEvents([...events, event]);
+		setEvent(toDefaultEvent(date));
 	};
 
 	return (
@@ -111,14 +93,17 @@ export const EventForm = ({ date, events, setEvents }: EventFormProps) => {
 				<input
 					type="date"
 					className="w-full p-1 rounded bg-neutral-800"
-					value={event.dates.start}
-					onChange={(e) => handleChange('startDate', e.target.value)}
+					value={event.start.toPlainDate().toString()}
+					onChange={(e) => handleChangeStartDate('startDate', e.target.value)}
 				/>
 			</label>
 			<datalist id="fifteenMinutes">
 				{[...new Array(24 * 4)].map((_, i) => {
-					const now = new Date();
-					const value = toTimeInputValue(new Date(now.setHours(0, i * 15)));
+					const now = Temporal.Now.zonedDateTimeISO().startOfDay();
+					const value = now
+						.add({ minutes: 15 * i })
+						.toPlainTime()
+						.toString();
 					return <option key={value} value={value} />;
 				})}
 			</datalist>
@@ -129,8 +114,9 @@ export const EventForm = ({ date, events, setEvents }: EventFormProps) => {
 						type="time"
 						list="fifteenMinutes"
 						className="w-full p-1 rounded bg-neutral-800"
-						value={event.times.start}
-						onChange={(e) => handleChange('startTime', e.target.value)}
+						value={event.start.toPlainTime().toString()}
+						step={15 * 60}
+						onChange={(e) => handleChangeStartTime('startTime', e.target.value)}
 					/>
 				</label>
 			)}
@@ -139,8 +125,8 @@ export const EventForm = ({ date, events, setEvents }: EventFormProps) => {
 				<input
 					type="date"
 					className="w-full p-1 rounded bg-neutral-800"
-					value={event.dates.end}
-					onChange={(e) => handleChange('endDate', e.target.value)}
+					value={event.end.toPlainDate().toString()}
+					onChange={(e) => handleChangeEndDate('endDate', e.target.value)}
 				/>
 			</label>
 			{!event.isAllDay && (
@@ -150,8 +136,9 @@ export const EventForm = ({ date, events, setEvents }: EventFormProps) => {
 						type="time"
 						list="fifteenMinutes"
 						className="w-full p-1 rounded bg-neutral-800"
-						value={event.times.end}
-						onChange={(e) => handleChange('endTime', e.target.value)}
+						value={event.end.toPlainTime().toString()}
+						step={15 * 60}
+						onChange={(e) => handleChangeEndTime('endTime', e.target.value)}
 					/>
 				</label>
 			)}

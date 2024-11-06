@@ -30,3 +30,5 @@ const monthLabel = Temporal.ZonedDateTime.from(
 });
 
 Temporal.Now.zonedDateTimeISO().with({ year: 1999 });
+
+Temporal.Now.plainDateISO().toString();

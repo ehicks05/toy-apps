@@ -22,6 +22,7 @@ export const EventChip = ({ date, event, laneOffset }: Props) => {
 	const textColor = isPast ? 'text-neutral-300' : '';
 	const isFirstDay = date.toPlainDate().equals(event.start.toPlainDate());
 	const isLastDay = date.toPlainDate().equals(event.end.toPlainDate());
+	const isDotChip = isFirstDay && isLastDay && !event.isAllDay;
 
 	const offsetMargin = LANE_OFFSETS[laneOffset];
 
@@ -34,15 +35,14 @@ export const EventChip = ({ date, event, laneOffset }: Props) => {
 			: `${shared} ${left} ${right}`;
 	const bgColor = { backgroundColor: event.color };
 
-	const innerContent =
-		isFirstDay && isLastDay ? (
-			<div className="flex gap-2 items-center">
-				<div className="h-3 w-3 shrink-0 rounded-full" style={bgColor} />
-				<span className="line-clamp-1">{event.label}</span>
-			</div>
-		) : isFirstDay ? (
-			event.label
-		) : null;
+	const innerContent = isDotChip ? (
+		<div className="flex gap-2 items-center">
+			<div className="h-3 w-3 shrink-0 rounded-full" style={bgColor} />
+			<span className="line-clamp-1">{event.label}</span>
+		</div>
+	) : isFirstDay ? (
+		event.label
+	) : null;
 
 	return (
 		<Popover>
@@ -50,7 +50,7 @@ export const EventChip = ({ date, event, laneOffset }: Props) => {
 				key={event.id}
 				type="button"
 				className={classes}
-				style={isFirstDay && isLastDay ? undefined : bgColor}
+				style={isDotChip ? undefined : bgColor}
 			>
 				{innerContent}
 			</PopoverTrigger>
