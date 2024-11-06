@@ -1,4 +1,5 @@
 import { sum } from 'lodash-es';
+import { useState } from 'react';
 import { Temporal } from 'temporal-polyfill';
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
 import { EventChip } from './EventChip';
@@ -47,14 +48,27 @@ export const Day = ({ date, eventsInDay, eventLanes, eventDayMasks }: DayProps) 
 				)}
 			</div>
 
-			<Popover>
-				<PopoverTrigger type="button" className="w-full flex-grow" />
-				<PopoverContent className="p-0 border-none">
-					<div className="p-2 rounded bg-neutral-700">
-						<EventForm date={date} />
-					</div>
-				</PopoverContent>
-			</Popover>
+			<EventFormPopover date={date} />
 		</div>
+	);
+};
+
+const EventFormPopover = ({ date }: { date: Temporal.ZonedDateTime }) => {
+	const [isOpen, setIsOpen] = useState(false);
+	const close = () => setIsOpen(false);
+
+	return (
+		<Popover modal open={isOpen}>
+			<PopoverTrigger
+				type="button"
+				onClick={() => setIsOpen(true)}
+				className="w-full flex-grow"
+			/>
+			<PopoverContent className="p-0 border-none">
+				<div className="p-2 rounded bg-neutral-700">
+					<EventForm date={date} close={close} />
+				</div>
+			</PopoverContent>
+		</Popover>
 	);
 };

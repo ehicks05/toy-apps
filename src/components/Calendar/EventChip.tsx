@@ -45,7 +45,7 @@ export const EventChip = ({ date, event, lane, width }: Props) => {
 	) : null;
 
 	return (
-		<Popover>
+		<Popover modal>
 			<PopoverTrigger
 				key={event.id}
 				type="button"

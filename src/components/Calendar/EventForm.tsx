@@ -30,9 +30,10 @@ const toDefaultEvent = (date: Temporal.ZonedDateTime): Event => ({
 interface EventFormProps {
 	date: Temporal.ZonedDateTime;
 	event?: Event;
+	close: () => void;
 }
 
-export const EventForm = ({ date }: EventFormProps) => {
+export const EventForm = ({ date, close }: EventFormProps) => {
 	const { events, setEvents } = useEvents();
 	const [event, setEvent] = useState(toDefaultEvent(date));
 
@@ -75,6 +76,7 @@ export const EventForm = ({ date }: EventFormProps) => {
 	const handleSubmit = () => {
 		setEvents([...events, event]);
 		setEvent(toDefaultEvent(date));
+		close();
 	};
 
 	return (
