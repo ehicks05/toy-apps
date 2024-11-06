@@ -4,19 +4,21 @@ import { EventInfo } from './EventInfo';
 import type { Event } from './types';
 
 const LANE_OFFSETS: Record<number, string> = {
-	0: '',
-	1: 'mt-8',
-	2: 'mt-16',
-	3: 'mt-24',
+	0: 'absolute top-0',
+	1: 'absolute top-8',
+	2: 'absolute top-16',
+	3: 'absolute top-24',
+	4: 'absolute top-32',
 };
 
 interface Props {
 	date: Temporal.ZonedDateTime;
 	event: Event;
-	laneOffset: number;
+	lane: number;
+	width: number;
 }
 
-export const EventChip = ({ date, event, laneOffset }: Props) => {
+export const EventChip = ({ date, event, lane, width }: Props) => {
 	const isPast =
 		Temporal.ZonedDateTime.compare(event.end, Temporal.Now.zonedDateTimeISO()) < 0;
 	const textColor = isPast ? 'text-neutral-300' : '';
@@ -24,15 +26,13 @@ export const EventChip = ({ date, event, laneOffset }: Props) => {
 	const isLastDay = date.toPlainDate().equals(event.end.toPlainDate());
 	const isDotChip = isFirstDay && isLastDay && !event.isAllDay;
 
-	const offsetMargin = LANE_OFFSETS[laneOffset];
+	const offsetMargin = LANE_OFFSETS[lane];
 
-	const left = isFirstDay ? 'rounded-l' : '-ml-2';
-	const right = isLastDay ? 'rounded-r' : '-mr-2';
-	const shared = `p-1 pl-2 ${offsetMargin} h-6 md:h-7 line-clamp-1 text-xs md:text-sm text-left ${textColor} cursor-pointer hover:brightness-110 transition-all`;
+	console.log({ event, offsetMargin });
+
+	const shared = `p-1 pl-2 ${offsetMargin} w-[${width}%] h-6 md:h-7 rounded line-clamp-1 text-xs md:text-sm text-left ${textColor} cursor-pointer hover:brightness-110 transition-all`;
 	const classes =
-		isFirstDay && isLastDay
-			? `${shared} rounded hover:bg-neutral-700`
-			: `${shared} ${left} ${right}`;
+		isFirstDay && isLastDay ? `${shared} hover:bg-neutral-700` : `${shared}`;
 	const bgColor = { backgroundColor: event.color };
 
 	const innerContent = isDotChip ? (
@@ -50,7 +50,7 @@ export const EventChip = ({ date, event, laneOffset }: Props) => {
 				key={event.id}
 				type="button"
 				className={classes}
-				style={isDotChip ? undefined : bgColor}
+				style={{ ...(isDotChip ? undefined : bgColor), ...{ width: `${width}%` } }}
 			>
 				{innerContent}
 			</PopoverTrigger>

@@ -1,5 +1,5 @@
 import { useSettings } from '@/hooks';
-import { chunk } from 'lodash-es';
+import { chunk, uniqBy } from 'lodash-es';
 import { useState } from 'react';
 import type { Temporal } from 'temporal-polyfill';
 import { Day } from './Day';
@@ -20,13 +20,6 @@ export const Calendar = ({ date: _date, events, setEvents }: Props) => {
 
 	const [date, setDate] = useState(_date);
 
-	const days = getCalendarDays(date)
-		.filter((date) => isShowWeekend || ![0, 6].includes(date.dayOfWeek))
-		.map((date) => ({
-			date,
-			events: events.filter((e) => isOverlapsDay(e, date)),
-		}));
-
 	const dayNames = getDayNames().slice(cols === 7 ? 0 : 1, cols === 7 ? 7 : -1);
 	const gridCols = cols === 7 ? 'grid-cols-7' : 'grid-cols-5';
 	const monthLabel = date.toLocaleString('en-US', {
@@ -34,7 +27,23 @@ export const Calendar = ({ date: _date, events, setEvents }: Props) => {
 		year: 'numeric',
 	});
 
-	const weeks = chunk(days, 7);
+	const days = getCalendarDays(date).filter(
+		(date) => isShowWeekend || ![0, 6].includes(date.dayOfWeek),
+	);
+
+	const weeks = chunk(days, 7).map((week) => {
+		const eventsInWeek = events
+			.map((event) => {
+				const dayMask = [0, 0, 0, 0, 0, 0, 0];
+				week.forEach((day, i) => {
+					if (isOverlapsDay(event, day)) dayMask[i] = 1;
+				});
+
+				return { ...event, dayMask };
+			})
+			.filter((event) => event.dayMask.some((dayValue) => dayValue !== 0));
+		return { days: week, eventsInWeek };
+	});
 
 	return (
 		<div className="w-full border-2 border-neutral-800">
@@ -51,28 +60,50 @@ export const Calendar = ({ date: _date, events, setEvents }: Props) => {
 						{dow}
 					</div>
 				))}
-				{weeks.map((week) => {
+
+				{weeks.map(({ days, eventsInWeek }) => {
+					console.log('');
 					// find each event's 'swimlane'
 					const eventLanes: Record<string, number> = {};
+					const eventDayMasks: Record<string, number[]> = {};
+					const dailyOffsets = [0, 0, 0, 0, 0, 0, 0];
 
-					week.forEach((day) =>
-						day.events.forEach((event, i) => {
-							if (eventLanes[event.id]) {
-								return;
-							}
-							eventLanes[event.id] = i;
-						}),
-					);
+					days.forEach((day, i) => {
+						const eventsInDay = eventsInWeek.filter((event) =>
+							event.start.toPlainDate().equals(day.toPlainDate()),
+						);
 
-					return week.map(({ date, events }) => (
-						<Day
-							key={date.toString()}
-							date={date}
-							events={events}
-							setEvents={setEvents}
-							eventLanes={eventLanes}
-						/>
-					));
+						eventsInDay.forEach((event) => {
+							const offset = dailyOffsets[i];
+							const offsetMovingForward = offset + 1;
+							eventLanes[event.id] = offset;
+							eventDayMasks[event.id] = event.dayMask;
+
+							// update daily offsets
+							dailyOffsets.forEach((offset, i) => {
+								dailyOffsets[i] = event.dayMask[i]
+									? offsetMovingForward
+									: dailyOffsets[i];
+							});
+						});
+					});
+
+					return days.map((date) => {
+						const eventsInDay = eventsInWeek.filter((event) =>
+							event.start.toPlainDate().equals(date.toPlainDate()),
+						);
+
+						return (
+							<Day
+								key={date.toString()}
+								date={date}
+								events={eventsInDay}
+								setEvents={setEvents}
+								eventLanes={eventLanes}
+								eventDayMasks={eventDayMasks}
+							/>
+						);
+					});
 				})}
 			</div>
 		</div>
