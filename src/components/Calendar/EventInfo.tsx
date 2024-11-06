@@ -1,11 +1,17 @@
 import type { Event } from './types';
 
-const df = { dateStyle: 'full' } as const;
-const dtf = { dateStyle: 'full', hour: 'numeric', minute: '2-digit' } as const;
+/* cases:
+1. partial day: Tuesday, November 12 ⋅ 10:00am – 8:30pm
+1a. partial day next year: Tuesday, January 21, 2025⋅10:00 – 10:30am
+2. full day: Wednesday, November 13
+2a. full day next year: Monday, January 20, 2025
+3. two full days: November 13 – 14, 2024
+4. two partial days: November 13, 2024, 1:30pm – November 14, 2024, 2:30pm
+*/
 
 export const EventInfo = ({ event }: { event: Event }) => {
-	const from = event.start.toLocaleString('en-US', event.isAllDay ? df : dtf);
-	const to = event.end.toLocaleString('en-US', event.isAllDay ? df : dtf);
+	const from = event.start.toLocaleString();
+	const to = event.end.toLocaleString();
 
 	return (
 		<div className="flex flex-col gap-2">
