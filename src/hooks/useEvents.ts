@@ -29,10 +29,13 @@ const hydrateEvent = (e: Event) => ({
 export const useEvents = () => {
 	const [_events, setEvents] = useLocalStorage('ecal-events', EVENTS);
 
+	const removeEvent = (id: string) => setEvents(events.filter((e) => e.id !== id));
+
 	const events = _events.map(hydrateEvent).toSorted(sort);
 
 	return {
 		events,
 		setEvents,
+		removeEvent,
 	};
 };

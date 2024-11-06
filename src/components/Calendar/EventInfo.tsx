@@ -1,3 +1,5 @@
+import { useEvents } from '@/hooks/useEvents';
+import { Trash } from 'lucide-react';
 import type { Event } from './types';
 
 /* cases:
@@ -10,11 +12,17 @@ import type { Event } from './types';
 */
 
 export const EventInfo = ({ event }: { event: Event }) => {
+	const { removeEvent } = useEvents();
 	const from = event.start.toLocaleString();
 	const to = event.end.toLocaleString();
 
 	return (
 		<div className="flex flex-col gap-2">
+			<div className="flex justify-end">
+				<button type="button" onClick={() => removeEvent(event.id)}>
+					<Trash size={16} />
+				</button>
+			</div>
 			<div className="flex items-center gap-2 text-lg">
 				<div
 					className={`h-3 w-3 ${event.color} rounded-full`}
