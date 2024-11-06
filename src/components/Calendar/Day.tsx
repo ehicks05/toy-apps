@@ -7,19 +7,12 @@ import type { Event } from './types';
 
 interface DayProps {
 	date: Temporal.ZonedDateTime;
-	events: Event[];
-	setEvents: React.Dispatch<React.SetStateAction<Event[]>>;
+	eventsInDay: Event[];
 	eventLanes: Record<string, number>;
 	eventDayMasks: Record<string, number[]>;
 }
 
-export const Day = ({
-	date,
-	events,
-	setEvents,
-	eventLanes,
-	eventDayMasks,
-}: DayProps) => {
+export const Day = ({ date, eventsInDay, eventLanes, eventDayMasks }: DayProps) => {
 	const isCurrentDay = date.toPlainDate().equals(Temporal.Now.plainDateISO());
 	const dateLabel =
 		date.day === 1
@@ -34,9 +27,9 @@ export const Day = ({
 		>
 			<div>
 				<div className="pl-2 pt-2 text-sm md:text-base">{dateLabel}</div>
-				{events.length > 0 && (
+				{eventsInDay.length > 0 && (
 					<div className="relative flex flex-col gap-1">
-						{events.map((e, i) => {
+						{eventsInDay.map((e, i) => {
 							const lane = eventLanes[e.id];
 							const dayMask = eventDayMasks[e.id];
 							const width = sum(dayMask) * 100;
@@ -58,7 +51,7 @@ export const Day = ({
 				<PopoverTrigger type="button" className="w-full flex-grow" />
 				<PopoverContent className="p-0 border-none">
 					<div className="p-2 rounded bg-neutral-700">
-						<EventForm date={date} events={events} setEvents={setEvents} />
+						<EventForm date={date} />
 					</div>
 				</PopoverContent>
 			</Popover>

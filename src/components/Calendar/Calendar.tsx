@@ -1,21 +1,21 @@
 import { useSettings } from '@/hooks';
-import { chunk, uniqBy } from 'lodash-es';
+import { useEvents } from '@/hooks/useEvents';
+import { chunk } from 'lodash-es';
 import { useState } from 'react';
 import type { Temporal } from 'temporal-polyfill';
 import { Day } from './Day';
 import { MonthMenu } from './MonthMenu';
 import { getCalendarDays, getDayNames } from './dates';
 import { isOverlapsDay } from './events';
-import type { Event } from './types';
 
 interface Props {
 	date: Temporal.ZonedDateTime;
-	events: Event[];
-	setEvents: React.Dispatch<React.SetStateAction<Event[]>>;
 }
 
-export const Calendar = ({ date: _date, events, setEvents }: Props) => {
+export const Calendar = ({ date: _date }: Props) => {
 	const { isShowWeekend } = useSettings();
+	const { events } = useEvents();
+	console.log({ events });
 	const cols = isShowWeekend ? 7 : 5;
 
 	const [date, setDate] = useState(_date);
@@ -97,8 +97,7 @@ export const Calendar = ({ date: _date, events, setEvents }: Props) => {
 							<Day
 								key={date.toString()}
 								date={date}
-								events={eventsInDay}
-								setEvents={setEvents}
+								eventsInDay={eventsInDay}
 								eventLanes={eventLanes}
 								eventDayMasks={eventDayMasks}
 							/>

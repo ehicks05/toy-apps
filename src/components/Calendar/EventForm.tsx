@@ -1,3 +1,4 @@
+import { useEvents } from '@/hooks/useEvents';
 import { useState } from 'react';
 import { Temporal } from 'temporal-polyfill';
 import type { Event } from './types';
@@ -28,11 +29,11 @@ const toDefaultEvent = (date: Temporal.ZonedDateTime): Event => ({
 
 interface EventFormProps {
 	date: Temporal.ZonedDateTime;
-	events: Event[];
-	setEvents: React.Dispatch<React.SetStateAction<Event[]>>;
+	event?: Event;
 }
 
-export const EventForm = ({ date, events, setEvents }: EventFormProps) => {
+export const EventForm = ({ date }: EventFormProps) => {
+	const { events, setEvents } = useEvents();
 	const [event, setEvent] = useState(toDefaultEvent(date));
 
 	const handleChange = (name: string, value: string | boolean) => {
