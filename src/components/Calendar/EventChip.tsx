@@ -67,7 +67,7 @@ export const EventChip = ({ date, event, lane, i, width }: Props) => {
 					className="p-0 border-none"
 					onPointerDownOutside={closePopover}
 				>
-					<div className="p-2 rounded bg-neutral-700">
+					<div className="p-2 rounded bg-neutral-800 shadow-2xl">
 						{isEditMode ? (
 							<EventForm date={date} event={event} close={closePopover} />
 						) : (

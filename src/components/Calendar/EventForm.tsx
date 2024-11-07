@@ -85,20 +85,20 @@ export const EventForm = ({ date, event: _event, close }: EventFormProps) => {
 	return (
 		<div className="flex flex-col gap-2 items-start max-w-96 text-sm">
 			<label className="w-full flex items-center gap-1 text-neutral-300">
-				<span className="w-36">Label</span>
+				<span className="min-w-20">Label</span>
 				<input
 					type="text"
-					className="w-full p-1 rounded bg-neutral-800"
+					className="w-full p-1 rounded bg-neutral-700"
 					value={event.label}
 					onChange={(e) => handleChange('label', e.target.value)}
 				/>
 			</label>
 
 			<label className="w-full flex items-center gap-1 text-neutral-300">
-				<span className="w-36">Start</span>
+				<span className="min-w-20">Start</span>
 				<input
 					type="date"
-					className="w-full p-1 rounded bg-neutral-800"
+					className="w-full p-1 rounded bg-neutral-700"
 					value={event.start.toPlainDate().toString()}
 					onChange={(e) => handleChangeStartDate('startDate', e.target.value)}
 				/>
@@ -115,11 +115,11 @@ export const EventForm = ({ date, event: _event, close }: EventFormProps) => {
 			</datalist>
 			{!event.isAllDay && (
 				<label className="w-full flex items-center gap-1 text-neutral-300">
-					<span className="w-36" />
+					<span className="min-w-20" />
 					<input
 						type="time"
 						list="fifteenMinutes"
-						className="w-full p-1 rounded bg-neutral-800"
+						className="w-full p-1 rounded bg-neutral-700"
 						value={event.start.toPlainTime().toString()}
 						step={15 * 60}
 						onChange={(e) => handleChangeStartTime('startTime', e.target.value)}
@@ -127,21 +127,21 @@ export const EventForm = ({ date, event: _event, close }: EventFormProps) => {
 				</label>
 			)}
 			<label className="w-full flex items-center gap-1 text-neutral-300">
-				<span className="w-36">End</span>
+				<span className="min-w-20">End</span>
 				<input
 					type="date"
-					className="w-full p-1 rounded bg-neutral-800"
+					className="w-full p-1 rounded bg-neutral-700"
 					value={event.end.toPlainDate().toString()}
 					onChange={(e) => handleChangeEndDate('endDate', e.target.value)}
 				/>
 			</label>
 			{!event.isAllDay && (
 				<label className="w-full flex items-center gap-1 text-neutral-300">
-					<span className="w-36" />
+					<span className="min-w-20" />
 					<input
 						type="time"
 						list="fifteenMinutes"
-						className="w-full p-1 rounded bg-neutral-800"
+						className="w-full p-1 rounded bg-neutral-700"
 						value={event.end.toPlainTime().toString()}
 						step={15 * 60}
 						onChange={(e) => handleChangeEndTime('endTime', e.target.value)}
@@ -152,7 +152,7 @@ export const EventForm = ({ date, event: _event, close }: EventFormProps) => {
 			<label className="w-full flex items-center gap-1 text-neutral-300">
 				<input
 					type="checkbox"
-					className="ml-24 p-1 rounded bg-neutral-800"
+					className="ml-24 p-1 rounded bg-neutral-700"
 					checked={event.isAllDay}
 					onChange={(e) => handleChange('isAllDay', e.target.checked)}
 				/>
@@ -160,22 +160,23 @@ export const EventForm = ({ date, event: _event, close }: EventFormProps) => {
 			</label>
 
 			<label className="w-full flex items-center gap-1 text-neutral-300">
-				<span className="w-36">Description</span>
+				<span className="min-w-20">Description</span>
 				<input
 					type="text"
-					className="w-full p-1 rounded bg-neutral-800"
+					className="w-full p-1 rounded bg-neutral-700"
 					value={event.description}
 					onChange={(e) => handleChange('description', e.target.value)}
 				/>
 			</label>
 			<label className="w-full flex items-center gap-1 text-neutral-300">
-				<span className="w-36">Color {event.color} </span>
+				<span className="min-w-20">Color</span>
 				<input
 					type="color"
 					className="w-full h-8 bg-transparent"
 					value={event.color}
 					onChange={(e) => handleChange('color', e.target.value)}
 				/>
+				<span className="text-xs">{event.color}</span>
 			</label>
 			<button
 				type="button"

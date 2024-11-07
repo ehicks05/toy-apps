@@ -1,23 +1,20 @@
 import { useEvents } from '@/hooks/useEvents';
-import { Edit, Trash } from 'lucide-react';
+import { Edit, NotebookText, Trash } from 'lucide-react';
 import { Temporal } from 'temporal-polyfill';
 import type { Event } from './types';
 
 /* cases:
 SINGLE DAY:
 1. partial day: 					 		Tuesday, November 12 ⋅ 10:00am – 8:30pm
-1a. partial day next year: 		Tuesday, January 21, 2025 ⋅ 10:00 – 10:30am
-2. full day: 									Wednesday, November 13
-2a. full day next year: 			Monday, January 20, 2025
-
-
-
+2. partial day next year: 		Tuesday, January 21, 2025 ⋅ 10:00 – 10:30am
+3. full day: 								Wednesday, November 13
+4. full day next year: 			Monday, January 20, 2025
 
 MULTI DAY:
+1. two partial days: 					November 13, 2024, 1:30pm – November 14, 2024, 2:30pm
+2. two full days year span: 	December 31, 2024 – January 1, 2025
+3. two full days month span: October 31 – November 1, 2024
 4. two full days: 						November 13 – 14, 2024
-4a. two full days month span: October 31 – November 1, 2024
-4b. two full days year span: 	December 31, 2024 – January 1, 2025
-3. two partial days: 					November 13, 2024, 1:30pm – November 14, 2024, 2:30pm
 */
 
 const getTimeLabel = (date: Temporal.ZonedDateTime) =>
@@ -47,32 +44,6 @@ const getSingleDayLabel = (event: Event) => {
 };
 
 const getMultipleDayLabel = (event: Event) => {
-	// if (!event.isAllDay) {
-	// 	const [start, end] = [event.start, event.end].map((d) =>
-	// 		d
-	// 			.toLocaleString('en-US', {
-	// 				dateStyle: 'long',
-	// 				timeStyle: 'short',
-	// 			})
-	// 			.replace(' at ', ', ')
-	// 			.replace(' PM', 'pm')
-	// 			.replace(' AM ', 'am'),
-	// 	);
-
-	// 	return `${start} - ${end}`;
-	// }
-
-	/*
-	MULTI DAY:
-	4. two full days: 						November 13 – 14, 2024
-	4a. two full days month span: October 31 – November 1, 2024
-	4b. two full days year span: 	December 31, 2024 – January 1, 2025
-	3. two partial days: 					November 13, 2024, 1:30pm – November 14, 2024, 2:30pm
-	*/
-
-	const isSameMonth = event.start.month === event.end.month;
-	const isSameYear = event.start.year === event.end.year;
-
 	const [startMonth, endMonth] = [event.start, event.end]
 		.map((date) => date.toLocaleString('en-US', { month: 'long' }))
 		.map((o) => `${o}`);
@@ -87,14 +58,22 @@ const getMultipleDayLabel = (event: Event) => {
 
 	const [startTime, endTime] = [event.start, event.end]
 		.map(getTimeLabel)
-		.map((o) => (event.isAllDay ? '' : ` ${o}`));
+		.map((o) => `, ${o}`);
 
-	return `${startMonth}${startDay}${startYear}${startTime} - ${endMonth}${endDay}${endYear}${endTime}`;
-};
+	const isMonthSpanning = event.start.month !== event.end.month;
+	const isYearSpanning = event.start.year !== event.end.year;
 
-const DISPLAY_MODES = {
-	singleDay: (event: Event) => getSingleDayLabel(event),
-	multipleDay: (event: Event) => getMultipleDayLabel(event),
+	if (!event.isAllDay) {
+		return `${startMonth}${startDay}${startYear}${startTime} - ${endMonth}${endDay}${endYear}${endTime}`;
+	}
+	if (isYearSpanning) {
+		return `${startMonth}${startDay}${startYear} - ${endMonth}${endDay}${endYear}`;
+	}
+	if (isMonthSpanning) {
+		return `${startMonth}${startDay} - ${endMonth}${endDay}${endYear}`;
+	}
+
+	return `${startMonth}${startDay} - ${endDay}${endYear}`;
 };
 
 export const EventInfo = ({
@@ -102,13 +81,10 @@ export const EventInfo = ({
 	enableEditMode,
 }: { event: Event; enableEditMode: () => void }) => {
 	const { removeEvent } = useEvents();
-	const from = event.start.toLocaleString();
-	const to = event.end.toLocaleString();
 
-	const isSingleDay = event.start.toPlainDate().equals(event.end.toPlainDate());
-	const mode = isSingleDay ? 'singleDay' : 'multipleDay';
-
-	const datetimeLabel = DISPLAY_MODES[mode](event);
+	const datetimeLabel = event.start.toPlainDate().equals(event.end.toPlainDate())
+		? getSingleDayLabel(event)
+		: getMultipleDayLabel(event);
 
 	return (
 		<div className="flex flex-col gap-2">
@@ -120,16 +96,23 @@ export const EventInfo = ({
 					<Trash size={16} />
 				</button>
 			</div>
-			<div className="border border-neutral-600 -mx-2" />
-			<div className="flex items-center gap-2 text-lg">
+			<div className="border border-neutral-700 -mx-2" />
+			<div className="flex items-baseline gap-2 text-lg">
 				<div
 					className={`h-3 w-3 ${event.color} rounded-full`}
 					style={{ backgroundColor: event.color }}
 				/>
-				{event.label}
+				<div className="flex flex-col">
+					{event.label}
+					<div className="text-xs">{datetimeLabel}</div>
+				</div>
 			</div>
-			<div className="text-sm">{event.description}</div>
-			<div className="text-sm">{datetimeLabel}</div>
+			{event.description && (
+				<div className="flex items-center gap-2 text-xs">
+					<NotebookText size={14} className="w-3 h-3" />
+					{event.description}
+				</div>
+			)}
 		</div>
 	);
 };
