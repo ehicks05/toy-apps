@@ -45,9 +45,7 @@ export const Day = ({ date, eventsInDay }: DayProps) => {
 	const border = isCurrentDay ? 'border-blue-800' : 'border-neutral-800';
 
 	return (
-		<div
-			className={`flex flex-col min-h-44 border-y-2 ${border} hover:bg-neutral-800 transition-all`}
-		>
+		<div className={`flex flex-col min-h-44 border-y-2 ${border} transition-all`}>
 			<div>
 				<div className="pl-2 pt-2 text-sm md:text-base">{dateLabel}</div>
 				<Events date={date} events={eventsInDay} />
