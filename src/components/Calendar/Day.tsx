@@ -1,4 +1,3 @@
-import { sum } from 'lodash-es';
 import { useState } from 'react';
 import { Temporal } from 'temporal-polyfill';
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
@@ -6,14 +5,37 @@ import { EventChip } from './EventChip';
 import { EventForm } from './EventForm';
 import type { Event } from './types';
 
-interface DayProps {
+interface EventsProps {
 	date: Temporal.ZonedDateTime;
-	eventsInDay: Event[];
-	eventLanes: Record<string, number>;
-	eventDayMasks: Record<string, number[]>;
+	events: AnnotatedEvent[];
 }
 
-export const Day = ({ date, eventsInDay, eventLanes, eventDayMasks }: DayProps) => {
+const Events = ({ date, events }: EventsProps) => {
+	if (events.length === 0) return null;
+
+	return (
+		<div className="relative flex flex-col gap-1">
+			{events.map((e, i) => {
+				const width = e.days * 100;
+				return (
+					<EventChip key={e.id} date={date} event={e} lane={e.lane} width={width} />
+				);
+			})}
+		</div>
+	);
+};
+
+interface AnnotatedEvent extends Event {
+	lane: number;
+	days: number;
+}
+
+interface DayProps {
+	date: Temporal.ZonedDateTime;
+	eventsInDay: AnnotatedEvent[];
+}
+
+export const Day = ({ date, eventsInDay }: DayProps) => {
 	const isCurrentDay = date.toPlainDate().equals(Temporal.Now.plainDateISO());
 	const dateLabel =
 		date.day === 1
@@ -28,24 +50,7 @@ export const Day = ({ date, eventsInDay, eventLanes, eventDayMasks }: DayProps) 
 		>
 			<div>
 				<div className="pl-2 pt-2 text-sm md:text-base">{dateLabel}</div>
-				{eventsInDay.length > 0 && (
-					<div className="relative flex flex-col gap-1">
-						{eventsInDay.map((e, i) => {
-							const lane = eventLanes[e.id];
-							const dayMask = eventDayMasks[e.id];
-							const width = sum(dayMask) * 100;
-							return (
-								<EventChip
-									key={e.id}
-									date={date}
-									event={e}
-									lane={lane}
-									width={width}
-								/>
-							);
-						})}
-					</div>
-				)}
+				<Events date={date} events={eventsInDay} />
 			</div>
 
 			<EventFormPopover date={date} />

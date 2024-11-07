@@ -1,6 +1,6 @@
 import { useSettings } from '@/hooks';
 import { useEvents } from '@/hooks/useEvents';
-import { chunk } from 'lodash-es';
+import { chunk, sum } from 'lodash-es';
 import { useState } from 'react';
 import type { Temporal } from 'temporal-polyfill';
 import { Day } from './Day';
@@ -15,7 +15,6 @@ interface Props {
 export const Calendar = ({ date: _date }: Props) => {
 	const { isShowWeekend } = useSettings();
 	const { events } = useEvents();
-	console.log({ events });
 	const cols = isShowWeekend ? 7 : 5;
 
 	const [date, setDate] = useState(_date);
@@ -62,7 +61,6 @@ export const Calendar = ({ date: _date }: Props) => {
 				))}
 
 				{weeks.map(({ days, eventsInWeek }) => {
-					console.log('');
 					// find each event's 'swimlane'
 					const eventLanes: Record<string, number> = {};
 					const eventDayMasks: Record<string, number[]> = {};
@@ -89,18 +87,18 @@ export const Calendar = ({ date: _date }: Props) => {
 					});
 
 					return days.map((date) => {
-						const eventsInDay = eventsInWeek.filter((event) =>
-							event.start.toPlainDate().equals(date.toPlainDate()),
-						);
+						const eventsInDay = eventsInWeek
+							.filter((event) =>
+								event.start.toPlainDate().equals(date.toPlainDate()),
+							)
+							.map((event) => ({
+								...event,
+								lane: eventLanes[event.id],
+								days: sum(eventDayMasks[event.id]),
+							}));
 
 						return (
-							<Day
-								key={date.toString()}
-								date={date}
-								eventsInDay={eventsInDay}
-								eventLanes={eventLanes}
-								eventDayMasks={eventDayMasks}
-							/>
+							<Day key={date.toString()} date={date} eventsInDay={eventsInDay} />
 						);
 					});
 				})}
