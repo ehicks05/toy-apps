@@ -1,19 +1,11 @@
 import { useSettings } from '@/hooks';
 import { useEvents } from '@/hooks/useEvents';
-import {
-	DndContext,
-	type DragEndEvent,
-	KeyboardSensor,
-	PointerSensor,
-	pointerWithin,
-	useSensor,
-	useSensors,
-} from '@dnd-kit/core';
 import { chunk, sum } from 'lodash-es';
 import { useState } from 'react';
 import { Temporal } from 'temporal-polyfill';
 import { Day } from './Day';
 import { MonthMenu } from './MonthMenu';
+import { MyDndContext } from './dnd/DndContext';
 import { isOverlapsDay } from './events';
 import { getMonthlyCalendarDays } from './utils/monthlyCalendarDays';
 import { getWeekdayNames } from './utils/weekdayNames';
@@ -130,51 +122,5 @@ export const Calendar = ({ date: _date }: Props) => {
 				</div>
 			</div>
 		</MyDndContext>
-	);
-};
-
-const MyDndContext = ({ children }: { children: React.ReactNode }) => {
-	const pointerSensor = useSensor(PointerSensor, {
-		// Require the mouse to move by 10 pixels before activating
-		activationConstraint: {
-			distance: 10,
-		},
-	});
-	const keyboardSensor = useSensor(KeyboardSensor);
-	const sensors = useSensors(pointerSensor, keyboardSensor);
-
-	const { events, setEvents, byId } = useEvents();
-
-	const handleDragEnd = (dragEventEnd: DragEndEvent) => {
-		console.log(dragEventEnd);
-		const { over, active } = dragEventEnd;
-		const dateString = over?.id;
-		if (!dateString) return;
-		const newDate = Temporal.PlainDateTime.from(dateString);
-
-		const eventId = active.id;
-		const event = byId(eventId);
-		if (!event) return;
-
-		const updateDelta = event.start.toPlainDate().until(newDate);
-
-		const duration = event.start.until(event.end);
-
-		// patch event.start
-		const start = event.start.add(updateDelta);
-		// update event.end in a way that maintains the duration
-		const end = start.add(duration);
-
-		setEvents(events.map((e) => (e.id === eventId ? { ...e, start, end } : e)));
-	};
-
-	return (
-		<DndContext
-			onDragEnd={handleDragEnd}
-			sensors={sensors}
-			collisionDetection={pointerWithin}
-		>
-			{children}
-		</DndContext>
 	);
 };
