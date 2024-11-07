@@ -3,7 +3,6 @@ import { useEvents } from '@/hooks/useEvents';
 import {
 	DndContext,
 	type DragEndEvent,
-	type DragOverEvent,
 	KeyboardSensor,
 	PointerSensor,
 	pointerWithin,
@@ -15,8 +14,9 @@ import { useState } from 'react';
 import { Temporal } from 'temporal-polyfill';
 import { Day } from './Day';
 import { MonthMenu } from './MonthMenu';
-import { getCalendarDays, getDayNames } from './dates';
 import { isOverlapsDay } from './events';
+import { getMonthlyCalendarDays } from './utils/monthlyCalendarDays';
+import { getWeekdayNames } from './utils/weekdayNames';
 
 interface Props {
 	date: Temporal.ZonedDateTime;
@@ -29,14 +29,14 @@ export const Calendar = ({ date: _date }: Props) => {
 
 	const [date, setDate] = useState(_date);
 
-	const dayNames = getDayNames().slice(cols === 7 ? 0 : 1, cols === 7 ? 7 : -1);
+	const dayNames = getWeekdayNames().slice(cols === 7 ? 0 : 1, cols === 7 ? 7 : -1);
 	const gridCols = cols === 7 ? 'grid-cols-7' : 'grid-cols-5';
 	const monthLabel = date.toLocaleString('en-US', {
 		month: 'long',
 		year: 'numeric',
 	});
 
-	const days = getCalendarDays(date).filter(
+	const days = getMonthlyCalendarDays(date).filter(
 		(date) => isShowWeekend || ![0, 6].includes(date.dayOfWeek),
 	);
 
@@ -167,20 +167,10 @@ const MyDndContext = ({ children }: { children: React.ReactNode }) => {
 
 		setEvents(events.map((e) => (e.id === eventId ? { ...e, start, end } : e)));
 	};
-	const handleDragOver = (event: DragOverEvent) => {
-		const { over } = event;
-		console.log(event);
-	};
-	const handleDragStart = (event: DragOverEvent) => {
-		const { over } = event;
-		console.log(event);
-	};
 
 	return (
 		<DndContext
 			onDragEnd={handleDragEnd}
-			// onDragOver={handleDragOver}
-			// onDragStart={handleDragStart}
 			sensors={sensors}
 			collisionDetection={pointerWithin}
 		>

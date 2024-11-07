@@ -1,4 +1,4 @@
-import { EVENTS } from '@/components/Calendar/data';
+import { EVENTS } from '@/components/Calendar/demoData';
 import { useLocalStorage } from '@uidotdev/usehooks';
 import { Temporal } from 'temporal-polyfill';
 import type { Event } from '../components/Calendar/types';

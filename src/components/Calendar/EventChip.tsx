@@ -71,7 +71,11 @@ export const EventChip = ({ date, event, lane, i, width }: Props) => {
 						{isEditMode ? (
 							<EventForm date={date} event={event} close={closePopover} />
 						) : (
-							<EventInfo event={event} enableEditMode={enableEditMode} />
+							<EventInfo
+								event={event}
+								enableEditMode={enableEditMode}
+								close={closePopover}
+							/>
 						)}
 					</div>
 				</PopoverContent>

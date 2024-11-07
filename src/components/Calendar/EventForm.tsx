@@ -1,4 +1,5 @@
 import { useEvents } from '@/hooks/useEvents';
+import { X } from 'lucide-react';
 import { useState } from 'react';
 import { Temporal } from 'temporal-polyfill';
 import type { Event } from './types';
@@ -83,7 +84,13 @@ export const EventForm = ({ date, event: _event, close }: EventFormProps) => {
 	};
 
 	return (
-		<div className="flex flex-col gap-2 items-start max-w-96 text-sm">
+		<div className="flex flex-col gap-2 max-w-96 text-sm">
+			<div className="flex justify-end gap-2">
+				<button type="button" onClick={close} className="ml-2">
+					<X size={16} />
+				</button>
+			</div>
+			<div className="border border-neutral-700 -mx-2" />
 			<label className="w-full flex items-center gap-1 text-neutral-300">
 				<span className="min-w-20">Label</span>
 				<input

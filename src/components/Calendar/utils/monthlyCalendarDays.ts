@@ -1,15 +1,6 @@
-import { Temporal } from 'temporal-polyfill';
+import type { Temporal } from 'temporal-polyfill';
 
-export const getDayNames = () => {
-	const temp = Temporal.Now.zonedDateTimeISO();
-	return [...new Array(7)].map((_, i) =>
-		temp
-			.with({ day: temp.day - temp.dayOfWeek + i })
-			.toLocaleString('en-US', { weekday: 'short' }),
-	);
-};
-
-export const getCalendarDays = (date: Temporal.ZonedDateTime) => {
+export const getMonthlyCalendarDays = (date: Temporal.ZonedDateTime) => {
 	const start = date.with({ day: 1 });
 
 	const currentMonthDays = [...new Array(date.daysInMonth)].map((_, i) =>
