@@ -26,10 +26,11 @@ export const MyDndContext = ({ children }: { children: React.ReactNode }) => {
 		console.log(dragEventEnd);
 		const { over, active } = dragEventEnd;
 		const dateString = over?.id;
-		if (!dateString) return;
+		if (!dateString || typeof dateString !== 'string') return;
 		const newDate = Temporal.PlainDateTime.from(dateString);
 
 		const eventId = active.id;
+		if (typeof eventId !== 'string') return;
 		const event = byId(eventId);
 		if (!event) return;
 
