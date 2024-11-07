@@ -17,6 +17,10 @@ body {
   min-height: 100vh;
 }
 
+input {
+  color-scheme: dark;
+}
+
 /* SCROLLBAR */
 body {
   overflow-y: auto;
