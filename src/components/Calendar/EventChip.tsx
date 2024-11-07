@@ -1,4 +1,4 @@
-import { Temporal } from 'temporal-polyfill';
+import type { Temporal } from 'temporal-polyfill';
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
 import { EventInfo } from './EventInfo';
 import type { Event } from './types';
@@ -19,20 +19,14 @@ interface Props {
 }
 
 export const EventChip = ({ date, event, lane, width }: Props) => {
-	const isPast =
-		Temporal.ZonedDateTime.compare(event.end, Temporal.Now.zonedDateTimeISO()) < 0;
-	const textColor = isPast ? 'text-neutral-300' : '';
 	const isFirstDay = date.toPlainDate().equals(event.start.toPlainDate());
 	const isLastDay = date.toPlainDate().equals(event.end.toPlainDate());
 	const isDotChip = isFirstDay && isLastDay && !event.isAllDay;
 
 	const offsetMargin = LANE_OFFSETS[lane];
 
-	console.log({ event, offsetMargin });
-
-	const shared = `p-1 pl-2 ${offsetMargin} w-[${width}%] h-6 md:h-7 rounded line-clamp-1 text-xs md:text-sm text-left ${textColor} cursor-pointer hover:brightness-110 transition-all`;
-	const classes =
-		isFirstDay && isLastDay ? `${shared} hover:bg-neutral-700` : `${shared}`;
+	const shared = `p-1 pl-2 ${offsetMargin} h-6 md:h-7 rounded line-clamp-1 text-xs md:text-sm text-left cursor-pointer hover:brightness-110 transition-all`;
+	const classes = isDotChip ? `${shared} hover:bg-neutral-800` : `${shared}`;
 	const bgColor = { backgroundColor: event.color };
 
 	const innerContent = isDotChip ? (
