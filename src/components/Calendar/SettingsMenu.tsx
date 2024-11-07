@@ -20,7 +20,7 @@ export const CalendarSettingsMenu = () => {
 			<DropdownMenuTrigger className="font-semibold text-sm">
 				{view}
 			</DropdownMenuTrigger>
-			<DropdownMenuContent className="flex flex-col gap-2 p-2 font-normal bg-neutral-700">
+			<DropdownMenuContent className="flex flex-col gap-2 p-2 font-normal bg-neutral-700 z-10">
 				{/* @ts-expect-error */}
 				<DropdownMenuRadioGroup value={view} onValueChange={setView}>
 					{VIEWS.map((view) => (

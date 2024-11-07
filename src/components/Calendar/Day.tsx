@@ -18,7 +18,14 @@ const Events = ({ date, events }: EventsProps) => {
 			{events.map((e, i) => {
 				const width = e.days * 100;
 				return (
-					<EventChip key={e.id} date={date} event={e} lane={e.lane} width={width} />
+					<EventChip
+						key={e.id}
+						date={date}
+						event={e}
+						lane={e.lane}
+						i={i}
+						width={width}
+					/>
 				);
 			})}
 		</div>
@@ -45,14 +52,14 @@ export const Day = ({ date, eventsInDay }: DayProps) => {
 	const border = isCurrentDay ? 'border-blue-800' : 'border-neutral-800';
 
 	return (
-		<div className={`flex flex-col min-h-44 border-y-2 ${border} transition-all`}>
-			<div>
+		<Droppable id={date.toPlainDate().toString()}>
+			<div className={`flex flex-col min-h-44 border-y-2 ${border} transition-all`}>
 				<div className="pl-2 pt-2 text-sm md:text-base">{dateLabel}</div>
 				<Events date={date} events={eventsInDay} />
-			</div>
 
-			<EventFormPopover date={date} />
-		</div>
+				<EventFormPopover date={date} />
+			</div>
+		</Droppable>
 	);
 };
 
@@ -73,5 +80,20 @@ const EventFormPopover = ({ date }: { date: Temporal.ZonedDateTime }) => {
 				</div>
 			</PopoverContent>
 		</Popover>
+	);
+};
+
+import { useDroppable } from '@dnd-kit/core';
+
+const Droppable = ({ id, children }: { id: string; children: React.ReactNode }) => {
+	const { isOver, setNodeRef } = useDroppable({ id });
+
+	return (
+		<div
+			ref={setNodeRef}
+			className={`w-full h-full ${isOver ? 'bg-neutral-800' : undefined}`}
+		>
+			{children}
+		</div>
 	);
 };
