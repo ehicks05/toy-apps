@@ -1,6 +1,9 @@
+import { useState } from 'react';
 import type { Temporal } from 'temporal-polyfill';
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
+import { EventForm } from './EventForm';
 import { EventInfo } from './EventInfo';
+import { Draggable } from './dnd/Draggable';
 import type { Event } from './types';
 
 const LANE_OFFSETS: Record<number, string> = {
@@ -81,22 +84,5 @@ export const EventChip = ({ date, event, lane, i, width }: Props) => {
 				</PopoverContent>
 			</Popover>
 		</Draggable>
-	);
-};
-
-import { useDraggable } from '@dnd-kit/core';
-import { useState } from 'react';
-import { EventForm } from './EventForm';
-
-const Draggable = ({ id, children }: { id: string; children: React.ReactNode }) => {
-	const { attributes, listeners, setNodeRef, transform } = useDraggable({ id });
-	const style = transform
-		? { transform: `translate3d(${transform.x}px, ${transform.y}px, 0)`, zIndex: 10 }
-		: undefined;
-
-	return (
-		<div ref={setNodeRef} style={style} {...listeners} {...attributes}>
-			{children}
-		</div>
 	);
 };
