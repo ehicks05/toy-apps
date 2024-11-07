@@ -33,9 +33,9 @@ interface EventFormProps {
 	close: () => void;
 }
 
-export const EventForm = ({ date, close }: EventFormProps) => {
+export const EventForm = ({ date, event: _event, close }: EventFormProps) => {
 	const { events, setEvents } = useEvents();
-	const [event, setEvent] = useState(toDefaultEvent(date));
+	const [event, setEvent] = useState(_event || toDefaultEvent(date));
 
 	const handleChange = (name: string, value: string | boolean) => {
 		setEvent({ ...event, [name]: value });
@@ -74,7 +74,10 @@ export const EventForm = ({ date, close }: EventFormProps) => {
 	};
 
 	const handleSubmit = () => {
-		setEvents([...events, event]);
+		const unchangedEvents = _event
+			? events.filter((e) => e.id !== _event.id)
+			: events;
+		setEvents([...unchangedEvents, event]);
 		setEvent(toDefaultEvent(date));
 		close();
 	};
@@ -179,7 +182,7 @@ export const EventForm = ({ date, close }: EventFormProps) => {
 				onClick={handleSubmit}
 				className="text-neutral-300 py-1 px-3 bg-blue-900 hover:bg-blue-800 rounded transition-all"
 			>
-				Add
+				{_event ? 'Update' : 'Add'}
 			</button>
 		</div>
 	);

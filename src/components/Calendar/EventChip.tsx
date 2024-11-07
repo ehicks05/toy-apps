@@ -39,9 +39,18 @@ export const EventChip = ({ date, event, lane, i, width }: Props) => {
 		event.label
 	) : null;
 
+	const [isEditMode, setIsEditMode] = useState(false);
+	const enableEditMode = () => setIsEditMode(true);
+
+	const [isPopoverOpen, setPopoverOpen] = useState(false);
+	const closePopover = () => {
+		setPopoverOpen(false);
+		setIsEditMode(false);
+	};
+
 	return (
 		<Draggable id={event.id}>
-			<Popover modal>
+			<Popover modal open={isPopoverOpen}>
 				<PopoverTrigger
 					key={event.id}
 					type="button"
@@ -50,12 +59,20 @@ export const EventChip = ({ date, event, lane, i, width }: Props) => {
 						...(isDotChip ? undefined : bgColor),
 						...{ width: `${width}%` },
 					}}
+					onClick={() => setPopoverOpen(true)}
 				>
 					{innerContent}
 				</PopoverTrigger>
-				<PopoverContent className="p-0 border-none">
+				<PopoverContent
+					className="p-0 border-none"
+					onPointerDownOutside={closePopover}
+				>
 					<div className="p-2 rounded bg-neutral-700">
-						<EventInfo event={event} />
+						{isEditMode ? (
+							<EventForm date={date} event={event} close={closePopover} />
+						) : (
+							<EventInfo event={event} enableEditMode={enableEditMode} />
+						)}
 					</div>
 				</PopoverContent>
 			</Popover>
@@ -64,6 +81,8 @@ export const EventChip = ({ date, event, lane, i, width }: Props) => {
 };
 
 import { useDraggable } from '@dnd-kit/core';
+import { useState } from 'react';
+import { EventForm } from './EventForm';
 
 const Draggable = ({ id, children }: { id: string; children: React.ReactNode }) => {
 	const { attributes, listeners, setNodeRef, transform } = useDraggable({ id });
