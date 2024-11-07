@@ -3,6 +3,7 @@ import { Temporal } from 'temporal-polyfill';
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
 import { EventChip } from './EventChip';
 import { EventForm } from './EventForm';
+import { Droppable } from './dnd/Droppable';
 import type { Event } from './types';
 
 interface EventsProps {
@@ -80,20 +81,5 @@ const EventFormPopover = ({ date }: { date: Temporal.ZonedDateTime }) => {
 				</div>
 			</PopoverContent>
 		</Popover>
-	);
-};
-
-import { useDroppable } from '@dnd-kit/core';
-
-const Droppable = ({ id, children }: { id: string; children: React.ReactNode }) => {
-	const { isOver, setNodeRef } = useDroppable({ id });
-
-	return (
-		<div
-			ref={setNodeRef}
-			className={`w-full h-full ${isOver ? 'bg-neutral-800' : undefined}`}
-		>
-			{children}
-		</div>
 	);
 };
