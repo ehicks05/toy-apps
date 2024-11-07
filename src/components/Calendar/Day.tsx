@@ -69,7 +69,7 @@ const EventFormPopover = ({ date }: { date: Temporal.ZonedDateTime }) => {
 				onClick={() => setIsOpen(true)}
 				className="w-full flex-grow"
 			/>
-			<PopoverContent className="p-0 border-none">
+			<PopoverContent className="p-0 border-none" onPointerDownOutside={close}>
 				<div className="p-2 rounded bg-neutral-700">
 					<EventForm date={date} close={close} />
 				</div>
