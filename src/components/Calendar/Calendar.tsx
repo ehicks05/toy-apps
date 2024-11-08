@@ -5,10 +5,10 @@ import { useState } from 'react';
 import { Temporal } from 'temporal-polyfill';
 import { Day } from './Day';
 import { MonthMenu } from './MonthMenu';
+import { WeekdayNames } from './WeekdayNames';
 import { MyDndContext } from './dnd/DndContext';
 import { isOverlapsDay } from './events';
 import { getMonthlyCalendarDays } from './utils/monthlyCalendarDays';
-import { getWeekdayNames } from './utils/weekdayNames';
 
 interface Props {
 	date: Temporal.ZonedDateTime;
@@ -21,7 +21,6 @@ export const Calendar = ({ date: _date }: Props) => {
 
 	const [date, setDate] = useState(_date);
 
-	const dayNames = getWeekdayNames().slice(cols === 7 ? 0 : 1, cols === 7 ? 7 : -1);
 	const gridCols = cols === 7 ? 'grid-cols-7' : 'grid-cols-5';
 	const monthLabel = date.toLocaleString('en-US', {
 		month: 'long',
@@ -59,11 +58,7 @@ export const Calendar = ({ date: _date }: Props) => {
 					</div>
 				</div>
 				<div className={`w-full grid ${gridCols}`}>
-					{dayNames.map((dow) => (
-						<div key={dow} className="p-2 border border-neutral-800 bg-neutral-800">
-							{dow}
-						</div>
-					))}
+					<WeekdayNames />
 
 					{weeks.map(({ days, eventsInWeek }) => {
 						// find each event's 'swimlane'
