@@ -6,6 +6,11 @@ import { EventForm } from './EventForm';
 import { Droppable } from './dnd/Droppable';
 import type { Event } from './types';
 
+const getDayLabel = (date: Temporal.ZonedDateTime) =>
+	date.day === 1
+		? date.toLocaleString('en-US', { month: 'short', day: 'numeric' })
+		: date.day;
+
 interface EventsProps {
 	date: Temporal.ZonedDateTime;
 	events: AnnotatedEvent[];
@@ -45,17 +50,12 @@ interface DayProps {
 
 export const Day = ({ date, eventsInDay }: DayProps) => {
 	const isCurrentDay = date.toPlainDate().equals(Temporal.Now.plainDateISO());
-	const dateLabel =
-		date.day === 1
-			? date.toLocaleString('en-US', { month: 'short', day: 'numeric' })
-			: date.day;
-
 	const border = isCurrentDay ? 'border-blue-800' : 'border-neutral-800';
 
 	return (
 		<Droppable id={date.toPlainDate().toString()}>
 			<div className={`flex flex-col min-h-44 border-y-2 ${border} transition-all`}>
-				<div className="pl-2 pt-2 text-sm md:text-base">{dateLabel}</div>
+				<div className="pl-2 pt-2 text-sm md:text-base">{getDayLabel(date)}</div>
 				<Events date={date} events={eventsInDay} />
 
 				<EventFormPopover date={date} />
