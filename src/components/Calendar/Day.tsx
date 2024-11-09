@@ -21,16 +21,14 @@ const Events = ({ date, events }: EventsProps) => {
 
 	return (
 		<div className="relative flex flex-col gap-1">
-			{events.map((e, i) => {
-				const width = e.days * 100;
+			{events.map((e) => {
 				return (
 					<EventChip
 						key={e.id}
 						date={date}
 						event={e}
-						lane={e.lane}
-						i={i}
-						width={width}
+						laneOffset={e.laneOffset}
+						dayCount={e.dayCount}
 					/>
 				);
 			})}
@@ -39,8 +37,8 @@ const Events = ({ date, events }: EventsProps) => {
 };
 
 interface AnnotatedEvent extends Event {
-	lane: number;
-	days: number;
+	laneOffset: number;
+	dayCount: number;
 }
 
 interface DayProps {

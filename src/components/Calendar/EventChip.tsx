@@ -7,7 +7,9 @@ import { Draggable } from './dnd/Draggable';
 import type { Event } from './types';
 
 const LANE_OFFSETS: Record<number, string> = {
-	0: 'mt-0',
+	'-2': '-mt-16',
+	'-1': '-mt-8',
+	0: '',
 	1: 'mt-8',
 	2: 'mt-16',
 	3: 'mt-24',
@@ -17,21 +19,21 @@ const LANE_OFFSETS: Record<number, string> = {
 interface Props {
 	date: Temporal.ZonedDateTime;
 	event: Event;
-	lane: number;
-	i: number;
-	width: number;
+	laneOffset: number;
+	dayCount: number;
 }
 
-export const EventChip = ({ date, event, lane, i, width }: Props) => {
+export const EventChip = ({ date, event, laneOffset, dayCount }: Props) => {
 	const isFirstDay = date.toPlainDate().equals(event.start.toPlainDate());
 	const isLastDay = date.toPlainDate().equals(event.end.toPlainDate());
 	const isDotChip = isFirstDay && isLastDay && !event.isAllDay;
 
-	const offsetMargin = LANE_OFFSETS[lane - i];
+	const offsetMargin = LANE_OFFSETS[laneOffset];
 
 	const shared = `p-1 pl-2 ${offsetMargin} h-6 md:h-7 rounded line-clamp-1 text-xs md:text-sm text-left cursor-pointer hover:brightness-110 transition-all`;
 	const classes = isDotChip ? `${shared} hover:bg-neutral-800` : `${shared}`;
 	const bgColor = { backgroundColor: event.color };
+	const width = { width: `calc(${dayCount * 100}% - 0.25rem)` };
 
 	const innerContent = isDotChip ? (
 		<div className="flex gap-2 items-center">
@@ -59,12 +61,13 @@ export const EventChip = ({ date, event, lane, i, width }: Props) => {
 					type="button"
 					className={classes}
 					style={{
+						...width,
 						...(isDotChip ? undefined : bgColor),
-						...{ width: `${width}%` },
 					}}
 					onClick={() => setPopoverOpen(true)}
 				>
 					{innerContent}
+					{dayCount}
 				</PopoverTrigger>
 				<PopoverContent
 					className="p-0 border-none"
