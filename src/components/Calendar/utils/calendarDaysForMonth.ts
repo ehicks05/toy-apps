@@ -5,7 +5,7 @@ import type { Temporal } from 'temporal-polyfill';
  * by a few days of the previous and next month as needed to fill out a monthly
  * calendar so it starts on Sun and ends on a Sat.
  */
-export const getMonthlyCalendarDays = (date: Temporal.ZonedDateTime) => {
+export const calendarDaysForMonth = (date: Temporal.ZonedDateTime) => {
 	const start = date.with({ day: 1 });
 
 	const currentMonthDays = [...new Array(date.daysInMonth)].map((_, i) =>

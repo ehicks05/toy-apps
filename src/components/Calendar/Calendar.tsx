@@ -8,7 +8,16 @@ import { MonthMenu } from './MonthMenu';
 import { WeekdayNames } from './WeekdayNames';
 import { MyDndContext } from './dnd/DndContext';
 import { isOverlapsDay } from './events';
-import { getMonthlyCalendarDays } from './utils/monthlyCalendarDays';
+import { calendarDaysForMonth } from './utils/calendarDaysForMonth';
+
+/*
+ SPECS:
+ 1. partial 1-day events (colored dot ui) always below other events
+ 2. when stacking, events starting earlier should be sorted earlier
+ 2a. if start dates match, later end dates should be sorted earlier
+ */
+
+const CalendarWeeks = () => {};
 
 interface Props {
 	date: Temporal.ZonedDateTime;
@@ -27,11 +36,11 @@ export const Calendar = ({ date: _date }: Props) => {
 		year: 'numeric',
 	});
 
-	const days = getMonthlyCalendarDays(date).filter(
+	const days = calendarDaysForMonth(date).filter(
 		(date) => isShowWeekend || ![0, 6].includes(date.dayOfWeek),
 	);
 
-	const weeks = chunk(days, 7).map((week) => {
+	const weeks = chunk(days, cols).map((week) => {
 		const eventsInWeek = events
 			.map((event) => {
 				const dayMask = [0, 0, 0, 0, 0, 0, 0];
