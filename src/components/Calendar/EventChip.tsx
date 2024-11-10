@@ -67,7 +67,6 @@ export const EventChip = ({ date, event, laneOffset, dayCount }: Props) => {
 					onClick={() => setPopoverOpen(true)}
 				>
 					{innerContent}
-					{dayCount}
 				</PopoverTrigger>
 				<PopoverContent
 					className="p-0 border-none"
