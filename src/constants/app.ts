@@ -3,4 +3,4 @@ export const LINKS = [
 	{ label: 'ehicks', url: 'https://ehicks.net' },
 ];
 
-export const APP_NAME = 'ecal';
+export const APP_NAME = 'jobbies';
