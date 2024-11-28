@@ -1,5 +1,5 @@
 import { useIsRestoring } from '@tanstack/react-query';
-import { MapPin } from 'lucide-react';
+import { Check, MapPin, X } from 'lucide-react';
 import { Footer, Header } from './components/layout';
 
 const currency = new Intl.NumberFormat('en-US', {
@@ -28,8 +28,8 @@ interface Job {
 	company: string;
 	icon: string;
 	iconClass: string;
-	title: string;
 	location: string;
+	recruited: boolean;
 	levels: Level[];
 }
 
@@ -39,8 +39,8 @@ const JOBS: Job[] = [
 		company: 'Rippling',
 		icon: 'https://www.rippling.com/favicons/apple-touch-icon.png',
 		iconClass: '',
-		title: 'Software Engineer',
 		location: 'Remote',
+		recruited: true,
 		levels: [
 			{
 				name: 'SWE II',
@@ -63,8 +63,8 @@ const JOBS: Job[] = [
 		company: 'Privy.io',
 		icon: 'https://framerusercontent.com/images/1yrQRlTAGFtgW2nERVauOo7PyJM.png',
 		iconClass: 'invert',
-		title: 'Software Engineer',
 		location: 'NYC',
+		recruited: true,
 		levels: [
 			{
 				name: 'Senior Fullstack',
@@ -83,6 +83,12 @@ const JOBS: Job[] = [
 		],
 	},
 ];
+
+interface Stage {
+	name: string;
+}
+
+const STAGES = [{ name: 'new' }];
 
 const LevelChip = ({ level }: { level: Level }) => {
 	const {
@@ -132,7 +138,7 @@ const Levels = ({ levels }: { levels: Level[] }) => {
 };
 
 const JobCard = ({ job }: { job: Job }) => {
-	const { company, icon, iconClass, location, levels } = job;
+	const { company, icon, iconClass, location, recruited, levels } = job;
 
 	return (
 		<div className="p-4 rounded bg-neutral-900">
@@ -143,11 +149,24 @@ const JobCard = ({ job }: { job: Job }) => {
 					</div>
 					<div className="flex flex-col">
 						<div>{company}</div>
-						{/* <div>{title}</div> */}
 						<div className="flex gap-1 items-center">
-							{location} <MapPin size={16} className="text-neutral-400" />
+							{location}
+							<MapPin
+								size={16}
+								className={
+									location === 'Remote' ? 'text-green-400' : 'text-neutral-400'
+								}
+							/>
 						</div>
 					</div>
+				</div>
+				<div className="flex gap-1 items-center">
+					Recruited
+					{recruited ? (
+						<Check size={16} className={'text-green-400'} />
+					) : (
+						<X size={16} className={'text-neutral-400'} />
+					)}
 				</div>
 				<Levels levels={levels} />
 			</div>
