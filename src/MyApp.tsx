@@ -88,7 +88,11 @@ interface Stage {
 	name: string;
 }
 
-const STAGES = [{ name: 'new' }];
+const STAGES = [
+	{ name: 'new', label: 'New' },
+	{ name: 'in_progress', label: 'In Progress' },
+	{ name: 'concluded', label: 'Concluded' },
+];
 
 const LevelChip = ({ level }: { level: Level }) => {
 	const {
@@ -104,9 +108,17 @@ const LevelChip = ({ level }: { level: Level }) => {
 			? currency.format(low)
 			: `${currency.format(low)} - ${currency.format(high)}`;
 
+	const avg = (low + high) / 2;
+	const total = avg + stock + bonus + avg * retirementMatch;
+
 	return (
-		<div className="flex flex-col gap-2 p-4 rounded bg-neutral-800">
+		<div className="flex flex-col gap-2 p-4 w-44 rounded bg-neutral-800">
 			<div className="text-lg text-neutral-300">{name}</div>
+			<div className="flex gap-1 items-center justify-end">
+				{currency.format(total)}
+				<span className="w-8 text-neutral-400">tot</span>
+			</div>
+
 			<div className="flex gap-1 items-center justify-end">
 				{base}
 				<span className="w-8 text-neutral-400">sal</span>
@@ -129,7 +141,7 @@ const LevelChip = ({ level }: { level: Level }) => {
 
 const Levels = ({ levels }: { levels: Level[] }) => {
 	return (
-		<div className="flex gap-4">
+		<div className="flex flex-col gap-2">
 			{levels.map((level) => (
 				<LevelChip key={level.name} level={level} />
 			))}
@@ -141,7 +153,7 @@ const JobCard = ({ job }: { job: Job }) => {
 	const { company, icon, iconClass, location, recruited, levels } = job;
 
 	return (
-		<div className="p-4 rounded bg-neutral-900">
+		<div className="p-2 rounded bg-neutral-900">
 			<div className="flex flex-col gap-4">
 				<div className="flex gap-2">
 					<div className="flex items-center">
@@ -180,15 +192,22 @@ function MyApp() {
 	if (isRestoring) return null;
 
 	return (
-		<div className="flex flex-col min-h-screen bg-gradient-to-r from-stone-900 to-neutral-950">
+		<div className="flex flex-col min-h-screen bg-neutral-950">
 			<div className="sm:px-4">
 				<Header />
 			</div>
 			<div className="flex-grow flex flex-col h-full sm:px-4">
 				<div className="w-full max-w-screen-2xl mx-auto">
-					<div className="flex flex-col gap-4 p-2 md:p-4 mt-7">
-						{JOBS.map((job) => (
-							<JobCard key={job.id} job={job} />
+					<div className="flex gap-4 overflow-x-auto">
+						{STAGES.map((stage) => (
+							<div key={stage.name} className="flex flex-col">
+								<div>{stage.label}</div>
+								<div className="flex flex-col gap-4">
+									{JOBS.map((job) => (
+										<JobCard key={job.id} job={job} />
+									))}
+								</div>
+							</div>
 						))}
 					</div>
 				</div>
