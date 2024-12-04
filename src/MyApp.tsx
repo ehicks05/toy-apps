@@ -119,7 +119,7 @@ const LevelChip = ({ level }: { level: Level }) => {
 				<span className="w-8 text-neutral-400">tot</span>
 			</div>
 
-			<div className="flex gap-1 items-center justify-end">
+			{/* <div className="flex gap-1 items-center justify-end">
 				{base}
 				<span className="w-8 text-neutral-400">sal</span>
 			</div>
@@ -134,7 +134,7 @@ const LevelChip = ({ level }: { level: Level }) => {
 			<div className="flex gap-1 items-center justify-end">
 				{percent.format(retirementMatch)}
 				<span className="w-8 text-neutral-400">mat</span>
-			</div>
+			</div> */}
 		</div>
 	);
 };
