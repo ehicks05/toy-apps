@@ -1,12 +1,12 @@
 import { useSettings } from '@/hooks';
-import { useEvents } from '@/hooks/useEvents';
+import { useEvents } from '@/hooks/useJobs';
 import { chunk } from 'lodash-es';
 import { useState } from 'react';
 import type { Temporal } from 'temporal-polyfill';
+import { MyDndContext } from '../../dnd/DndContext';
 import { Day } from './Day';
 import { MonthMenu } from './MonthMenu';
 import { WeekdayNames } from './WeekdayNames';
-import { MyDndContext } from './dnd/DndContext';
 import { isOverlapsDay } from './events';
 import type { Event } from './types';
 import { calendarDaysForMonth } from './utils/calendarDaysForMonth';

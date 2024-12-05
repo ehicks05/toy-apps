@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import type { Temporal } from 'temporal-polyfill';
+import { Draggable } from '../../dnd/Draggable';
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
 import { EventForm } from './EventForm';
 import { EventInfo } from './EventInfo';
-import { Draggable } from './dnd/Draggable';
 import type { Event } from './types';
 
 const LANE_OFFSETS: Record<number, string> = {

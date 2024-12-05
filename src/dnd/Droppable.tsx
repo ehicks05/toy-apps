@@ -11,7 +11,7 @@ export const Droppable = ({ id, children }: Props) => {
 	return (
 		<div
 			ref={setNodeRef}
-			className={`w-full h-full ${isOver ? 'bg-neutral-800' : undefined}`}
+			className={`flex flex-col w-full h-full flex-grow ${isOver ? 'bg-red-500' : ''}`}
 		>
 			{children}
 		</div>

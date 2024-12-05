@@ -1,4 +1,4 @@
-import { useEvents } from '@/hooks/useEvents';
+import { useEvents } from '@/hooks/useJobs';
 import { Edit, NotebookText, Trash, X } from 'lucide-react';
 import type { Event } from './types';
 import { getTimeIntervalLabel } from './utils/timeIntervalLabels';

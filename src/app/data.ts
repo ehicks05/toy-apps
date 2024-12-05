@@ -1,4 +1,4 @@
-import { Job } from "./types";
+import type { Job } from './types';
 
 export const STAGES = [
 	{ name: 'new', label: 'New' },
@@ -30,6 +30,7 @@ export const JOBS: Job[] = [
 				retirementMatch: 0,
 			},
 		],
+		stage: 'new',
 	},
 	{
 		id: '2',
@@ -54,5 +55,6 @@ export const JOBS: Job[] = [
 				retirementMatch: 0,
 			},
 		],
+		stage: 'new',
 	},
 ];

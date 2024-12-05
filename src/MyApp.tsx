@@ -1,6 +1,6 @@
 import { useIsRestoring } from '@tanstack/react-query';
-import { Footer, Header } from './components/layout';
 import { JobBoard } from './app/JobBoard';
+import { Footer, Header } from './components/layout';
 
 function MyApp() {
 	const isRestoring = useIsRestoring();
@@ -8,7 +8,7 @@ function MyApp() {
 	if (isRestoring) return null;
 
 	return (
-		<div className="flex flex-col min-h-screen bg-neutral-950">
+		<div className="flex flex-col min-h-screen bg-black">
 			<div className="sm:px-4">
 				<Header />
 			</div>

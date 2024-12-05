@@ -14,9 +14,10 @@ export interface Job {
 	location: string;
 	recruited: boolean;
 	levels: Level[];
+	stage: string;
 }
-
 
 export interface Stage {
 	name: string;
+	label: string;
 }

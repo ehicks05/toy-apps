@@ -1,4 +1,4 @@
-# cal (todo: better name)
+# jobbies
 
 ## Prereqs
 
@@ -12,11 +12,18 @@
 
 ## todo
 
-1. fix stacking
-2. solve too many events
-3. edit event
+1. columns, dnd
 
 
 > [!IMPORTANT]
 > testing
 >
+
+
+
+
+
+show basic company/job/expeceted compensation info
+
+move between columns (manually)
+add 'events'
