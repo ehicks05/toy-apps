@@ -17,7 +17,7 @@ const Column = ({ stage }: { stage: Stage }) => {
 		<SortableContext id={stage.name} items={jobs} strategy={rectSortingStrategy}>
 			<div
 				ref={setNodeRef}
-				className="flex flex-col flex-grow min-h-64 h-full bg-neutral-950"
+				className="flex flex-col flex-grow w-full bg-neutral-950"
 			>
 				<div>{stage.label}</div>
 				<div className="flex flex-col gap-4">
@@ -33,10 +33,15 @@ const Column = ({ stage }: { stage: Stage }) => {
 };
 
 export const JobBoard = () => {
+	const { jobs } = useJobs();
+
 	return (
 		<MyDndContext>
 			<div className="flex flex-col flex-grow w-full h-full max-w-screen-2xl mx-auto">
 				<div className="flex gap-4 h-full flex-grow overflow-x-auto">
+					{JSON.stringify(
+						jobs.map((o) => ({ id: o.id, stage: o.stage, company: o.company })),
+					)}
 					{STAGES.map((stage) => (
 						<Column key={stage.name} stage={stage} />
 					))}
