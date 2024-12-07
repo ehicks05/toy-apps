@@ -3,7 +3,7 @@ import { Droppable } from '@/dnd/Droppable';
 import { SortableItem } from '@/dnd/SortableItem';
 import { useJobs } from '@/hooks/useJobs';
 import { useDroppable } from '@dnd-kit/core';
-import { SortableContext, rectSortingStrategy } from '@dnd-kit/sortable';
+import { SortableContext, verticalListSortingStrategy } from '@dnd-kit/sortable';
 import { JobCard } from './JobCard';
 import { STAGES } from './data';
 import type { Stage } from './types';
@@ -14,7 +14,7 @@ const Column = ({ stage }: { stage: Stage }) => {
 	const { isOver, setNodeRef } = useDroppable({ id: stage.name });
 
 	return (
-		<SortableContext id={stage.name} items={jobs} strategy={rectSortingStrategy}>
+		<SortableContext id={stage.name} items={jobs}>
 			<div
 				ref={setNodeRef}
 				className="flex flex-col flex-grow w-full bg-neutral-950"
@@ -33,15 +33,10 @@ const Column = ({ stage }: { stage: Stage }) => {
 };
 
 export const JobBoard = () => {
-	const { jobs } = useJobs();
-
 	return (
 		<MyDndContext>
 			<div className="flex flex-col flex-grow w-full h-full max-w-screen-2xl mx-auto">
 				<div className="flex gap-4 h-full flex-grow overflow-x-auto">
-					{JSON.stringify(
-						jobs.map((o) => ({ id: o.id, stage: o.stage, company: o.company })),
-					)}
 					{STAGES.map((stage) => (
 						<Column key={stage.name} stage={stage} />
 					))}
