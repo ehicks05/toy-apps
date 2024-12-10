@@ -8,13 +8,15 @@ interface Props {
 }
 
 export const SortableItem = ({ id, children }: Props) => {
-	const { setNodeRef, transform, transition, attributes, listeners } = useSortable({
-		id,
-	});
+	const { setNodeRef, transform, transition, attributes, listeners, isDragging } =
+		useSortable({
+			id,
+		});
 
 	const style = {
 		transform: CSS.Transform.toString(transform),
 		transition,
+		opacity: isDragging ? '25%' : '100%',
 	};
 
 	return (
