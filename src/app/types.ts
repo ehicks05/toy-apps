@@ -4,17 +4,19 @@ export interface Level {
 	stock: number;
 	bonus: number;
 	retirementMatch: number;
+	ptoDays: number;
 }
 
 export interface Job {
 	id: string;
 	company: string;
 	icon: string;
-	iconClass: string;
+	invert: boolean;
 	location: string;
 	recruited: boolean;
 	levels: Level[];
 	stage: string;
+	index: number;
 }
 
 export interface Stage {

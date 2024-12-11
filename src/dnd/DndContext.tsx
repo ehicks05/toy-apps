@@ -6,54 +6,50 @@ import {
 	type DragOverEvent,
 	DragOverlay,
 	type DragStartEvent,
-	KeyboardSensor,
-	PointerSensor,
-	useSensor,
-	useSensors,
 } from '@dnd-kit/core';
 import { arrayMove } from '@dnd-kit/sortable';
 import { useState } from 'react';
 
+const COLUMNS = ['new', 'in_progress', 'concluded'];
+
 export const MyDndContext = ({ children }: { children: React.ReactNode }) => {
-	const { setJobs, updateById, findById } = useJobs();
+	const { jobs, updateJobs, updateJob, findById } = useJobs();
 	const [activeId, setActiveId] = useState<string | null>(null);
 	const activeJob = activeId ? findById(activeId) : undefined;
-	const sensors = useSensors(useSensor(PointerSensor), useSensor(KeyboardSensor));
 
 	function handleDragStart(event: DragStartEvent) {
-		setActiveId(event.active.id);
+		setActiveId(String(event.active.id));
 	}
 
 	const handleDragOver = (event: DragOverEvent) => {
-		console.log(event);
 		const { over, active } = event;
+		const overId = over?.id ? String(over.id) : undefined;
 
-		if (!over?.id || typeof over.id !== 'string') return;
+		if (!overId) return;
 
-		const COLUMNS = ['new', 'in_progress', 'concluded'];
-		const isOverAColumn = COLUMNS.includes(over.id);
-		const isOverAJobInDifferentColumn = findById(over.id);
+		const overJob = findById(overId);
+		const updateColumn = overJob?.stage !== activeJob?.stage;
 
-		if (COLUMNS.includes(over.id) && active.id !== over.id) {
-			updateById(active.id, over.id);
+		if (COLUMNS.includes(overId) || updateColumn) {
+			const updatedStage = overJob ? overJob.stage : overId;
+			updateJob(String(active.id), { stage: updatedStage });
 		}
 	};
 
 	const handleDragEnd = (event: DragEndEvent) => {
-		console.log(event);
 		setActiveId(null);
 		const { over, active } = event;
 
 		if (over === null || active === null) return;
-		console.log('ok');
 
 		if (active.id !== over.id) {
-			setJobs((items) => {
-				const oldIndex = items.findIndex((o) => o.id === active.id);
-				const newIndex = items.findIndex((o) => o.id === over.id);
-
-				return arrayMove(items, oldIndex, newIndex);
-			});
+			const oldIndex = jobs.findIndex((o) => o.id === active.id);
+			const newIndex = jobs.findIndex((o) => o.id === over.id);
+			const updatedJobs = arrayMove(jobs, oldIndex, newIndex).map((o, i) => ({
+				...o,
+				index: i,
+			}));
+			updateJobs(updatedJobs);
 		}
 	};
 
@@ -62,8 +58,6 @@ export const MyDndContext = ({ children }: { children: React.ReactNode }) => {
 			onDragStart={handleDragStart}
 			onDragOver={handleDragOver}
 			onDragEnd={handleDragEnd}
-			sensors={sensors}
-			// collisionDetection={pointerWithin}
 		>
 			{children}
 			<DragOverlay>{activeJob ? <JobCard job={activeJob} /> : null}</DragOverlay>

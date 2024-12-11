@@ -1,20 +1,52 @@
-import { JOBS } from '@/app/data';
-import { APP_NAME } from '@/constants/app';
-import { useLocalStorage } from '@uidotdev/usehooks';
+import { JOBS } from '@/../data';
+import type { Job } from '@/app/types';
+import { id, tx } from '@instantdb/react';
+import { db } from '../lib/db';
+
+function addJob(job: Job) {
+	db.transact(
+		tx.jobs[id()].update({
+			...job,
+		}),
+	);
+}
+
+function updateJob(id: string, data: Partial<Job>) {
+	db.transact([tx.jobs[id].merge({ ...data })]);
+}
+
+function updateJobs(jobs: Job[]) {
+	db.transact(jobs.map((j) => tx.jobs[j.id].update({ ...j })));
+}
+
+function deleteJob(job: Job) {
+	db.transact([tx.jobs[job.id].delete()]);
+}
+
+function resetJobs(jobs: Job[]) {
+	db.transact(jobs.map((j) => tx.jobs[j.id].delete()));
+
+	JOBS.map((job) => addJob(job));
+}
 
 export const useJobs = () => {
-	const [jobs, setJobs] = useLocalStorage(`${APP_NAME}-jobs`, JOBS);
-
-	const removeById = (id: string) => setJobs(jobs.filter((o) => o.id !== id));
-	const findById = (id: string) => jobs.find((o) => o.id === id);
-	const updateById = (id: string, stage: string) =>
-		setJobs(jobs.map((o) => (o.id === id ? { ...o, stage } : o)));
+	// const query = { jobs: { $: { order: { index: 'asc' } } } };
+	const query = { jobs: {} };
+	const { isLoading, error, data } = db.useQuery(query);
+	const jobs = data?.jobs.toSorted((o1, o2) => o1.index - o2.index) || [];
 
 	return {
+		// read
 		jobs,
-		setJobs,
-		removeById,
-		findById,
-		updateById,
+		isLoading,
+		error,
+		findById: (id: string) => jobs.find((o) => o.id === id),
+
+		// write
+		addJob,
+		deleteJob,
+		updateJob,
+		updateJobs,
+		resetJobs: () => resetJobs(jobs),
 	};
 };

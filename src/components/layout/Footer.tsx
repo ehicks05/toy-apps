@@ -1,4 +1,5 @@
 import { LINKS } from '@/constants/app';
+import { useJobs } from '@/hooks/useJobs';
 import React from 'react';
 
 interface LinkProps {
@@ -16,9 +17,23 @@ const Link = ({ href, children }: LinkProps) => (
 	</a>
 );
 
+const ResetJobs = () => {
+	const { resetJobs } = useJobs();
+	return (
+		<button
+			type="button"
+			className="text-blue-500 hover:underline hover:text-blue-400"
+			onClick={resetJobs}
+		>
+			reset
+		</button>
+	);
+};
+
 const Footer = () => {
 	return (
 		<footer className="flex items-center justify-end gap-4 px-2 py-4 max-w-screen-2xl mx-auto w-full">
+			<ResetJobs />
 			{LINKS.map((link) => (
 				<Link key={link.url} href={link.url}>
 					{link.label}
