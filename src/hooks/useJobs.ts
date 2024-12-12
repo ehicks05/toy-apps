@@ -51,6 +51,8 @@ export const useJobs = () => {
 		deleteJob,
 		updateJob,
 		updateJobs,
+
+		// specialized
 		resetJobs: () => resetJobs(jobs),
 		exportJobs: () => exportJobs(jobs),
 	};
