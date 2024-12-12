@@ -60,7 +60,7 @@ export const JobCard = ({ job }: { job: Job }) => {
 								<MapPin
 									size={16}
 									className={
-										location === 'Remote' ? 'text-green-400' : 'text-neutral-400'
+										location === 'remote' ? 'text-green-400' : 'text-neutral-400'
 									}
 								/>
 							</div>
