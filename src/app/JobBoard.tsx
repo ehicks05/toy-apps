@@ -3,8 +3,8 @@ import { SortableItem } from '@/dnd/SortableItem';
 import { useJobs } from '@/hooks/useJobs';
 import { useDroppable } from '@dnd-kit/core';
 import { SortableContext } from '@dnd-kit/sortable';
-import { STAGES } from '../../data';
 import { JobCard } from './JobCard';
+import { STAGES } from './constants';
 import type { Stage } from './types';
 
 const Column = ({ stage }: { stage: Stage }) => {
