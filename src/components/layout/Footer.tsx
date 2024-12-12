@@ -1,6 +1,6 @@
 import { LINKS } from '@/constants/app';
 import { useJobs } from '@/hooks/useJobs';
-import React from 'react';
+import React, { useState } from 'react';
 
 interface LinkProps {
 	href: string;
@@ -30,9 +30,31 @@ const ResetJobs = () => {
 	);
 };
 
+const ExportJobs = () => {
+	const { exportJobs } = useJobs();
+	const [label, setLabel] = useState('export');
+
+	const handleClick = () => {
+		exportJobs();
+		setLabel('copied');
+		setTimeout(() => setLabel('export'), 2000);
+	};
+
+	return (
+		<button
+			type="button"
+			className="text-blue-500 hover:underline hover:text-blue-400"
+			onClick={handleClick}
+		>
+			{label}
+		</button>
+	);
+};
+
 const Footer = () => {
 	return (
 		<footer className="flex items-center justify-end gap-4 px-2 py-4 max-w-screen-2xl mx-auto w-full">
+			<ExportJobs />
 			<ResetJobs />
 			{LINKS.map((link) => (
 				<Link key={link.url} href={link.url}>

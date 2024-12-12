@@ -29,6 +29,10 @@ function resetJobs(jobs: Job[]) {
 	JOBS.map((job) => addJob(job));
 }
 
+function exportJobs(jobs: Job[]) {
+	navigator.clipboard.writeText(JSON.stringify(jobs));
+}
+
 export const useJobs = () => {
 	// const query = { jobs: { $: { order: { index: 'asc' } } } };
 	const query = { jobs: {} };
@@ -48,5 +52,6 @@ export const useJobs = () => {
 		updateJob,
 		updateJobs,
 		resetJobs: () => resetJobs(jobs),
+		exportJobs: () => exportJobs(jobs),
 	};
 };
