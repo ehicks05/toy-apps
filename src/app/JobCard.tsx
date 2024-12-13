@@ -1,4 +1,4 @@
-import { Check, MapPin, X } from 'lucide-react';
+import { MapPin, PersonStanding } from 'lucide-react';
 import { CompensationDetails } from './CompensationDetails';
 import { currency } from './formatters';
 import type { Job, Level } from './types';
@@ -42,14 +42,30 @@ const Levels = ({ levels, job }: { levels: Level[]; job: Job }) => {
 	);
 };
 
-const LevelInfo = ({ job, level }: { job: Job; level: Level }) => {
+const LevelInfo = ({
+	job,
+	level,
+	levels,
+}: { job: Job; level: Level; levels: number }) => {
 	const { name } = level;
 	const total = getTC({ job, level });
 
 	return (
-		<div className="flex gap-2 items-center text-sm">
-			<div className="">{currency.format(total)}</div>
-			<div className="text-neutral-300 line-clamp-1">{name}</div>
+		<div
+			className={`flex gap-2 items-center ${levels > 1 ? 'text-sm p-1' : 'p-2'} ${
+				total > 300_000
+					? 'text-green-400'
+					: total > 250_000
+						? 'text-lime-400'
+						: total > 200_000
+							? 'text-yellow-400'
+							: total > 150_000
+								? 'text-orange-400'
+								: 'text-red-400'
+			}`}
+		>
+			<div>{currency.format(total)}</div>
+			<div className="line-clamp-1">{name}</div>
 		</div>
 	);
 };
@@ -67,45 +83,50 @@ export const JobCard = ({ job }: { job: Job }) => {
 						alt="icon"
 					/>
 					<div>{company}</div>
-				</div>
-			</td>
-			<td className="p-2 w-2/12 bg-neutral-900">
-				<div className="flex gap-0.5 items-center">
-					{location}
-					<MapPin
-						size={16}
-						className={
-							location === 'remote'
-								? 'text-green-400'
-								: ['nyc', 'philly'].includes(location)
-									? 'text-lime-400'
-									: 'text-yellow-400'
-						}
-					/>
-				</div>
-			</td>
-			<td className="p-2 w-2/12 bg-neutral-900">
-				<div className="flex items-center gap-1">
-					Recruited
-					{recruited ? (
-						<Check size={16} className={'text-green-400'} />
-					) : (
-						<X size={16} className={'text-neutral-400'} />
+					{recruited && (
+						<PersonStanding size={24} className={'text-green-400 shrink-0'} />
 					)}
 				</div>
 			</td>
-			<td className="p-2 text-right w-0 whitespace-nowrap bg-neutral-900">
+
+			<td
+				className={`p-2 w-2/12 bg-neutral-900 ${
+					location === 'remote'
+						? 'text-green-400'
+						: ['nyc', 'philly'].includes(location)
+							? 'text-lime-400'
+							: 'text-yellow-400'
+				}`}
+			>
+				<div className="flex gap-0.5 items-center">
+					{location}
+					<MapPin size={16} />
+				</div>
+			</td>
+
+			<td
+				className={`p-2 text-right w-1/12 whitespace-nowrap bg-neutral-900 ${
+					ptoDays >= 60
+						? 'text-green-400'
+						: ptoDays >= 30
+							? 'text-lime-400'
+							: 'text-red-400'
+				}`}
+			>
 				{ptoDays} days
 			</td>
-			{/* {job.levels.map((level) => (
-				<LevelInfo key={level.name} job={job} level={level} />
-			))} */}
 
-			<td className="p-2 bg-neutral-900">
+			<td className="w-2/12 p-0">
 				{job.levels.map((level) => (
-					<LevelInfo key={level.name} job={job} level={level} />
+					<LevelInfo
+						key={level.name}
+						job={job}
+						level={level}
+						levels={job.levels.length}
+					/>
 				))}
 			</td>
+			<td className="w-1/12" />
 		</>
 	);
 };

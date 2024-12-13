@@ -10,42 +10,15 @@
 2. To install depenencies, run `npm i`.
 3. For local dev, run `npm run dev`.
 
-## goals
+## Goals
 
-1. 'at a glance' basic company/job/compensation info
-2. basic tracking of progress
-   1. to help stay organized
-   2. drag to different columns
+### Primary Goals
 
-add 'events'?
+Gather and summarize key features of a job listing. This includes data on the company, the job role, and levels within the role. This can help to stay organized but can also reveal how attractive each job is.
 
-So far the focus has been on representing the jobs. This is mainly choosing which info to show and how to arrange it. What more user-centric data do we need to keep?
+What might factor into a job's attractiveness formula?
 
-1. the 'stage' of the application: new, in progress, completed. This is very basic stuff and can be represented by which column the job is in.
-2. free-form notes. Easy to add, most flexible, possibly unwieldy.
-3. a list of events could hold things like:
-   * recruiter reach out on $date
-   * i replied on $date
-   * on $date1 an interview was schedule for $date2
-
-This is basically a list of notes with timestamps.
-
-
-
-
-
-
-potential uses for this whole thing:
-1. track applications
-2. attempt to quantify the attractiveness of any job
-2. order jobs from most to least attractive
-
-
-
-what could an attractiveness formula for a job look like?
-
-Well, we care about the following:
-1. comp
+1. compensation
 2. work life balance
    1. 4-day-week will have obvious advantage
 3. engagingness
@@ -58,13 +31,28 @@ Well, we care about the following:
 4. ego - does "i work for $foocorp" impress people?
 5. location - remote is ideal, but in person opportunity at some point would be nice
 
-how do we score this? One approach would be a separate score for each aspect.
+How might we score this? One approach would be a separate score for each aspect.
 
-1. comp - score is literally the comp
-2. work life balance - score is days off? will be unknown for some jobs
-3. engagingness - very qualitative. tech stack and sample projects are sometimes mentioned.
-4. ego - score could be isHouseholdName: yes or no
+1. compensation - score is literally the total comp
+2. work life balance - score is estimated days off, not including federal holidays
+3. engagingness - this one's tough. can factor in company's mission and industry, reputation scores from glassdoor, tech stacks if listed.
+4. ego - score could be isHouseholdName: yes or no, or maybe a 1-5 scale...no-name-startup, small-co, mid-co, huge-co, faang
 5. location - remote > nyc/philly > the rest
 
 
-these could be displayed in columns, and color-coded by how good they are
+these could be displayed in columns, and color-coded by how good they are.
+
+We could try to fold it down to fewer scores but that'll involve figuring out how to weight features against each other.
+
+### Secondary Goals
+
+Include some very simple features to track where in the application process you are.
+
+1. Jobs can start out as 'new'.
+   1. Can be flagged to show a recruiter reached out to you
+2. Jobs can be moved to 'in-progress'.
+   1. Could potentially hold events here but that's low priority.
+3. Jobs can be moved to 'concluded'. A result should be added:
+   1. Ghosted or Denied
+   2. Offer w/ offer details
+   3. Previous jobs or offers could sit here (or we can add another stage for 'previous')
