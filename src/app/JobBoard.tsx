@@ -19,13 +19,17 @@ const Column = ({ stage }: { stage: Stage }) => {
 				className="flex flex-col flex-grow w-full bg-neutral-950"
 			>
 				<div>{stage.label}</div>
-				<div className="flex flex-col gap-4">
-					{jobs.map((job) => (
-						<SortableItem id={job.id} key={job.id}>
-							<JobCard job={job} />
-						</SortableItem>
-					))}
-				</div>
+				<table className="bg-neutral-900">
+					{/* <thead></thead> */}
+					<tbody>
+						{jobs.map((job) => (
+							<SortableItem id={job.id} key={job.id}>
+								<JobCard job={job} />
+							</SortableItem>
+						))}
+					</tbody>
+					{/* <tfoot></tfoot> */}
+				</table>
 			</div>
 		</SortableContext>
 	);
@@ -35,7 +39,7 @@ export const JobBoard = () => {
 	return (
 		<MyDndContext>
 			<div className="flex flex-col flex-grow w-full h-full max-w-screen-2xl mx-auto">
-				<div className="flex gap-4 h-full flex-grow overflow-x-auto">
+				<div className="flex flex-col gap-4 h-full flex-grow overflow-x-auto">
 					{STAGES.map((stage) => (
 						<Column key={stage.name} stage={stage} />
 					))}

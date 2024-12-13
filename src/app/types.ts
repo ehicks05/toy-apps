@@ -3,8 +3,6 @@ export interface Level {
 	base: { low: number; high: number };
 	stock: number;
 	bonus: number;
-	retirementMatch: number;
-	ptoDays: number;
 }
 
 export interface Job {
@@ -15,6 +13,8 @@ export interface Job {
 	location: string;
 	recruited: boolean;
 	levels: Level[];
+	ptoDays: number;
+	retirementMatch: number;
 	stage: string;
 	index: number;
 }

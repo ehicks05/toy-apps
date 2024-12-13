@@ -20,8 +20,8 @@ export const SortableItem = ({ id, children }: Props) => {
 	};
 
 	return (
-		<div ref={setNodeRef} style={style} {...attributes} {...listeners}>
+		<tr ref={setNodeRef} style={style} {...attributes} {...listeners}>
 			{children}
-		</div>
+		</tr>
 	);
 };

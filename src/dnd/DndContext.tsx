@@ -60,7 +60,17 @@ export const MyDndContext = ({ children }: { children: React.ReactNode }) => {
 			onDragEnd={handleDragEnd}
 		>
 			{children}
-			<DragOverlay>{activeJob ? <JobCard job={activeJob} /> : null}</DragOverlay>
+			<DragOverlay>
+				{activeJob ? (
+					<table className="w-full">
+						<tbody>
+							<tr>
+								<JobCard job={activeJob} />
+							</tr>
+						</tbody>
+					</table>
+				) : null}
+			</DragOverlay>
 		</DndContext>
 	);
 };
