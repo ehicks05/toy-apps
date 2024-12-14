@@ -75,7 +75,7 @@ export const JobCard = ({ job }: { job: Job }) => {
 
 	return (
 		<>
-			<td className="p-2 w-2/12 bg-neutral-900">
+			<td className="p-2 w-32 bg-neutral-900">
 				<div className="flex items-center gap-1">
 					<img
 						className={`w-5 h-5 ${invert ? 'invert' : ''}`}
@@ -83,14 +83,17 @@ export const JobCard = ({ job }: { job: Job }) => {
 						alt="icon"
 					/>
 					<div>{company}</div>
-					{recruited && (
-						<PersonStanding size={24} className={'text-green-400 shrink-0'} />
-					)}
 				</div>
 			</td>
 
+			<td className="p-2 w-[1%] bg-neutral-900">
+				{recruited && (
+					<PersonStanding size={24} className={'text-green-400 shrink-0'} />
+				)}
+			</td>
+
 			<td
-				className={`p-2 w-2/12 bg-neutral-900 ${
+				className={`p-2 w-[1%] bg-neutral-900 ${
 					location === 'remote'
 						? 'text-green-400'
 						: ['nyc', 'philly'].includes(location)
@@ -105,7 +108,7 @@ export const JobCard = ({ job }: { job: Job }) => {
 			</td>
 
 			<td
-				className={`p-2 text-right w-1/12 whitespace-nowrap bg-neutral-900 ${
+				className={`p-2 text-right w-[1%] whitespace-nowrap bg-neutral-900 ${
 					ptoDays >= 60
 						? 'text-green-400'
 						: ptoDays >= 30
@@ -116,7 +119,7 @@ export const JobCard = ({ job }: { job: Job }) => {
 				{ptoDays} days
 			</td>
 
-			<td className="w-2/12 p-0">
+			<td className="w-64 p-0">
 				{job.levels.map((level) => (
 					<LevelInfo
 						key={level.name}
@@ -126,6 +129,7 @@ export const JobCard = ({ job }: { job: Job }) => {
 					/>
 				))}
 			</td>
+			<td className="w-2/12">typescript, react</td>
 			<td className="w-1/12" />
 		</>
 	);
