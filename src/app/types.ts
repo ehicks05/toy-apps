@@ -1,6 +1,7 @@
 export interface Level {
 	name: string;
-	base: { low: number; high: number };
+	baseLow: number;
+	baseHigh: number;
 	stock: number;
 	bonus: number;
 }

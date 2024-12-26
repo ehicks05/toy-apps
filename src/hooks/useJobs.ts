@@ -1,6 +1,6 @@
-import { JOBS } from '@/../data';
 import type { Job } from '@/app/types';
 import { id, tx } from '@instantdb/react';
+import { JOBS } from '../../data';
 import { db } from '../lib/db';
 
 function addJob(job: Job) {
@@ -25,7 +25,6 @@ function deleteJob(job: Job) {
 
 function resetJobs(jobs: Job[]) {
 	db.transact(jobs.map((j) => tx.jobs[j.id].delete()));
-
 	JOBS.map((job) => addJob(job));
 }
 

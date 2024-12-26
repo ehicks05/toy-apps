@@ -4,13 +4,9 @@ import { currency } from './formatters';
 import type { Job, Level } from './types';
 
 const getTC = ({ job, level }: { job: Job; level: Level }) => {
-	const {
-		base: { low, high },
-		stock,
-		bonus,
-	} = level;
+	const { baseLow, baseHigh, stock, bonus } = level;
 	const { retirementMatch } = job;
-	const avg = (low + high) / 2;
+	const avg = (baseLow + baseHigh) / 2;
 	const total = avg + stock + bonus + avg * retirementMatch;
 	return total;
 };
