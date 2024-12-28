@@ -107,9 +107,13 @@ export const JobCard = ({ job }: { job: Job }) => {
 				className={`p-2 text-right w-[1%] whitespace-nowrap bg-neutral-900 ${
 					ptoDays >= 60
 						? 'text-green-400'
-						: ptoDays >= 30
+						: ptoDays >= 50
 							? 'text-lime-400'
-							: 'text-red-400'
+							: ptoDays >= 40
+								? 'text-yellow-400'
+								: ptoDays >= 30
+									? 'text-orange-400'
+									: 'text-red-400'
 				}`}
 			>
 				{ptoDays} days
