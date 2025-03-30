@@ -1,6 +1,8 @@
-# cal (todo: better name)
+# cal-el
 
-We use calendars all the time, how hard could it be to make a relatively basic one? Update: ok it gets hard.
+A learning experiment in building a simple calendar.
+
+Currently browser-only. Events are stored in local storage.
 
 ## Prereqs
 
