@@ -1,5 +1,5 @@
 import { Temporal } from 'temporal-polyfill';
-import type { Event } from './types';
+import type { Event } from './components/Calendar/types';
 
 const COLORS = {
 	green: '#14532d',
