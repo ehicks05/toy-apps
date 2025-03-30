@@ -1,3 +1,4 @@
+import { APP_NAME } from '@/constants/app';
 import { LucideCalendar } from 'lucide-react';
 
 const Logo = () => (
@@ -5,7 +6,7 @@ const Logo = () => (
 		<div className="flex items-center gap-1 text-blue-500">
 			<LucideCalendar className="inline h-8 w-auto" />
 			<span className="mt-1 hidden sm:inline font-bold text-3xl font-logo">
-				ecal
+				{APP_NAME}
 			</span>
 		</div>
 	</div>

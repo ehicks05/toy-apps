@@ -1,4 +1,5 @@
 import { EVENTS } from '@/components/Calendar/demoData';
+import { APP_NAME } from '@/constants/app';
 import { useLocalStorage } from '@uidotdev/usehooks';
 import { Temporal } from 'temporal-polyfill';
 import type { Event } from '../components/Calendar/types';
@@ -35,7 +36,7 @@ const hydrateEvent = (e: Event) => ({
 });
 
 export const useEvents = () => {
-	const [_events, setEvents] = useLocalStorage('ecal-events', EVENTS);
+	const [_events, setEvents] = useLocalStorage(`${APP_NAME}-events`, EVENTS);
 
 	const removeEvent = (id: string) => setEvents(events.filter((e) => e.id !== id));
 	const byId = (id: string) => events.find((e) => e.id === id);

@@ -1,3 +1,4 @@
+import { APP_NAME } from '@/constants/app';
 import { useLocalStorage } from '@uidotdev/usehooks';
 
 export const VIEWS = ['year', 'month', 'week', '4day', 'day', 'schedule'] as const;
@@ -15,7 +16,7 @@ const DEFAULTS: Settings = {
 };
 
 export const useSettings = () => {
-	const [settings, setSettings] = useLocalStorage('ecal-settings', DEFAULTS);
+	const [settings, setSettings] = useLocalStorage(`${APP_NAME}-settings`, DEFAULTS);
 
 	return {
 		settings,
