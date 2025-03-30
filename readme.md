@@ -1,5 +1,7 @@
 # cal (todo: better name)
 
+We use calendars all the time, how hard could it be to make a relatively basic one? Update: ok it gets hard.
+
 ## Prereqs
 
 1. node
