@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 @theme {
-  --font-*: initial;
+  --font-\*: initial;
   --font-sans: Lexend Deca, ui-sans-serif, system-ui;
   --font-serif: ui-serif, Georgia;
   --font-mono: ui-monospace, SFMono-Regular;
