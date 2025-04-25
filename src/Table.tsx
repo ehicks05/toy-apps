@@ -55,23 +55,26 @@ const UserRow = ({
 	return (
 		<tr className="border-b">
 			<th className="px-2 py-1 text-left">You</th>
-			{EXERCISES.map(({ name }) => {
+			{EXERCISES.map(({ name, unit }) => {
 				return (
-					<td className={'px-2 py-1 text-right'} key={name}>
-						<input
-							className={
-								'w-full text-right bg-gray-100 dark:text-gray-50 dark:bg-gray-900'
-							}
-							type="number"
-							inputMode={'numeric'}
-							value={user[name]}
-							onChange={(e) => {
-								setUser({
-									...user,
-									[name]: Number(e.target.value),
-								});
-							}}
-						/>
+					<td className={'text-right'} key={name}>
+						<span className="flex px-2 py-1">
+							<input
+								className={
+									'pr-1 w-full text-right bg-gray-100 dark:text-gray-50 dark:bg-gray-900'
+								}
+								type="number"
+								inputMode={'numeric'}
+								value={user[name]}
+								onChange={(e) => {
+									setUser({
+										...user,
+										[name]: Number(e.target.value),
+									});
+								}}
+							/>{' '}
+							{unit}
+						</span>
 					</td>
 				);
 			})}
