@@ -1,4 +1,5 @@
 import Table from './Table';
+import { Workouts } from './Workouts';
 
 function App() {
 	return (
@@ -13,6 +14,7 @@ function App() {
 
 				<section>
 					<Table />
+					<Workouts />
 				</section>
 
 				<footer className="p-12 pt-20">
