@@ -20,7 +20,8 @@
 		"enabled": true,
 		"rules": {
 			"recommended": true,
-			"complexity": { "noBannedTypes": "off" }
+			"complexity": { "noBannedTypes": "off" },
+			"a11y": { "noAutofocus": "off" }
 		}
 	},
 	"javascript": {

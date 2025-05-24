@@ -56,24 +56,24 @@ const UserRow = ({
 		<tr className="border-b">
 			<th className="px-2 py-1 text-left">You</th>
 			{EXERCISES.map(({ name, unit }) => {
+				const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+					setUser({
+						...user,
+						[name]: Number(e.target.value),
+					});
+				};
+
 				return (
 					<td className={'text-right'} key={name}>
 						<span className="flex px-2 py-1">
 							<input
-								className={
-									'pr-1 w-full text-right bg-gray-100 dark:text-gray-50 dark:bg-gray-900'
-								}
+								className="w-full text-right"
 								type="number"
-								inputMode={'numeric'}
+								inputMode="numeric"
 								value={user[name]}
-								onChange={(e) => {
-									setUser({
-										...user,
-										[name]: Number(e.target.value),
-									});
-								}}
-							/>{' '}
-							{unit}
+								onChange={handleChange}
+							/>
+							{unit && <div className="pl-1">{unit}</div>}
 						</span>
 					</td>
 				);
@@ -87,6 +87,7 @@ function Table() {
 
 	return (
 		<div className="overflow-auto">
+			<div className="text-2xl">Overview</div>
 			<table className="w-full">
 				<Header />
 				<tbody>
