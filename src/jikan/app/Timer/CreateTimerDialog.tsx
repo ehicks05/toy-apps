@@ -1,4 +1,4 @@
-import { chunk } from 'lodash';
+import { chunk } from 'es-toolkit';
 import { useState } from 'react';
 import { HiOutlineBackspace, HiPlus } from 'react-icons/hi2';
 import { useLocalStorage } from 'usehooks-ts';
