@@ -11,7 +11,7 @@ export function App() {
 						path="/"
 						element={
 							<div>
-								<Link to={'/jikan'}>jikan</Link>
+								<Link to={'/jikan'}>jikan - clock, timer, stopwatch</Link>
 							</div>
 						}
 					/>
