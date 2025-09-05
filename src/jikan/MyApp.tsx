@@ -2,8 +2,12 @@ import { Route, Routes } from 'react-router-dom';
 import { Clock, Stopwatch, Timer } from '@/jikan/app';
 import { Footer, Header } from './layout';
 import './app.css';
+import { useFavicon } from '@/hooks/useFavicon';
 
 function MyApp() {
+	document.title = 'jikan';
+	useFavicon('/jikan/icon.svg');
+
 	return (
 		<div className="flex flex-col min-h-screen bg-gradient-to-r from-sky-950 to-blue-950">
 			<Header />

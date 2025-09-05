@@ -22,8 +22,12 @@ const MobileMenuButton = ({ open }: { open: boolean }) => (
 const Logo = () => (
 	<div className="flex-shrink-0 flex items-center">
 		<Link to="./">
-			<img className="inline h-8 w-auto" src="/icon-color.svg" alt="logo" />
-			<img className="hidden sm:inline h-8 w-auto" src="/text.svg" alt="logo" />
+			<img className="inline h-8 w-auto" src="/jikan/icon-color.svg" alt="logo" />
+			<img
+				className="hidden sm:inline h-8 w-auto"
+				src="/jikan/text.svg"
+				alt="logo"
+			/>
 		</Link>
 	</div>
 );

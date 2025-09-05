@@ -10,6 +10,8 @@ const MainMenu = () => {
 };
 
 export function App() {
+	document.title = 'hi';
+
 	return (
 		<div className="flex flex-col min-h-screen bg-gradient-to-r from-sky-950 to-blue-950">
 			<div>
