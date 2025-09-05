@@ -2,6 +2,7 @@ import { Link, Route, Routes } from 'react-router-dom';
 import MyApp from './jikan/MyApp';
 
 const MainMenu = () => {
+	document.title = 'hi';
 	return (
 		<div>
 			<Link to={'/jikan'}>jikan - clock, timer, stopwatch</Link>
@@ -10,8 +11,6 @@ const MainMenu = () => {
 };
 
 export function App() {
-	document.title = 'hi';
-
 	return (
 		<div className="flex flex-col min-h-screen bg-gradient-to-r from-sky-950 to-blue-950">
 			<div>

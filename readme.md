@@ -1,4 +1,4 @@
-# Jikan
+# Toy Apps
 
 ## Prereqs
 
