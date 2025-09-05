@@ -3,9 +3,9 @@ import { HiOutlineMenu, HiOutlineX } from 'react-icons/hi';
 import { Link, NavLink, useLocation } from 'react-router-dom';
 
 const NAV_LINKS = [
-	{ name: 'Clock', href: '/' },
-	{ name: 'Timer', href: '/timer' },
-	{ name: 'Stopwatch', href: '/stopwatch' },
+	{ name: 'Clock', href: './' },
+	{ name: 'Timer', href: './timer' },
+	{ name: 'Stopwatch', href: './stopwatch' },
 ];
 
 const MobileMenuButton = ({ open }: { open: boolean }) => (
@@ -21,7 +21,7 @@ const MobileMenuButton = ({ open }: { open: boolean }) => (
 
 const Logo = () => (
 	<div className="flex-shrink-0 flex items-center">
-		<Link to="/">
+		<Link to="./">
 			<img className="inline h-8 w-auto" src="/icon-color.svg" alt="logo" />
 			<img className="hidden sm:inline h-8 w-auto" src="/text.svg" alt="logo" />
 		</Link>
