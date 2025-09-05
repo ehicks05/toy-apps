@@ -1,6 +1,6 @@
 import { useLocalStorageValue } from "@react-hookz/web/esm";
 import { useWindowSize } from "react-use";
-import React, { useRef } from "react";
+import { useRef } from "react";
 import {
   LineChart,
   Line,

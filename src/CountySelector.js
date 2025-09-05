@@ -1,5 +1,4 @@
-import React, { useMemo } from "react";
-import * as R from "ramda";
+import { useMemo } from "react";
 import Select, { createFilter, components } from "react-select";
 import { FixedSizeList as List } from "react-window";
 import { useLocalStorageValue } from "@react-hookz/web/esm";
@@ -81,16 +80,9 @@ const CountySelector = ({ counties }) => {
       .filter((o) => o.label.indexOf("Out of") === -1);
   }, [counties]);
 
-  const states = R.pipe(
-    R.pluck("Province_State"),
-    R.uniq,
-    R.filter((o) => o),
-    R.sort((o1, o2) => o1.localeCompare(o2))
-  )(Object.values(counties));
-
   return (
     <div>
-      <h1 className="text-xl">Select Counties</h1>
+      <h1 className="text-lg">Select Counties</h1>
       <Select
         isMulti
         value={UIDs.map((uid) => countyOptions.find((co) => co.value === uid))}
