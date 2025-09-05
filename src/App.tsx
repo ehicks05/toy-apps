@@ -1,30 +1,31 @@
 import { Link, Route, Routes } from 'react-router-dom';
-// import Eordle from './eordle/MyApp';
+import Eordle from './eordle/Eordle';
 import Jikan from './jikan/Jikan';
 
 const MainMenu = () => {
-	document.title = 'hi';
+	document.title = 'toy apps';
+
 	return (
-		<div>
+		<div className="flex flex-col">
 			<Link to={'/jikan'}>jikan - clock, timer, stopwatch</Link>
+			<Link to={'/eordle'}>eordle - wordle clone</Link>
 		</div>
 	);
 };
 
 export function App() {
 	return (
-		<div className="flex flex-col min-h-screen bg-gradient-to-r from-sky-950 to-blue-950">
+		<div className="flex flex-col min-h-screen">
 			<div>
 				<Link to="/">home</Link>
 			</div>
-			<div className="flex-grow flex flex-col h-full sm:px-4">
+			<div className="flex-grow flex flex-col h-full">
 				<Routes>
 					<Route path="/" element={<MainMenu />} />
 					<Route path="/jikan/*" element={<Jikan />} />
-					{/* <Route path="/eordle/*" element={<Eordle />} /> */}
+					<Route path="/eordle/*" element={<Eordle />} />
 				</Routes>
 			</div>
-			<div>footer: hi</div>
 		</div>
 	);
 }

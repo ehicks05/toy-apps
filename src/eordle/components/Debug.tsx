@@ -1,7 +1,6 @@
-import { useLocalStorageValue } from '@react-hookz/web';
-import React from 'react';
 import { HiCode } from 'react-icons/hi';
-import { Board, GameStatus } from '../types';
+import { useLocalStorage } from 'usehooks-ts';
+import type { Board, GameStatus } from '../types';
 import Button from './Button';
 
 interface GameState {
@@ -14,7 +13,7 @@ interface GameState {
 }
 
 const Debug = ({ state }: { state: GameState }) => {
-	const [debug] = useLocalStorageValue('debug', false);
+	const [debug] = useLocalStorage('debug', false);
 
 	return debug ? (
 		<div className="flex p-4 bg-neutral-800 text-xs">
@@ -24,7 +23,7 @@ const Debug = ({ state }: { state: GameState }) => {
 };
 
 const DebugButton = () => {
-	const [debug, setDebug] = useLocalStorageValue('debug', false);
+	const [debug, setDebug] = useLocalStorage('debug', false);
 
 	return import.meta.env.DEV ? (
 		<Button

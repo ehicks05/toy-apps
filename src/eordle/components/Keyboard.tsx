@@ -1,6 +1,5 @@
-import React from 'react';
 import { HiOutlineBackspace } from 'react-icons/hi';
-import { Board, GuessResult } from '../types';
+import type { Board, GuessResult } from '../types';
 
 const GUESS_RESULT_STYLES: Record<GuessResult, string> = {
 	not_present: 'bg-neutral-700',
@@ -27,7 +26,6 @@ const getLetterResults = (board: Board) =>
 				GUESS_RESULT_PRIORITIES[r2] - GUESS_RESULT_PRIORITIES[r1],
 		)
 		.reduce(
-			// biome-ignore lint/performance/noAccumulatingSpread: <explanation>
 			(agg, curr) => ({ ...agg, [curr.letter]: curr.result }),
 			{} as Record<string, GuessResult>,
 		);
@@ -71,10 +69,12 @@ const Keyboard = ({ board, handleKey }: KeyboardProps) => {
 	const letterResults = getLetterResults(board);
 	return (
 		<div className="flex flex-col gap-1.5 w-screen max-w-full h-52">
-			{KEYS.map((row) => (
-				<div className="flex justify-center gap-1.5 h-full">
+			{KEYS.map((row, i) => (
+				// biome-ignore lint/suspicious/noArrayIndexKey: ok
+				<div key={i} className="flex justify-center gap-1.5 h-full">
 					{row.map((key) => (
 						<KbKey
+							key={key}
 							kbKey={key}
 							letterResult={letterResults[key]}
 							handleKey={handleKey}

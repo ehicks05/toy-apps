@@ -1,5 +1,4 @@
-import React from 'react';
-import { Board, Cell } from '../types';
+import type { Board, Cell } from '../types';
 
 const GUESS_RESULT_STYLES = {
 	unknown: 'bg-neutral-900 border-neutral-600',
@@ -43,10 +42,10 @@ interface BoardViewProps {
 const BoardView = ({ board, boardEffects }: BoardViewProps) => (
 	<div className="flex flex-col h-full justify-center gap-1">
 		{board.rows.map((row, a) => (
-			// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+			// biome-ignore lint/suspicious/noArrayIndexKey: yup
 			<div key={a} className={`flex gap-1 ${boardEffects[a]}`}>
 				{row.cells.map((cell, b) => (
-					// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
+					// biome-ignore lint/suspicious/noArrayIndexKey: yep
 					<CellView key={b} cell={cell} index={b} />
 				))}
 			</div>

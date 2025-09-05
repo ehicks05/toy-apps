@@ -1,6 +1,6 @@
-import { useKeyboardEvent, useLocalStorageValue } from '@react-hookz/web';
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { HiChartBar, HiRefresh } from 'react-icons/hi';
+import { useLocalStorage } from 'usehooks-ts';
 import { checkRow, getCell, updateCell } from './boardService';
 import {
 	BoardView,
@@ -12,17 +12,18 @@ import {
 } from './components';
 import { DEFAULT_GAME } from './constants';
 import { getRandomWord, isAllowedGuess } from './wordService';
+import { useKeyPress } from './useKeyPress';
 
 const App = () => {
-	const [gameStatus, setGameStatus] = useLocalStorageValue(
+	const [gameStatus, setGameStatus] = useLocalStorage(
 		'gameStatus',
 		DEFAULT_GAME.status,
 	);
-	const [word, setWord] = useLocalStorageValue('word', getRandomWord());
-	const [board, setBoard] = useLocalStorageValue('board', DEFAULT_GAME.board);
+	const [word, setWord] = useLocalStorage('word', getRandomWord());
+	const [board, setBoard] = useLocalStorage('board', DEFAULT_GAME.board);
 	const [boardEffects, setBoardEffects] = useState(['', '', '', '', '', '']);
-	const [rowIndex, setRowIndex] = useLocalStorageValue('rowIndex', 0);
-	const [colIndex, setColIndex] = useLocalStorageValue('colIndex', 0);
+	const [rowIndex, setRowIndex] = useLocalStorage('rowIndex', 0);
+	const [colIndex, setColIndex] = useLocalStorage('colIndex', 0);
 
 	const handleInvalidGuess = () => {
 		setBoardEffects((boardEffects) =>
@@ -90,7 +91,7 @@ const App = () => {
 		}
 	};
 
-	useKeyboardEvent(true, (e) => {
+	useKeyPress((e) => {
 		const { key } = e;
 		handleKey(key);
 	});

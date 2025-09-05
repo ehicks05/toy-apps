@@ -1,4 +1,4 @@
-import { Board, Cell, Game, GameStatus, Row } from './types';
+import type { Board, Cell, Game, GameStatus, Row } from './types';
 
 export const DEFAULT_STATUS: GameStatus = { active: true, gameOverMessage: '' };
 
