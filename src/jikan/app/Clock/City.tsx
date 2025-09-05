@@ -2,8 +2,8 @@ import clsx from 'clsx';
 import { type MouseEvent, useState } from 'react';
 import { HiOutlineArrowDown, HiOutlineArrowUp } from 'react-icons/hi2';
 import { useLocalStorage } from 'usehooks-ts';
-import { Button } from '@/components';
-import type { Geoname } from '@/services/geonames';
+import { Button } from '@/jikan/components';
+import type { Geoname } from '@/jikan/services/geonames';
 import { FONT_SIZES } from './constants';
 import { getRelativeOffset, getTimeParts } from './utils';
 

@@ -2,8 +2,8 @@ import { chunk } from 'lodash';
 import { useState } from 'react';
 import { HiOutlineBackspace, HiPlus } from 'react-icons/hi2';
 import { useLocalStorage } from 'usehooks-ts';
-import { Button } from '@/components';
-import { BUTTON_SIZES } from '@/constants';
+import { Button } from '@/jikan/components';
+import { BUTTON_SIZES } from '@/jikan/constants';
 
 const DEFAULT_INPUT = '000000';
 

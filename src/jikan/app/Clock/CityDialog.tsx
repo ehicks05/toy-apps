@@ -2,8 +2,8 @@ import { useQuery } from '@tanstack/react-query';
 import { useState } from 'react';
 import { HiMagnifyingGlass, HiOutlineCheckCircle } from 'react-icons/hi2';
 import { useDebounceValue, useLocalStorage } from 'usehooks-ts';
-import { Button, Card } from '@/components';
-import { type Geoname, search } from '@/services/geonames';
+import { Button, Card } from '@/jikan/components';
+import { type Geoname, search } from '@/jikan/services/geonames';
 import { getTimeParts } from './utils';
 
 interface CityOptionProps {

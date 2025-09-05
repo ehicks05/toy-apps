@@ -26,6 +26,7 @@ const formatTime = (
 const TIME_STEP = 33;
 
 interface Lap {
+	id: string;
 	lapNumber: number;
 	lapTime: number;
 	totalTime: number;
@@ -85,6 +86,7 @@ export const useStopwatch = () => {
 		const prevLap = laps?.[0] || undefined;
 		setLaps([
 			{
+				id: Date.now().toString() + Math.random().toString(),
 				lapNumber: laps.length + 1,
 				lapTime: differenceInMilliseconds(
 					new Date(),

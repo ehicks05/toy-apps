@@ -1,8 +1,8 @@
 import { BiStopwatch } from 'react-icons/bi';
 import { MdPause, MdPlayArrow, MdRestartAlt } from 'react-icons/md';
-import { Button } from '@/components';
-import { BUTTON_SIZES, FONT_SIZES } from '@/constants';
-import { useStopwatch } from '@/hooks';
+import { Button } from '@/jikan/components';
+import { BUTTON_SIZES, FONT_SIZES } from '@/jikan/constants';
+import { useStopwatch } from '@/jikan/hooks';
 
 export const Stopwatch = () => {
 	const {
@@ -24,8 +24,8 @@ export const Stopwatch = () => {
 				<div className="max-h-96 overflow-auto">
 					<table>
 						<tbody>
-							{laps.map((lap, i) => (
-								<tr className={FONT_SIZES.SECONDARY} key={i}>
+							{laps.map((lap) => (
+								<tr className={FONT_SIZES.SECONDARY} key={lap.id}>
 									<td className="px-4">#{lap.lapNumber}</td>
 									<td className="px-4">{formatTime(lap.lapTime)}</td>
 									<td className="px-4">{formatTime(lap.totalTime)}</td>

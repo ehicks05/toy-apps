@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { HiOutlineClock, HiPlus } from 'react-icons/hi2';
 import { useLocalStorage } from 'usehooks-ts';
-import { Button, Card, Dialog, PageContainer } from '@/components';
-import { BUTTON_SIZES } from '@/constants';
+import { Button, Card, Dialog, PageContainer } from '@/jikan/components';
+import { BUTTON_SIZES } from '@/jikan/constants';
 import { CreateTimerDialog } from './CreateTimerDialog';
 import { TimerCard } from './TimerCard';
 

@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import { HiPlus } from 'react-icons/hi';
 import { useLocalStorage } from 'usehooks-ts';
-import { Button, Dialog, PageContainer } from '@/components';
-import { BUTTON_SIZES } from '@/constants';
-import { useClock } from '@/hooks';
-import type { Geoname } from '@/services/geonames';
+import { Button, Dialog, PageContainer } from '@/jikan/components';
+import { BUTTON_SIZES } from '@/jikan/constants';
+import { useClock } from '@/jikan/hooks';
+import type { Geoname } from '@/jikan/services/geonames';
 import { City } from './City';
 import CityDialog from './CityDialog';
 import { FONT_SIZES } from './constants';

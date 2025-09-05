@@ -1,10 +1,10 @@
 import { HiPlus, HiXMark } from 'react-icons/hi2';
 import { MdPause, MdPlayArrow, MdRestartAlt } from 'react-icons/md';
 import { useLocalStorage, useWindowSize } from 'usehooks-ts';
-import { Button } from '@/components';
-import ProgressBar from '@/components/ProgressBar';
-import { BUTTON_SIZES } from '@/constants';
-import { useTimer } from '@/hooks/useTimer';
+import { Button } from '@/jikan/components';
+import ProgressBar from '@/jikan/components/ProgressBar';
+import { BUTTON_SIZES } from '@/jikan/constants';
+import { useTimer } from '@/jikan/hooks/useTimer';
 import { secondsToHms } from './utils';
 
 const INNER_TEXT_SIZES = 'text-2xl sm:text-3xl md:text-4xl';

@@ -1,6 +1,7 @@
 import { Route, Routes } from 'react-router-dom';
-import { Clock, Stopwatch, Timer } from '@/app';
+import { Clock, Stopwatch, Timer } from '@/jikan/app';
 import { Footer, Header } from './layout';
+import './app.css';
 
 function MyApp() {
 	return (
