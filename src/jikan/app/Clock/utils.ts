@@ -1,33 +1,38 @@
-import { format, formatInTimeZone, getTimezoneOffset } from "date-fns-tz";
+import { format } from "date-fns";
+import { tz, tzOffset } from "@date-fns/tz";
 
 export const getTimeParts = (
   date: Date,
-  tz = Intl.DateTimeFormat().resolvedOptions().timeZone
+  _tz = Intl.DateTimeFormat().resolvedOptions().timeZone
 ) => ({
-  time: formatInTimeZone(date, tz, "h:mm"),
-  ampm: formatInTimeZone(date, tz, "a"),
-  date: formatInTimeZone(date, tz, "EEE, MMM dd"),
-  offset: formatInTimeZone(date, tz, "XXX"),
+  time: format(date, "h:mm", { in: tz(_tz) }),
+  ampm: format(date, "a", { in: tz(_tz) }),
+  date: format(date, "EEE, MMM dd", { in: tz(_tz) }),
+  offset: format(date, "XXX", { in: tz(_tz) }),
 });
 
 // get offset relative to browser
 // sample result: '+14h tomorrow'
 export const getRelativeOffset = (timeZoneId: string) => {
-  const offsetMillis =
-    getTimezoneOffset(timeZoneId) -
-    getTimezoneOffset(Intl.DateTimeFormat().resolvedOptions().timeZone);
-  const hour = Math.floor(offsetMillis / 1000 / 60 / 60);
-  const minute = (offsetMillis / 1000 / 60) % 60;
-  const offset = `${offsetMillis > 0 ? "+" : ""}${`${hour}h`}${minute ? ` ${minute}m` : ""
-    }`;
+  const offsetMinutes =
+    tzOffset(timeZoneId, new Date()) -
+    tzOffset(Intl.DateTimeFormat().resolvedOptions().timeZone, new Date());
+  const hour = Math.floor(offsetMinutes / 60);
+  const minute = offsetMinutes % 60;
+
+  const sign = offsetMinutes > 0 ? "+" : "";
+  const h = `${hour}h`;
+  const m = minute ? ` ${minute}m` : "";
+
+  const offset = `${sign}${h}${m}`;
 
   const localDate = format(new Date(), "dd");
-  const nonLocalDate = formatInTimeZone(new Date(), timeZoneId, "dd");
+  const nonLocalDate2 = format(new Date(), "dd", { in: tz(timeZoneId) });
 
   const relativeDate =
-    nonLocalDate > localDate
+    nonLocalDate2 > localDate
       ? " tomorrow"
-      : nonLocalDate < localDate
+      : nonLocalDate2 < localDate
         ? " yesterday"
         : "";
 

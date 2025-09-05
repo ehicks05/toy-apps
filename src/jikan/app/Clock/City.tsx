@@ -1,4 +1,3 @@
-import clsx from 'clsx';
 import { type MouseEvent, useState } from 'react';
 import { HiOutlineArrowDown, HiOutlineArrowUp } from 'react-icons/hi2';
 import { useLocalStorage } from 'usehooks-ts';
@@ -35,11 +34,7 @@ export const City = ({ city }: { city: Geoname }) => {
 	return (
 		<button
 			type="button"
-			className={clsx(
-				'w-full flex justify-between items-center gap-4 p-2 border-2 bg-slate-900 rounded-lg cursor-pointer',
-				{ 'border-transparent': !isReorderMode },
-				{ 'border-sky-900': isReorderMode },
-			)}
+			className={`w-full flex justify-between items-center gap-4 p-2 border-2 bg-slate-900 rounded-lg cursor-pointer ${isReorderMode ? 'border-sky-900' : 'border-transparent'}`}
 			onClick={() => setIsReorderMode((isReorderMode) => !isReorderMode)}
 		>
 			<div className="flex flex-col">
@@ -54,7 +49,7 @@ export const City = ({ city }: { city: Geoname }) => {
 					<div>{ampm}</div>
 				</div>
 				{isReorderMode && (
-					<div className={clsx('flex flex-col', { 'opacity-0': !isReorderMode })}>
+					<div className={`flex flex-col ${isReorderMode ? '' : 'opacity-0'}`}>
 						<Button onClick={(e) => handleMove(e, 'up')} disabled={!canMoveUp}>
 							<HiOutlineArrowUp />
 						</Button>
