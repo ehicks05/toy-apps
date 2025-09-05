@@ -1,5 +1,6 @@
 import { Link, Route, Routes } from 'react-router-dom';
-import MyApp from './jikan/MyApp';
+// import Eordle from './eordle/MyApp';
+import Jikan from './jikan/Jikan';
 
 const MainMenu = () => {
 	document.title = 'hi';
@@ -19,7 +20,8 @@ export function App() {
 			<div className="flex-grow flex flex-col h-full sm:px-4">
 				<Routes>
 					<Route path="/" element={<MainMenu />} />
-					<Route path="/jikan/*" element={<MyApp />} />
+					<Route path="/jikan/*" element={<Jikan />} />
+					{/* <Route path="/eordle/*" element={<Eordle />} /> */}
 				</Routes>
 			</div>
 			<div>footer: hi</div>

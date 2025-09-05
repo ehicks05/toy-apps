@@ -4,7 +4,7 @@ import { Footer, Header } from './layout';
 import './app.css';
 import { useFavicon } from '@/hooks/useFavicon';
 
-function MyApp() {
+function Jikan() {
 	document.title = 'jikan';
 	useFavicon('/jikan/icon.svg');
 
@@ -24,4 +24,4 @@ function MyApp() {
 	);
 }
 
-export default MyApp;
+export default Jikan;
