@@ -1,6 +1,6 @@
-import { QueryFunctionContext } from "@tanstack/react-query";
-import { SHARED_PARAMS, BASE } from "./constants";
-import { GetResult, Geoname, SearchResult } from "./types";
+import type { QueryFunctionContext } from "@tanstack/react-query";
+import { BASE, SHARED_PARAMS } from "./constants";
+import type { Geoname, GetResult, SearchResult } from "./types";
 
 const get = async (geonameId: string) => {
   const params = new URLSearchParams({
