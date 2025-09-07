@@ -1,5 +1,13 @@
 export function Hootch() {
-  return <div className="w-full h-screen">
-    <iframe className="w-full h-full" src="/hootch/index.html" />
-  </div>
+	document.title = 'Hootch Wrangler';
+
+	return (
+		<div className="w-full h-screen">
+			<iframe
+				title="Hootch Wrangler"
+				className="w-full h-full"
+				src="/hootch/index.html"
+			/>
+		</div>
+	);
 }
