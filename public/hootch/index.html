@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Hootch Wrangler</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/bulma-prefers-dark" />
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+    <style>
+
+        .pointer {cursor: pointer;}
+
+        ::-webkit-scrollbar{
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track-piece{
+            background-color: #FFF;
+        }
+
+        ::-webkit-scrollbar-thumb{
+            background-color: #CBCBCB;
+            outline: 2px solid #FFF;
+            outline-offset: -2px;
+            border: .1px solid #B7B7B7;
+        }
+
+        ::-webkit-scrollbar-thumb:hover{
+            background-color: #909090;
+        }
+
+        @media(prefers-color-scheme: dark)
+        {
+            .rainbowText {color: #333333;}
+            .button {background-color: rgb(54, 54, 54) !important;}
+            .select select {border: rgb(54, 54, 54);color: #b5b5b5 !important; background-color: rgb(54, 54, 54) !important;}
+        }
+    </style>
+</head>
+<body>
+<section class="hero is-dark">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">
+                Hootch Wrangler
+            </h1>
+            <h2 class="subtitle">
+                Wrangle up those prices!
+            </h2>
+        </div>
+    </div>
+</section>
+<section class="section">
+    <div class="container">
+
+        <div class="columns">
+            <div class="column is-one-third-tablet is-one-quarter-desktop is-one-fifth-widescreen is-one-fifth-fullhd">
+
+                <div class="field has-addons">
+                    <div class="control">
+                        <a class="button is-static">
+                            Name
+                        </a>
+                    </div>
+                    <div class="control is-expanded">
+                        <input class="input calc" type="text" id="name" name="name" />
+                    </div>
+                </div>
+
+                <div class="field has-addons">
+                    <div class="control">
+                        <a class="button is-static">
+                            Qty
+                        </a>
+                    </div>
+                    <div class="control is-expanded">
+                        <input class="input calc" type="number" id="containers" name="containers" step="1"
+                               min="1" placeholder="6"/>
+                    </div>
+                </div>
+
+                <div class="field has-addons">
+                    <div class="control is-expanded">
+                        <input class="input calc" type="number" id="containerVolume" name="containerVolume"
+                               min="1" placeholder="Unit Size"/>
+                    </div>
+                    <div class="control">
+                        <div class="select">
+                            <select class="calc" id="containerVolumeUnit" name="containerVolumeUnit">
+                                <option name="oz">oz</option>
+                                <option name="L">L</option>
+                                <option name="ml">ml</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="field has-addons">
+                    <p class="control is-expanded">
+                        <input class="input calc" type="number" id="percentAlcohol" name="percentAlcohol"
+                               min="1" max="100" placeholder="ABV"/>
+                    </p>
+                    <p class="control">
+                        <a class="button is-static">
+                            %
+                        </a>
+                    </p>
+                </div>
+
+                <div class="field has-addons">
+                    <p class="control">
+                        <a class="button is-static">
+                            $
+                        </a>
+                    </p>
+                    <p class="control is-expanded">
+                        <input class="input calc" type="number" id="price" name="price" min=".01" placeholder="Price"/>
+                    </p>
+                </div>
+
+                <div class="field has-addons">
+                    <p class="control">
+                        <a class="button is-static">
+                            Total Volume
+                        </a>
+                    </p>
+                    <p class="control is-expanded">
+                        <input class="input" readonly id="totalVolume"/>
+                    </p>
+                </div>
+
+                <div class="field has-addons">
+                    <p class="control">
+                        <a class="button is-static">
+                            Total Alcohol
+                        </a>
+                    </p>
+                    <p class="control is-expanded">
+                        <input class="input" readonly id="totalAlcohol"/>
+                    </p>
+                </div>
+
+                <div class="field has-addons">
+                    <p class="control">
+                        <a class="button is-static">
+                            Alcohol / $
+                        </a>
+                    </p>
+                    <p class="control is-expanded">
+                        <input class="input" type="number" id="alcoholPerDollar" readonly>
+                    </p>
+                </div>
+
+                <div class="field">
+                    <p class="control">
+                        <button disabled class="button" id="addButton">
+                            Add
+                        </button>
+                    </p>
+                </div>
+            </div>
+            <div class="column">
+                <div class="table-container">
+
+                    <table class="table is-narrow" id="table">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th class="has-text-right">Qty</th>
+                                <th class="has-text-right">Unit Size</th>
+                                <th class="has-text-right">ABV</th>
+                                <th class="has-text-right">Price</th>
+                                <th class="has-text-right">Total Volume</th>
+                                <th class="has-text-right pointer" onclick="sort('volumePerDollar')">Volume / $</th>
+                                <th class="has-text-right">Total Alcohol</th>
+                                <th class="has-text-right pointer" onclick="sort('alcoholPerDollar')">Alcohol / $</th>
+                            </tr>
+                        </thead>
+                        <tbody id="myTbody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+            Disclaimer: The best things in life cannot be <i>distilled</i> down to a number. <br />Alcohol purchases should not be
+            decided solely on cost. But it doesn't hurt to compare!
+            <br/><br/>
+            <strong> - Hootch Wrangler</strong> <a href="https://ehicks.net">Eric Hicks</a>
+        </p>
+    </div>
+</footer>
+
+<script>
+    class Product {
+        constructor(
+            name, containers,
+                    containerVolume,
+                    containerVolumeUnit,
+                    percentAlcohol,
+                    price) {
+            this.name = name;
+            this.containers = containers;
+            this.containerVolume = containerVolume;
+            this.containerVolumeUnit = containerVolumeUnit;
+            this.percentAlcohol = percentAlcohol;
+            this.price = price;
+        }
+
+        totalVolume() {
+            return this.containers && this.containerVolume ? this.containers * this.containerVolume : 0;
+        }
+        totalVolumeInOunces() {
+            let result = 0;
+            if (this.containerVolumeUnit === 'oz') result = this.totalVolume();
+            if (this.containerVolumeUnit === 'ml') result = this.totalVolume() * 0.033814;
+            if (this.containerVolumeUnit === 'L') result =  this.totalVolume() * 33.814;
+            return round(result);
+        }
+        volumePerDollar() {return round(this.totalVolumeInOunces() / this.price);}
+        totalAlcohol() {return round(this.totalVolume() * (this.percentAlcohol / 100));}
+        totalAlcoholInOunces() {return round(this.totalVolumeInOunces() * (this.percentAlcohol / 100));}
+        alcoholPerDollar() {return round(this.totalAlcoholInOunces() / this.price);}
+    }
+
+    document.querySelectorAll('.calc').forEach(item => {
+        item.addEventListener('keyup', updateForm);
+    });
+
+    const tableData = [];
+    tableData.push(new Product('Cigar City Jai Alai', 12, 12, 'oz', 7.5, 18.49));
+    tableData.push(new Product('Sierra Nevada Torpedo', 12, 12, 'oz', 7.2, 16.99));
+    tableData.push(new Product('Ardbeg 10', 1, 750, 'ml', 46, 46.99));
+    tableData.push(new Product('Johnnie Walker Red', 1, 1.75, 'L', 40, 32.97));
+    tableData.push(new Product('Johnnie Walker Black', 1, 750, 'ml', 40, 32.99));
+    tableData.push(new Product('Johnnie Walker Black', 1, 1.75, 'L', 40, 62.97));
+    tableData.push(new Product('Lagavulin 16', 1, 750, 'ml', 43, 66.99));
+    tableData.push(new Product('Talisker 10', 1, 750, 'ml', 45.8, 64.99));
+    tableData.push(new Product('Little Penguin Merlot', 1, 1.5, 'L', 13, 10.99));
+    tableData.push(new Product('Chateau La Verriere Bordeaux', 1, 750, 'ml', 14, 12.99));
+    tableData.push(new Product('Stone Fear Movie Lions', 6, 16, 'oz', 8.5, 13.49));
+    tableData.push(new Product('Genesee Cream Ale (bulk)', 12, 24, 'oz', 5.2, 11.99));
+    tableData.push(new Product('Genesee Cream Ale (bulk)', 24, 12, 'oz', 5.2, 16.99));
+    tableData.push(new Product('Bell\'s Hopslam Ale', 6, 12, 'oz', 10, 19.99));
+
+    tableData.push(new Product('Lawson\'s Sip Of Sunshine', 4, 16, 'oz', 8, 15.99));
+    tableData.push(new Product('Teachers Highland Cream', 1, 1.75, 'L', 40, 19.97));
+    tableData.push(new Product('Evan Williams Black Label', 1, 1.75, 'L', 43, 24.97));
+    tableData.push(new Product('Rittenhouse Rye', 1, 750, 'ml', 50, 25.99));
+    tableData.push(new Product('Gordon Graham Black Bottle', 1, 750, 'ml', 43, 22.99));
+    tableData.push(new Product('Jameson', 1, 750, 'ml', 40, 29.99));
+    tableData.push(new Product('Buffalo Trace', 1, 750, 'ml', 45, 31.99));
+    tableData.push(new Product('Elijah Craig 12', 1, 750, 'ml', 47, 31.99));
+    tableData.push(new Product('Caol Ila 12', 1, 750, 'ml', 43, 64.99));
+
+    sortColumn = '';
+    sort('alcoholPerDollar');
+
+    function updateForm() {
+        const product = new Product(
+            document.getElementById('name').value,
+            document.getElementById('containers').value,
+            document.getElementById('containerVolume').value,
+            document.getElementById('containerVolumeUnit').value,
+            document.getElementById('percentAlcohol').value,
+            document.getElementById('price').value);
+
+        document.getElementById('totalVolume').value = product.totalVolumeInOunces();
+        document.getElementById('totalAlcohol').value = product.totalAlcoholInOunces();
+        document.getElementById('alcoholPerDollar').value = product.alcoholPerDollar();
+
+        const formFilled = Array.prototype.slice.call(document.querySelectorAll('.calc'))
+            .every(input => input.value.length > 0);
+        if (formFilled) {
+            document.querySelector('#addButton').removeAttribute('disabled');
+        }
+    }
+
+    function addProduct() {
+        const product = new Product(
+            document.getElementById('name').value,
+            document.getElementById('containers').value,
+            document.getElementById('containerVolume').value,
+            document.getElementById('containerVolumeUnit').value,
+            document.getElementById('percentAlcohol').value,
+            document.getElementById('price').value,
+        );
+
+        tableData.push(product);
+        tableData.sort((p1, p2) => {return p2.alcoholPerDollar() - p1.alcoholPerDollar();});
+        replaceTableBody();
+
+        document.querySelectorAll('.calc').forEach(input => input.value = '');
+        document.querySelector('#containerVolumeUnit').value = 'oz';
+        document.querySelector('#totalVolume').value = '';
+        document.querySelector('#totalAlcohol').value = '';
+        document.querySelector('#alcoholPerDollar').value = '';
+        document.querySelector('#addButton').setAttribute('disabled', 'true')
+    }
+
+    function round(input) {
+        return Math.round(input * 100) / 100;
+    }
+
+    function replaceTableBody() {
+        const oldTbody = document.getElementById('myTbody');
+        var newTbody = document.createElement('tbody');
+        newTbody.id = 'myTbody';
+
+        const minAlcoholPerDollar = _.minBy(tableData, (product => product.alcoholPerDollar())).alcoholPerDollar();
+        const maxAlcoholPerDollar = _.maxBy(tableData, (product => product.alcoholPerDollar())).alcoholPerDollar();
+        const rangeAlcoholPerDollar = maxAlcoholPerDollar - minAlcoholPerDollar;
+
+        const minVolumePerDollar = _.minBy(tableData, (product => product.volumePerDollar())).volumePerDollar();
+        const maxVolumePerDollar = _.maxBy(tableData, (product => product.volumePerDollar())).volumePerDollar();
+        const rangeVolumePerDollar = maxVolumePerDollar - minVolumePerDollar;
+
+        tableData.forEach((product, i) => {
+            let row = newTbody.insertRow();
+
+            let cell = row.insertCell();
+            cell.innerText = product.name;
+
+            cell = row.insertCell();
+            cell.innerText = product.containers;
+            cell.classList.add('has-text-right');
+
+            cell = row.insertCell();
+            cell.innerText = product.containerVolume + ' ' + product.containerVolumeUnit;
+            cell.classList.add('has-text-right');
+
+            cell = row.insertCell();
+            cell.innerText = product.percentAlcohol + '%';
+            cell.classList.add('has-text-right');
+
+            cell = row.insertCell();
+            cell.innerText = '$' + product.price;
+            cell.classList.add('has-text-right');
+
+            cell = row.insertCell();
+            cell.innerText = product.totalVolumeInOunces() + ' oz';
+            cell.classList.add('has-text-right');
+
+            cell = row.insertCell();
+            cell.innerText = product.volumePerDollar() + ' oz';
+            cell.classList.add('has-text-right');
+            cell.classList.add('rainbowText');
+            cell.style.backgroundColor = getHSL(getPercentage(product.volumePerDollar(), minVolumePerDollar, rangeVolumePerDollar));
+
+            cell = row.insertCell();
+            cell.innerText = product.totalAlcoholInOunces() + ' oz';
+            cell.classList.add('has-text-right');
+
+            cell = row.insertCell();
+            cell.innerText = product.alcoholPerDollar() + ' oz';
+            cell.classList.add('has-text-right');
+            cell.classList.add('rainbowText');
+            cell.style.backgroundColor = getHSL(getPercentage(product.alcoholPerDollar(), minAlcoholPerDollar, rangeAlcoholPerDollar));
+
+            cell = row.insertCell();
+            cell.innerHTML =
+                "  <button class=\"button is-small\" onclick='removeItem(" + i + ")'>\n" +
+                "    <span class=\"icon is-small\">\n" +
+                "      <i class=\"fas fa-times\"></i>\n" +
+                "    </span>\n" +
+                "  </button>";
+            cell.classList.add('has-text-right');
+        });
+
+        oldTbody.parentNode.replaceChild(newTbody, oldTbody)
+    }
+
+    function getPercentage(value, minimum, range) {
+        const correctedStartValue = value - minimum;
+        return (correctedStartValue * 100) / range;
+    }
+
+    function getHSL(percentage) {
+        // green - white - red formula
+        // const hue = percentage > 50 ? 120 : 0;
+        // const saturation = Math.abs(50 - percentage) * 2;
+        // const lightness = 105 - Math.abs(50 - percentage);
+
+        // green - yellow - red formula
+        const hue = percentage * 1.2;
+        const saturation = 80;
+        const lightness = 70;
+
+        return "hsl(" + hue + "," + saturation + "%," + lightness + "%)";
+    }
+
+    function removeItem(i) {
+        tableData.splice(i, 1);
+        replaceTableBody();
+    }
+
+    function sort(column) {
+        if (column === sortColumn) {
+            tableData.reverse();
+        }
+        else {
+            if (column === 'alcoholPerDollar') {
+                tableData.sort((p1, p2) => {return p2.alcoholPerDollar() - p1.alcoholPerDollar();});
+            }
+            if (column === 'volumePerDollar') {
+                tableData.sort((p1, p2) => {return p2.volumePerDollar() - p1.volumePerDollar();});
+            }
+        }
+        sortColumn = column;
+
+        replaceTableBody();
+    }
+
+    document.getElementById('addButton').addEventListener('click', addProduct);
+
+    document.addEventListener('DOMContentLoaded', function () {
+        replaceTableBody();
+    }, false);
+</script>
+</body>
+</html>
