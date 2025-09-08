@@ -1,12 +1,12 @@
-import type { Event } from "@/constants/types";
-import { useGame } from "@/store";
-import { getCalendar } from "@/store/loop/calendar";
-import { ScrollArea } from "./ui/scroll-area";
+import type { Event } from '@/constants/types';
+import { useGame } from '@/store';
+import { getCalendar } from '@/store/loop/calendar';
+import { ScrollArea } from './ui/scroll-area';
 
-export const df = Intl.DateTimeFormat("en-US", {
-	hour: "numeric",
-	minute: "2-digit",
-	second: "2-digit",
+export const df = Intl.DateTimeFormat('en-US', {
+	hour: 'numeric',
+	minute: '2-digit',
+	second: '2-digit',
 });
 
 const LogLine = ({ event }: { event: Event }) => {

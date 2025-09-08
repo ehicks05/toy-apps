@@ -1,6 +1,6 @@
-import { ExportButton } from "./ExportButton";
-import { ImportForm } from "./ImportForm";
-import { ResetButton } from "./ResetButton";
+import { ExportButton } from './ExportButton';
+import { ImportForm } from './ImportForm';
+import { ResetButton } from './ResetButton';
 
 export const Settings = () => {
 	return (

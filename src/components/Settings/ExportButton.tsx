@@ -1,19 +1,19 @@
-import { useGame } from "@/store";
-import { useEffect, useState } from "react";
-import { Button } from "../ui/button";
+import { useEffect, useState } from 'react';
+import { useGame } from '@/store';
+import { Button } from '../ui/button';
 
 export const ExportButton = () => {
 	const { game } = useGame();
-	const [label, setLabel] = useState<"Export" | "Copied">("Export");
+	const [label, setLabel] = useState<'Export' | 'Copied'>('Export');
 
 	useEffect(() => {
-		if (label === "Copied") setTimeout(() => setLabel("Export"), 1500);
+		if (label === 'Copied') setTimeout(() => setLabel('Export'), 1500);
 	}, [label]);
 
 	async function handleExport() {
 		const encoded = btoa(JSON.stringify(game));
 		await navigator.clipboard.writeText(encoded);
-		setLabel("Copied");
+		setLabel('Copied');
 	}
 
 	return (

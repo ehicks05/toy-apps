@@ -1,8 +1,8 @@
-import { ICONS } from "@/constants/icons";
-import type { Perf } from "@/hooks/usePerf";
-import { useGame } from "@/store";
-import JsonView from "react18-json-view";
-import "react18-json-view/src/style.css";
+import JsonView from 'react18-json-view';
+import { ICONS } from '@/constants/icons';
+import type { Perf } from '@/hooks/usePerf';
+import { useGame } from '@/store';
+import 'react18-json-view/src/style.css';
 
 export const Debug = ({ perf: { history, max } }: { perf: Perf }) => {
 	const { game } = useGame();

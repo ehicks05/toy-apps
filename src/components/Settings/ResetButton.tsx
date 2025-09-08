@@ -1,5 +1,5 @@
-import { useGame } from "@/store";
-import { Button } from "../ui/button";
+import { useGame } from '@/store';
+import { Button } from '../ui/button';
 
 interface Props {
 	skipConfirm?: boolean;
@@ -10,7 +10,7 @@ export const ResetButton = ({ skipConfirm = false, cb }: Props) => {
 	const { resetGame } = useGame();
 
 	const handleReset = () => {
-		const confirm = "Are you sure you? All progress will be lost.";
+		const confirm = 'Are you sure you? All progress will be lost.';
 		if (skipConfirm || window.confirm(confirm)) {
 			resetGame();
 			if (cb) {

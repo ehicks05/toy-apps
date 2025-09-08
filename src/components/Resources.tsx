@@ -1,17 +1,17 @@
-import { Button } from "@/components/ui/button";
-import { FOOD_EATEN_PER_SECOND } from "@/constants/game.js";
-import type { Resource } from "@/constants/types";
-import { incrementResource, useGame } from "@/store";
-import { intlFormatDistance } from "date-fns";
-import { ChevronsUp, Ellipsis } from "lucide-react";
-import React from "react";
-import { GameIcon } from "./GameIcon";
+import { intlFormatDistance } from 'date-fns';
+import { ChevronsUp, Ellipsis } from 'lucide-react';
+import React from 'react';
+import { Button } from '@/components/ui/button';
+import { FOOD_EATEN_PER_SECOND } from '@/constants/game.js';
+import type { Resource } from '@/constants/types';
+import { incrementResource, useGame } from '@/store';
+import { GameIcon } from './GameIcon';
 import {
 	Tooltip,
 	TooltipContent,
 	TooltipProvider,
 	TooltipTrigger,
-} from "./ui/tooltip.js";
+} from './ui/tooltip.js';
 
 const LimitInfo = ({ resource }: { resource: Resource }) => {
 	const { game } = useGame();
@@ -34,9 +34,7 @@ const LimitInfo = ({ resource }: { resource: Resource }) => {
 					{mods.map((mod) => (
 						<tr key={mod.resource}>
 							<td>{building.name}</td>
-							<td className="pl-2 text-right">
-								+{building.amount * mod.amount}
-							</td>
+							<td className="pl-2 text-right">+{building.amount * mod.amount}</td>
 						</tr>
 					))}
 				</React.Fragment>
@@ -60,17 +58,17 @@ const TimeUntil = ({ resource }: { resource: Resource }) => {
 	const { rate, limit, amount } = resource;
 	const { time, result } =
 		rate > 0
-			? { time: (limit - amount) / rate, result: "full" }
+			? { time: (limit - amount) / rate, result: 'full' }
 			: rate < 0
-				? { time: amount / -rate, result: "empty" }
-				: { time: 0, result: "" };
+				? { time: amount / -rate, result: 'empty' }
+				: { time: 0, result: '' };
 
 	const fmt = (time: number) =>
 		intlFormatDistance(new Date().getTime() + time * 1000, new Date(), {
-			style: "narrow",
+			style: 'narrow',
 		});
 
-	const label = time === 0 ? "--" : `${result} in ${fmt(time)}`;
+	const label = time === 0 ? '--' : `${result} in ${fmt(time)}`;
 
 	return <div>{label}</div>;
 };
@@ -82,9 +80,7 @@ const RateInfo = ({ resource }: { resource: Resource }) => {
 		.filter(
 			(job) =>
 				job.amount &&
-				job?.production.some(
-					(production) => production.resource === resource.name,
-				),
+				job?.production.some((production) => production.resource === resource.name),
 		)
 		.map((job) => {
 			const production = job.production.filter(
@@ -105,7 +101,7 @@ const RateInfo = ({ resource }: { resource: Resource }) => {
 		});
 
 	const percent = (amount: number) =>
-		Intl.NumberFormat("en-US", { style: "percent" }).format(amount);
+		Intl.NumberFormat('en-US', { style: 'percent' }).format(amount);
 
 	const mods = Object.values(game.buildings)
 		.filter(
@@ -140,7 +136,7 @@ const RateInfo = ({ resource }: { resource: Resource }) => {
 				<tbody>
 					{production}
 					{mods}
-					{resource.name === "food" && (
+					{resource.name === 'food' && (
 						<tr key="foodConsumption">
 							<td>Villagers</td>
 							<td className="pl-2 text-right">
@@ -162,17 +158,17 @@ const RateInfo = ({ resource }: { resource: Resource }) => {
 const ResourceRow = ({ resource }: { resource: Resource }) => {
 	const { game } = useGame();
 	const harvestFood = () => {
-		incrementResource("food", 1);
+		incrementResource('food', 1);
 	};
 
 	const { image, name, limit, rate } = resource;
 	const amount =
-		resource.name === "villagers"
+		resource.name === 'villagers'
 			? Math.round(resource.amount)
 			: resource.amount.toFixed(2);
 
 	const rateColumn =
-		resource.name === "villagers" ? (
+		resource.name === 'villagers' ? (
 			game.isIncomingVillager ? (
 				<ChevronsUp size={16} />
 			) : (
@@ -180,7 +176,7 @@ const ResourceRow = ({ resource }: { resource: Resource }) => {
 			)
 		) : (
 			<>
-				{rate > 0 ? "+" : ""}
+				{rate > 0 ? '+' : ''}
 				{rate.toFixed(2)}
 				<span className="text-sm text-muted-foreground">/s</span>
 			</>
@@ -230,7 +226,7 @@ const ResourceRow = ({ resource }: { resource: Resource }) => {
 				</TooltipProvider>
 			</td>
 			<td className="text-right">
-				{name === "food" && (
+				{name === 'food' && (
 					<Button variant="secondary" size="sm" onClick={harvestFood}>
 						+
 					</Button>
@@ -247,7 +243,7 @@ export const Resources = () => {
 		<table className="w-full">
 			<tbody>
 				{Object.values(game.resources)
-					.filter((resource) => resource.status === "visible")
+					.filter((resource) => resource.status === 'visible')
 					.map((resource) => (
 						<ResourceRow key={resource.name} resource={resource} />
 					))}

@@ -1,16 +1,16 @@
-import { Button } from "@/components/ui/button";
-import type { Building } from "@/constants/types";
-import { canAfford, scaleBuildingCosts, useGame } from "@/store";
-import { buildBuilding, sellBuilding } from "@/store/actions";
-import EffectsTable from "./EffectsTable";
-import { GameIcon } from "./GameIcon";
-import ResourceCost from "./ResourceCost";
+import { Button } from '@/components/ui/button';
+import type { Building } from '@/constants/types';
+import { canAfford, scaleBuildingCosts, useGame } from '@/store';
+import { buildBuilding, sellBuilding } from '@/store/actions';
+import EffectsTable from './EffectsTable';
+import { GameIcon } from './GameIcon';
+import ResourceCost from './ResourceCost';
 import {
 	Tooltip,
 	TooltipContent,
 	TooltipProvider,
 	TooltipTrigger,
-} from "./ui/tooltip";
+} from './ui/tooltip';
 
 const BuildingRow = ({ building }: { building: Building }) => {
 	const { game } = useGame();
@@ -80,7 +80,7 @@ export const Buildings = () => {
 		<table className="w-full">
 			<tbody>
 				{Object.values(game.buildings)
-					.filter((building) => building.status === "visible")
+					.filter((building) => building.status === 'visible')
 					.map((building) => (
 						<BuildingRow key={building.name} building={building} />
 					))}

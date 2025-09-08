@@ -1,16 +1,16 @@
-import { Button } from "@/components/ui/button";
-import type { Job } from "@/constants/types";
-import { cn } from "@/lib/utils";
-import { useGame } from "@/store";
-import { assignJob, setDefaultJob } from "@/store/actions";
-import EffectsTable from "./EffectsTable";
-import { GameIcon } from "./GameIcon";
+import { Button } from '@/components/ui/button';
+import type { Job } from '@/constants/types';
+import { cn } from '@/lib/utils';
+import { useGame } from '@/store';
+import { assignJob, setDefaultJob } from '@/store/actions';
+import EffectsTable from './EffectsTable';
+import { GameIcon } from './GameIcon';
 import {
 	Tooltip,
 	TooltipContent,
 	TooltipProvider,
 	TooltipTrigger,
-} from "./ui/tooltip";
+} from './ui/tooltip';
 
 const JobRow = ({ job }: { job: Job }) => {
 	const { game } = useGame();
@@ -25,8 +25,8 @@ const JobRow = ({ job }: { job: Job }) => {
 							<button
 								type="button"
 								className={cn(
-									"flex gap-1 cursor-pointer",
-									isDefaultJob ? "text-yellow-500" : "",
+									'flex gap-1 cursor-pointer',
+									isDefaultJob ? 'text-yellow-500' : '',
 								)}
 								onClick={() => setDefaultJob(job.name)}
 							>
@@ -45,7 +45,7 @@ const JobRow = ({ job }: { job: Job }) => {
 			</td>
 			<td className="p-1 text-right">{job.amount}</td>
 			<td className="p-1 text-center whitespace-nowrap">
-				{job.name !== "idlers" && (
+				{job.name !== 'idlers' && (
 					<div className="space-x-2">
 						<Button
 							variant="secondary"
@@ -76,7 +76,7 @@ export const Villagers = () => {
 		<table className="w-full">
 			<tbody>
 				{Object.values(game.jobs)
-					.filter((job) => job.status === "visible")
+					.filter((job) => job.status === 'visible')
 					.map((job) => (
 						<JobRow key={job.name} job={job} />
 					))}

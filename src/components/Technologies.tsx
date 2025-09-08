@@ -1,10 +1,10 @@
-import { Button } from "@/components/ui/button";
-import type { Technology } from "@/constants/types";
-import { camelToTitle } from "@/lib/utils";
-import { canAfford, useGame } from "@/store";
-import { makeDiscovery } from "@/store/actions";
-import { GameIcon } from "./GameIcon";
-import ResourceCost from "./ResourceCost";
+import { Button } from '@/components/ui/button';
+import type { Technology } from '@/constants/types';
+import { camelToTitle } from '@/lib/utils';
+import { canAfford, useGame } from '@/store';
+import { makeDiscovery } from '@/store/actions';
+import { GameIcon } from './GameIcon';
+import ResourceCost from './ResourceCost';
 
 const TechnologyRow = ({ technology }: { technology: Technology }) => {
 	const { game } = useGame();
@@ -34,7 +34,7 @@ const TechnologyRow = ({ technology }: { technology: Technology }) => {
 					disabled={technology.discovered || !isCanAfford}
 					onClick={() => makeDiscovery(technology.name)}
 				>
-					{technology.discovered ? "Discovered" : "Discover"}
+					{technology.discovered ? 'Discovered' : 'Discover'}
 				</Button>
 			</td>
 		</tr>
@@ -48,7 +48,7 @@ export const Technologies = () => {
 		<table className="w-full">
 			<tbody>
 				{Object.values(game.technologies)
-					.filter((technology) => technology.status === "visible")
+					.filter((technology) => technology.status === 'visible')
 					.map((technology) => (
 						<TechnologyRow key={technology.name} technology={technology} />
 					))}

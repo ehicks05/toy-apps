@@ -1,19 +1,19 @@
-import { useInterval } from "usehooks-ts";
+import { useInterval } from 'usehooks-ts';
 
-import { Buildings } from "@/components/Buildings";
-import { Resources } from "@/components/Resources";
-import { Settings } from "@/components/Settings";
-import { Technologies } from "@/components/Technologies";
-import { Villagers } from "@/components/Villagers";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { MS_PER_TICK } from "@/constants/gameSpeed";
-import { usePerf } from "@/hooks/usePerf";
-import { useGame } from "@/store";
-import { doGameTick } from "@/store/loop";
-import { Debug } from "./components/Debug";
-import { Log } from "./components/Log";
-import { ResetButton } from "./components/Settings/ResetButton";
-import { ThemeToggle } from "./components/ThemeToggle";
+import { Buildings } from '@/components/Buildings';
+import { Resources } from '@/components/Resources';
+import { Settings } from '@/components/Settings';
+import { Technologies } from '@/components/Technologies';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import { Villagers } from '@/components/Villagers';
+import { MS_PER_TICK } from '@/constants/gameSpeed';
+import { usePerf } from '@/hooks/usePerf';
+import { useGame } from '@/store';
+import { doGameTick } from '@/store/loop';
+import { Debug } from './components/Debug';
+import { Log } from './components/Log';
+import { ResetButton } from './components/Settings/ResetButton';
+import { ThemeToggle } from './components/ThemeToggle';
 
 function App() {
 	const { game } = useGame();
@@ -26,11 +26,11 @@ function App() {
 	}, MS_PER_TICK);
 
 	const tabs = [
-		{ name: "Buildings", unlocked: game.progress.unlockHuts.unlocked },
-		{ name: "Villagers", unlocked: game.progress.unlockVillagers.unlocked },
-		{ name: "Techs", unlocked: game.progress.unlockLevelOneTech.unlocked },
-		{ name: "Settings", unlocked: true },
-		{ name: "Debug", unlocked: import.meta.env.DEV },
+		{ name: 'Buildings', unlocked: game.progress.unlockHuts.unlocked },
+		{ name: 'Villagers', unlocked: game.progress.unlockVillagers.unlocked },
+		{ name: 'Techs', unlocked: game.progress.unlockLevelOneTech.unlocked },
+		{ name: 'Settings', unlocked: true },
+		{ name: 'Debug', unlocked: import.meta.env.DEV },
 	].filter(({ unlocked }) => unlocked);
 
 	return (
@@ -94,7 +94,7 @@ function App() {
 										{
 											date: new Date().getTime(),
 											tick: 0,
-											text: "You wake up",
+											text: 'You wake up',
 										},
 									];
 								});

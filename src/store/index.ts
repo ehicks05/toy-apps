@@ -1,8 +1,8 @@
-import { DEFAULT_GAME } from "@/constants/game";
-import type { Building, Game, ResourceAmount } from "@/constants/types";
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
 import { immer } from "zustand/middleware/immer";
+import { DEFAULT_GAME } from "@/constants/game";
+import type { Building, Game, ResourceAmount } from "@/constants/types";
 
 type GameStore = {
 	game: Game;

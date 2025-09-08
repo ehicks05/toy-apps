@@ -21,7 +21,7 @@ export const getPByTime = (seconds: number) => {
 
 export function createEvent(text: string) {
 	const event: Event = {
-		date: new Date().getTime(),
+		date: Date.now(),
 		tick: useGame.getState().game.tickCount,
 		text,
 	};

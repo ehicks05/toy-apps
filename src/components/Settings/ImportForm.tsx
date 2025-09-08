@@ -1,16 +1,16 @@
-import { Button } from "@/components/ui/button";
-import { useGame } from "@/store";
-import { useState } from "react";
+import { useState } from 'react';
+import { Button } from '@/components/ui/button';
+import { useGame } from '@/store';
 
 export const ImportForm = () => {
-	const [importText, setImportText] = useState("");
+	const [importText, setImportText] = useState('');
 	const [isImportTextValid, setIsImportTextValid] = useState(false);
 
 	const handleImport = () => {
-		if (window.confirm("Are you sure you? All progress will be replaced.")) {
+		if (window.confirm('Are you sure you? All progress will be replaced.')) {
 			const parsed = JSON.parse(atob(importText));
 			useGame.setState({ game: parsed });
-			setImportText("");
+			setImportText('');
 		}
 	};
 
@@ -19,7 +19,7 @@ export const ImportForm = () => {
 			setImportText(text);
 			JSON.parse(atob(text));
 			setIsImportTextValid(true);
-		} catch (e) {
+		} catch (_e) {
 			setIsImportTextValid(false);
 		}
 	};
@@ -38,7 +38,7 @@ export const ImportForm = () => {
 				disabled={!importText || !isImportTextValid}
 				onClick={handleImport}
 			>
-				{isImportTextValid ? "Import" : "Invalid Save"}
+				{isImportTextValid ? 'Import' : 'Invalid Save'}
 			</Button>
 		</div>
 	);
