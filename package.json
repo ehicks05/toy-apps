@@ -10,13 +10,12 @@
 		"preview": "vite preview"
 	},
 	"dependencies": {
-		"radix-ui": "^1.1.8",
 		"@tailwindcss/vite": "^4.1.13",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
 		"date-fns": "^4.1.0",
-		"lodash-es": "^4.17.21",
 		"lucide-react": "^0.542.0",
+		"radix-ui": "^1.1.8",
 		"react": "^19.1.1",
 		"react-dom": "^19.1.1",
 		"react18-json-view": "^0.2.9",
