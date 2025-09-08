@@ -1,5 +1,5 @@
 import { LucideCalendar } from 'lucide-react';
-import { APP_NAME } from '@/constants/app';
+import { APP_NAME } from '../../constants/app';
 
 const Logo = () => (
 	<div className="flex-shrink-0 flex items-center">

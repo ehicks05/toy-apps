@@ -1,5 +1,5 @@
 import React from 'react';
-import { LINKS } from '@/constants/app';
+import { LINKS } from '../../constants/app';
 
 interface LinkProps {
 	href: string;

@@ -1,8 +1,8 @@
 import { chunk } from 'es-toolkit';
 import { useState } from 'react';
 import type { Temporal } from 'temporal-polyfill';
-import { useSettings } from '@/hooks';
-import { useEvents } from '@/hooks/useEvents';
+import { useSettings } from '../../hooks';
+import { useEvents } from '../../hooks/useEvents';
 import { Day } from './Day';
 import { MyDndContext } from './dnd/DndContext';
 import { isOverlapsDay } from './events';

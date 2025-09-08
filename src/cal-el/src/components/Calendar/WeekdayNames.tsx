@@ -1,4 +1,4 @@
-import { useSettings } from '@/hooks';
+import { useSettings } from '../../hooks';
 import { getWeekdayNames } from './utils/weekdayNames';
 
 export const WeekdayNames = () => {

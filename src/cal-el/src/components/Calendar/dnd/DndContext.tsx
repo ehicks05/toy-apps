@@ -8,7 +8,7 @@ import {
 	useSensors,
 } from '@dnd-kit/core';
 import { Temporal } from 'temporal-polyfill';
-import { useEvents } from '@/hooks/useEvents';
+import { useEvents } from '../../../hooks/useEvents';
 
 export const MyDndContext = ({ children }: { children: React.ReactNode }) => {
 	const pointerSensor = useSensor(PointerSensor, {

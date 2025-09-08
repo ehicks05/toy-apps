@@ -1,7 +1,7 @@
 import { X } from 'lucide-react';
 import { useState } from 'react';
 import { Temporal } from 'temporal-polyfill';
-import { useEvents } from '@/hooks/useEvents';
+import { useEvents } from '../../hooks/useEvents';
 import type { Event } from './types';
 
 // push forward to the next quarter hour, then add 0 or more quarter hours
@@ -114,6 +114,7 @@ export const EventForm = ({ date, event: _event, close }: EventFormProps) => {
 					onChange={(e) => handleChangeStartDate('startDate', e.target.value)}
 				/>
 			</label>
+			{/** biome-ignore lint/correctness/useUniqueElementIds: . */}
 			<datalist id="fifteenMinutes">
 				{[...new Array(24 * 4)].map((_, i) => {
 					const now = Temporal.Now.zonedDateTimeISO().startOfDay();

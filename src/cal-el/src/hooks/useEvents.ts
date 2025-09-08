@@ -1,7 +1,7 @@
 import { Temporal } from 'temporal-polyfill';
 import { useLocalStorage } from 'usehooks-ts';
-import { APP_NAME } from '@/constants/app';
 import type { Event } from '../components/Calendar/types';
+import { APP_NAME } from '../constants/app';
 
 const isPartialDay = (event: Event) =>
 	!event.isAllDay && event.start.toPlainDate().equals(event.end.toPlainDate());

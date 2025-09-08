@@ -4,8 +4,8 @@ import {
 	DropdownMenuSeparator,
 	DropdownMenuTrigger,
 } from '@radix-ui/react-dropdown-menu';
-import { useSettings } from '@/hooks';
-import { VIEWS } from '@/hooks/useSettings';
+import { useSettings } from '../../hooks';
+import { VIEWS } from '../../hooks/useSettings';
 import {
 	DropdownMenuCheckboxItem,
 	DropdownMenuRadioGroup,
