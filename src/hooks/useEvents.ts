@@ -1,5 +1,5 @@
 import { APP_NAME } from '@/constants/app';
-import { useLocalStorage } from '@uidotdev/usehooks';
+import { useLocalStorage } from 'usehooks-ts';
 import { Temporal } from 'temporal-polyfill';
 import type { Event } from '../components/Calendar/types';
 

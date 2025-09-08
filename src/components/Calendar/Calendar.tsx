@@ -1,6 +1,6 @@
 import { useSettings } from '@/hooks';
 import { useEvents } from '@/hooks/useEvents';
-import { chunk } from 'lodash-es';
+import { chunk } from 'es-toolkit';
 import { useState } from 'react';
 import type { Temporal } from 'temporal-polyfill';
 import { Day } from './Day';
