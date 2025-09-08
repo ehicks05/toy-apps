@@ -1,4 +1,4 @@
-import { MdArrowBack, MdArrowForward, MdToday } from 'react-icons/md';
+import { ArrowLeft, ArrowRight, Calendar } from 'lucide-react';
 import type { Temporal } from 'temporal-polyfill';
 import { CalendarSettingsMenu } from './SettingsMenu';
 
@@ -18,13 +18,13 @@ export const MonthMenu = ({ date, setDate, _date }: Props) => {
 			<CalendarSettingsMenu />
 
 			<button type="button" onClick={handleReset}>
-				<MdToday size={20} />
+				<Calendar size={20} />
 			</button>
 			<button type="button" onClick={handlePrev}>
-				<MdArrowBack size={20} />
+				<ArrowLeft size={20} />
 			</button>
 			<button type="button" onClick={handleNext}>
-				<MdArrowForward size={20} />
+				<ArrowRight size={20} />
 			</button>
 		</div>
 	);
