@@ -1,6 +1,15 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@plugin "tailwindcss-animate";
+
+@theme {
+  --font-sans: 'Fredoka', sans-serif;
+  --font-logo: 'Proza Libre';
+
+	--container-screens-2xl: '1400px';
+  --container-center: true;
+  --container-padding: '2rem';
+}
 
 html {
   height: -webkit-fill-available;
@@ -8,7 +17,6 @@ html {
 
 body {
   min-height: 100vh;
-  min-height: -webkit-fill-available;
   color: #eee;
   background-color: #111;
 }
