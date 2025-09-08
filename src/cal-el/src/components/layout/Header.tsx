@@ -5,7 +5,7 @@ const Logo = () => (
 	<div className="flex-shrink-0 flex items-center">
 		<div className="flex items-center gap-1 text-blue-500">
 			<LucideCalendar className="inline h-8 w-auto" />
-			<span className="mt-1 hidden sm:inline font-bold text-3xl font-logo">
+			<span className="mt-1 hidden sm:inline font-bold text-3xl font-[Proza_Libre]">
 				{APP_NAME}
 			</span>
 		</div>
