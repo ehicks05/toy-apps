@@ -1,7 +1,7 @@
 export const JHU_REPO = 'https://github.com/CSSEGISandData/COVID-19';
 
-const usConfirmedUrl = "/data/time_series_covid19_confirmed_US.csv";
-const usDeathsUrl = "/data/time_series_covid19_deaths_US.csv";
+const usConfirmedUrl = "/covid/data/time_series_covid19_confirmed_US.csv";
+const usDeathsUrl = "/covid/data/time_series_covid19_deaths_US.csv";
 
 const INFECTION_DURATION = 14;
 

@@ -7,12 +7,14 @@ import type { County } from "./types";
 const toFetch = async (url: string) => (await fetch(url)).text()
 const toParsedCsv = async (csv: string) => Papa.parse<County>(csv, { header: true }).data;
 
+const fetchFiles = async () => {
+  const confirmedData = await toParsedCsv(await toFetch(usConfirmedUrl));
+  const deathsData = await toParsedCsv(await toFetch(usDeathsUrl));
+  return { confirmedData, deathsData };
+}
+
 const queryFn = async () => {
-  const [confirmedData, deathsData] = await Promise.all(
-    [usConfirmedUrl, usDeathsUrl]
-      .map(toFetch)
-      .map(async (csv) => toParsedCsv(await csv))
-  );
+  const { confirmedData, deathsData } = await fetchFiles();
   console.log("CSVs fetched and parsed");
 
   const countyArray = deathsData.map(row => ({
@@ -37,47 +39,47 @@ const queryFn = async () => {
     const deathsRow = deathsData.find((d) => d.UID === confirmedRow.UID);
     return { confirmedRow, deathsRow };
   });// so now we have a bunch of rows like this:
-		/*
-  
+  /*
+ 
+{
+  confirmedRow: {uid: 123, ...},
+  deathsRow: {uid: 123, ...},
+}[]
+
+*/
+
+  // desired shape would be:
+  /*
+ 
+[{
+  '10/10/2020': [
   {
-    confirmedRow: {uid: 123, ...},
-    deathsRow: {uid: 123, ...},
-  }[]
-
-  */
-
-		// desired shape would be:
-		/*
-  
-  [{
-    '10/10/2020': [
-    {
-      UID: 123,
-      date: '10/10/2020',
-      active: 0,
-      activePercent: 0,
-      confirmed: 0,
-      confirmedPercent: 0,
-      deaths: 0,
-      deathsPercent: 0,
-    },
-    {
-      UID: 234,
-      date: '10/10/2020',
-      active: 0,
-      activePercent: 0,
-      confirmed: 0,
-      confirmedPercent: 0,
-      deaths: 0,
-      deathsPercent: 0,
-    },
-    ]
-  }]
+    UID: 123,
+    date: '10/10/2020',
+    active: 0,
+    activePercent: 0,
+    confirmed: 0,
+    confirmedPercent: 0,
+    deaths: 0,
+    deathsPercent: 0,
+  },
+  {
+    UID: 234,
+    date: '10/10/2020',
+    active: 0,
+    activePercent: 0,
+    confirmed: 0,
+    confirmedPercent: 0,
+    deaths: 0,
+    deathsPercent: 0,
+  },
+  ]
+}]
 
 
-   */
+ */
 
-		return { counties, mergedData };
+  return { counties, mergedData };
 };
 
 

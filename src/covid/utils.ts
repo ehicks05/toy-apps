@@ -18,6 +18,17 @@ const numberFormat = Intl.NumberFormat("en-US", {
 export const pretty = (input: number) => numberFormat.format(input);
 const dateRegex = /\d+\/\d+\/\d+/g;
 
+export interface RowData {
+  UID: number;
+  date: string;
+  active: number;
+  activePercent: number;
+  confirmed: number;
+  confirmedPercent: number;
+  deaths: number;
+  deathsPercent: number;
+}
+
 const processData = (merged: { confirmedRow: County, deathsRow: County }[], UIDs: number[]) => {
   // split each row into a row-per-date that includes the combined metadata from each file,
   // along with the confirmed and deaths counts for that date.

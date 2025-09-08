@@ -1,7 +1,8 @@
 import { Link, Route, Routes } from 'react-router-dom';
+import { CovidCharts } from './covid/CovidCharts';
 import Eordle from './eordle/Eordle';
-import Jikan from './jikan/Jikan';
 import { Hootch } from './hootch';
+import Jikan from './jikan/Jikan';
 
 const MainMenu = () => {
 	document.title = 'toy apps';
@@ -11,6 +12,7 @@ const MainMenu = () => {
 			<Link to={'/jikan'}>jikan - clock, timer, stopwatch</Link>
 			<Link to={'/eordle'}>eordle - wordle clone</Link>
 			<Link to={'/hootch'}>hootch - booze math</Link>
+			<Link to={'/covid'}>covid-charts - charts and tables</Link>
 		</div>
 	);
 };
@@ -27,6 +29,7 @@ export function App() {
 					<Route path="/jikan/*" element={<Jikan />} />
 					<Route path="/eordle/*" element={<Eordle />} />
 					<Route path="/hootch/*" element={<Hootch />} />
+					<Route path="/covid/*" element={<CovidCharts />} />
 				</Routes>
 			</div>
 		</div>

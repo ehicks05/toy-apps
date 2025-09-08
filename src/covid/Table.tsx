@@ -1,30 +1,44 @@
 import {
+	createColumnHelper,
 	flexRender,
+	getCoreRowModel,
 	getPaginationRowModel,
 	type PaginationState,
 	useReactTable,
 } from '@tanstack/react-table';
 import React from 'react';
 import type { County } from './types';
-import { getLocationDisplayName, pretty } from './utils';
+import { getLocationDisplayName, pretty, type RowData } from './utils';
 
 const NUMBER_FORMAT = Intl.NumberFormat('en-US');
 const formatNumber = (number: number) => NUMBER_FORMAT.format(number);
 
 interface Props {
-	data: any;
+	data: RowData[];
 	counties: Record<number, County>;
 	UIDs: number[];
 }
 
 const Table = ({ data, counties, UIDs }: Props) => {
-	const columns = React.useMemo(
+	console.log('data:');
+	console.log(data);
+
+	const columnHelper = createColumnHelper<RowData>();
+
+	const columns = [
+		columnHelper.accessor('date', {
+			cell: (info) => info.getValue(),
+			footer: (info) => info.column.id,
+		}),
+	];
+
+	const columns2 = React.useMemo(
 		() => [
 			{
 				header: 'Date',
 				id: 'date',
-				accessor: (row) => {
-					return Object.values(row)[0].date;
+				accessor: (row: RowData) => {
+					return row.date;
 				},
 				disableSortBy: true,
 			},
@@ -76,6 +90,7 @@ const Table = ({ data, counties, UIDs }: Props) => {
 	const table = useReactTable({
 		columns,
 		data,
+		getCoreRowModel: getCoreRowModel(),
 		getPaginationRowModel: getPaginationRowModel(),
 		onPaginationChange: setPagination,
 		state: { pagination },

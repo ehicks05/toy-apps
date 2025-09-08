@@ -1,4 +1,4 @@
-import { ReactNode, useMemo } from 'react';
+import { type ReactNode, useMemo } from 'react';
 import { useLocalStorage } from 'usehooks-ts'; // esm
 import Chart from './Chart';
 import CountySelector from './CountySelector';
@@ -18,8 +18,8 @@ const Banner = () => (
 	</div>
 );
 
-const Shell = ({children}: {children: ReactNode}) => {
-		return (
+const Shell = ({ children }: { children: ReactNode }) => {
+	return (
 		<div className="flex flex-col min-h-screen w-full">
 			<Banner />
 
@@ -33,38 +33,39 @@ const Shell = ({children}: {children: ReactNode}) => {
 			</footer>
 		</div>
 	);
-}
+};
 
 const Content = () => {
-		const { isLoading, isError, data: rawData } = useFetchData();
+	const { isLoading, isError, data: rawData } = useFetchData();
 
 	const [UIDs] = useLocalStorage('UIDs', ['84034019'], {
 		initializeWithValue: true,
 	});
 
 	const data = useMemo(() => {
-		return rawData && UIDs ? processData(rawData, UIDs) : [];
+		return rawData && UIDs ? processData(rawData.mergedData, UIDs) : [];
 	}, [rawData, UIDs]);
 
-		if (isError) return <div>Error...</div>;
-		if (isLoading) return <div>Loading...</div>;
-		if (!rawData) return <div>No data...</div>;
+	if (isError) return <div>Error...</div>;
+	if (isLoading) return <div>Loading...</div>;
+	if (!rawData) return <div>No data...</div>;
 
-			return Object.keys(rawData?.counties || {})?.includes('84034019') &&
-				Object.entries(data).length !== 0 && (
-					<div className="max-w-screen-xl w-full m-auto flex flex-col gap-4 p-4">
-						<CountySelector counties={rawData.counties} />
-						<Chart data={data} counties={rawData.counties} UIDs={UIDs} />
-						<Table data={data} counties={rawData.counties} UIDs={UIDs} />
-					</div>
-				)
-}
+	return (
+		Object.keys(rawData?.counties || {})?.includes('84034019') &&
+		Object.entries(data).length !== 0 && (
+			<div className="max-w-screen-xl w-full m-auto flex flex-col gap-4 p-4">
+				<CountySelector counties={rawData.counties} />
+				<Chart data={data} counties={rawData.counties} UIDs={UIDs} />
+				<Table data={data} counties={rawData.counties} UIDs={UIDs} />
+			</div>
+		)
+	);
+};
 
 function App() {
 	return (
 		<Shell>
-
-<Content />
+			<Content />
 		</Shell>
 	);
 }
