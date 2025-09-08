@@ -56,8 +56,10 @@ export const EventForm = ({ date, event: _event, close }: EventFormProps) => {
 	const handleChangeStartDate = (name: string, value: string) => {
 		const duration = event.start.until(event.end);
 
-		// patch event.start with the incoming date string
-		const start = event.start.withPlainDate(value);
+		const [year, month, day] = value.split('-').map(Number);
+
+		// patch event.start with the incoming date
+		const start = event.start.with({ year, month, day });
 		// update event.end in a way that maintains the duration
 		const end = start.add(duration);
 
@@ -70,7 +72,9 @@ export const EventForm = ({ date, event: _event, close }: EventFormProps) => {
 	};
 
 	const handleChangeEndDate = (name: string, value: string) => {
-		const end = event.end.withPlainDate(value);
+		const [year, month, day] = value.split('-').map(Number);
+		const end = event.end.with({ year, month, day });
+		console.log({ end: end.toString() });
 		setEvent({ ...event, end });
 	};
 
