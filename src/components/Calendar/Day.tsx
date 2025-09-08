@@ -1,9 +1,9 @@
 import { useState } from 'react';
 import { Temporal } from 'temporal-polyfill';
 import { Popover, PopoverContent, PopoverTrigger } from '../ui/popover';
+import { Droppable } from './dnd/Droppable';
 import { EventChip } from './EventChip';
 import { EventForm } from './EventForm';
-import { Droppable } from './dnd/Droppable';
 import type { Event } from './types';
 
 const getDayLabel = (date: Temporal.ZonedDateTime) =>

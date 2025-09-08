@@ -1,5 +1,5 @@
-import { APP_NAME } from '@/constants/app';
 import { useLocalStorage } from 'usehooks-ts';
+import { APP_NAME } from '@/constants/app';
 
 export const VIEWS = ['year', 'month', 'week', '4day', 'day', 'schedule'] as const;
 

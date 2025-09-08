@@ -1,7 +1,7 @@
-import { useEvents } from '@/hooks/useEvents';
 import { X } from 'lucide-react';
 import { useState } from 'react';
 import { Temporal } from 'temporal-polyfill';
+import { useEvents } from '@/hooks/useEvents';
 import type { Event } from './types';
 
 // push forward to the next quarter hour, then add 0 or more quarter hours

@@ -1,6 +1,6 @@
-import { APP_NAME } from '@/constants/app';
-import { useLocalStorage } from 'usehooks-ts';
 import { Temporal } from 'temporal-polyfill';
+import { useLocalStorage } from 'usehooks-ts';
+import { APP_NAME } from '@/constants/app';
 import type { Event } from '../components/Calendar/types';
 
 const isPartialDay = (event: Event) =>
