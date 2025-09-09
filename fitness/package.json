@@ -1,0 +1,36 @@
+{
+  "name": "logical-fitness",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "lint": "biome check .",
+    "preview": "vite preview"
+  },
+  "homepage": "https://fitness.ehicks.net",
+  "dependencies": {
+    "@instantdb/react": "^0.18.9",
+    "@tailwindcss/vite": "^4.1.4",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "lucide-react": "^0.503.0",
+    "radix-ui": "^1.3.4",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "tailwind-merge": "^3.2.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@tailwindcss/postcss": "^4.1.4",
+    "@types/react": "^19.1.2",
+    "@types/react-dom": "^19.1.2",
+    "@vitejs/plugin-react": "^4.4.1",
+    "postcss": "^8.4.38",
+    "tailwindcss": "^4.1.4",
+    "tw-animate-css": "^1.2.8",
+    "typescript": "^5.8.3",
+    "vite": "^6.3.3"
+  }
+}
