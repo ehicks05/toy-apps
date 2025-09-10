@@ -1,6 +1,6 @@
 import { useIsRestoring } from '@tanstack/react-query';
 import { JobBoard } from './app/JobBoard';
-import { Footer, Header } from './components/layout';
+import { Footer, Header } from './components';
 
 function MyApp() {
 	const isRestoring = useIsRestoring();
