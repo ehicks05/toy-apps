@@ -1,4 +1,4 @@
-import type { Job } from './src/app/types';
+import type { Job } from '../app/types';
 
 export const JOBS: Job[] = [
 	{

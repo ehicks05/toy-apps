@@ -1,4 +1,4 @@
-import { APP_NAME } from '@/constants/app';
+import { APP_NAME } from '@/jobbies/constants/app';
 import { LucidePickaxe } from 'lucide-react';
 
 const Logo = () => (

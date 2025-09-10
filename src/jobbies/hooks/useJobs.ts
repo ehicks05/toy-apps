@@ -1,6 +1,6 @@
-import type { Job } from '@/app/types';
+import type { Job } from '@/jobbies/app/types';
 import { useLocalStorage } from 'usehooks-ts';
-import { JOBS } from '../../sample_data';
+import { JOBS } from './sample_data';
 
 export const useJobs = () => {
 	const [data, setJobs] = useLocalStorage('jobs', JOBS);

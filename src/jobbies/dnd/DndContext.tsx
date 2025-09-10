@@ -1,5 +1,5 @@
-import { JobCard } from '@/app/JobCard';
-import { useJobs } from '@/hooks/useJobs';
+import { JobCard } from '@/jobbies/app/JobCard';
+import { useJobs } from '@/jobbies/hooks/useJobs';
 import {
 	DndContext,
 	type DragEndEvent,

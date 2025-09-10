@@ -1,6 +1,6 @@
-import { MyDndContext } from '@/dnd/DndContext';
-import { SortableItem } from '@/dnd/SortableItem';
-import { useJobs } from '@/hooks/useJobs';
+import { MyDndContext } from '@/jobbies/dnd/DndContext';
+import { SortableItem } from '@/jobbies/dnd/SortableItem';
+import { useJobs } from '@/jobbies/hooks/useJobs';
 import { useDroppable } from '@dnd-kit/core';
 import { SortableContext } from '@dnd-kit/sortable';
 import { JobCard } from './JobCard';
