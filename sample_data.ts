@@ -1,0 +1,88 @@
+import type { Job } from './src/app/types';
+
+export const JOBS: Job[] = [
+	{
+		id: '1',
+		company: 'Rippling',
+		icon: 'https://www.rippling.com/favicons/apple-touch-icon.png',
+		invert: false,
+		location: 'remote',
+		recruited: true,
+		levels: [
+			{
+				name: 'SWE II',
+				baseLow: 190000,
+				baseHigh: 190000,
+				stock: 102000,
+				bonus: 1000,
+			},
+			{
+				name: 'Senior SWE',
+				baseLow: 236000,
+				baseHigh: 236000,
+				stock: 206000,
+				bonus: 8000,
+			},
+		],
+		retirementMatch: 0,
+		ptoDays: 21,
+		stage: 'new',
+		index: 0,
+	},
+	{
+		id: '2',
+		company: 'Privy.io',
+		icon: 'https://framerusercontent.com/images/1yrQRlTAGFtgW2nERVauOo7PyJM.png',
+		invert: true,
+		location: 'nyc',
+		recruited: true,
+		levels: [
+			{
+				name: 'Senior Fullstack',
+				baseLow: 150000,
+				baseHigh: 220000,
+				stock: 0,
+				bonus: 0,
+			},
+			{
+				name: 'Senior Frontend',
+				baseLow: 170000,
+				baseHigh: 220000,
+				stock: 0,
+				bonus: 0,
+			},
+		],
+		retirementMatch: 0,
+		ptoDays: 0,
+		stage: 'new',
+		index: 1,
+	},
+	{
+		id: '3',
+		company: 'Close',
+		icon: 'https://cdn.prod.website-files.com/61717799a852418a278cfa9b/66268a52e0119bfb4fb75e16_webclip.png',
+		invert: false,
+		location: 'remote',
+		recruited: false,
+		levels: [
+			{
+				name: 'FT Senior / Staff',
+				baseLow: 140000,
+				baseHigh: 200000,
+				stock: 0,
+				bonus: 0,
+			},
+			{
+				name: '80% Senior / Staff',
+				baseLow: 128000,
+				baseHigh: 152000,
+				stock: 0,
+				bonus: 0,
+			},
+		],
+		retirementMatch: 0.06,
+		ptoDays: 78,
+		stage: 'new',
+		index: 2,
+	},
+];

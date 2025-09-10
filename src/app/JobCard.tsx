@@ -23,7 +23,7 @@ const LevelChip = ({ job, level }: { job: Job; level: Level }) => {
 				<span className="w-8 text-neutral-400">tot</span>
 			</div>
 
-			{/* <CompensationDetails level={level} /> */}
+			<CompensationDetails level={level} />
 		</div>
 	);
 };
