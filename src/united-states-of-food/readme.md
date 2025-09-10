@@ -8,5 +8,3 @@ Made by following these tutorials:
 2. https://leafletjs.com/examples/choropleth/
 
 And googling around for signature state foods
-
-demo: https://foods.ehicks.net
