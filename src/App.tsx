@@ -2,6 +2,7 @@ import { Link, Route, Routes } from 'react-router-dom';
 import { CalElDemo } from './cal-el/src/CalElDemo';
 import { CovidCharts } from './covid/CovidCharts';
 import Eordle from './eordle/Eordle';
+import { EricIdle } from './eric-idle/EricIdle';
 import { Hootch } from './hootch';
 import Jikan from './jikan/Jikan';
 import { LogicalFitness } from './logical-fitness/main';
@@ -17,8 +18,9 @@ const MainMenu = () => {
 			<Link to={'/covid'}>covid-charts - charts and tables</Link>
 			<Link to={'/cal-el'}>cal-el - calendar</Link>
 			<Link to={'/logical-fitness'}>
-				logical-fitness - like logical increments but for fitness
+				logical-fitness - logical increments for fitness
 			</Link>
+			<Link to={'/eric-idle'}>eric-idle - incomplete idle game</Link>
 		</div>
 	);
 };
@@ -35,6 +37,7 @@ export function App() {
 					<Route path="/covid/*" element={<CovidCharts />} />
 					<Route path="/cal-el/*" element={<CalElDemo />} />
 					<Route path="/logical-fitness/*" element={<LogicalFitness />} />
+					<Route path="/eric-idle/*" element={<EricIdle />} />
 				</Routes>
 			</div>
 			<div>
