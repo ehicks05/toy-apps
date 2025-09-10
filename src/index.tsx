@@ -5,7 +5,6 @@ import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client
 import { createRoot } from 'react-dom/client';
 import App from './MyApp';
 import { APP_NAME } from './constants/app';
-import { AppProvider } from './contexts/AppProvider';
 
 const queryClient = new QueryClient();
 
@@ -18,8 +17,6 @@ const container = document.getElementById('root');
 const root = createRoot(container as Element);
 root.render(
 	<PersistQueryClientProvider client={queryClient} persistOptions={{ persister }}>
-		<AppProvider>
-			<App />
-		</AppProvider>
+		<App />
 	</PersistQueryClientProvider>,
 );

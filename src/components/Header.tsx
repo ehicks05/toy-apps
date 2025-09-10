@@ -12,7 +12,7 @@ const Logo = () => (
 	</div>
 );
 
-export default function Header() {
+export function Header() {
 	return (
 		<div className="flex items-center justify-between h-16 max-w-screen-2xl mx-auto px-2 w-full">
 			<Logo />

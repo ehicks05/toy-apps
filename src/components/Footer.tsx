@@ -1,6 +1,7 @@
 import { LINKS } from '@/constants/app';
 import { useJobs } from '@/hooks/useJobs';
-import React, { useState } from 'react';
+import type React from 'react';
+import { useState } from 'react';
 
 interface LinkProps {
 	href: string;
@@ -51,7 +52,7 @@ const ExportJobs = () => {
 	);
 };
 
-const Footer = () => {
+export const Footer = () => {
 	return (
 		<footer className="flex items-center justify-end gap-4 px-2 py-4 max-w-screen-2xl mx-auto w-full">
 			<ExportJobs />
@@ -64,5 +65,3 @@ const Footer = () => {
 		</footer>
 	);
 };
-
-export default React.memo(Footer);
