@@ -1,7 +1,7 @@
-import { LINKS } from '@/jobbies/constants/app';
-import { useJobs } from '@/jobbies/hooks/useJobs';
 import type React from 'react';
 import { useState } from 'react';
+import { LINKS } from '@/jobbies/constants/app';
+import { useJobs } from '@/jobbies/hooks/useJobs';
 
 interface LinkProps {
 	href: string;

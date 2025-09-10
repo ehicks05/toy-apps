@@ -1,10 +1,10 @@
+import { useDroppable } from '@dnd-kit/core';
+import { SortableContext } from '@dnd-kit/sortable';
 import { MyDndContext } from '@/jobbies/dnd/DndContext';
 import { SortableItem } from '@/jobbies/dnd/SortableItem';
 import { useJobs } from '@/jobbies/hooks/useJobs';
-import { useDroppable } from '@dnd-kit/core';
-import { SortableContext } from '@dnd-kit/sortable';
-import { JobCard } from './JobCard';
 import { STAGES } from './constants';
+import { JobCard } from './JobCard';
 import type { Stage } from './types';
 
 const Column = ({ stage }: { stage: Stage }) => {

@@ -1,56 +1,59 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+	--font-sans: "Fredoka", sans-serif;
+	--font-logo: "Proza Libre", sans-serif;
+}
 
 html {
-  height: -webkit-fill-available;
+	height: -webkit-fill-available;
 }
 
 body {
-  min-height: 100vh;
-  min-height: -webkit-fill-available;
-  color: #eee;
-  background-color: #111;
+	min-height: 100vh;
+	min-height: -webkit-fill-available;
+	color: #eee;
+	background-color: #111;
 }
 
 #root {
-  min-height: 100vh;
+	min-height: 100vh;
 }
 
 input {
-  color-scheme: dark;
+	color-scheme: dark;
 }
 
 /* SCROLLBAR */
 body {
-  overflow-y: auto;
+	overflow-y: auto;
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+	width: 8px;
 }
 
 ::-webkit-scrollbar {
-  height: 8px;
+	height: 8px;
 }
 
 ::-webkit-scrollbar-track {
-  background: #555;
+	background: #555;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #777;
+	background: #777;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #aaa;
+	background: #aaa;
 }
 
 /* hack */
 input {
-  @apply outline-none;
+	@apply outline-none;
 }
 
 ::-webkit-color-swatch {
-  border: none;
+	border: none;
 }

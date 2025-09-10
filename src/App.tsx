@@ -7,6 +7,7 @@ import { Hootch } from './hootch';
 import Jikan from './jikan/Jikan';
 import { LogicalFitness } from './logical-fitness/main';
 import { UnitedStatesOfFood } from './united-states-of-food';
+import { Jobbies } from './jobbies';
 
 const MainMenu = () => {
 	document.title = 'toy apps';
@@ -25,6 +26,7 @@ const MainMenu = () => {
 			<Link to={'/united-states-of-food'}>
 				united-states-of-food - signature foods in each state
 			</Link>
+			<Link to={'/jobbies'}>jobbies - incomplete job app tracker</Link>
 		</div>
 	);
 };
@@ -43,6 +45,7 @@ export function App() {
 					<Route path="/logical-fitness/*" element={<LogicalFitness />} />
 					<Route path="/eric-idle/*" element={<EricIdle />} />
 					<Route path="/united-states-of-food/*" element={<UnitedStatesOfFood />} />
+					<Route path="/jobbies/*" element={<Jobbies />} />
 				</Routes>
 			</div>
 			<div>
