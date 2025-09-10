@@ -1,8 +1,8 @@
-import { create } from "zustand";
-import { persist } from "zustand/middleware";
-import { immer } from "zustand/middleware/immer";
-import { DEFAULT_GAME } from "../constants/game";
-import type { Building, Game, ResourceAmount } from "../constants/types";
+import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
+import { immer } from 'zustand/middleware/immer';
+import { DEFAULT_GAME } from '../constants/game';
+import type { Building, Game, ResourceAmount } from '../constants/types';
 
 type GameStore = {
 	game: Game;
@@ -18,7 +18,7 @@ export const useGame = create<GameStore>()(
 				updateGame: (game) => set({ game: game }),
 				resetGame: () => set({ game: DEFAULT_GAME }),
 			}),
-			{ name: "ericIdle-storage" },
+			{ name: 'ericIdle-storage' },
 		),
 	),
 );
@@ -38,16 +38,10 @@ export const canAfford = ({ cost }: { cost: ResourceAmount[] }) => {
 /**
  * Respects `resource.limit`.
  */
-export const incrementResource = (
-	name: keyof Game["resources"],
-	amount: number,
-) => {
+export const incrementResource = (name: keyof Game['resources'], amount: number) => {
 	const { resources } = useGame.getState().game;
 
-	const newAmount = Math.min(
-		resources[name].amount + amount,
-		resources[name].limit,
-	);
+	const newAmount = Math.min(resources[name].amount + amount, resources[name].limit);
 
 	useGame.setState(({ game }) => {
 		game.resources[name].amount = newAmount;
@@ -58,7 +52,7 @@ export const incrementResource = (
  * Take each resource cost, and map it to a scaled version of itself.
  */
 export const scaleBuildingCosts = (building: Building, isSale = false) => {
-	const scalingFactor = building.name === "huts" ? 1.14 : 1.07;
+	const scalingFactor = building.name === 'huts' ? 1.14 : 1.07;
 	const buildingAmount = building.amount - (isSale ? 1 : 0);
 	return building.cost.map((cost) => ({
 		...cost,

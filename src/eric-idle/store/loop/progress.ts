@@ -1,4 +1,4 @@
-import { canAfford, useGame } from "../index";
+import { canAfford, useGame } from '../index';
 
 export const checkProgress = () => {
 	const { game } = useGame.getState();
@@ -9,7 +9,7 @@ export const checkProgress = () => {
 			const goal = progress.goal;
 
 			const shouldUnlock =
-				"technology" in goal
+				'technology' in goal
 					? game.technologies[goal.technology].discovered
 					: canAfford({ cost: [goal] });
 
@@ -30,30 +30,30 @@ const applyProgress = (progressName: string) => {
 
 	Object.values(game.resources)
 		.filter((o) => o.prereq === progressName)
-		.forEach((o) =>
+		.forEach((o) => {
 			useGame.setState(({ game }) => {
-				game.resources[o.name].status = "visible";
-			}),
-		);
+				game.resources[o.name].status = 'visible';
+			});
+		});
 	Object.values(game.buildings)
 		.filter((o) => o.prereq === progressName)
-		.forEach((o) =>
+		.forEach((o) => {
 			useGame.setState(({ game }) => {
-				game.buildings[o.name].status = "visible";
-			}),
-		);
+				game.buildings[o.name].status = 'visible';
+			});
+		});
 	Object.values(game.jobs)
 		.filter((o) => o.prereq === progressName)
-		.forEach((o) =>
+		.forEach((o) => {
 			useGame.setState(({ game }) => {
-				game.jobs[o.name].status = "visible";
-			}),
-		);
+				game.jobs[o.name].status = 'visible';
+			});
+		});
 	Object.values(game.technologies)
 		.filter((o) => o.prereq === progressName)
-		.forEach((o) =>
+		.forEach((o) => {
 			useGame.setState(({ game }) => {
-				game.technologies[o.name].status = "visible";
-			}),
-		);
+				game.technologies[o.name].status = 'visible';
+			});
+		});
 };

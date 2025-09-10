@@ -64,7 +64,7 @@ const TimeUntil = ({ resource }: { resource: Resource }) => {
 				: { time: 0, result: '' };
 
 	const fmt = (time: number) =>
-		intlFormatDistance(new Date().getTime() + time * 1000, new Date(), {
+		intlFormatDistance(Date.now() + time * 1000, new Date(), {
 			style: 'narrow',
 		});
 

@@ -3,8 +3,8 @@ import {
 	DAYS_IN_YEAR,
 	SEASONS,
 	TICKS_PER_DAY,
-} from "../../constants/calendar";
-import { useGame } from "..";
+} from '../../constants/calendar';
+import { useGame } from '..';
 
 export const countTick = () => {
 	useGame.setState(({ game }) => {

@@ -1,5 +1,5 @@
-import { useGame } from "..";
-import { createEvent, getPByTime } from "../utils";
+import { useGame } from '..';
+import { createEvent, getPByTime } from '../utils';
 
 const VILLAGER_CREATION_SECONDS = import.meta.env.DEV ? 3 : 30;
 
@@ -29,7 +29,7 @@ const createVillager = () => {
 		game.jobs[game.defaultJob].amount += villagersToCreate;
 
 		const event = createEvent(
-			`${villagersToCreate} ${villagersToCreate === 1 ? "villager joins" : "villagers join"} the community`,
+			`${villagersToCreate} ${villagersToCreate === 1 ? 'villager joins' : 'villagers join'} the community`,
 		);
 		game.log = [event, ...game.log];
 		game.villagerCreatedAt = Date.now();

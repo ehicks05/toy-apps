@@ -1,6 +1,6 @@
-import { FOOD_EATEN_PER_SECOND } from "../../constants/game";
-import { incrementResource, useGame } from "..";
-import { createEvent, getPByTime } from "../utils";
+import { FOOD_EATEN_PER_SECOND } from '../../constants/game';
+import { incrementResource, useGame } from '..';
+import { createEvent, getPByTime } from '../utils';
 
 export const SECONDS_PER_HUNT = 60;
 
@@ -20,7 +20,7 @@ const huntingPartyFood = () => {
 const handleHuntingPartyReturn = () => {
 	const foodFound = huntingPartyFood();
 
-	incrementResource("food", foodFound);
+	incrementResource('food', foodFound);
 
 	useGame.setState(({ game }) => {
 		game.isHuntingPartyActive = false;

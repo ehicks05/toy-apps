@@ -1,8 +1,8 @@
-import { FOOD_EATEN_PER_SECOND } from "../../constants/game";
-import { SECONDS_PER_TICK } from "../../constants/gameSpeed";
-import type { Game } from "../../constants/types";
-import { incrementResource, useGame } from "../index";
-import { createEvent } from "../utils";
+import { FOOD_EATEN_PER_SECOND } from '../../constants/game';
+import { SECONDS_PER_TICK } from '../../constants/gameSpeed';
+import type { Game } from '../../constants/types';
+import { incrementResource, useGame } from '../index';
+import { createEvent } from '../utils';
 
 const removeWorkers = (_count: number) => {
 	const { game } = useGame.getState();
@@ -12,7 +12,7 @@ const removeWorkers = (_count: number) => {
 	while (count > 0) {
 		const jobName =
 			game.jobs.idlers.amount > 0
-				? "idlers"
+				? 'idlers'
 				: Object.values(game.jobs).find((job) => job.amount > 0)?.name;
 
 		if (jobName) {
@@ -50,7 +50,7 @@ export const updateResources = () => {
 
 		// villagers gotta eat
 		const foodConsumption =
-			resource.name === "food"
+			resource.name === 'food'
 				? FOOD_EATEN_PER_SECOND * game.resources.villagers.amount
 				: 0;
 
@@ -61,7 +61,7 @@ export const updateResources = () => {
 		});
 
 		incrementResource(
-			resource.name as keyof Game["resources"],
+			resource.name as keyof Game['resources'],
 			// apply rate per tick
 			newRate * SECONDS_PER_TICK,
 		);
@@ -73,12 +73,12 @@ export const updateResources = () => {
 		const deaths = Math.ceil(foodDeficit / FOOD_EATEN_PER_SECOND);
 
 		removeWorkers(deaths);
-		incrementResource("food", deaths * FOOD_EATEN_PER_SECOND);
+		incrementResource('food', deaths * FOOD_EATEN_PER_SECOND);
 
 		useGame.setState(({ game }) => {
 			game.resources.villagers.amount -= deaths;
 			const event = createEvent(
-				`${deaths} villager${deaths !== 1 ? "s" : ""} starved`,
+				`${deaths} villager${deaths !== 1 ? 's' : ''} starved`,
 			);
 			game.log = [event, ...game.log];
 		});

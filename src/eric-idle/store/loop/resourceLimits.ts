@@ -1,4 +1,4 @@
-import { useGame } from "..";
+import { useGame } from '..';
 
 export const updateResourceLimits = () => {
 	const { game } = useGame.getState();
@@ -10,13 +10,11 @@ export const updateResourceLimits = () => {
 			.filter((building) => building.resourceLimitModifier)
 			.forEach((building) => {
 				building.resourceLimitModifier
-					.filter(
-						(resourceLimitMod) => resourceLimitMod.resource === resource.name,
-					)
+					.filter((resourceLimitMod) => resourceLimitMod.resource === resource.name)
 					.forEach((resourceLimitMod) => {
-						if (resourceLimitMod.type === "mult")
+						if (resourceLimitMod.type === 'mult')
 							multiplicativeMod += building.amount * resourceLimitMod.amount;
-						if (resourceLimitMod.type === "add")
+						if (resourceLimitMod.type === 'add')
 							additiveMod += building.amount * resourceLimitMod.amount;
 					});
 			});

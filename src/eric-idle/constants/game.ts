@@ -1,9 +1,9 @@
-import { buildings } from "./buildings";
-import { jobs } from "./jobs";
-import { progressChecks } from "./progressChecks";
-import { resources } from "./resources";
-import { technologies } from "./technologies";
-import type { Game } from "./types";
+import { buildings } from './buildings';
+import { jobs } from './jobs';
+import { progressChecks } from './progressChecks';
+import { resources } from './resources';
+import { technologies } from './technologies';
+import type { Game } from './types';
 
 export const DEFAULT_GAME: Game = {
 	resources: resources,
@@ -14,7 +14,7 @@ export const DEFAULT_GAME: Game = {
 
 	log: [],
 	tickCount: 0,
-	defaultJob: "idlers",
+	defaultJob: 'idlers',
 	villagerCreatedAt: Date.now(),
 	isIncomingVillager: false,
 	huntingPartyReturnedAt: Date.now(),

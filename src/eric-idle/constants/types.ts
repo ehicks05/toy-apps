@@ -1,9 +1,9 @@
-import type { ICONS } from "./icons";
+import type { ICONS } from './icons';
 
-export type UnlockStatus = "hidden" | "visible";
-export type ModifierType = "add" | "mult";
+export type UnlockStatus = 'hidden' | 'visible';
+export type ModifierType = 'add' | 'mult';
 export interface ResourceAmount {
-	resource: keyof Game["resources"];
+	resource: keyof Game['resources'];
 	amount: number;
 }
 export interface Event {
@@ -13,8 +13,8 @@ export interface Event {
 }
 
 export interface Resource {
-	name: keyof Game["resources"];
-	prereq: keyof Game["progress"] | "";
+	name: keyof Game['resources'];
+	prereq: keyof Game['progress'] | '';
 	status: UnlockStatus;
 	image: keyof typeof ICONS;
 	amount: number;
@@ -24,8 +24,8 @@ export interface Resource {
 }
 
 export interface Job {
-	name: keyof Game["jobs"];
-	prereq: keyof Game["progress"];
+	name: keyof Game['jobs'];
+	prereq: keyof Game['progress'];
 	status: UnlockStatus;
 	image: keyof typeof ICONS;
 	amount: number;
@@ -33,8 +33,8 @@ export interface Job {
 }
 
 export interface Building {
-	name: keyof Game["buildings"];
-	prereq: keyof Game["progress"];
+	name: keyof Game['buildings'];
+	prereq: keyof Game['progress'];
 	status: UnlockStatus;
 	image: keyof typeof ICONS;
 	amount: number;
@@ -49,8 +49,8 @@ export interface Building {
 }
 
 export interface Technology {
-	name: keyof Game["technologies"];
-	prereq: keyof Game["progress"];
+	name: keyof Game['technologies'];
+	prereq: keyof Game['progress'];
 	status: UnlockStatus;
 	image: keyof typeof ICONS;
 	discovered: boolean;
@@ -58,8 +58,8 @@ export interface Technology {
 }
 
 export interface ProgressCheck {
-	name: keyof Game["progress"];
-	goal: ResourceAmount | { technology: keyof Game["technologies"] };
+	name: keyof Game['progress'];
+	goal: ResourceAmount | { technology: keyof Game['technologies'] };
 	unlocked: boolean;
 }
 
@@ -115,7 +115,7 @@ export interface Game {
 
 	log: Event[];
 	tickCount: number;
-	defaultJob: keyof Game["jobs"];
+	defaultJob: keyof Game['jobs'];
 	villagerCreatedAt: number;
 	isIncomingVillager: boolean;
 	huntingPartyReturnedAt: number;
