@@ -1,0 +1,56 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  height: -webkit-fill-available;
+}
+
+body {
+  min-height: 100vh;
+  min-height: -webkit-fill-available;
+  color: #eee;
+  background-color: #111;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+input {
+  color-scheme: dark;
+}
+
+/* SCROLLBAR */
+body {
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar {
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #555;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #777;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #aaa;
+}
+
+/* hack */
+input {
+  @apply outline-none;
+}
+
+::-webkit-color-swatch {
+  border: none;
+}
