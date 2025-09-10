@@ -1,0 +1,60 @@
+import type { Game, Job } from "./types";
+
+export const jobs: Record<keyof Game["jobs"], Job> = {
+	idlers: {
+		name: "idlers",
+		image: "bed",
+		prereq: "unlockVillagers",
+		status: "hidden",
+		production: [],
+		amount: 0,
+	},
+	hunters: {
+		name: "hunters",
+		image: "ham",
+		prereq: "unlockVillagers",
+		status: "hidden",
+		production: [{ resource: "food", amount: 0.05 }],
+		amount: 0,
+	},
+	farmers: {
+		name: "farmers",
+		image: "shovel",
+		prereq: "unlockFarming",
+		status: "hidden",
+		production: [{ resource: "food", amount: 0.05 }],
+		amount: 0,
+	},
+	thinkers: {
+		name: "thinkers",
+		image: "graduationCap",
+		prereq: "unlockVillagers",
+		status: "hidden",
+		production: [{ resource: "research", amount: 0.02 }],
+		amount: 0,
+	},
+	foresters: {
+		name: "foresters",
+		image: "axe",
+		prereq: "unlockVillagers",
+		status: "hidden",
+		production: [{ resource: "lumber", amount: 0.03 }],
+		amount: 0,
+	},
+	miners: {
+		name: "miners",
+		image: "pickaxe",
+		prereq: "unlockStoneConstruction",
+		status: "hidden",
+		production: [{ resource: "stone", amount: 0.01 }],
+		amount: 0,
+	},
+	builders: {
+		name: "builders",
+		image: "hammer",
+		prereq: "unlockBuilders",
+		status: "hidden",
+		production: [],
+		amount: 0,
+	},
+};
