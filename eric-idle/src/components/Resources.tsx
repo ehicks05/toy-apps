@@ -5,7 +5,7 @@ import { Button } from '@/components/ui/button';
 import { FOOD_EATEN_PER_SECOND } from '@/constants/game.js';
 import type { Resource } from '@/constants/types';
 import { incrementResource, useGame } from '@/store';
-import { GameIcon } from './GameIcon';
+import { GameIcon } from './GameIcon.js';
 import {
 	Tooltip,
 	TooltipContent,
