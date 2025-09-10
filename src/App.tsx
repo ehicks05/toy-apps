@@ -6,6 +6,7 @@ import { EricIdle } from './eric-idle/EricIdle';
 import { Hootch } from './hootch';
 import Jikan from './jikan/Jikan';
 import { LogicalFitness } from './logical-fitness/main';
+import { UnitedStatesOfFood } from './united-states-of-food';
 
 const MainMenu = () => {
 	document.title = 'toy apps';
@@ -21,6 +22,9 @@ const MainMenu = () => {
 				logical-fitness - logical increments for fitness
 			</Link>
 			<Link to={'/eric-idle'}>eric-idle - incomplete idle game</Link>
+			<Link to={'/united-states-of-food'}>
+				united-states-of-food - signature foods in each state
+			</Link>
 		</div>
 	);
 };
@@ -38,6 +42,7 @@ export function App() {
 					<Route path="/cal-el/*" element={<CalElDemo />} />
 					<Route path="/logical-fitness/*" element={<LogicalFitness />} />
 					<Route path="/eric-idle/*" element={<EricIdle />} />
+					<Route path="/united-states-of-food/*" element={<UnitedStatesOfFood />} />
 				</Routes>
 			</div>
 			<div>
