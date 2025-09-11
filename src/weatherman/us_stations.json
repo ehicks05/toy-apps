@@ -1,0 +1,8031 @@
+[
+	{
+		"id" : "91176022519",
+		"name" : "KANEOHE BAY MCAS, HI US",
+		"latitude" : 21.45045,
+		"longitude" : -157.76794,
+		"pleasant_days" : 199
+	},
+	{
+		"id" : "72065100232",
+		"name" : "UNION CO AIRPORT, OH US",
+		"latitude" : 40.225,
+		"longitude" : -83.352,
+		"pleasant_days" : 128
+	},
+	{
+		"id" : "72033063853",
+		"name" : "MOUNT CARMEL MUNICIPAL AIRPORT, IL US",
+		"latitude" : 38.60667,
+		"longitude" : -87.72667,
+		"pleasant_days" : 92
+	},
+	{
+		"id" : "72032704995",
+		"name" : "MENOMONIE MUNICIPAL AIRPORT SCORE FIELD, WI US",
+		"latitude" : 44.89222,
+		"longitude" : -91.86778,
+		"pleasant_days" : 93
+	},
+	{
+		"id" : "72030763804",
+		"name" : "HUNTSVILLE MADISON CO EXECUTIVE AIRPORT, AL US",
+		"latitude" : 34.86139,
+		"longitude" : -86.55722,
+		"pleasant_days" : 81
+	},
+	{
+		"id" : "70362625323",
+		"name" : "HAINES AIRPORT, AK US",
+		"latitude" : 59.24287,
+		"longitude" : -135.51139,
+		"pleasant_days" : 5
+	},
+	{
+		"id" : "70343025402",
+		"name" : "MIDDLETON ISLAND, AK US",
+		"latitude" : 59.43333,
+		"longitude" : -146.33333,
+		"pleasant_days" : 0
+	},
+	{
+		"id" : "72449013993",
+		"name" : "ST JOSEPH ROSECRANS MEMORIAL AIRPORT, MO US",
+		"latitude" : 39.7736,
+		"longitude" : -94.9233,
+		"pleasant_days" : 60
+	},
+	{
+		"id" : "72393093214",
+		"name" : "VANDENBERG AFB, CA US",
+		"latitude" : 34.71667,
+		"longitude" : -120.56667,
+		"pleasant_days" : 62
+	},
+	{
+		"id" : "72381523161",
+		"name" : "BARSTOW DAGGETT AIRPORT, CA US",
+		"latitude" : 34.8536,
+		"longitude" : -116.7858,
+		"pleasant_days" : 7
+	},
+	{
+		"id" : "72367723054",
+		"name" : "LAS VEGAS MUNICIPAL AIRPORT, NM US",
+		"latitude" : 35.65417,
+		"longitude" : -105.14194,
+		"pleasant_days" : 30
+	},
+	{
+		"id" : "72365493091",
+		"name" : "LOS ALAMOS MUNICIPAL AIRPORT, NM US",
+		"latitude" : 35.88333,
+		"longitude" : -106.28333,
+		"pleasant_days" : 102
+	},
+	{
+		"id" : "72274793084",
+		"name" : "SAFFORD MUNICIPAL AIRPORT, AZ US",
+		"latitude" : 32.85472,
+		"longitude" : -109.63528,
+		"pleasant_days" : 12
+	},
+	{
+		"id" : "72226903850",
+		"name" : "CAIRNS FIELD FORT RUCKER, AL US",
+		"latitude" : 31.26667,
+		"longitude" : -85.71667,
+		"pleasant_days" : 109
+	},
+	{
+		"id" : "72226013895",
+		"name" : "MONTGOMERY AIRPORT, AL US",
+		"latitude" : 32.2997,
+		"longitude" : -86.4075,
+		"pleasant_days" : 84
+	},
+	{
+		"id" : "72225013829",
+		"name" : "FORT BENNING LAWSON FIELD, GA US",
+		"latitude" : 32.35,
+		"longitude" : -85.0,
+		"pleasant_days" : 99
+	},
+	{
+		"id" : "72221763881",
+		"name" : "DUBLIN MUNICIPAL AIRPORT, GA US",
+		"latitude" : 32.56444,
+		"longitude" : -82.98528,
+		"pleasant_days" : 93
+	},
+	{
+		"id" : "72217104889",
+		"name" : "PONTIAC MUNICIPAL AIRPORT, IL US",
+		"latitude" : 40.9244,
+		"longitude" : -88.6239,
+		"pleasant_days" : 90
+	},
+	{
+		"id" : "72028653977",
+		"name" : "GRANBURY MUNICIPAL AIRPORT, TX US",
+		"latitude" : 32.44444,
+		"longitude" : -97.81694,
+		"pleasant_days" : 77
+	},
+	{
+		"id" : "91190422552",
+		"name" : "KAPALUA W. MAUI AIRPORT 462.4, HI US",
+		"latitude" : 20.9625,
+		"longitude" : -156.6753,
+		"pleasant_days" : 257
+	},
+	{
+		"id" : "74465253897",
+		"name" : "HARRISBURG RALEIGH AIRPORT, IL US",
+		"latitude" : 37.81139,
+		"longitude" : -88.54889,
+		"pleasant_days" : 86
+	},
+	{
+		"id" : "99464099999",
+		"name" : "CEDAR KEY, FL US",
+		"latitude" : 29.14,
+		"longitude" : -83.03,
+		"pleasant_days" : 153
+	},
+	{
+		"id" : "99439099999",
+		"name" : "SETTLEMENT POINT GBI, US",
+		"latitude" : 26.7,
+		"longitude" : -79.0,
+		"pleasant_days" : 189
+	},
+	{
+		"id" : "99427099999",
+		"name" : "ISLE OF SHOALS NH, NH US",
+		"latitude" : 42.97,
+		"longitude" : -70.62,
+		"pleasant_days" : 66
+	},
+	{
+		"id" : "99422099999",
+		"name" : "VENICE FL, FL US",
+		"latitude" : 27.07,
+		"longitude" : -82.45,
+		"pleasant_days" : 173
+	},
+	{
+		"id" : "72794504205",
+		"name" : "ARLINGTON MUNICIPAL AIRPORT, WA US",
+		"latitude" : 48.16056,
+		"longitude" : -122.15889,
+		"pleasant_days" : 100
+	},
+	{
+		"id" : "72540704854",
+		"name" : "GAYLORD OTSEGO CO AIRPORT, MI US",
+		"latitude" : 45.01657,
+		"longitude" : -84.68942,
+		"pleasant_days" : 103
+	},
+	{
+		"id" : "72513014777",
+		"name" : "WILKES BARRE SCRANTON INTERNATIONAL AIRPORT, PA US",
+		"latitude" : 41.33349,
+		"longitude" : -75.72273,
+		"pleasant_days" : 92
+	},
+	{
+		"id" : "72483323206",
+		"name" : "SACRAMENTO MATHER AFB, CA US",
+		"latitude" : 38.56667,
+		"longitude" : -121.3,
+		"pleasant_days" : 79
+	},
+	{
+		"id" : "72464523070",
+		"name" : "TRINIDAD AIRPORT, CO US",
+		"latitude" : 37.26217,
+		"longitude" : -104.33185,
+		"pleasant_days" : 7
+	},
+	{
+		"id" : "72450713981",
+		"name" : "CHANUTE MARTIN JOHNSON AIRPORT, KS US",
+		"latitude" : 37.6705,
+		"longitude" : -95.48462,
+		"pleasant_days" : 51
+	},
+	{
+		"id" : "72417713734",
+		"name" : "MARTINSBURG EASTERN WEST VIRGINIA REGIONAL AIRPORT, WV US",
+		"latitude" : 39.40375,
+		"longitude" : -77.97501,
+		"pleasant_days" : 87
+	},
+	{
+		"id" : "72407493780",
+		"name" : "SOUTH JERSEY REGIONAL AIRPORT, NJ US",
+		"latitude" : 39.94076,
+		"longitude" : -74.84075,
+		"pleasant_days" : 93
+	},
+	{
+		"id" : "72340703953",
+		"name" : "JONESBORO MUNICIPAL AIRPORT, AR US",
+		"latitude" : 35.83567,
+		"longitude" : -90.64424,
+		"pleasant_days" : 72
+	},
+	{
+		"id" : "72311403715",
+		"name" : "LOUISA CO FREEMAN FIELD AIRPORT, VA US",
+		"latitude" : 38.00972,
+		"longitude" : -77.97,
+		"pleasant_days" : 103
+	},
+	{
+		"id" : "72234853808",
+		"name" : "LAUREL HATTIESBURG PINE BELT REGIONAL AIRPORT, MS US",
+		"latitude" : 31.46667,
+		"longitude" : -89.33333,
+		"pleasant_days" : 103
+	},
+	{
+		"id" : "72212404998",
+		"name" : "HEBRON MUNICIPAL AIRPORT, NE US",
+		"latitude" : 40.14917,
+		"longitude" : -97.58667,
+		"pleasant_days" : 54
+	},
+	{
+		"id" : "72034054818",
+		"name" : "FRANKFORT DOW MEMORIAL FIELD AIRPORT, MI US",
+		"latitude" : 44.62556,
+		"longitude" : -86.20083,
+		"pleasant_days" : 126
+	},
+	{
+		"id" : "72273003124",
+		"name" : "FORT HUACHUCA SIERRA VISTA MUNICIPAL AIRPORT, AZ US",
+		"latitude" : 31.58833,
+		"longitude" : -110.34417,
+		"pleasant_days" : 49
+	},
+	{
+		"id" : "72224603844",
+		"name" : "EGLIN AF AUX NR 3 D, FL US",
+		"latitude" : 30.65,
+		"longitude" : -86.517,
+		"pleasant_days" : 86
+	},
+	{
+		"id" : "72215704949",
+		"name" : "MACOMB MUNICIPAL AIRPORT, IL US",
+		"latitude" : 40.52028,
+		"longitude" : -90.65222,
+		"pleasant_days" : 92
+	},
+	{
+		"id" : "72215653873",
+		"name" : "CARTERSVILLE AIRPORT, GA US",
+		"latitude" : 34.12306,
+		"longitude" : -84.84861,
+		"pleasant_days" : 96
+	},
+	{
+		"id" : "72214753817",
+		"name" : "MOULTRIE AIRPORT, GA US",
+		"latitude" : 31.08333,
+		"longitude" : -83.8,
+		"pleasant_days" : 144
+	},
+	{
+		"id" : "74331253925",
+		"name" : "DE QUEEN SEVIER CO AIRPORT, AR US",
+		"latitude" : 34.04799,
+		"longitude" : -94.40157,
+		"pleasant_days" : 91
+	},
+	{
+		"id" : "72695024285",
+		"name" : "NEWPORT MUNICIPAL AIRPORT, OR US",
+		"latitude" : 44.58333,
+		"longitude" : -124.05,
+		"pleasant_days" : 15
+	},
+	{
+		"id" : "72650454838",
+		"name" : "EAGLE RIVER UNION AIRPORT, WI US",
+		"latitude" : 45.93167,
+		"longitude" : -89.26889,
+		"pleasant_days" : 106
+	},
+	{
+		"id" : "72581024193",
+		"name" : "WENDOVER USAF AUXILIARY FIELD, UT US",
+		"latitude" : 40.7206,
+		"longitude" : -114.0358,
+		"pleasant_days" : 43
+	},
+	{
+		"id" : "72572424174",
+		"name" : "PROVO AIRPORT, UT US",
+		"latitude" : 40.21889,
+		"longitude" : -111.72333,
+		"pleasant_days" : 26
+	},
+	{
+		"id" : "72562804935",
+		"name" : "HOLDREGE BREWSTER FIELD AIRPORT, NE US",
+		"latitude" : 40.45,
+		"longitude" : -99.33917,
+		"pleasant_days" : 56
+	},
+	{
+		"id" : "72552614905",
+		"name" : "KEARNEY MUNICIPAL AIRPORT, NE US",
+		"latitude" : 40.73333,
+		"longitude" : -99.0,
+		"pleasant_days" : 38
+	},
+	{
+		"id" : "72552594949",
+		"name" : "HASTINGS MUNICIPAL AIRPORT, NE US",
+		"latitude" : 40.60021,
+		"longitude" : -98.42637,
+		"pleasant_days" : 45
+	},
+	{
+		"id" : "72551304901",
+		"name" : "AURORA MUNICIPAL AIRPORT, NE US",
+		"latitude" : 40.89306,
+		"longitude" : -97.99722,
+		"pleasant_days" : 69
+	},
+	{
+		"id" : "72549094933",
+		"name" : "FORT DODGE OZARK AIRLINES, IA US",
+		"latitude" : 42.55,
+		"longitude" : -94.18333,
+		"pleasant_days" : 95
+	},
+	{
+		"id" : "72442013997",
+		"name" : "VICHY ROLLA NATIONAL AIRPORT, MO US",
+		"latitude" : 38.13178,
+		"longitude" : -91.76468,
+		"pleasant_days" : 81
+	},
+	{
+		"id" : "72406793744",
+		"name" : "BALTIMORE MARTIN FIELD, MD US",
+		"latitude" : 39.33333,
+		"longitude" : -76.41667,
+		"pleasant_days" : 83
+	},
+	{
+		"id" : "72400603701",
+		"name" : "NORFOLK CHESAPEAKE REGIONAL AIRPORT, VA US",
+		"latitude" : 36.66556,
+		"longitude" : -76.32056,
+		"pleasant_days" : 85
+	},
+	{
+		"id" : "72400703719",
+		"name" : "SUFFOLK MUNICIPAL AIRPORT, VA US",
+		"latitude" : 36.68222,
+		"longitude" : -76.60167,
+		"pleasant_days" : 96
+	},
+	{
+		"id" : "72374023194",
+		"name" : "WINSLOW AIRPORT, AZ US",
+		"latitude" : 35.02795,
+		"longitude" : -110.72206,
+		"pleasant_days" : 5
+	},
+	{
+		"id" : "72344593993",
+		"name" : "FAYETTEVILLE DRAKE FIELD, AR US",
+		"latitude" : 36.01027,
+		"longitude" : -94.16824,
+		"pleasant_days" : 72
+	},
+	{
+		"id" : "72344403978",
+		"name" : "BENTONVILLE MUNICIPAL AIRPORT, AR US",
+		"latitude" : 36.35,
+		"longitude" : -94.21667,
+		"pleasant_days" : 67
+	},
+	{
+		"id" : "72292023191",
+		"name" : "AVALON CATALINA AIRPORT, CA US",
+		"latitude" : 33.40419,
+		"longitude" : -118.41456,
+		"pleasant_days" : 167
+	},
+	{
+		"id" : "72272193063",
+		"name" : "SILVER CITY GRANT CO AIRPORT, NM US",
+		"latitude" : 32.63333,
+		"longitude" : -108.16667,
+		"pleasant_days" : 29
+	},
+	{
+		"id" : "72268793033",
+		"name" : "CAVERN CITY AIRPORT, NM US",
+		"latitude" : 32.33355,
+		"longitude" : -104.25846,
+		"pleasant_days" : 19
+	},
+	{
+		"id" : "72267703027",
+		"name" : "CLINES CORNERS, NM US",
+		"latitude" : 35.003027,
+		"longitude" : -105.662781,
+		"pleasant_days" : 40
+	},
+	{
+		"id" : "72252712976",
+		"name" : "ANGLETON LAKE JACKSON BRAZORIA CO AIRPORT, TX US",
+		"latitude" : 29.11536,
+		"longitude" : -95.46323,
+		"pleasant_days" : 113
+	},
+	{
+		"id" : "72251512926",
+		"name" : "CORPUS CHRISTI NAS, TX US",
+		"latitude" : 27.68786,
+		"longitude" : -97.29158,
+		"pleasant_days" : 116
+	},
+	{
+		"id" : "72247003901",
+		"name" : "LONGVIEW E TX REGIONAL AIRPORT, TX US",
+		"latitude" : 32.39094,
+		"longitude" : -94.71396,
+		"pleasant_days" : 77
+	},
+	{
+		"id" : "72210812894",
+		"name" : "FORT MYERS SW FLORIDA REGIONAL AIRPORT, FL US",
+		"latitude" : 26.53805,
+		"longitude" : -81.75674,
+		"pleasant_days" : 159
+	},
+	{
+		"id" : "72207303727",
+		"name" : "CLINTON SAMPSON CO AIRPORT, NC US",
+		"latitude" : 34.97556,
+		"longitude" : -78.36444,
+		"pleasant_days" : 122
+	},
+	{
+		"id" : "72203412812",
+		"name" : "PUNTA GORDA CHARLOTTE CO AIRPORT, FL US",
+		"latitude" : 26.91847,
+		"longitude" : -81.99391,
+		"pleasant_days" : 135
+	},
+	{
+		"id" : "72202912888",
+		"name" : "MIAMI KENDALL TAMIAMI EXEC AIRPORT, FL US",
+		"latitude" : 25.64226,
+		"longitude" : -80.43467,
+		"pleasant_days" : 159
+	},
+	{
+		"id" : "72062900216",
+		"name" : "JACK BARSTOW AIRPORT, MI US",
+		"latitude" : 43.663,
+		"longitude" : -84.261,
+		"pleasant_days" : 125
+	},
+	{
+		"id" : "72059400188",
+		"name" : "HOUSTON DUNN HELISTOP, TX US",
+		"latitude" : 29.717,
+		"longitude" : -95.383,
+		"pleasant_days" : 96
+	},
+	{
+		"id" : "99472099999",
+		"name" : "FLAT ISLAND LIGHT, AK US",
+		"latitude" : 59.332,
+		"longitude" : -151.995,
+		"pleasant_days" : 0
+	},
+	{
+		"id" : "99423099999",
+		"name" : "FOLLY ISLAND SC, US",
+		"latitude" : 32.68,
+		"longitude" : -79.89,
+		"pleasant_days" : 107
+	},
+	{
+		"id" : "91285021504",
+		"name" : "HILO INTERNATIONAL AIRPORT 87, HI US",
+		"latitude" : 19.71909,
+		"longitude" : -155.04897,
+		"pleasant_days" : 260
+	},
+	{
+		"id" : "91197521510",
+		"name" : "KAILUA KONA KE AHOLE AIRPORT, HI US",
+		"latitude" : 19.73782,
+		"longitude" : -156.04795,
+		"pleasant_days" : 152
+	},
+	{
+		"id" : "91190022516",
+		"name" : "KAHULUI AIRPORT, HI US",
+		"latitude" : 20.88871,
+		"longitude" : -156.43453,
+		"pleasant_days" : 158
+	},
+	{
+		"id" : "91178022551",
+		"name" : "EWA KALAELOA AIRPORT, HI US",
+		"latitude" : 21.30555,
+		"longitude" : -158.06582,
+		"pleasant_days" : 179
+	},
+	{
+		"id" : "91186022534",
+		"name" : "MOLOKAI KAUNAKAKAI MOLOKAI AIRPORT, HI US",
+		"latitude" : 21.15448,
+		"longitude" : -157.09612,
+		"pleasant_days" : 244
+	},
+	{
+		"id" : "91182022521",
+		"name" : "HONOLULU INTERNATIONAL AIRPORT, HI US",
+		"latitude" : 21.32402,
+		"longitude" : -157.93946,
+		"pleasant_days" : 177
+	},
+	{
+		"id" : "91165022536",
+		"name" : "LIHUE WEATHER SERVICE OFFICE AIRPORT 1020.1, HI US",
+		"latitude" : 21.98048,
+		"longitude" : -159.33863,
+		"pleasant_days" : 290
+	},
+	{
+		"id" : "78551011624",
+		"name" : "HENRY E. ROHLSEN AIRPORT, VI US",
+		"latitude" : 17.69965,
+		"longitude" : -64.81249,
+		"pleasant_days" : 62
+	},
+	{
+		"id" : "78543011640",
+		"name" : "CYRIL E. KING AIRPORT, VI US",
+		"latitude" : 18.33626,
+		"longitude" : -64.97994,
+		"pleasant_days" : 117
+	},
+	{
+		"id" : "78526011641",
+		"name" : "SAN JUAN L M MARIN INTERNATIONAL AIRPORT, PR US",
+		"latitude" : 18.43261,
+		"longitude" : -66.01065,
+		"pleasant_days" : 30
+	},
+	{
+		"id" : "74793012843",
+		"name" : "VERO BEACH INTERNATIONAL AIRPORT, FL US",
+		"latitude" : 27.6553,
+		"longitude" : -80.41425,
+		"pleasant_days" : 165
+	},
+	{
+		"id" : "74791593718",
+		"name" : "NORTH MYRTLE BEACH, SC US",
+		"latitude" : 33.81618,
+		"longitude" : -78.72043,
+		"pleasant_days" : 104
+	},
+	{
+		"id" : "74791013717",
+		"name" : "MYRTLE BEACH AFB, SC US",
+		"latitude" : 33.68333,
+		"longitude" : -78.93333,
+		"pleasant_days" : 103
+	},
+	{
+		"id" : "74790013849",
+		"name" : "SUMTER SHAW AFB, SC US",
+		"latitude" : 33.96667,
+		"longitude" : -80.46667,
+		"pleasant_days" : 85
+	},
+	{
+		"id" : "74788012810",
+		"name" : "MACDILL AFB, FL US",
+		"latitude" : 27.85,
+		"longitude" : -82.51667,
+		"pleasant_days" : 156
+	},
+	{
+		"id" : "74783012849",
+		"name" : "FORT LAUDERDALE INTERNATIONAL AIRPORT, FL US",
+		"latitude" : 26.07875,
+		"longitude" : -80.16223,
+		"pleasant_days" : 185
+	},
+	{
+		"id" : "74782053860",
+		"name" : "JACKSONVILLE CRAIG MUNICIPAL AIRPORT, FL US",
+		"latitude" : 30.33708,
+		"longitude" : -81.51277,
+		"pleasant_days" : 131
+	},
+	{
+		"id" : "74787012834",
+		"name" : "DAYTONA BEACH INTERNATIONAL AIRPORT, FL US",
+		"latitude" : 29.17351,
+		"longitude" : -81.07185,
+		"pleasant_days" : 172
+	},
+	{
+		"id" : "74781263813",
+		"name" : "MARIETTA COBB CO MCCOLLUM FIELD AIRPORT, GA US",
+		"latitude" : 34.01306,
+		"longitude" : -84.59861,
+		"pleasant_days" : 86
+	},
+	{
+		"id" : "74781013857",
+		"name" : "VALDOSTA MOODY AFB, GA US",
+		"latitude" : 30.96667,
+		"longitude" : -83.2,
+		"pleasant_days" : 116
+	},
+	{
+		"id" : "74780663809",
+		"name" : "THOMASTON UPSON CO AIRPORT, GA US",
+		"latitude" : 32.955,
+		"longitude" : -84.26417,
+		"pleasant_days" : 124
+	},
+	{
+		"id" : "74780563818",
+		"name" : "STATESBORO BULLOCH CO AIRPORT, GA US",
+		"latitude" : 32.48306,
+		"longitude" : -81.73722,
+		"pleasant_days" : 125
+	},
+	{
+		"id" : "74777003852",
+		"name" : "VALPARAISO HURLBURT FIELD, FL US",
+		"latitude" : 30.41667,
+		"longitude" : -86.68333,
+		"pleasant_days" : 111
+	},
+	{
+		"id" : "74768613820",
+		"name" : "BILOXI KEESLER AFB, MS US",
+		"latitude" : 30.41667,
+		"longitude" : -88.91667,
+		"pleasant_days" : 119
+	},
+	{
+		"id" : "74775013846",
+		"name" : "TYNDALL AFB, FL US",
+		"latitude" : 30.06667,
+		"longitude" : -85.58333,
+		"pleasant_days" : 122
+	},
+	{
+		"id" : "74768013939",
+		"name" : "GREENVILLE ASOS, MS US",
+		"latitude" : 33.49385,
+		"longitude" : -90.98058,
+		"pleasant_days" : 58
+	},
+	{
+		"id" : "74768853858",
+		"name" : "PASCAGOULA LOTT INTERNATIONAL AIRPORT, MS US",
+		"latitude" : 30.46304,
+		"longitude" : -88.53156,
+		"pleasant_days" : 115
+	},
+	{
+		"id" : "74759013833",
+		"name" : "HATTIESBURG CHAIN MUNICIPAL AIRPORT, MS US",
+		"latitude" : 31.26951,
+		"longitude" : -89.25609,
+		"pleasant_days" : 111
+	},
+	{
+		"id" : "74758013978",
+		"name" : "GREENWOOD LEFLORE AIRPORT, MS US",
+		"latitude" : 33.49612,
+		"longitude" : -90.08946,
+		"pleasant_days" : 80
+	},
+	{
+		"id" : "74757093874",
+		"name" : "GULFPORT BILOXI AIRPORT, MS US",
+		"latitude" : 30.4121,
+		"longitude" : -89.08093,
+		"pleasant_days" : 112
+	},
+	{
+		"id" : "74746003904",
+		"name" : "COLLEGE STATION EASTERWOOD FIELD, TX US",
+		"latitude" : 30.5912,
+		"longitude" : -96.36309,
+		"pleasant_days" : 81
+	},
+	{
+		"id" : "74756012816",
+		"name" : "GAINESVILLE REGIONAL AIRPORT, FL US",
+		"latitude" : 29.6917,
+		"longitude" : -82.27603,
+		"pleasant_days" : 109
+	},
+	{
+		"id" : "74754093915",
+		"name" : "ALEXANDRIA INTERNATIONAL AIRPORT, LA US",
+		"latitude" : 31.33464,
+		"longitude" : -92.55849,
+		"pleasant_days" : 90
+	},
+	{
+		"id" : "74739013961",
+		"name" : "FORT WORTH MEACHAM FIELD, TX US",
+		"latitude" : 32.82478,
+		"longitude" : -97.36403,
+		"pleasant_days" : 59
+	},
+	{
+		"id" : "74718503144",
+		"name" : "IMPERIAL CO AIRPORT, CA US",
+		"latitude" : 32.83464,
+		"longitude" : -115.57656,
+		"pleasant_days" : 37
+	},
+	{
+		"id" : "74740013973",
+		"name" : "JUNCTION KIMBLE CO AIRPORT, TX US",
+		"latitude" : 30.51048,
+		"longitude" : -99.76649,
+		"pleasant_days" : 57
+	},
+	{
+		"id" : "74718823158",
+		"name" : "BLYTHE ASOS, CA US",
+		"latitude" : 33.61876,
+		"longitude" : -114.71451,
+		"pleasant_days" : 44
+	},
+	{
+		"id" : "74704003102",
+		"name" : "ONTARIO INTERNATIONAL AIRPORT, CA US",
+		"latitude" : 34.05314,
+		"longitude" : -117.57689,
+		"pleasant_days" : 109
+	},
+	{
+		"id" : "74694003708",
+		"name" : "GOLDSBORO WAYNE MUNICIPAL AIRPORT, NC US",
+		"latitude" : 35.46028,
+		"longitude" : -77.96472,
+		"pleasant_days" : 93
+	},
+	{
+		"id" : "74598013702",
+		"name" : "LANGLEY AIR FORCE BASE, VA US",
+		"latitude" : 37.08278,
+		"longitude" : -76.36028,
+		"pleasant_days" : 84
+	},
+	{
+		"id" : "74671693808",
+		"name" : "BOWLING GREEN WARREN CO AIRPORT, KY US",
+		"latitude" : 36.96467,
+		"longitude" : -86.42379,
+		"pleasant_days" : 80
+	},
+	{
+		"id" : "74671013806",
+		"name" : "FORT CAMPBELL ARMY AIR FIELD, KY US",
+		"latitude" : 36.66667,
+		"longitude" : -87.48333,
+		"pleasant_days" : 85
+	},
+	{
+		"id" : "74614123141",
+		"name" : "INDIAN SPRINGS, NV US",
+		"latitude" : 36.58333,
+		"longitude" : -115.68333,
+		"pleasant_days" : 39
+	},
+	{
+		"id" : "74614023112",
+		"name" : "LAS VEGAS NELLIS AFB, NV US",
+		"latitude" : 36.25,
+		"longitude" : -115.03333,
+		"pleasant_days" : 25
+	},
+	{
+		"id" : "74611003182",
+		"name" : "BICYCLE LAKE FORT IRWIN ARMY AIR FIELD, CA US",
+		"latitude" : 35.28333,
+		"longitude" : -116.63333,
+		"pleasant_days" : 34
+	},
+	{
+		"id" : "74498914747",
+		"name" : "DUNKIRK CHAUTAUQUA CO AIRPORT, NY US",
+		"latitude" : 42.4932,
+		"longitude" : -79.27623,
+		"pleasant_days" : 122
+	},
+	{
+		"id" : "74491514775",
+		"name" : "WESTFIELD BARNES REGIONAL AIRPORT, MA US",
+		"latitude" : 42.16005,
+		"longitude" : -72.71246,
+		"pleasant_days" : 87
+	},
+	{
+		"id" : "74491014703",
+		"name" : "CHICOPEE FALLS WESTOVER FIELD, MA US",
+		"latitude" : 42.2,
+		"longitude" : -72.53333,
+		"pleasant_days" : 92
+	},
+	{
+		"id" : "74465853889",
+		"name" : "FLORA MUNICIPAL AIRPORT, IL US",
+		"latitude" : 38.66472,
+		"longitude" : -88.45278,
+		"pleasant_days" : 80
+	},
+	{
+		"id" : "74370014715",
+		"name" : "WHEELER SACK FIELD ARMY AIR FIELD, NY US",
+		"latitude" : 44.05,
+		"longitude" : -75.73333,
+		"pleasant_days" : 105
+	},
+	{
+		"id" : "72798594276",
+		"name" : "FRIDAY HARBOR AIRPORT, WA US",
+		"latitude" : 48.51998,
+		"longitude" : -123.0264,
+		"pleasant_days" : 98
+	},
+	{
+		"id" : "72789094197",
+		"name" : "OMAK, WA US",
+		"latitude" : 48.46113,
+		"longitude" : -119.52091,
+		"pleasant_days" : 28
+	},
+	{
+		"id" : "72788594266",
+		"name" : "PORT ANGELES FAIRCHILD INTERNATIONAL AIRPORT, WA US",
+		"latitude" : 48.12194,
+		"longitude" : -123.50662,
+		"pleasant_days" : 66
+	},
+	{
+		"id" : "72450613986",
+		"name" : "HUTCHINSON MUNICIPAL AIRPORT, KS US",
+		"latitude" : 38.06824,
+		"longitude" : -97.86075,
+		"pleasant_days" : 32
+	},
+	{
+		"id" : "72428014821",
+		"name" : "JOHN GLENN INTERNATIONAL AIRPORT, OH US",
+		"latitude" : 39.99068,
+		"longitude" : -82.87703,
+		"pleasant_days" : 76
+	},
+	{
+		"id" : "74793112876",
+		"name" : "WINTER HAVEN GILBERT AIRPORT, FL US",
+		"latitude" : 28.06137,
+		"longitude" : -81.75684,
+		"pleasant_days" : 147
+	},
+	{
+		"id" : "74702023110",
+		"name" : "LEMOORE REEVES NAS, CA US",
+		"latitude" : 36.33333,
+		"longitude" : -119.95,
+		"pleasant_days" : 24
+	},
+	{
+		"id" : "74486514719",
+		"name" : "WESTHAMPTON GABRESKI AIRPORT, NY US",
+		"latitude" : 40.85055,
+		"longitude" : -72.61928,
+		"pleasant_days" : 124
+	},
+	{
+		"id" : "72791094224",
+		"name" : "ASTORIA AIRPORT PORT OF, OR US",
+		"latitude" : 46.15694,
+		"longitude" : -123.88326,
+		"pleasant_days" : 48
+	},
+	{
+		"id" : "72790024141",
+		"name" : "EPHRATA AIRPORT, WA US",
+		"latitude" : 47.30777,
+		"longitude" : -119.51551,
+		"pleasant_days" : 35
+	},
+	{
+		"id" : "72782724110",
+		"name" : "MOSES LAKE GRANT CO AIRPORT, WA US",
+		"latitude" : 47.19295,
+		"longitude" : -119.31459,
+		"pleasant_days" : 34
+	},
+	{
+		"id" : "72656404967",
+		"name" : "RED WING REGIONAL AIRPORT, MN US",
+		"latitude" : 44.58917,
+		"longitude" : -92.48472,
+		"pleasant_days" : 113
+	},
+	{
+		"id" : "72656194997",
+		"name" : "WADENA MUNICIPAL AIRPORT, MN US",
+		"latitude" : 46.44667,
+		"longitude" : -95.21167,
+		"pleasant_days" : 92
+	},
+	{
+		"id" : "72646314897",
+		"name" : "WAUSAU ASOS, WI US",
+		"latitude" : 44.927497,
+		"longitude" : -89.625279,
+		"pleasant_days" : 110
+	},
+	{
+		"id" : "72641754911",
+		"name" : "MEDFORD TAYLOR CO AIRPORT, WI US",
+		"latitude" : 45.10083,
+		"longitude" : -90.30333,
+		"pleasant_days" : 108
+	},
+	{
+		"id" : "72618514605",
+		"name" : "AUGUSTA STATE AIRPORT, ME US",
+		"latitude" : 44.3161,
+		"longitude" : -69.79702,
+		"pleasant_days" : 110
+	},
+	{
+		"id" : "72582524121",
+		"name" : "ELKO REGIONAL AIRPORT, NV US",
+		"latitude" : 40.82402,
+		"longitude" : -115.78635,
+		"pleasant_days" : 0
+	},
+	{
+		"id" : "72549404966",
+		"name" : "RED OAK MUNICIPAL AIRPORT, IA US",
+		"latitude" : 41.01028,
+		"longitude" : -95.25972,
+		"pleasant_days" : 79
+	},
+	{
+		"id" : "72510954782",
+		"name" : "HERITAGE FIELD AIRPORT, PA US",
+		"latitude" : 40.23803,
+		"longitude" : -75.55485,
+		"pleasant_days" : 99
+	},
+	{
+		"id" : "72501654790",
+		"name" : "SHIRLEY BROOKHAVEN AIRPORT, NY US",
+		"latitude" : 40.82121,
+		"longitude" : -72.86742,
+		"pleasant_days" : 119
+	},
+	{
+		"id" : "72469824015",
+		"name" : "AKRON WASHINGTON CO AIRPORT, CO US",
+		"latitude" : 40.174306,
+		"longitude" : -103.214588,
+		"pleasant_days" : 14
+	},
+	{
+		"id" : "72451993967",
+		"name" : "COFFEYVILLE MUNICIPAL AIRPORT, KS US",
+		"latitude" : 37.0912,
+		"longitude" : -95.57258,
+		"pleasant_days" : 63
+	},
+	{
+		"id" : "72437503893",
+		"name" : "BLOOMINGTON MONROE CO AIRPORT, IN US",
+		"latitude" : 39.14317,
+		"longitude" : -86.61676,
+		"pleasant_days" : 87
+	},
+	{
+		"id" : "72433003879",
+		"name" : "SALEM LECKRONE AIRPORT, IL US",
+		"latitude" : 38.65,
+		"longitude" : -88.96667,
+		"pleasant_days" : 86
+	},
+	{
+		"id" : "72375953990",
+		"name" : "IDABEL MCCURTAIN CO REGIONAL AIRPORT, OK US",
+		"latitude" : 33.90944,
+		"longitude" : -94.85944,
+		"pleasant_days" : 80
+	},
+	{
+		"id" : "72375854928",
+		"name" : "LADYSMITH RUSK CO AIRPORT, WI US",
+		"latitude" : 45.49694,
+		"longitude" : -91.00056,
+		"pleasant_days" : 113
+	},
+	{
+		"id" : "72375493027",
+		"name" : "ST JOHNS INDUSTRIAL AIR PARK, AZ US",
+		"latitude" : 34.51838,
+		"longitude" : -109.38006,
+		"pleasant_days" : 21
+	},
+	{
+		"id" : "72332093862",
+		"name" : "TUPELO REGIONAL AIRPORT, MS US",
+		"latitude" : 34.26224,
+		"longitude" : -88.77127,
+		"pleasant_days" : 73
+	},
+	{
+		"id" : "72306893759",
+		"name" : "ROCKY MOUNT WILSON AIRPORT, NC US",
+		"latitude" : 35.85023,
+		"longitude" : -77.89511,
+		"pleasant_days" : 84
+	},
+	{
+		"id" : "72254413958",
+		"name" : "AUSTIN CAMP MABRY, TX US",
+		"latitude" : 30.3208,
+		"longitude" : -97.7604,
+		"pleasant_days" : 112
+	},
+	{
+		"id" : "72242712975",
+		"name" : "HOUSTON CLOVER FIELD, TX US",
+		"latitude" : 29.51924,
+		"longitude" : -95.2423,
+		"pleasant_days" : 115
+	},
+	{
+		"id" : "72242012923",
+		"name" : "GALVESTON SCHOLES FIELD, TX US",
+		"latitude" : 29.27036,
+		"longitude" : -94.86421,
+		"pleasant_days" : 118
+	},
+	{
+		"id" : "72226703878",
+		"name" : "TROY MUNICIPAL AIRPORT, AL US",
+		"latitude" : 31.85742,
+		"longitude" : -86.01025,
+		"pleasant_days" : 105
+	},
+	{
+		"id" : "72224800359",
+		"name" : "SOUTHLAND FIELD AIRPORT, LA US",
+		"latitude" : 30.131,
+		"longitude" : -93.376,
+		"pleasant_days" : 120
+	},
+	{
+		"id" : "72223100357",
+		"name" : "HAMILTON MUNICIPAL AIRPORT, TX US",
+		"latitude" : 31.666,
+		"longitude" : -98.149,
+		"pleasant_days" : 73
+	},
+	{
+		"id" : "72219863819",
+		"name" : "BOONE WATAUGA CO HOSPITAL HELIPORT, NC US",
+		"latitude" : 36.2,
+		"longitude" : -81.65,
+		"pleasant_days" : 138
+	},
+	{
+		"id" : "72218992815",
+		"name" : "STUART WITHAM FIELD AIRPORT, FL US",
+		"latitude" : 27.18167,
+		"longitude" : -80.22083,
+		"pleasant_days" : 201
+	},
+	{
+		"id" : "72215253957",
+		"name" : "WEST WOODWARD AIRPORT, OK US",
+		"latitude" : 36.43667,
+		"longitude" : -99.52083,
+		"pleasant_days" : 38
+	},
+	{
+		"id" : "72214353975",
+		"name" : "LANCASTER AIRPORT, TX US",
+		"latitude" : 32.57917,
+		"longitude" : -96.71917,
+		"pleasant_days" : 92
+	},
+	{
+		"id" : "72213713878",
+		"name" : "BRUNSWICK MCKINNON AIRPORT, GA US",
+		"latitude" : 31.1527,
+		"longitude" : -81.39053,
+		"pleasant_days" : 123
+	},
+	{
+		"id" : "72213353946",
+		"name" : "SALLISAW MUNICIPAL AIRPORT, OK US",
+		"latitude" : 35.43806,
+		"longitude" : -94.80278,
+		"pleasant_days" : 82
+	},
+	{
+		"id" : "72211912883",
+		"name" : "LAKELAND LINDER REGIONAL AIRPORT, FL US",
+		"latitude" : 28.0,
+		"longitude" : -82.05,
+		"pleasant_days" : 177
+	},
+	{
+		"id" : "72211800482",
+		"name" : "VENICE MUNICIPAL AIRPORT, FL US",
+		"latitude" : 27.07161,
+		"longitude" : -82.44033,
+		"pleasant_days" : 168
+	},
+	{
+		"id" : "72211454901",
+		"name" : "BUFFALO MUNICIPAL AIRPORT, MN US",
+		"latitude" : 45.15917,
+		"longitude" : -93.84333,
+		"pleasant_days" : 104
+	},
+	{
+		"id" : "72211012842",
+		"name" : "TAMPA INTERNATIONAL AIRPORT, FL US",
+		"latitude" : 27.96331,
+		"longitude" : -82.54,
+		"pleasant_days" : 172
+	},
+	{
+		"id" : "72210312895",
+		"name" : "FORT PIERCE ST LUCIE CO INTERNATIONAL AIRPORT, FL US",
+		"latitude" : 27.49816,
+		"longitude" : -80.37626,
+		"pleasant_days" : 192
+	},
+	{
+		"id" : "72210612835",
+		"name" : "FORT MYERS PAGE FIELD AIRPORT, FL US",
+		"latitude" : 26.58495,
+		"longitude" : -81.86146,
+		"pleasant_days" : 156
+	},
+	{
+		"id" : "74594693786",
+		"name" : "OCEAN CITY MUNICIPAL AIRPORT, MD US",
+		"latitude" : 38.30911,
+		"longitude" : -75.12336,
+		"pleasant_days" : 102
+	},
+	{
+		"id" : "74570013840",
+		"name" : "DAYTON WRIGHT PATTERSON AFB, OH US",
+		"latitude" : 39.83333,
+		"longitude" : -84.05,
+		"pleasant_days" : 97
+	},
+	{
+		"id" : "74594013705",
+		"name" : "CAMP SPRINGS ANDREWS AFB, MD US",
+		"latitude" : 38.81667,
+		"longitude" : -76.86667,
+		"pleasant_days" : 79
+	},
+	{
+		"id" : "74543103998",
+		"name" : "PARSONS TRI CITY AIRPORT, KS US",
+		"latitude" : 37.32814,
+		"longitude" : -95.50446,
+		"pleasant_days" : 75
+	},
+	{
+		"id" : "74543093978",
+		"name" : "PRATT INDUSTRIAL AIRPORT, KS US",
+		"latitude" : 37.70167,
+		"longitude" : -98.74694,
+		"pleasant_days" : 31
+	},
+	{
+		"id" : "74516023202",
+		"name" : "TRAVIS FIELD AFB, CA US",
+		"latitude" : 38.26667,
+		"longitude" : -121.93333,
+		"pleasant_days" : 5
+	},
+	{
+		"id" : "74505823277",
+		"name" : "WATSONVILLE MUNICIPAL AIRPORT, CA US",
+		"latitude" : 36.93936,
+		"longitude" : -121.79001,
+		"pleasant_days" : 162
+	},
+	{
+		"id" : "74505653120",
+		"name" : "RAMONA AIRPORT, CA US",
+		"latitude" : 33.03801,
+		"longitude" : -116.915979,
+		"pleasant_days" : 69
+	},
+	{
+		"id" : "74504693242",
+		"name" : "MADERA MUNICIPAL AIRPORT, CA US",
+		"latitude" : 36.98505,
+		"longitude" : -120.11068,
+		"pleasant_days" : 56
+	},
+	{
+		"id" : "74465504808",
+		"name" : "CHICAGO AURORA MUNICIPAL AIRPORT, IL US",
+		"latitude" : 41.77132,
+		"longitude" : -88.48148,
+		"pleasant_days" : 97
+	},
+	{
+		"id" : "74465363814",
+		"name" : "SPARTA COMMUNITY HUNTER FIELD AIRPORT, IL US",
+		"latitude" : 38.14889,
+		"longitude" : -89.69861,
+		"pleasant_days" : 89
+	},
+	{
+		"id" : "74466263817",
+		"name" : "TAYLORVILLE MUNICIPAL AIRPORT, IL US",
+		"latitude" : 39.53417,
+		"longitude" : -89.32778,
+		"pleasant_days" : 73
+	},
+	{
+		"id" : "74394514710",
+		"name" : "MANCHESTER AIRPORT, NH US",
+		"latitude" : 42.92963,
+		"longitude" : -71.43559,
+		"pleasant_days" : 101
+	},
+	{
+		"id" : "74207124201",
+		"name" : "GRAY ARMY AIR FIELD, WA US",
+		"latitude" : 47.08333,
+		"longitude" : -122.58333,
+		"pleasant_days" : 102
+	},
+	{
+		"id" : "74206024207",
+		"name" : "TACOMA MCCHORD AFB, WA US",
+		"latitude" : 47.15,
+		"longitude" : -122.48333,
+		"pleasant_days" : 108
+	},
+	{
+		"id" : "74201099999",
+		"name" : "PORT ANGELES CGAS, WA US",
+		"latitude" : 48.141481,
+		"longitude" : -123.414075,
+		"pleasant_days" : 3
+	},
+	{
+		"id" : "74003503145",
+		"name" : "YUMA MCAS, AZ US",
+		"latitude" : 32.65,
+		"longitude" : -114.61667,
+		"pleasant_days" : 61
+	},
+	{
+		"id" : "72788324220",
+		"name" : "ELLENSBURG BOWERS FIELD, WA US",
+		"latitude" : 47.03376,
+		"longitude" : -120.53135,
+		"pleasant_days" : 4
+	},
+	{
+		"id" : "72787094119",
+		"name" : "DEER PARK AIRPORT, WA US",
+		"latitude" : 47.97416,
+		"longitude" : -117.42921,
+		"pleasant_days" : 17
+	},
+	{
+		"id" : "72785794129",
+		"name" : "PULLMAN MOSCOW REGIONAL AIRPORT, WA US",
+		"latitude" : 46.74376,
+		"longitude" : -117.11581,
+		"pleasant_days" : 34
+	},
+	{
+		"id" : "72785524114",
+		"name" : "FAIRCHILD AFB, WA US",
+		"latitude" : 47.63333,
+		"longitude" : -117.65,
+		"pleasant_days" : 44
+	},
+	{
+		"id" : "72785694176",
+		"name" : "SPOKANE FELTS FIELD, WA US",
+		"latitude" : 47.68575,
+		"longitude" : -117.32141,
+		"pleasant_days" : 55
+	},
+	{
+		"id" : "72785024157",
+		"name" : "SPOKANE INTERNATIONAL AIRPORT, WA US",
+		"latitude" : 47.62168,
+		"longitude" : -117.52796,
+		"pleasant_days" : 35
+	},
+	{
+		"id" : "72784624160",
+		"name" : "WALLA WALLA REGIONAL AIRPORT, WA US",
+		"latitude" : 46.09456,
+		"longitude" : -118.28572,
+		"pleasant_days" : 45
+	},
+	{
+		"id" : "72784524163",
+		"name" : "PASCO TRI CITIES AIRPORT, WA US",
+		"latitude" : 46.2695,
+		"longitude" : -119.11816,
+		"pleasant_days" : 39
+	},
+	{
+		"id" : "72783424136",
+		"name" : "COEUR D ALENE AIR TERMINAL, ID US",
+		"latitude" : 47.76667,
+		"longitude" : -116.81667,
+		"pleasant_days" : 41
+	},
+	{
+		"id" : "72783024149",
+		"name" : "LEWISTON AIRPORT, ID US",
+		"latitude" : 46.37458,
+		"longitude" : -117.01529,
+		"pleasant_days" : 58
+	},
+	{
+		"id" : "72782594239",
+		"name" : "WENATCHEE PANGBORN MEMORIAL AIRPORT, WA US",
+		"latitude" : 47.39746,
+		"longitude" : -120.20124,
+		"pleasant_days" : 39
+	},
+	{
+		"id" : "72781024243",
+		"name" : "YAKIMA AIRPORT, WA US",
+		"latitude" : 46.56398,
+		"longitude" : -120.53488,
+		"pleasant_days" : 26
+	},
+	{
+		"id" : "72775024143",
+		"name" : "GREAT FALLS AIRPORT, MT US",
+		"latitude" : 47.47327,
+		"longitude" : -111.38281,
+		"pleasant_days" : 6
+	},
+	{
+		"id" : "72773024153",
+		"name" : "MISSOULA INTERNATIONAL AIRPORT, MT US",
+		"latitude" : 46.92076,
+		"longitude" : -114.09376,
+		"pleasant_days" : 16
+	},
+	{
+		"id" : "72743404870",
+		"name" : "CHARLEVOIX MUNICIPAL AIRPORT, MI US",
+		"latitude" : 45.30472,
+		"longitude" : -85.27472,
+		"pleasant_days" : 110
+	},
+	{
+		"id" : "72743554820",
+		"name" : "MACKINAC ISLAND AIRPORT, MI US",
+		"latitude" : 45.865,
+		"longitude" : -84.63722,
+		"pleasant_days" : 101
+	},
+	{
+		"id" : "72741754825",
+		"name" : "ROGERS CITY PRESQUE ISLE CO AIRPORT, MI US",
+		"latitude" : 45.40722,
+		"longitude" : -83.81306,
+		"pleasant_days" : 95
+	},
+	{
+		"id" : "72734714841",
+		"name" : "PELLSTON REGIONAL AIRPORT, MI US",
+		"latitude" : 45.5644,
+		"longitude" : -84.79291,
+		"pleasant_days" : 98
+	},
+	{
+		"id" : "72734014847",
+		"name" : "SAULT STE MARIE SANDERSON FIELD, MI US",
+		"latitude" : 46.47998,
+		"longitude" : -84.35809,
+		"pleasant_days" : 102
+	},
+	{
+		"id" : "72698824219",
+		"name" : "DALLESPORT AIRPORT, WA US",
+		"latitude" : 45.61901,
+		"longitude" : -121.16571,
+		"pleasant_days" : 20
+	},
+	{
+		"id" : "72698694261",
+		"name" : "PORTLAND HILLSBORO AIRPORT, OR US",
+		"latitude" : 45.54762,
+		"longitude" : -122.95572,
+		"pleasant_days" : 83
+	},
+	{
+		"id" : "72698524242",
+		"name" : "PORTLAND TROUTDALE AIRPORT, OR US",
+		"latitude" : 45.55098,
+		"longitude" : -122.40984,
+		"pleasant_days" : 110
+	},
+	{
+		"id" : "72698024229",
+		"name" : "PORTLAND INTERNATIONAL AIRPORT, OR US",
+		"latitude" : 45.59578,
+		"longitude" : -122.60919,
+		"pleasant_days" : 111
+	},
+	{
+		"id" : "72695994281",
+		"name" : "AURORA STATE AIRPORT, OR US",
+		"latitude" : 45.24656,
+		"longitude" : -122.77095,
+		"pleasant_days" : 107
+	},
+	{
+		"id" : "72694024232",
+		"name" : "SALEM AIRPORT MCNARY FIELD, OR US",
+		"latitude" : 44.90488,
+		"longitude" : -123.00103,
+		"pleasant_days" : 79
+	},
+	{
+		"id" : "72693024221",
+		"name" : "EUGENE MAHLON SWEET FIELD, OR US",
+		"latitude" : 44.13311,
+		"longitude" : -123.21563,
+		"pleasant_days" : 51
+	},
+	{
+		"id" : "72691724284",
+		"name" : "NORTH BEND SOUTHWEST OREGON REGIONAL AIRPORT, OR US",
+		"latitude" : 43.41333,
+		"longitude" : -124.24361,
+		"pleasant_days" : 2
+	},
+	{
+		"id" : "72692024230",
+		"name" : "REDMOND AIRPORT, OR US",
+		"latitude" : 44.2558,
+		"longitude" : -121.1407,
+		"pleasant_days" : 1
+	},
+	{
+		"id" : "72690424231",
+		"name" : "ROSEBURG REGIONAL AIRPORT, OR US",
+		"latitude" : 43.23367,
+		"longitude" : -123.35775,
+		"pleasant_days" : 91
+	},
+	{
+		"id" : "72688624130",
+		"name" : "BAKER CITY AIRPORT, OR US",
+		"latitude" : 44.84301,
+		"longitude" : -117.80987,
+		"pleasant_days" : 2
+	},
+	{
+		"id" : "72681894194",
+		"name" : "REXBURG MADISON CO AIRPORT, ID US",
+		"latitude" : 43.83211,
+		"longitude" : -111.80751,
+		"pleasant_days" : 16
+	},
+	{
+		"id" : "72681604110",
+		"name" : "JEROME CO AIRPORT, ID US",
+		"latitude" : 42.72735,
+		"longitude" : -114.4547,
+		"pleasant_days" : 12
+	},
+	{
+		"id" : "72683724162",
+		"name" : "ONTARIO, OR US",
+		"latitude" : 44.01423,
+		"longitude" : -117.00808,
+		"pleasant_days" : 34
+	},
+	{
+		"id" : "72681524106",
+		"name" : "MOUNTAIN HOME AFB, ID US",
+		"latitude" : 43.05,
+		"longitude" : -115.86667,
+		"pleasant_days" : 6
+	},
+	{
+		"id" : "72681024131",
+		"name" : "BOISE AIR TERMINAL, ID US",
+		"latitude" : 43.56705,
+		"longitude" : -116.24062,
+		"pleasant_days" : 38
+	},
+	{
+		"id" : "72655614992",
+		"name" : "REDWOOD FALLS MUNICIPAL AIRPORT, MN US",
+		"latitude" : 44.54827,
+		"longitude" : -95.08042,
+		"pleasant_days" : 77
+	},
+	{
+		"id" : "74486454787",
+		"name" : "FARMINGDALE REPUBLIC AIRPORT, NY US",
+		"latitude" : 40.73443,
+		"longitude" : -73.41637,
+		"pleasant_days" : 103
+	},
+	{
+		"id" : "74490494723",
+		"name" : "LAWRENCE MUNICIPAL AIRPORT, MA US",
+		"latitude" : 42.71249,
+		"longitude" : -71.12558,
+		"pleasant_days" : 100
+	},
+	{
+		"id" : "74486094789",
+		"name" : "JFK INTERNATIONAL AIRPORT, NY US",
+		"latitude" : 40.63915,
+		"longitude" : -73.7639,
+		"pleasant_days" : 83
+	},
+	{
+		"id" : "74466504838",
+		"name" : "CHICAGO PALWAUKEE AIRPORT, IL US",
+		"latitude" : 42.12076,
+		"longitude" : -87.90479,
+		"pleasant_days" : 85
+	},
+	{
+		"id" : "74466353950",
+		"name" : "PITTSFIELD PENSTONE MUNICIPAL AIRPORT, IL US",
+		"latitude" : 39.63861,
+		"longitude" : -90.77833,
+		"pleasant_days" : 83
+	},
+	{
+		"id" : "72797624217",
+		"name" : "BELLINGHAM INTERNATIONAL AIRPORT, WA US",
+		"latitude" : 48.7991,
+		"longitude" : -122.54069,
+		"pleasant_days" : 94
+	},
+	{
+		"id" : "72797094240",
+		"name" : "QUILLAYUTE AIRPORT, WA US",
+		"latitude" : 47.93695,
+		"longitude" : -124.55757,
+		"pleasant_days" : 93
+	},
+	{
+		"id" : "72793894274",
+		"name" : "TACOMA NARROWS AIRPORT, WA US",
+		"latitude" : 47.26744,
+		"longitude" : -122.57623,
+		"pleasant_days" : 99
+	},
+	{
+		"id" : "72793724222",
+		"name" : "EVERETT SNOHOMISH CO AIRPORT, WA US",
+		"latitude" : 47.92322,
+		"longitude" : -122.28308,
+		"pleasant_days" : 90
+	},
+	{
+		"id" : "72793494248",
+		"name" : "RENTON MUNICIPAL AIRPORT, WA US",
+		"latitude" : 47.49513,
+		"longitude" : -122.21442,
+		"pleasant_days" : 130
+	},
+	{
+		"id" : "72793524234",
+		"name" : "SEATTLE BOEING FIELD, WA US",
+		"latitude" : 47.54554,
+		"longitude" : -122.31475,
+		"pleasant_days" : 139
+	},
+	{
+		"id" : "72793024233",
+		"name" : "SEATTLE TACOMA AIRPORT, WA US",
+		"latitude" : 47.44467,
+		"longitude" : -122.31442,
+		"pleasant_days" : 92
+	},
+	{
+		"id" : "72792594227",
+		"name" : "SHELTON AIRPORT, WA US",
+		"latitude" : 47.23842,
+		"longitude" : -123.14147,
+		"pleasant_days" : 78
+	},
+	{
+		"id" : "72792424223",
+		"name" : "KELSO SOUTHWEST REGIONAL AIRPORT, WA US",
+		"latitude" : 46.11667,
+		"longitude" : -122.89389,
+		"pleasant_days" : 126
+	},
+	{
+		"id" : "72792394225",
+		"name" : "HOQUIAM BOWERMAN AIRPORT, WA US",
+		"latitude" : 46.97288,
+		"longitude" : -123.93074,
+		"pleasant_days" : 34
+	},
+	{
+		"id" : "72792024227",
+		"name" : "OLYMPIA AIRPORT, WA US",
+		"latitude" : 46.97371,
+		"longitude" : -122.90493,
+		"pleasant_days" : 89
+	},
+	{
+		"id" : "72791894298",
+		"name" : "VANCOUVER PEARSON AIRPORT, WA US",
+		"latitude" : 45.62102,
+		"longitude" : -122.65421,
+		"pleasant_days" : 126
+	},
+	{
+		"id" : "72755014958",
+		"name" : "BEMIDJI MUNICIPAL AIRPORT, MN US",
+		"latitude" : 47.5,
+		"longitude" : -94.93333,
+		"pleasant_days" : 82
+	},
+	{
+		"id" : "72688194273",
+		"name" : "MCMINNVILLE MUNICIPAL AIRPORT, OR US",
+		"latitude" : 45.19572,
+		"longitude" : -123.13381,
+		"pleasant_days" : 88
+	},
+	{
+		"id" : "72688024155",
+		"name" : "PENDLETON E OR REGIONAL AIRPORT, OR US",
+		"latitude" : 45.6975,
+		"longitude" : -118.83446,
+		"pleasant_days" : 18
+	},
+	{
+		"id" : "72687300452",
+		"name" : "IDAHO CO AIRPORT, ID US",
+		"latitude" : 45.94255,
+		"longitude" : -116.12341,
+		"pleasant_days" : 56
+	},
+	{
+		"id" : "72687600387",
+		"name" : "GRANT CO REGIONAL AIRPORT OGILVIE FIELD, OR US",
+		"latitude" : 44.4,
+		"longitude" : -118.967,
+		"pleasant_days" : 30
+	},
+	{
+		"id" : "72662604864",
+		"name" : "ANTIGO LANGLADE CO AIRPORT, WI US",
+		"latitude" : 45.15417,
+		"longitude" : -89.11056,
+		"pleasant_days" : 89
+	},
+	{
+		"id" : "72662524006",
+		"name" : "ELLSWORTH AFB, SD US",
+		"latitude" : 44.15,
+		"longitude" : -103.1,
+		"pleasant_days" : 22
+	},
+	{
+		"id" : "72657794974",
+		"name" : "MINNEAPOLIS ANOKA CO AIRPORT, MN US",
+		"latitude" : 45.15,
+		"longitude" : -93.21667,
+		"pleasant_days" : 118
+	},
+	{
+		"id" : "72657594960",
+		"name" : "MINNEAPOLIS CRYSTAL AIRPORT, MN US",
+		"latitude" : 45.06222,
+		"longitude" : -93.35107,
+		"pleasant_days" : 77
+	},
+	{
+		"id" : "72641014837",
+		"name" : "MADISON DANE CO REGIONAL AIRPORT, WI US",
+		"latitude" : 43.14069,
+		"longitude" : -89.34521,
+		"pleasant_days" : 96
+	},
+	{
+		"id" : "72641304875",
+		"name" : "WEST BEND MUNICIPAL AIRPORT, WI US",
+		"latitude" : 43.41667,
+		"longitude" : -88.13333,
+		"pleasant_days" : 118
+	},
+	{
+		"id" : "72616654781",
+		"name" : "BENNINGTON MORSE STATE AIRPORT, VT US",
+		"latitude" : 42.8935,
+		"longitude" : -73.24875,
+		"pleasant_days" : 124
+	},
+	{
+		"id" : "72606014764",
+		"name" : "PORTLAND JETPORT, ME US",
+		"latitude" : 43.64244,
+		"longitude" : -70.30443,
+		"pleasant_days" : 111
+	},
+	{
+		"id" : "72605654791",
+		"name" : "ROCHESTER SKYHAVEN AIRPORT, NH US",
+		"latitude" : 43.27938,
+		"longitude" : -70.92427,
+		"pleasant_days" : 108
+	},
+	{
+		"id" : "72605504743",
+		"name" : "PORTSMOUTH PEASE AFB, NH US",
+		"latitude" : 43.08333,
+		"longitude" : -70.81667,
+		"pleasant_days" : 117
+	},
+	{
+		"id" : "72557014943",
+		"name" : "SIOUX CITY AIRPORT, IA US",
+		"latitude" : 42.39169,
+		"longitude" : -96.37948,
+		"pleasant_days" : 56
+	},
+	{
+		"id" : "72556604957",
+		"name" : "ONEILL MUNICIPAL AIRPORT, NE US",
+		"latitude" : 42.46972,
+		"longitude" : -98.68806,
+		"pleasant_days" : 56
+	},
+	{
+		"id" : "72555694975",
+		"name" : "AINSWORTH MUNICIPAL AIRPORT, NE US",
+		"latitude" : 42.57694,
+		"longitude" : -100.00056,
+		"pleasant_days" : 44
+	},
+	{
+		"id" : "72554014949",
+		"name" : "BELLEVUE OFFUTT AFB, NE US",
+		"latitude" : 41.11667,
+		"longitude" : -95.91667,
+		"pleasant_days" : 50
+	},
+	{
+		"id" : "72553394957",
+		"name" : "FALLS CITY BRENNER FIELD, NE US",
+		"latitude" : 40.07912,
+		"longitude" : -95.58928,
+		"pleasant_days" : 54
+	},
+	{
+		"id" : "72537354819",
+		"name" : "GROSSE ILE MUNICIPAL AIRPORT, MI US",
+		"latitude" : 42.09861,
+		"longitude" : -83.16111,
+		"pleasant_days" : 132
+	},
+	{
+		"id" : "72532014842",
+		"name" : "GENERAL WAYNE A. DOWNING INTERNATIONAL AIRPORT, IL US",
+		"latitude" : 40.66747,
+		"longitude" : -89.68418,
+		"pleasant_days" : 83
+	},
+	{
+		"id" : "72531753802",
+		"name" : "MATTOON CHARLESTON COLES CO AIRPORT, IL US",
+		"latitude" : 39.47437,
+		"longitude" : -88.27235,
+		"pleasant_days" : 82
+	},
+	{
+		"id" : "72531603887",
+		"name" : "DECATUR AIRPORT, IL US",
+		"latitude" : 39.83079,
+		"longitude" : -88.87192,
+		"pleasant_days" : 59
+	},
+	{
+		"id" : "72767594011",
+		"name" : "MINOT AFB, ND US",
+		"latitude" : 48.41667,
+		"longitude" : -101.35,
+		"pleasant_days" : 57
+	},
+	{
+		"id" : "72757594925",
+		"name" : "GRAND FORKS AF, ND US",
+		"latitude" : 47.96667,
+		"longitude" : -97.4,
+		"pleasant_days" : 86
+	},
+	{
+		"id" : "72756604902",
+		"name" : "AUSTIN MUNICIPAL AIRPORT, MN US",
+		"latitude" : 43.66472,
+		"longitude" : -92.93333,
+		"pleasant_days" : 119
+	},
+	{
+		"id" : "72745794962",
+		"name" : "DETROIT LAKES, MN US",
+		"latitude" : 46.83333,
+		"longitude" : -95.88333,
+		"pleasant_days" : 94
+	},
+	{
+		"id" : "72743604863",
+		"name" : "BELLAIRE ANTRIM CO AIRPORT, MI US",
+		"latitude" : 44.98639,
+		"longitude" : -85.20306,
+		"pleasant_days" : 128
+	},
+	{
+		"id" : "72654804971",
+		"name" : "WARROAD INTERNATIONAL SWEDE CARLSON FIELD AIRPORT, MN US",
+		"latitude" : 48.94139,
+		"longitude" : -95.34833,
+		"pleasant_days" : 90
+	},
+	{
+		"id" : "72651894990",
+		"name" : "WINNER WILEY FIELD, SD US",
+		"latitude" : 43.389044,
+		"longitude" : -99.843315,
+		"pleasant_days" : 22
+	},
+	{
+		"id" : "72651494032",
+		"name" : "CUSTER CO AIRPORT, SD US",
+		"latitude" : 43.7331,
+		"longitude" : -103.61513,
+		"pleasant_days" : 64
+	},
+	{
+		"id" : "72650904898",
+		"name" : "JUNEAU DODGE CO AIRPORT, WI US",
+		"latitude" : 43.42639,
+		"longitude" : -88.70306,
+		"pleasant_days" : 103
+	},
+	{
+		"id" : "72650604840",
+		"name" : "FOND DU LAC CO AIRPORT, WI US",
+		"latitude" : 43.76951,
+		"longitude" : -88.49076,
+		"pleasant_days" : 109
+	},
+	{
+		"id" : "72650504845",
+		"name" : "KENOSHA REGIONAL AIRPORT, WI US",
+		"latitude" : 42.59529,
+		"longitude" : -87.93832,
+		"pleasant_days" : 99
+	},
+	{
+		"id" : "72650354833",
+		"name" : "BARABOO WISCONSIN DELLS AIRPORT, WI US",
+		"latitude" : 43.52194,
+		"longitude" : -89.77361,
+		"pleasant_days" : 112
+	},
+	{
+		"id" : "72642754908",
+		"name" : "SUPERIOR RICHARD I BONG AIRPORT, WI US",
+		"latitude" : 46.68944,
+		"longitude" : -92.09444,
+		"pleasant_days" : 86
+	},
+	{
+		"id" : "72642604895",
+		"name" : "STEVENS POINT MUNICIPAL AIRPORT, WI US",
+		"latitude" : 44.55,
+		"longitude" : -89.53333,
+		"pleasant_days" : 118
+	},
+	{
+		"id" : "72641854912",
+		"name" : "OSCEOLA L O SIMENSTAD MUNICIPAL AIRPORT, WI US",
+		"latitude" : 45.30833,
+		"longitude" : -92.69,
+		"pleasant_days" : 119
+	},
+	{
+		"id" : "72641594854",
+		"name" : "JANESVILLE ROCK CO, WI US",
+		"latitude" : 42.61667,
+		"longitude" : -89.03333,
+		"pleasant_days" : 110
+	},
+	{
+		"id" : "72641614921",
+		"name" : "LONE ROCK TRI CO AIRPORT, WI US",
+		"latitude" : 43.21106,
+		"longitude" : -90.18739,
+		"pleasant_days" : 118
+	},
+	{
+		"id" : "72638094814",
+		"name" : "HOUGHTON LAKE ROSCOMMON CO AIRPORT, MI US",
+		"latitude" : 44.35904,
+		"longitude" : -84.6739,
+		"pleasant_days" : 77
+	},
+	{
+		"id" : "72638414817",
+		"name" : "CADILLAC WEXFORD CO AIRPORT, MI US",
+		"latitude" : 44.28333,
+		"longitude" : -85.41667,
+		"pleasant_days" : 109
+	},
+	{
+		"id" : "72637914845",
+		"name" : "SAGINAW MBS INTERNATIONAL AIRPORT, MI US",
+		"latitude" : 43.52808,
+		"longitude" : -84.08133,
+		"pleasant_days" : 84
+	},
+	{
+		"id" : "72637594817",
+		"name" : "PONTIAC OAKLAND CO INTERNATIONAL AIRPORT, MI US",
+		"latitude" : 42.66314,
+		"longitude" : -83.41016,
+		"pleasant_days" : 107
+	},
+	{
+		"id" : "72636404883",
+		"name" : "LUDINGTON MASON CO AIRPORT, MI US",
+		"latitude" : 43.9625,
+		"longitude" : -86.40778,
+		"pleasant_days" : 123
+	},
+	{
+		"id" : "72637014826",
+		"name" : "FLINT FCWOS, MI US",
+		"latitude" : 42.96684,
+		"longitude" : -83.74996,
+		"pleasant_days" : 83
+	},
+	{
+		"id" : "72636014840",
+		"name" : "MUSKEGON CO AIRPORT, MI US",
+		"latitude" : 43.17111,
+		"longitude" : -86.23685,
+		"pleasant_days" : 120
+	},
+	{
+		"id" : "72635794815",
+		"name" : "KALAMAZOO BATTLE CREEK INTERNATIONAL AIRPORT, MI US",
+		"latitude" : 42.22826,
+		"longitude" : -85.546,
+		"pleasant_days" : 105
+	},
+	{
+		"id" : "72635094860",
+		"name" : "GRAND RAPIDS GERALD R FORD INTERNATIONAL AIRPORT, MI US",
+		"latitude" : 42.8821,
+		"longitude" : -85.52297,
+		"pleasant_days" : 96
+	},
+	{
+		"id" : "72628494836",
+		"name" : "GWINN K I SAWYER AFB, MI US",
+		"latitude" : 46.35,
+		"longitude" : -87.4,
+		"pleasant_days" : 76
+	},
+	{
+		"id" : "72622794790",
+		"name" : "WATERTOWN INTERNATIONAL AIRPORT, NY US",
+		"latitude" : 43.98872,
+		"longitude" : -76.02609,
+		"pleasant_days" : 116
+	},
+	{
+		"id" : "72617014742",
+		"name" : "BURLINGTON INTERNATIONAL AIRPORT, VT US",
+		"latitude" : 44.46825,
+		"longitude" : -73.1499,
+		"pleasant_days" : 81
+	},
+	{
+		"id" : "72526604751",
+		"name" : "BRADFORD REGIONAL AIRPORT, PA US",
+		"latitude" : 41.79835,
+		"longitude" : -78.63543,
+		"pleasant_days" : 114
+	},
+	{
+		"id" : "72526014860",
+		"name" : "ERIE INTERNATIONAL AIRPORT, PA US",
+		"latitude" : 42.08026,
+		"longitude" : -80.18236,
+		"pleasant_days" : 123
+	},
+	{
+		"id" : "72484653123",
+		"name" : "LAS VEGAS AIR TERMINAL, NV US",
+		"latitude" : 36.21205,
+		"longitude" : -115.19394,
+		"pleasant_days" : 45
+	},
+	{
+		"id" : "72485523153",
+		"name" : "TONOPAH AIRPORT, NV US",
+		"latitude" : 38.05049,
+		"longitude" : -117.09063,
+		"pleasant_days" : 4
+	},
+	{
+		"id" : "72483893205",
+		"name" : "MARYSVILLE AIRPORT ASOS, CA US",
+		"latitude" : 39.10205,
+		"longitude" : -121.56884,
+		"pleasant_days" : 65
+	},
+	{
+		"id" : "72483993225",
+		"name" : "SACRAMENTO METROPOLITAN AIRPORT, CA US",
+		"latitude" : 38.70069,
+		"longitude" : -121.59479,
+		"pleasant_days" : 53
+	},
+	{
+		"id" : "72480023157",
+		"name" : "BISHOP AIRPORT, CA US",
+		"latitude" : 37.37114,
+		"longitude" : -118.35886,
+		"pleasant_days" : 0
+	},
+	{
+		"id" : "72450213932",
+		"name" : "WINFIELD STROTHER FIELD AIRPORT, KS US",
+		"latitude" : 37.16493,
+		"longitude" : -97.03496,
+		"pleasant_days" : 44
+	},
+	{
+		"id" : "72450003928",
+		"name" : "WICHITA DWIGHT D. EISENHOWER NATIONAL AIRPORT, KS US",
+		"latitude" : 37.64753,
+		"longitude" : -97.42999,
+		"pleasant_days" : 37
+	},
+	{
+		"id" : "72447593909",
+		"name" : "OLATHE JOHNSON CO INDUSTRIAL AIRPORT, KS US",
+		"latitude" : 38.8221,
+		"longitude" : -94.89027,
+		"pleasant_days" : 57
+	},
+	{
+		"id" : "72446803967",
+		"name" : "OLATHE JOHNSON CO EXECUTIVE AIRPORT, KS US",
+		"latitude" : 38.84997,
+		"longitude" : -94.73949,
+		"pleasant_days" : 75
+	},
+	{
+		"id" : "72646594890",
+		"name" : "MOSINEE, WI US",
+		"latitude" : 44.78333,
+		"longitude" : -89.66667,
+		"pleasant_days" : 100
+	},
+	{
+		"id" : "72645694855",
+		"name" : "OSHKOSH WITTMAN REGIONAL AIRPORT, WI US",
+		"latitude" : 43.9871,
+		"longitude" : -88.55642,
+		"pleasant_days" : 98
+	},
+	{
+		"id" : "72645704825",
+		"name" : "APPLETON OUTAGAMIE CO AIRPORT, WI US",
+		"latitude" : 44.26667,
+		"longitude" : -88.51667,
+		"pleasant_days" : 108
+	},
+	{
+		"id" : "72645014898",
+		"name" : "GREEN BAY A S INTERNATIONAL AIRPORT, WI US",
+		"latitude" : 44.47958,
+		"longitude" : -88.1371,
+		"pleasant_days" : 87
+	},
+	{
+		"id" : "72640904897",
+		"name" : "WAUKESHA CO AIRPORT, WI US",
+		"latitude" : 43.04083,
+		"longitude" : -88.23694,
+		"pleasant_days" : 109
+	},
+	{
+		"id" : "72640594869",
+		"name" : "MILWAUKEE TIMMERMAN AIRPORT, WI US",
+		"latitude" : 43.1086,
+		"longitude" : -88.0306,
+		"pleasant_days" : 124
+	},
+	{
+		"id" : "72640014839",
+		"name" : "MILWAUKEE MITCHELL AIRPORT, WI US",
+		"latitude" : 42.95489,
+		"longitude" : -87.9045,
+		"pleasant_days" : 78
+	},
+	{
+		"id" : "72639514808",
+		"name" : "OSCODA WURTSMITH AIRPORT, MI US",
+		"latitude" : 44.45,
+		"longitude" : -83.4,
+		"pleasant_days" : 104
+	},
+	{
+		"id" : "72639404874",
+		"name" : "NEWBERRY LUCE CO AIRPORT, MI US",
+		"latitude" : 46.31111,
+		"longitude" : -85.45722,
+		"pleasant_days" : 83
+	},
+	{
+		"id" : "72639094849",
+		"name" : "ALPENA CO REGIONAL AIRPORT, MI US",
+		"latitude" : 45.0716,
+		"longitude" : -83.56451,
+		"pleasant_days" : 86
+	},
+	{
+		"id" : "72638714850",
+		"name" : "TRAVERSE CITY CHERRY CAPITAL AIRPORT, MI US",
+		"latitude" : 44.73895,
+		"longitude" : -85.5679,
+		"pleasant_days" : 114
+	},
+	{
+		"id" : "72597524235",
+		"name" : "SEXTON SUMMIT, OR US",
+		"latitude" : 42.6,
+		"longitude" : -123.3667,
+		"pleasant_days" : 67
+	},
+	{
+		"id" : "72597024225",
+		"name" : "MEDFORD INTERNATIONAL AIRPORT, OR US",
+		"latitude" : 42.37503,
+		"longitude" : -122.87702,
+		"pleasant_days" : 53
+	},
+	{
+		"id" : "72595524259",
+		"name" : "MONTAGUE SISKIYOU AIRPORT, CA US",
+		"latitude" : 41.77373,
+		"longitude" : -122.46825,
+		"pleasant_days" : 12
+	},
+	{
+		"id" : "72594524283",
+		"name" : "ARCATA EUREKA AIRPORT, CA US",
+		"latitude" : 40.97844,
+		"longitude" : -124.10479,
+		"pleasant_days" : 23
+	},
+	{
+		"id" : "72594624286",
+		"name" : "CRESCENT CITY MCNAMARA AIRPORT, CA US",
+		"latitude" : 41.78361,
+		"longitude" : -124.23796,
+		"pleasant_days" : 11
+	},
+	{
+		"id" : "72592024257",
+		"name" : "REDDING AIRPORT, CA US",
+		"latitude" : 40.51462,
+		"longitude" : -122.29773,
+		"pleasant_days" : 46
+	},
+	{
+		"id" : "72591024216",
+		"name" : "RED BLUFF MUNICIPAL AIRPORT, CA US",
+		"latitude" : 40.15186,
+		"longitude" : -122.25478,
+		"pleasant_days" : 35
+	},
+	{
+		"id" : "72593023233",
+		"name" : "SALINAS AIRPORT, CA US",
+		"latitude" : 36.66352,
+		"longitude" : -121.60928,
+		"pleasant_days" : 85
+	},
+	{
+		"id" : "72590523275",
+		"name" : "UKIAH MUNICIPAL AIRPORT, CA US",
+		"latitude" : 39.12781,
+		"longitude" : -123.20015,
+		"pleasant_days" : 42
+	},
+	{
+		"id" : "72589594236",
+		"name" : "KLAMATH FALLS INTERNATIONAL AIRPORT, OR US",
+		"latitude" : 42.14702,
+		"longitude" : -121.72553,
+		"pleasant_days" : 9
+	},
+	{
+		"id" : "72586724133",
+		"name" : "BURLEY MUNICIPAL AIRPORT, ID US",
+		"latitude" : 42.54525,
+		"longitude" : -113.7686,
+		"pleasant_days" : 16
+	},
+	{
+		"id" : "72586694178",
+		"name" : "TWIN FALLS SUN VALLEY REGIONAL AIRPORT, ID US",
+		"latitude" : 42.47849,
+		"longitude" : -114.47744,
+		"pleasant_days" : 11
+	},
+	{
+		"id" : "72586594161",
+		"name" : "HAILEY FRIEDMAN MEMORIAL AIRPORT, ID US",
+		"latitude" : 43.5,
+		"longitude" : -114.3,
+		"pleasant_days" : 42
+	},
+	{
+		"id" : "72585093228",
+		"name" : "HAYWARD AIR TERMINAL, CA US",
+		"latitude" : 37.65886,
+		"longitude" : -122.12116,
+		"pleasant_days" : 148
+	},
+	{
+		"id" : "72584523225",
+		"name" : "BLUE CANYON NYACK AIRPORT, CA US",
+		"latitude" : 39.27617,
+		"longitude" : -120.70927,
+		"pleasant_days" : 114
+	},
+	{
+		"id" : "72578524145",
+		"name" : "IDAHO FALLS FAA AIRPORT, ID US",
+		"latitude" : 43.52044,
+		"longitude" : -112.06753,
+		"pleasant_days" : 3
+	},
+	{
+		"id" : "72578024156",
+		"name" : "POCATELLO REGIONAL AIRPORT, ID US",
+		"latitude" : 42.91969,
+		"longitude" : -112.57232,
+		"pleasant_days" : 1
+	},
+	{
+		"id" : "72577624166",
+		"name" : "JACKSON HOLE AIRPORT, WY US",
+		"latitude" : 43.6,
+		"longitude" : -110.73333,
+		"pleasant_days" : 15
+	},
+	{
+		"id" : "72575524101",
+		"name" : "OGDEN HILL AFB, UT US",
+		"latitude" : 41.11667,
+		"longitude" : -111.96667,
+		"pleasant_days" : 19
+	},
+	{
+		"id" : "72571703016",
+		"name" : "RIFLE GARFIELD CO AIRPORT, CO US",
+		"latitude" : 39.52791,
+		"longitude" : -107.71965,
+		"pleasant_days" : 6
+	},
+	{
+		"id" : "72566594073",
+		"name" : "KIMBALL MUNICIPAL AIRPORT ROBERT E ARRAJ FIELD, NE US",
+		"latitude" : 41.18944,
+		"longitude" : -103.67083,
+		"pleasant_days" : 28
+	},
+	{
+		"id" : "72564024018",
+		"name" : "CHEYENNE WSFO AIRPORT, WY US",
+		"latitude" : 41.15788,
+		"longitude" : -104.80814,
+		"pleasant_days" : 23
+	},
+	{
+		"id" : "72552794978",
+		"name" : "TEKAMAH MUNICIPAL AIRPORT, NE US",
+		"latitude" : 41.76304,
+		"longitude" : -96.17973,
+		"pleasant_days" : 49
+	},
+	{
+		"id" : "72552014935",
+		"name" : "GRAND ISLAND CENTRAL NE REGIONAL AIRPORT, NE US",
+		"latitude" : 40.96146,
+		"longitude" : -98.31304,
+		"pleasant_days" : 20
+	},
+	{
+		"id" : "72551594947",
+		"name" : "BEATRICE MUNICIPAL AIRPORT, NE US",
+		"latitude" : 40.30139,
+		"longitude" : -96.75389,
+		"pleasant_days" : 51
+	},
+	{
+		"id" : "72550014942",
+		"name" : "OMAHA EPPLEY AIRFIELD, NE US",
+		"latitude" : 41.31186,
+		"longitude" : -95.90186,
+		"pleasant_days" : 36
+	},
+	{
+		"id" : "72551014939",
+		"name" : "LINCOLN AIRPORT, NE US",
+		"latitude" : 40.84781,
+		"longitude" : -96.76467,
+		"pleasant_days" : 31
+	},
+	{
+		"id" : "72549994991",
+		"name" : "LAMONI MUNICIPAL AIRPORT, IA US",
+		"latitude" : 40.63064,
+		"longitude" : -93.90045,
+		"pleasant_days" : 73
+	},
+	{
+		"id" : "72546014933",
+		"name" : "DES MOINES INTERNATIONAL AIRPORT, IA US",
+		"latitude" : 41.53395,
+		"longitude" : -93.65313,
+		"pleasant_days" : 48
+	},
+	{
+		"id" : "72545014990",
+		"name" : "CEDAR RAPIDS MUNICIPAL AIRPORT, IA US",
+		"latitude" : 41.882917,
+		"longitude" : -91.724591,
+		"pleasant_days" : 102
+	},
+	{
+		"id" : "72543454789",
+		"name" : "POCONO MOUNTAINS MUNICIPAL AIRPORT, PA US",
+		"latitude" : 41.13684,
+		"longitude" : -75.3771,
+		"pleasant_days" : 103
+	},
+	{
+		"id" : "72544014923",
+		"name" : "MOLINE QUAD CITY INTERNATIONAL AIRPORT, IL US",
+		"latitude" : 41.44816,
+		"longitude" : -90.52365,
+		"pleasant_days" : 65
+	},
+	{
+		"id" : "72543094822",
+		"name" : "ROCKFORD GREATER ROCKFORD AIRPORT, IL US",
+		"latitude" : 42.19325,
+		"longitude" : -89.093348,
+		"pleasant_days" : 79
+	},
+	{
+		"id" : "72542404885",
+		"name" : "MOUNT PLEASANT MUNICIPAL AIRPORT, MI US",
+		"latitude" : 43.62167,
+		"longitude" : -84.73722,
+		"pleasant_days" : 127
+	},
+	{
+		"id" : "72541854823",
+		"name" : "MONROE CUSTER AIRPORT, MI US",
+		"latitude" : 41.94,
+		"longitude" : -83.43472,
+		"pleasant_days" : 118
+	},
+	{
+		"id" : "72575024126",
+		"name" : "OGDEN HINKLEY AIRPORT, UT US",
+		"latitude" : 41.19406,
+		"longitude" : -112.01682,
+		"pleasant_days" : 31
+	},
+	{
+		"id" : "72572024127",
+		"name" : "SALT LAKE CITY INTERNATIONAL AIRPORT, UT US",
+		"latitude" : 40.77069,
+		"longitude" : -111.96503,
+		"pleasant_days" : 31
+	},
+	{
+		"id" : "72546214937",
+		"name" : "IOWA CITY MUNICIPAL AIRPORT, IA US",
+		"latitude" : 41.6394,
+		"longitude" : -91.54455,
+		"pleasant_days" : 77
+	},
+	{
+		"id" : "72540404847",
+		"name" : "ADRIAN LENAWEE CO AIRPORT, MI US",
+		"latitude" : 41.86784,
+		"longitude" : -84.07946,
+		"pleasant_days" : 91
+	},
+	{
+		"id" : "72540554816",
+		"name" : "ALMA GRATIOT COMMUNITY AIRPORT, MI US",
+		"latitude" : 43.32222,
+		"longitude" : -84.68806,
+		"pleasant_days" : 107
+	},
+	{
+		"id" : "72539614815",
+		"name" : "BATTLE CREEK KELLOGG AIRPORT, MI US",
+		"latitude" : 42.31192,
+		"longitude" : -85.24147,
+		"pleasant_days" : 105
+	},
+	{
+		"id" : "72539514833",
+		"name" : "JACKSON REYNOLDS FIELD, MI US",
+		"latitude" : 42.26373,
+		"longitude" : -84.45644,
+		"pleasant_days" : 98
+	},
+	{
+		"id" : "72539404839",
+		"name" : "HOLLAND TULIP CITY AIRPORT, MI US",
+		"latitude" : 42.74634,
+		"longitude" : -86.09677,
+		"pleasant_days" : 115
+	},
+	{
+		"id" : "72539014836",
+		"name" : "LANSING CAPITAL CITY AIRPORT, MI US",
+		"latitude" : 42.77609,
+		"longitude" : -84.59972,
+		"pleasant_days" : 99
+	},
+	{
+		"id" : "72538404888",
+		"name" : "PORT HURON ST CLAIR CO INTERNATIONAL AIRPORT, MI US",
+		"latitude" : 42.91083,
+		"longitude" : -82.52861,
+		"pleasant_days" : 126
+	},
+	{
+		"id" : "72538354827",
+		"name" : "STURGIS KIRSCH MUNICIPAL AIRPORT, MI US",
+		"latitude" : 41.81667,
+		"longitude" : -85.43333,
+		"pleasant_days" : 126
+	},
+	{
+		"id" : "72537614853",
+		"name" : "DETROIT WILLOW RUN AIRPORT, MI US",
+		"latitude" : 42.23666,
+		"longitude" : -83.52638,
+		"pleasant_days" : 62
+	},
+	{
+		"id" : "72537514822",
+		"name" : "DETROIT CITY AIRPORT, MI US",
+		"latitude" : 42.40725,
+		"longitude" : -83.00899,
+		"pleasant_days" : 97
+	},
+	{
+		"id" : "72535014848",
+		"name" : "SOUTH BEND AIRPORT, IN US",
+		"latitude" : 41.70722,
+		"longitude" : -86.31628,
+		"pleasant_days" : 86
+	},
+	{
+		"id" : "72536094830",
+		"name" : "TOLEDO EXPRESS AIRPORT, OH US",
+		"latitude" : 41.58705,
+		"longitude" : -83.80538,
+		"pleasant_days" : 68
+	},
+	{
+		"id" : "72534514834",
+		"name" : "JOLIET, IL US",
+		"latitude" : 41.5,
+		"longitude" : -88.16667,
+		"pleasant_days" : 117
+	},
+	{
+		"id" : "72534014819",
+		"name" : "CHICAGO MIDWAY AIRPORT, IL US",
+		"latitude" : 41.78412,
+		"longitude" : -87.75514,
+		"pleasant_days" : 91
+	},
+	{
+		"id" : "72533594833",
+		"name" : "PERU GRISSOM AFB, IN US",
+		"latitude" : 40.65,
+		"longitude" : -86.15,
+		"pleasant_days" : 92
+	},
+	{
+		"id" : "72508654734",
+		"name" : "DANBURY MUNICIPAL AIRPORT, CT US",
+		"latitude" : 41.37215,
+		"longitude" : -73.48337,
+		"pleasant_days" : 119
+	},
+	{
+		"id" : "72508014740",
+		"name" : "HARTFORD BRADLEY INTERNATIONAL AIRPORT, CT US",
+		"latitude" : 41.93742,
+		"longitude" : -72.68202,
+		"pleasant_days" : 68
+	},
+	{
+		"id" : "72507014765",
+		"name" : "RHODE ISLAND T.F. GREEN INTERNATIONAL AIRPORT, RI US",
+		"latitude" : 41.72252,
+		"longitude" : -71.43248,
+		"pleasant_days" : 89
+	},
+	{
+		"id" : "72506794720",
+		"name" : "HYANNIS BARNSTABLE MUNICIPAL AIRPORT, MA US",
+		"latitude" : 41.6719,
+		"longitude" : -70.26972,
+		"pleasant_days" : 118
+	},
+	{
+		"id" : "72506594726",
+		"name" : "NEW BEDFORD MUNICIPAL AIRPORT, MA US",
+		"latitude" : 41.67908,
+		"longitude" : -70.95911,
+		"pleasant_days" : 106
+	},
+	{
+		"id" : "72506454769",
+		"name" : "PLYMOUTH MUNICIPAL AIRPORT, MA US",
+		"latitude" : 41.90851,
+		"longitude" : -70.72785,
+		"pleasant_days" : 105
+	},
+	{
+		"id" : "72506694724",
+		"name" : "VINEYARD HAVEN MARTHAS VINEYARD AIRPORT, MA US",
+		"latitude" : 41.39296,
+		"longitude" : -70.61592,
+		"pleasant_days" : 114
+	},
+	{
+		"id" : "72504514758",
+		"name" : "NEW HAVEN TWEED AIRPORT, CT US",
+		"latitude" : 41.259,
+		"longitude" : -72.88911,
+		"pleasant_days" : 121
+	},
+	{
+		"id" : "72503014732",
+		"name" : "LAGUARDIA AIRPORT, NY US",
+		"latitude" : 40.77945,
+		"longitude" : -73.88027,
+		"pleasant_days" : 66
+	},
+	{
+		"id" : "72503614757",
+		"name" : "POUGHKEEPSIE AIRPORT, NY US",
+		"latitude" : 41.62574,
+		"longitude" : -73.88155,
+		"pleasant_days" : 101
+	},
+	{
+		"id" : "72502964707",
+		"name" : "OXFORD WATERBURY, CT US",
+		"latitude" : 41.48333,
+		"longitude" : -73.13333,
+		"pleasant_days" : 119
+	},
+	{
+		"id" : "72503814714",
+		"name" : "STEWART FIELD, NY US",
+		"latitude" : 41.5,
+		"longitude" : -74.1,
+		"pleasant_days" : 127
+	},
+	{
+		"id" : "72503794745",
+		"name" : "WESTCHESTER CO AIRPORT, NY US",
+		"latitude" : 41.06236,
+		"longitude" : -73.70454,
+		"pleasant_days" : 127
+	},
+	{
+		"id" : "72502754788",
+		"name" : "MERIDEN MARKHAM MUNICIPAL AIRPORT, CT US",
+		"latitude" : 41.50969,
+		"longitude" : -72.82783,
+		"pleasant_days" : 112
+	},
+	{
+		"id" : "72502594741",
+		"name" : "TETERBORO AIRPORT, NJ US",
+		"latitude" : 40.85898,
+		"longitude" : -74.05616,
+		"pleasant_days" : 79
+	},
+	{
+		"id" : "72501454780",
+		"name" : "MONTAUK AIRPORT, NY US",
+		"latitude" : 41.073056,
+		"longitude" : -71.923505,
+		"pleasant_days" : 116
+	},
+	{
+		"id" : "72502014734",
+		"name" : "NEWARK LIBERTY INTERNATIONAL AIRPORT, NJ US",
+		"latitude" : 40.68275,
+		"longitude" : -74.16927,
+		"pleasant_days" : 65
+	},
+	{
+		"id" : "72497393203",
+		"name" : "CHICO ARMY FLYING SCHOOL, CA US",
+		"latitude" : 39.8,
+		"longitude" : -121.85,
+		"pleasant_days" : 56
+	},
+	{
+		"id" : "72495723213",
+		"name" : "SANTA ROSA SONOMA CO AIRPORT, CA US",
+		"latitude" : 38.50369,
+		"longitude" : -122.81101,
+		"pleasant_days" : 89
+	},
+	{
+		"id" : "72495593227",
+		"name" : "NAPA CO AIRPORT, CA US",
+		"latitude" : 38.2075,
+		"longitude" : -122.28041,
+		"pleasant_days" : 89
+	},
+	{
+		"id" : "72494523293",
+		"name" : "SAN JOSE, CA US",
+		"latitude" : 37.35938,
+		"longitude" : -121.92444,
+		"pleasant_days" : 160
+	},
+	{
+		"id" : "72495023254",
+		"name" : "CONCORD BUCHANAN FIELD, CA US",
+		"latitude" : 37.99165,
+		"longitude" : -122.05268,
+		"pleasant_days" : 50
+	},
+	{
+		"id" : "72494023234",
+		"name" : "SAN FRANCISCO INTERNATIONAL AIRPORT, CA US",
+		"latitude" : 37.61962,
+		"longitude" : -122.36562,
+		"pleasant_days" : 9
+	},
+	{
+		"id" : "72493893231",
+		"name" : "SAN CARLOS AIRPORT, CA US",
+		"latitude" : 37.51667,
+		"longitude" : -122.25,
+		"pleasant_days" : 160
+	},
+	{
+		"id" : "72492723285",
+		"name" : "LIVERMORE MUNICIPAL AIRPORT, CA US",
+		"latitude" : 37.69309,
+		"longitude" : -121.8149,
+		"pleasant_days" : 44
+	},
+	{
+		"id" : "72492623258",
+		"name" : "MODESTO AIRPORT, CA US",
+		"latitude" : 37.62544,
+		"longitude" : -120.95492,
+		"pleasant_days" : 54
+	},
+	{
+		"id" : "72492023237",
+		"name" : "STOCKTON AIRPORT, CA US",
+		"latitude" : 37.88997,
+		"longitude" : -121.22637,
+		"pleasant_days" : 43
+	},
+	{
+		"id" : "72491523259",
+		"name" : "MONTEREY PENINSUL AIRPORT, CA US",
+		"latitude" : 36.59041,
+		"longitude" : -121.84881,
+		"pleasant_days" : 124
+	},
+	{
+		"id" : "72488593102",
+		"name" : "FALLON NAAS, NV US",
+		"latitude" : 39.41667,
+		"longitude" : -118.71667,
+		"pleasant_days" : 7
+	},
+	{
+		"id" : "72488023185",
+		"name" : "RENO AIRPORT, NV US",
+		"latitude" : 39.50769,
+		"longitude" : -119.76829,
+		"pleasant_days" : 22
+	},
+	{
+		"id" : "72541754822",
+		"name" : "MASON JEWETT FIELD AIRPORT, MI US",
+		"latitude" : 42.56583,
+		"longitude" : -84.43306,
+		"pleasant_days" : 129
+	},
+	{
+		"id" : "72541614864",
+		"name" : "BIG RAPIDS ROBEN HOOD AIRPORT, MI US",
+		"latitude" : 43.71667,
+		"longitude" : -85.5,
+		"pleasant_days" : 122
+	},
+	{
+		"id" : "72541554821",
+		"name" : "MARSHALL BROOKS FIELD AIRPORT, MI US",
+		"latitude" : 42.25111,
+		"longitude" : -84.95556,
+		"pleasant_days" : 124
+	},
+	{
+		"id" : "72541404886",
+		"name" : "COLDWATER BRANCH CO MEMORIAL AIRPORT, MI US",
+		"latitude" : 41.93333,
+		"longitude" : -85.0525,
+		"pleasant_days" : 126
+	},
+	{
+		"id" : "72540904882",
+		"name" : "HILLSDALE MUNICIPAL AIRPORT, MI US",
+		"latitude" : 41.92111,
+		"longitude" : -84.58556,
+		"pleasant_days" : 130
+	},
+	{
+		"id" : "72540804881",
+		"name" : "MANISTIQUE SCHOOLCRAFT CO AIRPORT, MI US",
+		"latitude" : 45.98333,
+		"longitude" : -86.18333,
+		"pleasant_days" : 87
+	},
+	{
+		"id" : "72536614825",
+		"name" : "FINDLAY AIRPORT, OH US",
+		"latitude" : 41.01369,
+		"longitude" : -83.66814,
+		"pleasant_days" : 75
+	},
+	{
+		"id" : "72537094847",
+		"name" : "DETROIT METRO AIRPORT, MI US",
+		"latitude" : 42.23113,
+		"longitude" : -83.33121,
+		"pleasant_days" : 86
+	},
+	{
+		"id" : "72533014827",
+		"name" : "FORT WAYNE INTERNATIONAL AIRPORT, IN US",
+		"latitude" : 40.97248,
+		"longitude" : -85.20636,
+		"pleasant_days" : 84
+	},
+	{
+		"id" : "72533694895",
+		"name" : "MUNCIE DELAWARE CO AIRPORT, IN US",
+		"latitude" : 40.23451,
+		"longitude" : -85.39356,
+		"pleasant_days" : 95
+	},
+	{
+		"id" : "72528704724",
+		"name" : "NIAGARA FALLS INTERNATIONAL AIRPORT, NY US",
+		"latitude" : 43.1083,
+		"longitude" : -78.93818,
+		"pleasant_days" : 112
+	},
+	{
+		"id" : "72529014768",
+		"name" : "ROCHESTER GREATER INTERNATIONAL, NY US",
+		"latitude" : 43.11723,
+		"longitude" : -77.67539,
+		"pleasant_days" : 112
+	},
+	{
+		"id" : "72525604857",
+		"name" : "ASHTABULA CO AIRPORT, OH US",
+		"latitude" : 41.7794,
+		"longitude" : -80.69683,
+		"pleasant_days" : 135
+	},
+	{
+		"id" : "72525404851",
+		"name" : "DEFIANCE AIRPORT, OH US",
+		"latitude" : 41.3357,
+		"longitude" : -84.4285,
+		"pleasant_days" : 93
+	},
+	{
+		"id" : "72525014852",
+		"name" : "YOUNGSTOWN WARREN REGIONAL AIRPORT, OH US",
+		"latitude" : 41.25478,
+		"longitude" : -80.67361,
+		"pleasant_days" : 106
+	},
+	{
+		"id" : "72524704805",
+		"name" : "CLEVELAND CUYAHOGA CO AIRPORT, OH US",
+		"latitude" : 41.56667,
+		"longitude" : -81.48333,
+		"pleasant_days" : 119
+	},
+	{
+		"id" : "72524504853",
+		"name" : "CLEVELAND BURKE LAKEFRONT AIRPORT, OH US",
+		"latitude" : 41.52568,
+		"longitude" : -81.66908,
+		"pleasant_days" : 121
+	},
+	{
+		"id" : "72524014820",
+		"name" : "CLEVELAND HOPKINS INTERNATIONAL AIRPORT, OH US",
+		"latitude" : 41.40568,
+		"longitude" : -81.85191,
+		"pleasant_days" : 104
+	},
+	{
+		"id" : "72522904858",
+		"name" : "NEWARK HEATH AIRPORT, OH US",
+		"latitude" : 40.02635,
+		"longitude" : -82.46346,
+		"pleasant_days" : 123
+	},
+	{
+		"id" : "72522404852",
+		"name" : "NEW PHILADELPHIA CLEVER FIELD, OH US",
+		"latitude" : 40.47031,
+		"longitude" : -81.42176,
+		"pleasant_days" : 107
+	},
+	{
+		"id" : "72521604842",
+		"name" : "WOOSTER WAYNE CO AIRPORT, OH US",
+		"latitude" : 40.87324,
+		"longitude" : -81.88864,
+		"pleasant_days" : 113
+	},
+	{
+		"id" : "72521404849",
+		"name" : "ELYRIA LORAIN CO AIRPORT, OH US",
+		"latitude" : 41.34628,
+		"longitude" : -82.17885,
+		"pleasant_days" : 111
+	},
+	{
+		"id" : "72521014895",
+		"name" : "AKRON CANTON AIRPORT, OH US",
+		"latitude" : 40.91811,
+		"longitude" : -81.44342,
+		"pleasant_days" : 99
+	},
+	{
+		"id" : "72520514762",
+		"name" : "PITTSBURGH ALLEGHENY CO AIRPORT, PA US",
+		"latitude" : 40.3551,
+		"longitude" : -79.92145,
+		"pleasant_days" : 137
+	},
+	{
+		"id" : "72517014737",
+		"name" : "ALLENTOWN LEHIGH VALLEY INTERNATIONAL AIRPORT, PA US",
+		"latitude" : 40.64984,
+		"longitude" : -75.44773,
+		"pleasant_days" : 82
+	},
+	{
+		"id" : "72511493778",
+		"name" : "YORK AIRPORT, PA US",
+		"latitude" : 39.91942,
+		"longitude" : -76.87685,
+		"pleasant_days" : 92
+	},
+	{
+		"id" : "72511354786",
+		"name" : "DOYLESTOWN AIRPORT, PA US",
+		"latitude" : 40.33015,
+		"longitude" : -75.12284,
+		"pleasant_days" : 98
+	},
+	{
+		"id" : "72510514770",
+		"name" : "SELINSGROVE PENN VALLEY AIRPORT, PA US",
+		"latitude" : 40.81929,
+		"longitude" : -76.86581,
+		"pleasant_days" : 105
+	},
+	{
+		"id" : "72510704780",
+		"name" : "FITCHBURG MUNICIPAL AIRPORT, MA US",
+		"latitude" : 42.55495,
+		"longitude" : -71.75699,
+		"pleasant_days" : 97
+	},
+	{
+		"id" : "72510404843",
+		"name" : "MEADVILLE PORT MEADVILLE AIRPORT, PA US",
+		"latitude" : 41.62584,
+		"longitude" : -80.21231,
+		"pleasant_days" : 130
+	},
+	{
+		"id" : "72510314712",
+		"name" : "READING REGIONAL AIRPORT, PA US",
+		"latitude" : 40.37342,
+		"longitude" : -75.95924,
+		"pleasant_days" : 93
+	},
+	{
+		"id" : "72469523036",
+		"name" : "AURORA BUCKLEY FIELD ANGB, CO US",
+		"latitude" : 39.71667,
+		"longitude" : -104.75,
+		"pleasant_days" : 30
+	},
+	{
+		"id" : "72423093821",
+		"name" : "LOUISVILLE INTERNATIONAL AIRPORT, KY US",
+		"latitude" : 38.17738,
+		"longitude" : -85.73077,
+		"pleasant_days" : 65
+	},
+	{
+		"id" : "72421093814",
+		"name" : "CINCINNATI NORTHERN KENTUCKY INTERNATIONAL AIRPORT, KY US",
+		"latitude" : 39.04443,
+		"longitude" : -84.67241,
+		"pleasant_days" : 72
+	},
+	{
+		"id" : "72422093820",
+		"name" : "LEXINGTON BLUEGRASS AIRPORT, KY US",
+		"latitude" : 38.03391,
+		"longitude" : -84.61138,
+		"pleasant_days" : 74
+	},
+	{
+		"id" : "72423353841",
+		"name" : "FRANKFORT CAPITAL CITY AIRPORT, KY US",
+		"latitude" : 38.18463,
+		"longitude" : -84.90393,
+		"pleasant_days" : 85
+	},
+	{
+		"id" : "72403513773",
+		"name" : "QUANTICO MCAS, VA US",
+		"latitude" : 38.50362,
+		"longitude" : -77.30503,
+		"pleasant_days" : 88
+	},
+	{
+		"id" : "72403093738",
+		"name" : "WASHINGTON DULLES INTERNATIONAL AIRPORT, VA US",
+		"latitude" : 38.93485,
+		"longitude" : -77.44728,
+		"pleasant_days" : 75
+	},
+	{
+		"id" : "72402093739",
+		"name" : "WALLOPS ISLAND NASA TEST FACILITY, VA US",
+		"latitude" : 37.93718,
+		"longitude" : -75.46622,
+		"pleasant_days" : 77
+	},
+	{
+		"id" : "72401993773",
+		"name" : "WAKEFIELD MUNICIPAL AIRPORT, VA US",
+		"latitude" : 36.98269,
+		"longitude" : -77.00137,
+		"pleasant_days" : 85
+	},
+	{
+		"id" : "72401693736",
+		"name" : "CHARLOTTESVILLE ALBEMARLE AIRPORT, VA US",
+		"latitude" : 38.1374,
+		"longitude" : -78.45513,
+		"pleasant_days" : 90
+	},
+	{
+		"id" : "72401493714",
+		"name" : "PETERSBURG DINWIDDIE CO AIRPORT, VA US",
+		"latitude" : 37.18333,
+		"longitude" : -77.5,
+		"pleasant_days" : 82
+	},
+	{
+		"id" : "72401013740",
+		"name" : "RICHMOND INTERNATIONAL AIRPORT, VA US",
+		"latitude" : 37.51154,
+		"longitude" : -77.32338,
+		"pleasant_days" : 61
+	},
+	{
+		"id" : "72399014711",
+		"name" : "MIDDLETOWN HARRISBURG INTERNATIONAL AIRPORT, PA US",
+		"latitude" : 40.1962,
+		"longitude" : -76.77249,
+		"pleasant_days" : 83
+	},
+	{
+		"id" : "72394023273",
+		"name" : "SANTA MARIA PUBLIC AIRPORT, CA US",
+		"latitude" : 34.89403,
+		"longitude" : -120.45216,
+		"pleasant_days" : 130
+	},
+	{
+		"id" : "72392623136",
+		"name" : "CAMARILLO AIRPORT, CA US",
+		"latitude" : 34.21142,
+		"longitude" : -119.08762,
+		"pleasant_days" : 212
+	},
+	{
+		"id" : "72392793110",
+		"name" : "OXNARD VENTURA CO AIRPORT, CA US",
+		"latitude" : 34.20012,
+		"longitude" : -119.20417,
+		"pleasant_days" : 182
+	},
+	{
+		"id" : "72392523190",
+		"name" : "SANTA BARBARA MUNICIPAL AIRPORT, CA US",
+		"latitude" : 34.4241,
+		"longitude" : -119.84249,
+		"pleasant_days" : 189
+	},
+	{
+		"id" : "72389093193",
+		"name" : "FRESNO YOSEMITE INTERNATIONAL, CA US",
+		"latitude" : 36.77999,
+		"longitude" : -119.72016,
+		"pleasant_days" : 63
+	},
+	{
+		"id" : "72387003160",
+		"name" : "DESERT ROCK AIRPORT, NV US",
+		"latitude" : 36.6206,
+		"longitude" : -116.0278,
+		"pleasant_days" : 26
+	},
+	{
+		"id" : "72386023169",
+		"name" : "MCCARRAN INTERNATIONAL AIRPORT, NV US",
+		"latitude" : 36.0719,
+		"longitude" : -115.16343,
+		"pleasant_days" : 48
+	},
+	{
+		"id" : "72378853135",
+		"name" : "LAUGHLIN BULLHEAD INTERNATIONAL AIRPORT, AZ US",
+		"latitude" : 35.15722,
+		"longitude" : -114.55944,
+		"pleasant_days" : 30
+	},
+	{
+		"id" : "72376123901",
+		"name" : "CALDWELL MUNICIPAL AIRPORT, TX US",
+		"latitude" : 30.51556,
+		"longitude" : -96.70417,
+		"pleasant_days" : 79
+	},
+	{
+		"id" : "72376099999",
+		"name" : "FLAGSTAFF, AZ US",
+		"latitude" : 35.2166666,
+		"longitude" : -111.8166666,
+		"pleasant_days" : 17
+	},
+	{
+		"id" : "72375003103",
+		"name" : "FLAGSTAFF AIRPORT, AZ US",
+		"latitude" : 35.14427,
+		"longitude" : -111.66637,
+		"pleasant_days" : 80
+	},
+	{
+		"id" : "72365623049",
+		"name" : "SANTA FE CO MUNICIPAL AIRPORT, NM US",
+		"latitude" : 35.61096,
+		"longitude" : -106.09574,
+		"pleasant_days" : 17
+	},
+	{
+		"id" : "72362603737",
+		"name" : "CURRITUCK CO AIRPORT, NC US",
+		"latitude" : 36.39889,
+		"longitude" : -76.01639,
+		"pleasant_days" : 91
+	},
+	{
+		"id" : "72354013919",
+		"name" : "OKLAHOMA CITY TINKER AFB, OK US",
+		"latitude" : 35.41667,
+		"longitude" : -97.38333,
+		"pleasant_days" : 46
+	},
+	{
+		"id" : "72353653986",
+		"name" : "ENID WOODRING AIRPORT, OK US",
+		"latitude" : 36.38333,
+		"longitude" : -97.8,
+		"pleasant_days" : 28
+	},
+	{
+		"id" : "72327313827",
+		"name" : "SMYRNA AIRPORT, TN US",
+		"latitude" : 36.00889,
+		"longitude" : -86.52,
+		"pleasant_days" : 62
+	},
+	{
+		"id" : "72327013897",
+		"name" : "NASHVILLE INTERNATIONAL AIRPORT, TN US",
+		"latitude" : 36.11054,
+		"longitude" : -86.68815,
+		"pleasant_days" : 65
+	},
+	{
+		"id" : "72329003935",
+		"name" : "CAPE GIRARDEAU MUNICIPAL AIRPORT, MO US",
+		"latitude" : 37.22545,
+		"longitude" : -89.57855,
+		"pleasant_days" : 73
+	},
+	{
+		"id" : "72330003975",
+		"name" : "POPLAR BLUFF MUNICIPAL AIRPORT, MO US",
+		"latitude" : 36.76973,
+		"longitude" : -90.32241,
+		"pleasant_days" : 70
+	},
+	{
+		"id" : "72531594870",
+		"name" : "CHAMPAIGN URBANA WILLARD AIRPORT, IL US",
+		"latitude" : 40.0324,
+		"longitude" : -88.27547,
+		"pleasant_days" : 95
+	},
+	{
+		"id" : "72531403960",
+		"name" : "CAHOKIA ST LOUIS DOWNTOWN AIRPORT, IL US",
+		"latitude" : 38.56402,
+		"longitude" : -90.14869,
+		"pleasant_days" : 68
+	},
+	{
+		"id" : "72530094846",
+		"name" : "CHICAGO OHARE INTERNATIONAL AIRPORT, IL US",
+		"latitude" : 41.96017,
+		"longitude" : -87.93164,
+		"pleasant_days" : 63
+	},
+	{
+		"id" : "72528014733",
+		"name" : "BUFFALO NIAGARA INTERNATIONAL, NY US",
+		"latitude" : 42.93998,
+		"longitude" : -78.73606,
+		"pleasant_days" : 112
+	},
+	{
+		"id" : "72520094823",
+		"name" : "PITTSBURGH INTERNATIONAL AIRPORT, PA US",
+		"latitude" : 40.48459,
+		"longitude" : -80.21448,
+		"pleasant_days" : 127
+	},
+	{
+		"id" : "72519014771",
+		"name" : "SYRACUSE HANCOCK INTERNATIONAL AIRPORT, NY US",
+		"latitude" : 43.1111,
+		"longitude" : -76.10384,
+		"pleasant_days" : 101
+	},
+	{
+		"id" : "72518014735",
+		"name" : "ALBANY INTERNATIONAL AIRPORT, NY US",
+		"latitude" : 42.74722,
+		"longitude" : -73.79913,
+		"pleasant_days" : 113
+	},
+	{
+		"id" : "72517564706",
+		"name" : "INDIANA J STEWART, PA US",
+		"latitude" : 40.63333,
+		"longitude" : -79.1,
+		"pleasant_days" : 145
+	},
+	{
+		"id" : "72515754757",
+		"name" : "WELLSVILLE MUNICIPAL AIRPORT, NY US",
+		"latitude" : 42.10775,
+		"longitude" : -77.98424,
+		"pleasant_days" : 109
+	},
+	{
+		"id" : "72515614748",
+		"name" : "ELMIRA CORNING REGIONAL AIRPORT, NY US",
+		"latitude" : 42.15658,
+		"longitude" : -76.90291,
+		"pleasant_days" : 96
+	},
+	{
+		"id" : "72515594761",
+		"name" : "ITHACA TOMPKINS CNTY, NY US",
+		"latitude" : 42.48333,
+		"longitude" : -76.46667,
+		"pleasant_days" : 114
+	},
+	{
+		"id" : "72515004725",
+		"name" : "BINGHAMTON GREATER AP, NY US",
+		"latitude" : 42.20678,
+		"longitude" : -75.97993,
+		"pleasant_days" : 102
+	},
+	{
+		"id" : "72514654773",
+		"name" : "FULTON OSWEGO CO AIRPORT, NY US",
+		"latitude" : 43.35037,
+		"longitude" : -76.38316,
+		"pleasant_days" : 125
+	},
+	{
+		"id" : "72514014778",
+		"name" : "WILLIAMSPORT REGIONAL AIRPORT, PA US",
+		"latitude" : 41.24295,
+		"longitude" : -76.92173,
+		"pleasant_days" : 101
+	},
+	{
+		"id" : "72512854739",
+		"name" : "UNIVERSITY PARK, PA US",
+		"latitude" : 40.85,
+		"longitude" : -77.85,
+		"pleasant_days" : 121
+	},
+	{
+		"id" : "72512704726",
+		"name" : "JOHNSTOWN CAMBRIA CO AIRPORT, PA US",
+		"latitude" : 40.31488,
+		"longitude" : -78.83075,
+		"pleasant_days" : 117
+	},
+	{
+		"id" : "72512614736",
+		"name" : "ALTOONA BLAIR CO AIRPORT, PA US",
+		"latitude" : 40.29993,
+		"longitude" : -78.3168,
+		"pleasant_days" : 131
+	},
+	{
+		"id" : "72512504787",
+		"name" : "DUBOIS REGIONAL AIRPORT, PA US",
+		"latitude" : 41.17947,
+		"longitude" : -78.89326,
+		"pleasant_days" : 121
+	},
+	{
+		"id" : "72511954792",
+		"name" : "CLEARFIELD LAWRENCE AIRPORT, PA US",
+		"latitude" : 41.04647,
+		"longitude" : -78.4112,
+		"pleasant_days" : 121
+	},
+	{
+		"id" : "72511814751",
+		"name" : "HARRISBURG CAPITAL CITY AIRPORT, PA US",
+		"latitude" : 40.21843,
+		"longitude" : -76.85521,
+		"pleasant_days" : 82
+	},
+	{
+		"id" : "72511654737",
+		"name" : "LANCASTER AIRPORT, PA US",
+		"latitude" : 40.12061,
+		"longitude" : -76.29446,
+		"pleasant_days" : 96
+	},
+	{
+		"id" : "72510094746",
+		"name" : "WORCESTER REGIONAL AIRPORT, MA US",
+		"latitude" : 42.2706,
+		"longitude" : -71.8731,
+		"pleasant_days" : 100
+	},
+	{
+		"id" : "72509854704",
+		"name" : "NORWOOD MEMORIAL AIRPORT, MA US",
+		"latitude" : 42.19123,
+		"longitude" : -71.17326,
+		"pleasant_days" : 87
+	},
+	{
+		"id" : "72509014739",
+		"name" : "BOSTON LOGAN INTERNATIONAL AIRPORT, MA US",
+		"latitude" : 42.36057,
+		"longitude" : -71.00975,
+		"pleasant_days" : 95
+	},
+	{
+		"id" : "72508714752",
+		"name" : "HARTFORD BRAINARD AIRPORT, CT US",
+		"latitude" : 41.7352,
+		"longitude" : -72.65115,
+		"pleasant_days" : 93
+	},
+	{
+		"id" : "72508554756",
+		"name" : "ORANGE MUNICIPAL AIRPORT, MA US",
+		"latitude" : 42.56998,
+		"longitude" : -72.28696,
+		"pleasant_days" : 86
+	},
+	{
+		"id" : "72508454767",
+		"name" : "WILLIMANTIC WINDHAM AIRPORT, CT US",
+		"latitude" : 41.74249,
+		"longitude" : -72.18246,
+		"pleasant_days" : 125
+	},
+	{
+		"id" : "72507914787",
+		"name" : "NEWPORT STATE AIRPORT, RI US",
+		"latitude" : 41.52991,
+		"longitude" : -71.28331,
+		"pleasant_days" : 126
+	},
+	{
+		"id" : "72506014756",
+		"name" : "NANTUCKET MEMORIAL AIRPORT, MA US",
+		"latitude" : 41.25407,
+		"longitude" : -70.05893,
+		"pleasant_days" : 92
+	},
+	{
+		"id" : "72506994624",
+		"name" : "CHATHAM MUNICIPAL AIRPORT, MA US",
+		"latitude" : 41.68778,
+		"longitude" : -69.99318,
+		"pleasant_days" : 125
+	},
+	{
+		"id" : "72505914702",
+		"name" : "BEDFORD HANSCOM FIELD, MA US",
+		"latitude" : 42.46811,
+		"longitude" : -71.29463,
+		"pleasant_days" : 96
+	},
+	{
+		"id" : "72505394728",
+		"name" : "NY CITY CENTRAL PARK, NY US",
+		"latitude" : 40.77898,
+		"longitude" : -73.96925,
+		"pleasant_days" : 115
+	},
+	{
+		"id" : "72505004781",
+		"name" : "ISLIP LI MACARTHUR AIRPORT, NY US",
+		"latitude" : 40.79389,
+		"longitude" : -73.10181,
+		"pleasant_days" : 112
+	},
+	{
+		"id" : "72504614707",
+		"name" : "GROTON NEW LONDON AIRPORT, CT US",
+		"latitude" : 41.32792,
+		"longitude" : -72.04893,
+		"pleasant_days" : 126
+	},
+	{
+		"id" : "72504094702",
+		"name" : "IGOR I SIKORSKY MEMORIAL AIRPORT, CT US",
+		"latitude" : 41.16424,
+		"longitude" : -73.12664,
+		"pleasant_days" : 101
+	},
+	{
+		"id" : "72493023230",
+		"name" : "OAKLAND INTERNATIONAL AIRPORT, CA US",
+		"latitude" : 37.7178,
+		"longitude" : -122.23301,
+		"pleasant_days" : 75
+	},
+	{
+		"id" : "72476593013",
+		"name" : "MONTROSE REGIONAL AIRPORT, CO US",
+		"latitude" : 38.50538,
+		"longitude" : -107.89813,
+		"pleasant_days" : 16
+	},
+	{
+		"id" : "72476023066",
+		"name" : "GRAND JUNCTION WALKER FIELD, CO US",
+		"latitude" : 39.13437,
+		"longitude" : -108.54081,
+		"pleasant_days" : 23
+	},
+	{
+		"id" : "72475593129",
+		"name" : "CEDAR CITY AIRPORT, UT US",
+		"latitude" : 37.70672,
+		"longitude" : -113.09698,
+		"pleasant_days" : 3
+	},
+	{
+		"id" : "72475423186",
+		"name" : "ST GEORGE MUNICIPAL AIRPORT, UT US",
+		"latitude" : 37.1,
+		"longitude" : -113.6,
+		"pleasant_days" : 39
+	},
+	{
+		"id" : "72470093141",
+		"name" : "PRICE CARBON CO AIRPORT, UT US",
+		"latitude" : 39.60886,
+		"longitude" : -110.75547,
+		"pleasant_days" : 19
+	},
+	{
+		"id" : "72469903065",
+		"name" : "BROOMFIELD JEFFERSON CO AIRPORT, CO US",
+		"latitude" : 39.9,
+		"longitude" : -105.11667,
+		"pleasant_days" : 45
+	},
+	{
+		"id" : "72467523063",
+		"name" : "EAGLE CO AIRPORT, CO US",
+		"latitude" : 39.65,
+		"longitude" : -106.91667,
+		"pleasant_days" : 47
+	},
+	{
+		"id" : "72466693067",
+		"name" : "DENVER CENTENNIAL AIRPORT, CO US",
+		"latitude" : 39.5599,
+		"longitude" : -104.84843,
+		"pleasant_days" : 28
+	},
+	{
+		"id" : "72466093037",
+		"name" : "COLORADO SPRINGS MUNICIPAL AIRPORT, CO US",
+		"latitude" : 38.80949,
+		"longitude" : -104.68873,
+		"pleasant_days" : 39
+	},
+	{
+		"id" : "72462703011",
+		"name" : "TELLURIDE REGIONAL AIRPORT, CO US",
+		"latitude" : 37.95,
+		"longitude" : -107.9,
+		"pleasant_days" : 79
+	},
+	{
+		"id" : "72458603919",
+		"name" : "SALINA MUNICIPAL AIRPORT, KS US",
+		"latitude" : 38.77996,
+		"longitude" : -97.64444,
+		"pleasant_days" : 32
+	},
+	{
+		"id" : "72458013984",
+		"name" : "CONCORDIA ASOS, KS US",
+		"latitude" : 39.55127,
+		"longitude" : -97.65077,
+		"pleasant_days" : 31
+	},
+	{
+		"id" : "72456513920",
+		"name" : "TOPEKA FORBES FIELD, KS US",
+		"latitude" : 38.94144,
+		"longitude" : -95.65125,
+		"pleasant_days" : 51
+	},
+	{
+		"id" : "72430314813",
+		"name" : "AKRON FULTON INTERNATIONAL AIRPORT, OH US",
+		"latitude" : 41.03732,
+		"longitude" : -81.46341,
+		"pleasant_days" : 122
+	},
+	{
+		"id" : "72432093817",
+		"name" : "EVANSVILLE REGIONAL AIRPORT, IN US",
+		"latitude" : 38.05015,
+		"longitude" : -87.51465,
+		"pleasant_days" : 66
+	},
+	{
+		"id" : "72433693810",
+		"name" : "CARBONDALE SOUTHERN ILLINOIS AIRPORT, IL US",
+		"latitude" : 37.78329,
+		"longitude" : -89.24533,
+		"pleasant_days" : 75
+	},
+	{
+		"id" : "72429804850",
+		"name" : "LIMA ALLEN CO AIRPORT, OH US",
+		"latitude" : 40.70806,
+		"longitude" : -84.0214,
+		"pleasant_days" : 103
+	},
+	{
+		"id" : "72429613841",
+		"name" : "WILMINGTON AIR PARK, OH US",
+		"latitude" : 39.43084,
+		"longitude" : -83.777,
+		"pleasant_days" : 108
+	},
+	{
+		"id" : "72429793812",
+		"name" : "CINCINNATI MUNICIPAL AIRPORT LUNKEN FIELD, OH US",
+		"latitude" : 39.106,
+		"longitude" : -84.41609,
+		"pleasant_days" : 91
+	},
+	{
+		"id" : "72429453844",
+		"name" : "LANCASTER FAIRFIELD CO AIRPORT, OH US",
+		"latitude" : 39.75725,
+		"longitude" : -82.66333,
+		"pleasant_days" : 86
+	},
+	{
+		"id" : "72428704848",
+		"name" : "TOLEDO EXECUTIVE AIRPORT, OH US",
+		"latitude" : 41.56327,
+		"longitude" : -83.47671,
+		"pleasant_days" : 81
+	},
+	{
+		"id" : "72428693824",
+		"name" : "ZANESVILLE MUNICIPAL AIRPORT, OH US",
+		"latitude" : 39.94609,
+		"longitude" : -81.89315,
+		"pleasant_days" : 120
+	},
+	{
+		"id" : "72428513812",
+		"name" : "COLUMBUS RICKENBACKER, OH US",
+		"latitude" : 39.81667,
+		"longitude" : -82.93333,
+		"pleasant_days" : 87
+	},
+	{
+		"id" : "72428463825",
+		"name" : "COLUMBUS BOLTON FIELD, OH US",
+		"latitude" : 39.9,
+		"longitude" : -83.13333,
+		"pleasant_days" : 147
+	},
+	{
+		"id" : "72427514894",
+		"name" : "WHEELING OHIO CO AIRPORT, WV US",
+		"latitude" : 40.16994,
+		"longitude" : -80.64406,
+		"pleasant_days" : 111
+	},
+	{
+		"id" : "72427303804",
+		"name" : "PARKERSBURG MID OHIO VALLEY REGIONAL AIRPORT, WV US",
+		"latitude" : 39.33948,
+		"longitude" : -81.44379,
+		"pleasant_days" : 91
+	},
+	{
+		"id" : "72455503936",
+		"name" : "MANHATTAN ASOS, KS US",
+		"latitude" : 39.13456,
+		"longitude" : -96.67894,
+		"pleasant_days" : 47
+	},
+	{
+		"id" : "72455613989",
+		"name" : "EMPORIA ASOS, KS US",
+		"latitude" : 38.32906,
+		"longitude" : -96.19453,
+		"pleasant_days" : 45
+	},
+	{
+		"id" : "72456013996",
+		"name" : "TOPEKA ASOS, KS US",
+		"latitude" : 39.07246,
+		"longitude" : -95.62602,
+		"pleasant_days" : 48
+	},
+	{
+		"id" : "72451013985",
+		"name" : "DODGE CITY REGIONAL AIRPORT, KS US",
+		"latitude" : 37.77105,
+		"longitude" : -99.96915,
+		"pleasant_days" : 5
+	},
+	{
+		"id" : "72450803997",
+		"name" : "LAWRENCE ASOS, KS US",
+		"latitude" : 39.00779,
+		"longitude" : -95.2115,
+		"pleasant_days" : 55
+	},
+	{
+		"id" : "74718703104",
+		"name" : "DESERT RESORTS REGIONAL AIRPORT, CA US",
+		"latitude" : 33.63166,
+		"longitude" : -116.16412,
+		"pleasant_days" : 26
+	},
+	{
+		"id" : "72656804961",
+		"name" : "OWATONNA DEGNER REGIONAL AIRPORT, MN US",
+		"latitude" : 44.12333,
+		"longitude" : -93.26056,
+		"pleasant_days" : 104
+	},
+	{
+		"id" : "72656704980",
+		"name" : "NEW ULM MUNICIPAL AIRPORT, MN US",
+		"latitude" : 44.31944,
+		"longitude" : -94.50222,
+		"pleasant_days" : 103
+	},
+	{
+		"id" : "72656204943",
+		"name" : "MINNEAPOLIS AIRLAKE AIRPORT, MN US",
+		"latitude" : 44.62778,
+		"longitude" : -93.22806,
+		"pleasant_days" : 98
+	},
+	{
+		"id" : "72655304951",
+		"name" : "MONTEVIDEO CHIPPEWA CO AIRPORT, MN US",
+		"latitude" : 44.96889,
+		"longitude" : -95.71,
+		"pleasant_days" : 97
+	},
+	{
+		"id" : "72635594871",
+		"name" : "BENTON HARBOR, MI US",
+		"latitude" : 42.12894,
+		"longitude" : -86.41518,
+		"pleasant_days" : 129
+	},
+	{
+		"id" : "72537804887",
+		"name" : "HOWELL LIVINGSTON CO AIRPORT, MI US",
+		"latitude" : 42.62944,
+		"longitude" : -83.98417,
+		"pleasant_days" : 131
+	},
+	{
+		"id" : "72533704807",
+		"name" : "GARY, IN US",
+		"latitude" : 41.61667,
+		"longitude" : -87.41667,
+		"pleasant_days" : 112
+	},
+	{
+		"id" : "72519664775",
+		"name" : "ROME GRIFFISS AIRFIELD, NY US",
+		"latitude" : 43.22417,
+		"longitude" : -75.39563,
+		"pleasant_days" : 118
+	},
+	{
+		"id" : "72506854777",
+		"name" : "TAUNTON MUNICIPAL AIRPORT, MA US",
+		"latitude" : 41.87561,
+		"longitude" : -71.02083,
+		"pleasant_days" : 90
+	},
+	{
+		"id" : "72497593809",
+		"name" : "CAIRO REGIONAL AIRPORT, IL US",
+		"latitude" : 37.06444,
+		"longitude" : -89.21944,
+		"pleasant_days" : 86
+	},
+	{
+		"id" : "72453013969",
+		"name" : "PONCA CITY MUNICIPAL AIRPORT, OK US",
+		"latitude" : 36.73689,
+		"longitude" : -97.10234,
+		"pleasant_days" : 49
+	},
+	{
+		"id" : "72450403974",
+		"name" : "WICHITA COLONEL JAMES JABARA AIRPORT, KS US",
+		"latitude" : 37.74965,
+		"longitude" : -97.21907,
+		"pleasant_days" : 45
+	},
+	{
+		"id" : "72410613728",
+		"name" : "DANVILLE REGIONAL AIRPORT, VA US",
+		"latitude" : 36.57286,
+		"longitude" : -79.33496,
+		"pleasant_days" : 76
+	},
+	{
+		"id" : "72403603710",
+		"name" : "MANASSAS REGIONAL DAVIS FIELD AIRPORT, VA US",
+		"latitude" : 38.72139,
+		"longitude" : -77.51528,
+		"pleasant_days" : 77
+	},
+	{
+		"id" : "72389693144",
+		"name" : "VISALIA MUNICIPAL AIRPORT, CA US",
+		"latitude" : 36.31667,
+		"longitude" : -119.4,
+		"pleasant_days" : 66
+	},
+	{
+		"id" : "72383023187",
+		"name" : "SANDBERG, CA US",
+		"latitude" : 34.7436,
+		"longitude" : -118.7242,
+		"pleasant_days" : 9
+	},
+	{
+		"id" : "72316013870",
+		"name" : "ALMA BACON CO AIRPORT, GA US",
+		"latitude" : 31.54006,
+		"longitude" : -82.50735,
+		"pleasant_days" : 104
+	},
+	{
+		"id" : "72307513769",
+		"name" : "OCEANA NAS, VA US",
+		"latitude" : 36.81667,
+		"longitude" : -76.03333,
+		"pleasant_days" : 82
+	},
+	{
+		"id" : "72221292814",
+		"name" : "ST AUGUSTINE AIRPORT, FL US",
+		"latitude" : 29.95917,
+		"longitude" : -81.33972,
+		"pleasant_days" : 144
+	},
+	{
+		"id" : "72214504884",
+		"name" : "HARBOR SPRINGS AIRPORT, MI US",
+		"latitude" : 45.42556,
+		"longitude" : -84.91333,
+		"pleasant_days" : 114
+	},
+	{
+		"id" : "72213013861",
+		"name" : "WAYCROSS WARE CO AIRPORT, GA US",
+		"latitude" : 31.25,
+		"longitude" : -82.4,
+		"pleasant_days" : 115
+	},
+	{
+		"id" : "72206263842",
+		"name" : "DOUGLAS MUNICIPAL AIRPORT, GA US",
+		"latitude" : 31.47667,
+		"longitude" : -82.86056,
+		"pleasant_days" : 110
+	},
+	{
+		"id" : "72203912885",
+		"name" : "FORT LAUDERDALE EXECUTIVE AIRPORT, FL US",
+		"latitude" : 26.19905,
+		"longitude" : -80.17764,
+		"pleasant_days" : 179
+	},
+	{
+		"id" : "72203812897",
+		"name" : "NAPLES MUNICIPAL AIRPORT, FL US",
+		"latitude" : 26.15498,
+		"longitude" : -81.77514,
+		"pleasant_days" : 173
+	},
+	{
+		"id" : "72096200337",
+		"name" : "HEART OF GEORGIA REGIONAL AIRPORT, GA US",
+		"latitude" : 32.214,
+		"longitude" : -83.128,
+		"pleasant_days" : 119
+	},
+	{
+		"id" : "72210900355",
+		"name" : "CHEROKEE CO AIRPORT, GA US",
+		"latitude" : 34.317,
+		"longitude" : -84.417,
+		"pleasant_days" : 118
+	},
+	{
+		"id" : "72200354930",
+		"name" : "STANTON AIRFIELD, MN US",
+		"latitude" : 44.47556,
+		"longitude" : -93.01639,
+		"pleasant_days" : 113
+	},
+	{
+		"id" : "72103400351",
+		"name" : "CAMERON MUNICIPAL AIRPORT, TX US",
+		"latitude" : 30.879,
+		"longitude" : -96.971,
+		"pleasant_days" : 90
+	},
+	{
+		"id" : "69015093121",
+		"name" : "TWENTYNINE PALMS MC, CA US",
+		"latitude" : 34.3,
+		"longitude" : -116.16667,
+		"pleasant_days" : 32
+	},
+	{
+		"id" : "74410414763",
+		"name" : "PITTSFIELD MUNICIPAL AIRPORT, MA US",
+		"latitude" : 42.42685,
+		"longitude" : -73.28907,
+		"pleasant_days" : 122
+	},
+	{
+		"id" : "72683604201",
+		"name" : "SCAPPOOSE INDUSTRIAL AIRPORT, OR US",
+		"latitude" : 45.77278,
+		"longitude" : -122.86111,
+		"pleasant_days" : 102
+	},
+	{
+		"id" : "72482893241",
+		"name" : "VACAVILLE NUT TREE AIRPORT ASOS, CA US",
+		"latitude" : 38.37753,
+		"longitude" : -121.95854,
+		"pleasant_days" : 66
+	},
+	{
+		"id" : "72483023232",
+		"name" : "SACRAMENTO AIRPORT ASOS, CA US",
+		"latitude" : 38.50659,
+		"longitude" : -121.49604,
+		"pleasant_days" : 62
+	},
+	{
+		"id" : "72481523257",
+		"name" : "MERCED MUNICIPAL AIRPORT, CA US",
+		"latitude" : 37.28597,
+		"longitude" : -120.51788,
+		"pleasant_days" : 56
+	},
+	{
+		"id" : "72477693075",
+		"name" : "MOAB CANYONLAND AIRPORT, UT US",
+		"latitude" : 38.75006,
+		"longitude" : -109.76267,
+		"pleasant_days" : 24
+	},
+	{
+		"id" : "72315003812",
+		"name" : "ASHEVILLE REGIONAL AIRPORT, NC US",
+		"latitude" : 35.43178,
+		"longitude" : -82.53787,
+		"pleasant_days" : 132
+	},
+	{
+		"id" : "72314753870",
+		"name" : "GASTONIA MUNICIPAL AIRPORT, NC US",
+		"latitude" : 35.1968,
+		"longitude" : -81.15552,
+		"pleasant_days" : 96
+	},
+	{
+		"id" : "72312314886",
+		"name" : "KINGS LAND O LAKES AIRPORT, WI US",
+		"latitude" : 46.15,
+		"longitude" : -89.21667,
+		"pleasant_days" : 93
+	},
+	{
+		"id" : "72313993729",
+		"name" : "CAPE HATTERAS BILLY MITCHELL FIELD, NC US",
+		"latitude" : 35.23238,
+		"longitude" : -75.62223,
+		"pleasant_days" : 100
+	},
+	{
+		"id" : "72312453874",
+		"name" : "GREENWOOD CO AIRPORT, SC US",
+		"latitude" : 34.25394,
+		"longitude" : -82.15265,
+		"pleasant_days" : 85
+	},
+	{
+		"id" : "72312263889",
+		"name" : "GREENVILLE DONALDSON CENTER AIRPORT, SC US",
+		"latitude" : 34.75833,
+		"longitude" : -82.37639,
+		"pleasant_days" : 105
+	},
+	{
+		"id" : "72310013883",
+		"name" : "COLUMBIA METROPOLITAN AIRPORT, SC US",
+		"latitude" : 33.94225,
+		"longitude" : -81.11802,
+		"pleasant_days" : 75
+	},
+	{
+		"id" : "72309593719",
+		"name" : "NEW BERN COASTAL CAROLINA REGIONAL AIRPORT, NC US",
+		"latitude" : 35.06836,
+		"longitude" : -77.04783,
+		"pleasant_days" : 88
+	},
+	{
+		"id" : "72289903179",
+		"name" : "CHINO AIRPORT, CA US",
+		"latitude" : 33.97563,
+		"longitude" : -117.62487,
+		"pleasant_days" : 82
+	},
+	{
+		"id" : "72289793206",
+		"name" : "SAN LUIS OBISPO MCCHESNEY FIELD, CA US",
+		"latitude" : 35.23815,
+		"longitude" : -120.64406,
+		"pleasant_days" : 146
+	},
+	{
+		"id" : "72281353146",
+		"name" : "FORT HUACHUCA PIONEER AIRFIELD, AZ US",
+		"latitude" : 31.60563,
+		"longitude" : -110.42809,
+		"pleasant_days" : 26
+	},
+	{
+		"id" : "72257793984",
+		"name" : "TEMPLE DRAUGHTON MIL, TX US",
+		"latitude" : 31.15,
+		"longitude" : -97.41667,
+		"pleasant_days" : 57
+	},
+	{
+		"id" : "72212904939",
+		"name" : "MOORHEAD MUNICIPAL AIRPORT, MN US",
+		"latitude" : 46.83917,
+		"longitude" : -96.66306,
+		"pleasant_days" : 95
+	},
+	{
+		"id" : "72212504829",
+		"name" : "SAGINAW HARRY W BROWNE AIRPORT, MI US",
+		"latitude" : 43.43333,
+		"longitude" : -83.86667,
+		"pleasant_days" : 120
+	},
+	{
+		"id" : "72210703056",
+		"name" : "GAINES CO AIRPORT, TX US",
+		"latitude" : 32.67528,
+		"longitude" : -102.65444,
+		"pleasant_days" : 36
+	},
+	{
+		"id" : "72209653127",
+		"name" : "LAS VEGAS HENDERSON AIRPORT, NV US",
+		"latitude" : 35.97611,
+		"longitude" : -115.1325,
+		"pleasant_days" : 40
+	},
+	{
+		"id" : "72209153940",
+		"name" : "CLAREMORE REGIONAL AIRPORT, OK US",
+		"latitude" : 36.29417,
+		"longitude" : -95.47944,
+		"pleasant_days" : 63
+	},
+	{
+		"id" : "72201612896",
+		"name" : "MARATHON AIRPORT, FL US",
+		"latitude" : 24.72624,
+		"longitude" : -81.0477,
+		"pleasant_days" : 153
+	},
+	{
+		"id" : "72077900461",
+		"name" : "MEXIA LIMESTONE CO AIRPORT, TX US",
+		"latitude" : 31.64117,
+		"longitude" : -96.51445,
+		"pleasant_days" : 75
+	},
+	{
+		"id" : "72034763877",
+		"name" : "GREENSBORO GREENE CO REGIONAL AIRPORT, GA US",
+		"latitude" : 33.59778,
+		"longitude" : -83.13889,
+		"pleasant_days" : 123
+	},
+	{
+		"id" : "72207504871",
+		"name" : "DE KALB TAYLOR MUNICIPAL AIRPORT, IL US",
+		"latitude" : 41.93167,
+		"longitude" : -88.70806,
+		"pleasant_days" : 114
+	},
+	{
+		"id" : "72207463840",
+		"name" : "CARMI MUNICIPAL AIRPORT, IL US",
+		"latitude" : 38.08944,
+		"longitude" : -88.12306,
+		"pleasant_days" : 82
+	},
+	{
+		"id" : "72200812995",
+		"name" : "PORT ARANSAS MUSTANG BEACH AIRPORT, TX US",
+		"latitude" : 27.81194,
+		"longitude" : -97.08861,
+		"pleasant_days" : 119
+	},
+	{
+		"id" : "72058600183",
+		"name" : "PLATTEVILLE MUNICIPAL AIRPORT, WI US",
+		"latitude" : 42.683,
+		"longitude" : -90.45,
+		"pleasant_days" : 119
+	},
+	{
+		"id" : "72037713917",
+		"name" : "NEWPORT MUNICIPAL AIRPORT, AR US",
+		"latitude" : 35.63333,
+		"longitude" : -91.16667,
+		"pleasant_days" : 50
+	},
+	{
+		"id" : "72446313988",
+		"name" : "KANSAS CITY DOWNTOWN AIRPORT, MO US",
+		"latitude" : 39.12791,
+		"longitude" : -94.58915,
+		"pleasant_days" : 64
+	},
+	{
+		"id" : "72446003947",
+		"name" : "KANSAS CITY INTERNATIONAL AIRPORT, MO US",
+		"latitude" : 39.29747,
+		"longitude" : -94.73087,
+		"pleasant_days" : 43
+	},
+	{
+		"id" : "72445803963",
+		"name" : "JEFFERSON CITY MEMORIAL AIRPORT, MO US",
+		"latitude" : 38.59454,
+		"longitude" : -92.15672,
+		"pleasant_days" : 76
+	},
+	{
+		"id" : "72445514938",
+		"name" : "KIRKSVILLE REGIONAL AIRPORT, MO US",
+		"latitude" : 40.09661,
+		"longitude" : -92.54696,
+		"pleasant_days" : 69
+	},
+	{
+		"id" : "72445303994",
+		"name" : "SEDALIA MEMORIAL AIRPORT, MO US",
+		"latitude" : 38.71198,
+		"longitude" : -93.17467,
+		"pleasant_days" : 64
+	},
+	{
+		"id" : "72445003945",
+		"name" : "COLUMBIA REGIONAL AIRPORT, MO US",
+		"latitude" : 38.81704,
+		"longitude" : -92.21475,
+		"pleasant_days" : 55
+	},
+	{
+		"id" : "72443093989",
+		"name" : "QUINCY REGIONAL AIRPORT, IL US",
+		"latitude" : 39.93709,
+		"longitude" : -91.19661,
+		"pleasant_days" : 74
+	},
+	{
+		"id" : "72440013995",
+		"name" : "SPRINGFIELD WEATHER SERVICE OFFICE AIRPORT, MO US",
+		"latitude" : 37.23983,
+		"longitude" : -93.38995,
+		"pleasant_days" : 52
+	},
+	{
+		"id" : "72439754831",
+		"name" : "BLOOMINGTON NORMAL AIRPORT, IL US",
+		"latitude" : 40.48333,
+		"longitude" : -88.95,
+		"pleasant_days" : 78
+	},
+	{
+		"id" : "72439503958",
+		"name" : "ALTON ST LOUIS REGIONAL AIRPORT, IL US",
+		"latitude" : 38.88333,
+		"longitude" : -90.05,
+		"pleasant_days" : 90
+	},
+	{
+		"id" : "72439093822",
+		"name" : "SPRINGFIELD ABRAHAM LINCOLN CAPITAL AIRPORT, IL US",
+		"latitude" : 39.84529,
+		"longitude" : -89.68401,
+		"pleasant_days" : 71
+	},
+	{
+		"id" : "72438614835",
+		"name" : "LAFAYETTE PURDUE UNIVERSITY AIRPORT, IN US",
+		"latitude" : 40.41236,
+		"longitude" : -86.94739,
+		"pleasant_days" : 87
+	},
+	{
+		"id" : "72437303868",
+		"name" : "TERRE HAUTE HULMAN REGIONAL AIRPORT, IN US",
+		"latitude" : 39.4429,
+		"longitude" : -87.32206,
+		"pleasant_days" : 74
+	},
+	{
+		"id" : "72438093819",
+		"name" : "INDIANAPOLIS INTERNATIONAL AIRPORT, IN US",
+		"latitude" : 39.72515,
+		"longitude" : -86.2816,
+		"pleasant_days" : 68
+	},
+	{
+		"id" : "72438453842",
+		"name" : "INDIANAPOLIS EAGLE CREEK AIRPORT, IN US",
+		"latitude" : 39.82483,
+		"longitude" : -86.29583,
+		"pleasant_days" : 91
+	},
+	{
+		"id" : "72435653866",
+		"name" : "SHELBYVILLE MUNICIPAL AIRPORT, IN US",
+		"latitude" : 39.58545,
+		"longitude" : -85.79982,
+		"pleasant_days" : 65
+	},
+	{
+		"id" : "72434753904",
+		"name" : "ST CHARLES CO AIRPORT, MO US",
+		"latitude" : 38.93043,
+		"longitude" : -90.43291,
+		"pleasant_days" : 68
+	},
+	{
+		"id" : "72435003816",
+		"name" : "PADUCAH BARKLEY REGIONAL AIRPORT, KY US",
+		"latitude" : 37.05635,
+		"longitude" : -88.77425,
+		"pleasant_days" : 65
+	},
+	{
+		"id" : "72434503966",
+		"name" : "ST LOUIS SPIRIT OF ST LOUIS AIRPORT, MO US",
+		"latitude" : 38.65752,
+		"longitude" : -90.65577,
+		"pleasant_days" : 72
+	},
+	{
+		"id" : "72434013994",
+		"name" : "ST LOUIS LAMBERT INTERNATIONAL AIRPORT, MO US",
+		"latitude" : 38.75246,
+		"longitude" : -90.37342,
+		"pleasant_days" : 54
+	},
+	{
+		"id" : "72433903865",
+		"name" : "MARION WILLIAMSON CO AIRPORT, IL US",
+		"latitude" : 37.75,
+		"longitude" : -89.0,
+		"pleasant_days" : 91
+	},
+	{
+		"id" : "72433813802",
+		"name" : "BELLEVILLE SCOTT AFB, IL US",
+		"latitude" : 38.55,
+		"longitude" : -89.85,
+		"pleasant_days" : 70
+	},
+	{
+		"id" : "72311013873",
+		"name" : "ATHENS BEN EPPS AIRPORT, GA US",
+		"latitude" : 33.94773,
+		"longitude" : -83.32736,
+		"pleasant_days" : 77
+	},
+	{
+		"id" : "72308693741",
+		"name" : "NEWPORT NEWS INTERNATIONAL AIRPORT, VA US",
+		"latitude" : 37.13216,
+		"longitude" : -76.49399,
+		"pleasant_days" : 78
+	},
+	{
+		"id" : "72308513750",
+		"name" : "NORFOLK NAS, VA US",
+		"latitude" : 36.93746,
+		"longitude" : -76.28926,
+		"pleasant_days" : 81
+	},
+	{
+		"id" : "72308493775",
+		"name" : "ASHLAND HANOVER CO MUNICIPAL AIRPORT, VA US",
+		"latitude" : 37.70926,
+		"longitude" : -77.43484,
+		"pleasant_days" : 77
+	},
+	{
+		"id" : "72306513783",
+		"name" : "GREENVILLE PITT GREENVILLE AIRPORT, NC US",
+		"latitude" : 35.63333,
+		"longitude" : -77.38333,
+		"pleasant_days" : 101
+	},
+	{
+		"id" : "72304613766",
+		"name" : "MANTEO, NC US",
+		"latitude" : 35.9172,
+		"longitude" : -75.7024,
+		"pleasant_days" : 97
+	},
+	{
+		"id" : "72303593740",
+		"name" : "FAYETTEVILLE REGIONAL AIRPORT GRANNIS FIELD, NC US",
+		"latitude" : 34.98953,
+		"longitude" : -78.88004,
+		"pleasant_days" : 74
+	},
+	{
+		"id" : "72303793765",
+		"name" : "BEAUFORT MICHAEL J. SMITH FIELD, NC US",
+		"latitude" : 34.73258,
+		"longitude" : -76.65659,
+		"pleasant_days" : 113
+	},
+	{
+		"id" : "72303013714",
+		"name" : "FAYETTEVILLE POPE AFB, NC US",
+		"latitude" : 35.17389,
+		"longitude" : -79.00889,
+		"pleasant_days" : 84
+	},
+	{
+		"id" : "72301003810",
+		"name" : "HICKORY FAA AIRPORT, NC US",
+		"latitude" : 35.74205,
+		"longitude" : -81.38225,
+		"pleasant_days" : 87
+	},
+	{
+		"id" : "72297603166",
+		"name" : "FULLERTON MUNICIPAL AIRPORT, CA US",
+		"latitude" : 33.87154,
+		"longitude" : -117.98561,
+		"pleasant_days" : 247
+	},
+	{
+		"id" : "72302013748",
+		"name" : "WILMINGTON INTERNATIONAL AIRPORT, NC US",
+		"latitude" : 34.26678,
+		"longitude" : -77.89987,
+		"pleasant_days" : 80
+	},
+	{
+		"id" : "72297793184",
+		"name" : "SANTA ANA JOHN WAYNE AIRPORT, CA US",
+		"latitude" : 33.67975,
+		"longitude" : -117.86746,
+		"pleasant_days" : 333
+	},
+	{
+		"id" : "72297023129",
+		"name" : "LONG BEACH DAUGHERTY AIRPORT, CA US",
+		"latitude" : 33.81177,
+		"longitude" : -118.14718,
+		"pleasant_days" : 264
+	},
+	{
+		"id" : "72297263878",
+		"name" : "LITCHFIELD MUNICIPAL AIRPORT, IL US",
+		"latitude" : 39.1625,
+		"longitude" : -89.67472,
+		"pleasant_days" : 105
+	},
+	{
+		"id" : "72295603167",
+		"name" : "HAWTHORNE MUNICIPAL AIRPORT, CA US",
+		"latitude" : 33.92353,
+		"longitude" : -118.33291,
+		"pleasant_days" : 350
+	},
+	{
+		"id" : "72288623130",
+		"name" : "VAN NUYS AIRPORT, CA US",
+		"latitude" : 34.21214,
+		"longitude" : -118.49146,
+		"pleasant_days" : 143
+	},
+	{
+		"id" : "72286023119",
+		"name" : "MARCH AFB, CA US",
+		"latitude" : 33.9,
+		"longitude" : -117.25,
+		"pleasant_days" : 64
+	},
+	{
+		"id" : "72278903192",
+		"name" : "SCOTTSDALE MUNICIPAL AIRPORT, AZ US",
+		"latitude" : 33.61234,
+		"longitude" : -111.92317,
+		"pleasant_days" : 96
+	},
+	{
+		"id" : "72259903971",
+		"name" : "DALLAS REDBIRD AIRPORT, TX US",
+		"latitude" : 32.67816,
+		"longitude" : -96.86771,
+		"pleasant_days" : 71
+	},
+	{
+		"id" : "72260003969",
+		"name" : "STEPHENVILLE CLARK FIELD, TX US",
+		"latitude" : 32.21528,
+		"longitude" : -98.1775,
+		"pleasant_days" : 92
+	},
+	{
+		"id" : "72257603902",
+		"name" : "ROBERT GRAY ARMY AIR FIELD, TX US",
+		"latitude" : 31.06667,
+		"longitude" : -97.83333,
+		"pleasant_days" : 62
+	},
+	{
+		"id" : "72255512935",
+		"name" : "PALACIOS MUNICIPAL AIRPORT, TX US",
+		"latitude" : 28.7248,
+		"longitude" : -96.25353,
+		"pleasant_days" : 102
+	},
+	{
+		"id" : "72256013959",
+		"name" : "WACO REGIONAL AIRPORT, TX US",
+		"latitude" : 31.61796,
+		"longitude" : -97.2283,
+		"pleasant_days" : 50
+	},
+	{
+		"id" : "72255293929",
+		"name" : "GAINESVILLE MUNICIPAL AIRPORT, TX US",
+		"latitude" : 33.65139,
+		"longitude" : -97.19694,
+		"pleasant_days" : 59
+	},
+	{
+		"id" : "72255012912",
+		"name" : "VICTORIA REGIONAL AIRPORT, TX US",
+		"latitude" : 28.86245,
+		"longitude" : -96.9301,
+		"pleasant_days" : 61
+	},
+	{
+		"id" : "72254753942",
+		"name" : "GEORGETOWN MUNICIPAL AIRPORT, TX US",
+		"latitude" : 30.67917,
+		"longitude" : -97.67944,
+		"pleasant_days" : 77
+	},
+	{
+		"id" : "72254312977",
+		"name" : "HOUSTON SUGARLAND MEM, TX US",
+		"latitude" : 29.61971,
+		"longitude" : -95.65748,
+		"pleasant_days" : 89
+	},
+	{
+		"id" : "72254203999",
+		"name" : "BURNET MUNICIPAL AIRPORT, TX US",
+		"latitude" : 30.74067,
+		"longitude" : -98.23539,
+		"pleasant_days" : 90
+	},
+	{
+		"id" : "72254013904",
+		"name" : "AUSTIN BERGSTROM INTERNATIONAL AIRPORT, TX US",
+		"latitude" : 30.18311,
+		"longitude" : -97.67989,
+		"pleasant_days" : 61
+	},
+	{
+		"id" : "72253712961",
+		"name" : "KERRVILLE MUNICIPAL AIRPORT, TX US",
+		"latitude" : 29.98333,
+		"longitude" : -99.08333,
+		"pleasant_days" : 98
+	},
+	{
+		"id" : "72254153914",
+		"name" : "MCKINNEY MUNICIPAL AIRPORT, TX US",
+		"latitude" : 33.18286,
+		"longitude" : -96.58988,
+		"pleasant_days" : 55
+	},
+	{
+		"id" : "72253612911",
+		"name" : "RANDOLPH AFB, TX US",
+		"latitude" : 29.5325,
+		"longitude" : -98.2623,
+		"pleasant_days" : 80
+	},
+	{
+		"id" : "72253512909",
+		"name" : "SAN ANTONIO KELLY FIELD AFB, TX US",
+		"latitude" : 29.38333,
+		"longitude" : -98.58333,
+		"pleasant_days" : 78
+	},
+	{
+		"id" : "72253012921",
+		"name" : "SAN ANTONIO INTERNATIONAL AIRPORT, TX US",
+		"latitude" : 29.54429,
+		"longitude" : -98.48395,
+		"pleasant_days" : 79
+	},
+	{
+		"id" : "72252412972",
+		"name" : "ROCKPORT ARANSAS CO AIRPORT, TX US",
+		"latitude" : 28.08366,
+		"longitude" : -97.04669,
+		"pleasant_days" : 123
+	},
+	{
+		"id" : "72248013957",
+		"name" : "SHREVEPORT AIRPORT, LA US",
+		"latitude" : 32.4473,
+		"longitude" : -93.8244,
+		"pleasant_days" : 75
+	},
+	{
+		"id" : "72247953907",
+		"name" : "ARLINGTON MUNICIPAL AIRPORT, TX US",
+		"latitude" : 32.65832,
+		"longitude" : -97.09509,
+		"pleasant_days" : 56
+	},
+	{
+		"id" : "72246953912",
+		"name" : "CORSICANA CAMPBELL FIELD, TX US",
+		"latitude" : 32.03155,
+		"longitude" : -96.39936,
+		"pleasant_days" : 58
+	},
+	{
+		"id" : "72244813972",
+		"name" : "TYLER POUNDS FIELD, TX US",
+		"latitude" : 32.3587,
+		"longitude" : -95.404,
+		"pleasant_days" : 73
+	},
+	{
+		"id" : "72244753903",
+		"name" : "HUNTSVILLE MUNICIPAL AIRPORT, TX US",
+		"latitude" : 30.74432,
+		"longitude" : -95.58657,
+		"pleasant_days" : 102
+	},
+	{
+		"id" : "72240413941",
+		"name" : "LAKE CHARLES CHENNAULT INTERNATIONAL AIRPORT, LA US",
+		"latitude" : 30.21028,
+		"longitude" : -93.14333,
+		"pleasant_days" : 107
+	},
+	{
+		"id" : "72241012917",
+		"name" : "PORT ARTHUR SE TX REGIONAL AIRPORT, TX US",
+		"latitude" : 29.95205,
+		"longitude" : -94.02616,
+		"pleasant_days" : 84
+	},
+	{
+		"id" : "72232403071",
+		"name" : "MIDLAND AIRPARK, TX US",
+		"latitude" : 32.03639,
+		"longitude" : -102.10111,
+		"pleasant_days" : 35
+	},
+	{
+		"id" : "72232013970",
+		"name" : "BATON ROUGE METRO AIRPORT, LA US",
+		"latitude" : 30.53782,
+		"longitude" : -91.14681,
+		"pleasant_days" : 100
+	},
+	{
+		"id" : "72231612958",
+		"name" : "NEW ORLEANS ALVIN CALLENDER FIELD, LA US",
+		"latitude" : 29.81667,
+		"longitude" : -90.01667,
+		"pleasant_days" : 125
+	},
+	{
+		"id" : "72231553917",
+		"name" : "NEW ORLEANS LAKEFRONT AIRPORT, LA US",
+		"latitude" : 30.04934,
+		"longitude" : -90.02899,
+		"pleasant_days" : 95
+	},
+	{
+		"id" : "72230053864",
+		"name" : "ALABASTER SHELBY CO AIRPORT ASOS, AL US",
+		"latitude" : 33.17835,
+		"longitude" : -86.78178,
+		"pleasant_days" : 107
+	},
+	{
+		"id" : "72229100470",
+		"name" : "PLATTSMOUTH MUNICIPAL AIRPORT, NE US",
+		"latitude" : 40.94836,
+		"longitude" : -95.91735,
+		"pleasant_days" : 72
+	},
+	{
+		"id" : "72228713871",
+		"name" : "ANNISTON METROPOLITAN AIRPORT, AL US",
+		"latitude" : 33.59043,
+		"longitude" : -85.84788,
+		"pleasant_days" : 96
+	},
+	{
+		"id" : "72425003860",
+		"name" : "HUNTINGTON TRI STATE AIRPORT, WV US",
+		"latitude" : 38.36531,
+		"longitude" : -82.5548,
+		"pleasant_days" : 90
+	},
+	{
+		"id" : "72424013807",
+		"name" : "FORT KNOX GODMAN ARMY AIR FIELD, KY US",
+		"latitude" : 37.9,
+		"longitude" : -85.96667,
+		"pleasant_days" : 85
+	},
+	{
+		"id" : "72424303849",
+		"name" : "LONDON CORBIN AIRPORT, KY US",
+		"latitude" : 37.08958,
+		"longitude" : -84.06881,
+		"pleasant_days" : 107
+	},
+	{
+		"id" : "72428804804",
+		"name" : "COLUMBUS OHIO STATE UNIVERSITY AIRPORT, OH US",
+		"latitude" : 40.078406,
+		"longitude" : -83.078332,
+		"pleasant_days" : 92
+	},
+	{
+		"id" : "72429093815",
+		"name" : "DAYTON INTERNATIONAL AIRPORT, OH US",
+		"latitude" : 39.90638,
+		"longitude" : -84.21853,
+		"pleasant_days" : 89
+	},
+	{
+		"id" : "72423753803",
+		"name" : "OWENSBORO DAVIESS CO REGIONAL AIRPORT, KY US",
+		"latitude" : 37.75,
+		"longitude" : -87.16667,
+		"pleasant_days" : 72
+	},
+	{
+		"id" : "72423513810",
+		"name" : "LOUISVILLE BOWMAN FIELD, KY US",
+		"latitude" : 38.23021,
+		"longitude" : -85.66294,
+		"pleasant_days" : 84
+	},
+	{
+		"id" : "72414013866",
+		"name" : "CHARLESTON WEST VIRGINIA INTERNATIONAL YEAGER AIRPORT, WV US",
+		"latitude" : 38.3795,
+		"longitude" : -81.59112,
+		"pleasant_days" : 87
+	},
+	{
+		"id" : "72412753801",
+		"name" : "LEWISBURG, WV US",
+		"latitude" : 37.86667,
+		"longitude" : -80.4,
+		"pleasant_days" : 144
+	},
+	{
+		"id" : "72412503859",
+		"name" : "BLUEFIELD MERCER CO AIRPORT, WV US",
+		"latitude" : 37.2978,
+		"longitude" : -81.20358,
+		"pleasant_days" : 147
+	},
+	{
+		"id" : "72412003872",
+		"name" : "BECKLEY RALEIGH CO AIRPORT, WV US",
+		"latitude" : 37.78359,
+		"longitude" : -81.12283,
+		"pleasant_days" : 135
+	},
+	{
+		"id" : "72411013741",
+		"name" : "ROANOKE BLACKSBURG REGIONAL AIRPORT, VA US",
+		"latitude" : 37.31719,
+		"longitude" : -79.97369,
+		"pleasant_days" : 84
+	},
+	{
+		"id" : "72410593760",
+		"name" : "STAUNTON, VA US",
+		"latitude" : 38.26361,
+		"longitude" : -78.89639,
+		"pleasant_days" : 117
+	},
+	{
+		"id" : "72408013739",
+		"name" : "PHILADELPHIA INTERNATIONAL AIRPORT, PA US",
+		"latitude" : 39.87326,
+		"longitude" : -75.22681,
+		"pleasant_days" : 67
+	},
+	{
+		"id" : "72407754779",
+		"name" : "AEROFLEX ANDOVER AIRPORT, NJ US",
+		"latitude" : 41.00928,
+		"longitude" : -74.73633,
+		"pleasant_days" : 112
+	},
+	{
+		"id" : "72407513735",
+		"name" : "MILLVILLE MUNICIPAL AIRPORT, NJ US",
+		"latitude" : 39.36623,
+		"longitude" : -75.07778,
+		"pleasant_days" : 83
+	},
+	{
+		"id" : "72407093730",
+		"name" : "ATLANTIC CITY INTERNATIONAL AIRPORT, NJ US",
+		"latitude" : 39.45203,
+		"longitude" : -74.56701,
+		"pleasant_days" : 72
+	},
+	{
+		"id" : "72406693706",
+		"name" : "HAGERSTOWN REGIONAL AIRPORT, MD US",
+		"latitude" : 39.70618,
+		"longitude" : -77.73037,
+		"pleasant_days" : 87
+	},
+	{
+		"id" : "72406093721",
+		"name" : "BALTIMORE WASHINGTON INTERNATIONAL AIRPORT, MD US",
+		"latitude" : 39.17329,
+		"longitude" : -76.68408,
+		"pleasant_days" : 77
+	},
+	{
+		"id" : "72391093111",
+		"name" : "POINT MUGU NF, CA US",
+		"latitude" : 34.12407,
+		"longitude" : -119.12281,
+		"pleasant_days" : 167
+	},
+	{
+		"id" : "72381023114",
+		"name" : "EDWARDS AFB, CA US",
+		"latitude" : 34.9,
+		"longitude" : -117.86667,
+		"pleasant_days" : 9
+	},
+	{
+		"id" : "72374703101",
+		"name" : "SHOW LOW AIRPORT, AZ US",
+		"latitude" : 34.2639,
+		"longitude" : -110.0075,
+		"pleasant_days" : 70
+	},
+	{
+		"id" : "72374500374",
+		"name" : "PAYSON AIRPORT, AZ US",
+		"latitude" : 34.257,
+		"longitude" : -111.339,
+		"pleasant_days" : 79
+	},
+	{
+		"id" : "72372323184",
+		"name" : "PRESCOTT LOVE FIELD, AZ US",
+		"latitude" : 34.64915,
+		"longitude" : -112.42234,
+		"pleasant_days" : 20
+	},
+	{
+		"id" : "72371003162",
+		"name" : "PAGE MUNICIPAL AIRPORT, AZ US",
+		"latitude" : 36.92112,
+		"longitude" : -111.44874,
+		"pleasant_days" : 53
+	},
+	{
+		"id" : "72370093167",
+		"name" : "KINGMAN AIRPORT, AZ US",
+		"latitude" : 35.25745,
+		"longitude" : -113.93405,
+		"pleasant_days" : 17
+	},
+	{
+		"id" : "72365823090",
+		"name" : "FARMINGTON FOUR CORNERS REGIONAL AIRPORT, NM US",
+		"latitude" : 36.74354,
+		"longitude" : -108.22931,
+		"pleasant_days" : 11
+	},
+	{
+		"id" : "72365023050",
+		"name" : "ALBUQUERQUE INTERNATIONAL AIRPORT, NM US",
+		"latitude" : 35.04189,
+		"longitude" : -106.61545,
+		"pleasant_days" : 35
+	},
+	{
+		"id" : "72364703034",
+		"name" : "ALBUQUERQUE DOUBLE EAGLE II AIRPORT, NM US",
+		"latitude" : 35.145,
+		"longitude" : -106.795,
+		"pleasant_days" : 28
+	},
+	{
+		"id" : "72363503024",
+		"name" : "BORGER HUTCHINSON CO AIRPORT, TX US",
+		"latitude" : 35.69502,
+		"longitude" : -101.39551,
+		"pleasant_days" : 27
+	},
+	{
+		"id" : "72362093040",
+		"name" : "SOCORRO MUNICIPAL AIRPORT, NM US",
+		"latitude" : 34.06667,
+		"longitude" : -106.9,
+		"pleasant_days" : 32
+	},
+	{
+		"id" : "72328003894",
+		"name" : "CLARKSVILLE OUTLAW AIRPORT, TN US",
+		"latitude" : 36.61689,
+		"longitude" : -87.41174,
+		"pleasant_days" : 86
+	},
+	{
+		"id" : "72314013881",
+		"name" : "CHARLOTTE DOUGLAS AIRPORT, NC US",
+		"latitude" : 35.22254,
+		"longitude" : -80.95433,
+		"pleasant_days" : 72
+	},
+	{
+		"id" : "72310453867",
+		"name" : "COLUMBIA OWENS DOWNTOWN AIRPORT, SC US",
+		"latitude" : 33.97198,
+		"longitude" : -80.99383,
+		"pleasant_days" : 109
+	},
+	{
+		"id" : "72309693727",
+		"name" : "NEW RIVER MCAF, NC US",
+		"latitude" : 34.70842,
+		"longitude" : -77.43966,
+		"pleasant_days" : 90
+	},
+	{
+		"id" : "72308313763",
+		"name" : "FRANKLIN MUNICIPAL JOHN BEVERLY ROSE AIRPORT, VA US",
+		"latitude" : 36.69806,
+		"longitude" : -76.90306,
+		"pleasant_days" : 86
+	},
+	{
+		"id" : "72308013737",
+		"name" : "NORFOLK INTERNATIONAL AIRPORT, VA US",
+		"latitude" : 36.90371,
+		"longitude" : -76.19266,
+		"pleasant_days" : 77
+	},
+	{
+		"id" : "72307403703",
+		"name" : "EDENTON NORTHEAST REGIONAL AIRPORT, NC US",
+		"latitude" : 36.0275,
+		"longitude" : -76.56694,
+		"pleasant_days" : 88
+	},
+	{
+		"id" : "72307013786",
+		"name" : "ELIZABETH CITY COAST GUARD AIR STATION, NC US",
+		"latitude" : 36.25771,
+		"longitude" : -76.1716,
+		"pleasant_days" : 79
+	},
+	{
+		"id" : "72306793726",
+		"name" : "KINSTON STALLINGS FIELD, NC US",
+		"latitude" : 35.31667,
+		"longitude" : -77.63333,
+		"pleasant_days" : 100
+	},
+	{
+		"id" : "72306613713",
+		"name" : "GOLDSBORO SEYMOUR JOHNSON AFB, NC US",
+		"latitude" : 35.3444,
+		"longitude" : -77.9647,
+		"pleasant_days" : 89
+	},
+	{
+		"id" : "72290303131",
+		"name" : "SAN DIEGO MONTGOMERY FIELD, CA US",
+		"latitude" : 32.81453,
+		"longitude" : -117.13747,
+		"pleasant_days" : 260
+	},
+	{
+		"id" : "72290023188",
+		"name" : "SAN DIEGO INTERNATIONAL AIRPORT, CA US",
+		"latitude" : 32.7336,
+		"longitude" : -117.1831,
+		"pleasant_days" : 306
+	},
+	{
+		"id" : "72288023152",
+		"name" : "BURBANK GLENDALE PASADENA AIRPORT, CA US",
+		"latitude" : 34.19966,
+		"longitude" : -118.36543,
+		"pleasant_days" : 160
+	},
+	{
+		"id" : "72287493134",
+		"name" : "LOS ANGELES DOWNTOWN USC, CA US",
+		"latitude" : 34.0236,
+		"longitude" : -118.2911,
+		"pleasant_days" : 304
+	},
+	{
+		"id" : "72286893138",
+		"name" : "PALM SPRINGS ASOS, CA US",
+		"latitude" : 33.82216,
+		"longitude" : -116.50433,
+		"pleasant_days" : 81
+	},
+	{
+		"id" : "72286903171",
+		"name" : "RIVERSIDE MUNICIPAL AIRPORT, CA US",
+		"latitude" : 33.95282,
+		"longitude" : -117.43523,
+		"pleasant_days" : 110
+	},
+	{
+		"id" : "72286699999",
+		"name" : "SAN BERNARDINO INTERNATIONAL, CA US",
+		"latitude" : 34.095353,
+		"longitude" : -117.234875,
+		"pleasant_days" : 125
+	},
+	{
+		"id" : "72278523111",
+		"name" : "PHOENIX LUKE AFB, AZ US",
+		"latitude" : 33.55,
+		"longitude" : -112.36667,
+		"pleasant_days" : 67
+	},
+	{
+		"id" : "72278403184",
+		"name" : "PHOENIX DEER VALLEY MUNICIPAL AIRPORT, AZ US",
+		"latitude" : 33.69021,
+		"longitude" : -112.06616,
+		"pleasant_days" : 77
+	},
+	{
+		"id" : "72278023183",
+		"name" : "PHOENIX AIRPORT, AZ US",
+		"latitude" : 33.4278,
+		"longitude" : -112.00365,
+		"pleasant_days" : 67
+	},
+	{
+		"id" : "72274523109",
+		"name" : "DAVIS MONTHAN AFB, AZ US",
+		"latitude" : 32.16667,
+		"longitude" : -110.88333,
+		"pleasant_days" : 40
+	},
+	{
+		"id" : "72272803196",
+		"name" : "NOGALES INTERNATIONAL AIRPORT, AZ US",
+		"latitude" : 31.42076,
+		"longitude" : -110.84655,
+		"pleasant_days" : 18
+	},
+	{
+		"id" : "72272523078",
+		"name" : "DEMING MUNICIPAL AIRPORT, NM US",
+		"latitude" : 32.25923,
+		"longitude" : -107.72056,
+		"pleasant_days" : 15
+	},
+	{
+		"id" : "72274023160",
+		"name" : "TUCSON INTERNATIONAL AIRPORT, AZ US",
+		"latitude" : 32.13153,
+		"longitude" : -110.95638,
+		"pleasant_days" : 30
+	},
+	{
+		"id" : "72267023042",
+		"name" : "LUBBOCK INTERNATIONAL AIRPORT, TX US",
+		"latitude" : 33.66578,
+		"longitude" : -101.8233,
+		"pleasant_days" : 7
+	},
+	{
+		"id" : "72252612947",
+		"name" : "COTULLA LA SALLE CO AIRPORT, TX US",
+		"latitude" : 28.45854,
+		"longitude" : -99.22275,
+		"pleasant_days" : 62
+	},
+	{
+		"id" : "72234654824",
+		"name" : "OWOSSO COMMUNITY AIRPORT, MI US",
+		"latitude" : 42.99306,
+		"longitude" : -84.13889,
+		"pleasant_days" : 124
+	},
+	{
+		"id" : "72234354826",
+		"name" : "SOUTH HAVEN AREA REGIONAL AIRPORT, MI US",
+		"latitude" : 42.35083,
+		"longitude" : -86.25611,
+		"pleasant_days" : 128
+	},
+	{
+		"id" : "72234013865",
+		"name" : "MERIDIAN KEY FIELD, MS US",
+		"latitude" : 32.33483,
+		"longitude" : -88.75073,
+		"pleasant_days" : 83
+	},
+	{
+		"id" : "72227013864",
+		"name" : "MARIETTA DOBBINS AFB, GA US",
+		"latitude" : 33.91667,
+		"longitude" : -84.51667,
+		"pleasant_days" : 95
+	},
+	{
+		"id" : "72226813839",
+		"name" : "DOTHAN REGIONAL AIRPORT, AL US",
+		"latitude" : 31.31767,
+		"longitude" : -85.44324,
+		"pleasant_days" : 89
+	},
+	{
+		"id" : "72420014891",
+		"name" : "MANSFIELD LAHM REGIONAL AIRPORT, OH US",
+		"latitude" : 40.8204,
+		"longitude" : -82.51769,
+		"pleasant_days" : 115
+	},
+	{
+		"id" : "72418013781",
+		"name" : "WILMINGTON NEW CASTLE CO AIRPORT, DE US",
+		"latitude" : 39.67444,
+		"longitude" : -75.60566,
+		"pleasant_days" : 77
+	},
+	{
+		"id" : "72389853119",
+		"name" : "HANFORD MUNICIPAL AIRPORT, CA US",
+		"latitude" : 36.3114,
+		"longitude" : -119.62319,
+		"pleasant_days" : 41
+	},
+	{
+		"id" : "72384023155",
+		"name" : "BAKERSFIELD AIRPORT, CA US",
+		"latitude" : 35.43424,
+		"longitude" : -119.05524,
+		"pleasant_days" : 72
+	},
+	{
+		"id" : "72382023182",
+		"name" : "PALMDALE AIRPORT, CA US",
+		"latitude" : 34.62944,
+		"longitude" : -118.08309,
+		"pleasant_days" : 9
+	},
+	{
+		"id" : "72381603159",
+		"name" : "LANCASTER, CA US",
+		"latitude" : 34.74121,
+		"longitude" : -118.21255,
+		"pleasant_days" : 2
+	},
+	{
+		"id" : "72353013967",
+		"name" : "OKLAHOMA CITY WILL ROGERS WORLD AIRPORT, OK US",
+		"latitude" : 35.38843,
+		"longitude" : -97.60035,
+		"pleasant_days" : 31
+	},
+	{
+		"id" : "72352593986",
+		"name" : "HOBART MUNICIPAL AIRPORT, OK US",
+		"latitude" : 34.98908,
+		"longitude" : -99.05282,
+		"pleasant_days" : 27
+	},
+	{
+		"id" : "72352603932",
+		"name" : "CLINTON SHERMAN AIRPORT, OK US",
+		"latitude" : 35.35677,
+		"longitude" : -99.20411,
+		"pleasant_days" : 24
+	},
+	{
+		"id" : "72351013966",
+		"name" : "WICHITA FALLS MUNICIPAL AIRPORT, TX US",
+		"latitude" : 33.97855,
+		"longitude" : -98.49298,
+		"pleasant_days" : 18
+	},
+	{
+		"id" : "72349513987",
+		"name" : "JOPLIN REGIONAL AIRPORT, MO US",
+		"latitude" : 37.15222,
+		"longitude" : -94.49524,
+		"pleasant_days" : 64
+	},
+	{
+		"id" : "72348453901",
+		"name" : "WEST PLAINS MUNICIPAL AIRPORT, MO US",
+		"latitude" : 36.87913,
+		"longitude" : -91.90523,
+		"pleasant_days" : 79
+	},
+	{
+		"id" : "72345013971",
+		"name" : "HARRISON BOONE CO AIRPORT, AR US",
+		"latitude" : 36.26727,
+		"longitude" : -93.15657,
+		"pleasant_days" : 76
+	},
+	{
+		"id" : "72344953954",
+		"name" : "ROGERS MUNICIPAL CARTER FIELD AIRPORT, AR US",
+		"latitude" : 36.37222,
+		"longitude" : -94.10667,
+		"pleasant_days" : 64
+	},
+	{
+		"id" : "72344013964",
+		"name" : "FORT SMITH REGIONAL AIRPORT, AR US",
+		"latitude" : 35.33346,
+		"longitude" : -94.36526,
+		"pleasant_days" : 62
+	},
+	{
+		"id" : "72343953918",
+		"name" : "MOUNTAIN HOME BAXTER CO REGIONAL AIRPORT, AR US",
+		"latitude" : 36.37056,
+		"longitude" : -92.47194,
+		"pleasant_days" : 87
+	},
+	{
+		"id" : "72343653922",
+		"name" : "FAYETTEVILLE SPRINGDALE NW AR REGL AIRPORT, AR US",
+		"latitude" : 36.28975,
+		"longitude" : -94.31152,
+		"pleasant_days" : 62
+	},
+	{
+		"id" : "72342953920",
+		"name" : "RUSSELLVILLE MUNICIPAL AIRPORT, AR US",
+		"latitude" : 35.25733,
+		"longitude" : -93.095,
+		"pleasant_days" : 96
+	},
+	{
+		"id" : "72343403973",
+		"name" : "SPRINGDALE MUNICIPAL AIRPORT, AR US",
+		"latitude" : 36.1764,
+		"longitude" : -94.1193,
+		"pleasant_days" : 87
+	},
+	{
+		"id" : "72317013723",
+		"name" : "GREENSBORO PIEDMONT TRIAD INTERNATIONAL AIRPORT, NC US",
+		"latitude" : 36.0969,
+		"longitude" : -79.94316,
+		"pleasant_days" : 81
+	},
+	{
+		"id" : "72271093045",
+		"name" : "TRUTH OR CONSEQUENCES MUNICIPAL AIRPORT, NM US",
+		"latitude" : 33.23685,
+		"longitude" : -107.26849,
+		"pleasant_days" : 35
+	},
+	{
+		"id" : "72270023044",
+		"name" : "EL PASO INTERNATIONAL AIRPORT, TX US",
+		"latitude" : 31.81234,
+		"longitude" : -106.37737,
+		"pleasant_days" : 29
+	},
+	{
+		"id" : "72269593041",
+		"name" : "LAS CRUCES MUNICIPAL AIRPORT, NM US",
+		"latitude" : 32.28333,
+		"longitude" : -106.91667,
+		"pleasant_days" : 38
+	},
+	{
+		"id" : "72268393083",
+		"name" : "RUIDOSO SIERRA BLANCA AIRPORT, NM US",
+		"latitude" : 33.45,
+		"longitude" : -105.51667,
+		"pleasant_days" : 100
+	},
+	{
+		"id" : "72265623040",
+		"name" : "WINK FAA AIRPORT, TX US",
+		"latitude" : 31.78011,
+		"longitude" : -103.2017,
+		"pleasant_days" : 13
+	},
+	{
+		"id" : "72266013962",
+		"name" : "ABILENE REGIONAL AIRPORT, TX US",
+		"latitude" : 32.41063,
+		"longitude" : -99.68208,
+		"pleasant_days" : 35
+	},
+	{
+		"id" : "72265023023",
+		"name" : "MIDLAND INTERNATIONAL AIRPORT, TX US",
+		"latitude" : 31.94754,
+		"longitude" : -102.20859,
+		"pleasant_days" : 19
+	},
+	{
+		"id" : "72264803031",
+		"name" : "ODESSA SCHLEMEYER FIELD, TX US",
+		"latitude" : 31.925,
+		"longitude" : -102.38743,
+		"pleasant_days" : 29
+	},
+	{
+		"id" : "72263023034",
+		"name" : "SAN ANGELO MATHIS FIELD AIRPORT, TX US",
+		"latitude" : 31.35172,
+		"longitude" : -100.4948,
+		"pleasant_days" : 37
+	},
+	{
+		"id" : "72261823091",
+		"name" : "FORT STOCKTON PECOS CO AIRPORT, TX US",
+		"latitude" : 30.91193,
+		"longitude" : -102.91714,
+		"pleasant_days" : 23
+	},
+	{
+		"id" : "72259793985",
+		"name" : "MINERAL WELLS AIRPORT, TX US",
+		"latitude" : 32.78155,
+		"longitude" : -98.06023,
+		"pleasant_days" : 43
+	},
+	{
+		"id" : "72259803970",
+		"name" : "DALLAS ADDISON AIRPORT, TX US",
+		"latitude" : 32.96861,
+		"longitude" : -96.83639,
+		"pleasant_days" : 77
+	},
+	{
+		"id" : "72259453909",
+		"name" : "FORT WORTH ALLIANCE AIRPORT, TX US",
+		"latitude" : 32.99434,
+		"longitude" : -97.32034,
+		"pleasant_days" : 59
+	},
+	{
+		"id" : "72259003927",
+		"name" : "DAL FTW WSCMO AIRPORT, TX US",
+		"latitude" : 32.89744,
+		"longitude" : -97.02196,
+		"pleasant_days" : 44
+	},
+	{
+		"id" : "72259303985",
+		"name" : "DALLAS FORT WORTH SPINKS AIRPORT, TX US",
+		"latitude" : 32.565,
+		"longitude" : -97.30806,
+		"pleasant_days" : 72
+	},
+	{
+		"id" : "72258903991",
+		"name" : "DENTON MUNICPAL AIRPORT, TX US",
+		"latitude" : 33.20883,
+		"longitude" : -97.19922,
+		"pleasant_days" : 60
+	},
+	{
+		"id" : "72258793955",
+		"name" : "PARIS, TX US",
+		"latitude" : 33.63333,
+		"longitude" : -95.45,
+		"pleasant_days" : 50
+	},
+	{
+		"id" : "72258013960",
+		"name" : "DALLAS FAA AIRPORT, TX US",
+		"latitude" : 32.83839,
+		"longitude" : -96.83583,
+		"pleasant_days" : 62
+	},
+	{
+		"id" : "72040500436",
+		"name" : "BLAIR MUNICIPAL AIRPORT, NE US",
+		"latitude" : 41.41167,
+		"longitude" : -96.10861,
+		"pleasant_days" : 77
+	},
+	{
+		"id" : "72031963841",
+		"name" : "ROBINSON MUNICIPAL AIRPORT, IL US",
+		"latitude" : 39.01611,
+		"longitude" : -87.64972,
+		"pleasant_days" : 92
+	},
+	{
+		"id" : "72027763843",
+		"name" : "SHELBY MUNICIPAL AIRPORT, NC US",
+		"latitude" : 35.25556,
+		"longitude" : -81.60111,
+		"pleasant_days" : 105
+	},
+	{
+		"id" : "72013704867",
+		"name" : "MORRIS MUNICIPAL JR WASHBURN FIELD AIRPORT, IL US",
+		"latitude" : 41.42528,
+		"longitude" : -88.41861,
+		"pleasant_days" : 111
+	},
+	{
+		"id" : "72047900149",
+		"name" : "MONETT MUNICIPAL AIRPORT, MO US",
+		"latitude" : 36.9,
+		"longitude" : -94.017,
+		"pleasant_days" : 93
+	},
+	{
+		"id" : "72417613736",
+		"name" : "MORGANTOWN MUNICIPAL AIRPORT, WV US",
+		"latitude" : 39.64981,
+		"longitude" : -79.92064,
+		"pleasant_days" : 142
+	},
+	{
+		"id" : "72417503802",
+		"name" : "CLARKSBURG BENEDUM AIRPORT, WV US",
+		"latitude" : 39.30218,
+		"longitude" : -80.22392,
+		"pleasant_days" : 125
+	},
+	{
+		"id" : "72411613868",
+		"name" : "PULASKI, VA US",
+		"latitude" : 37.13333,
+		"longitude" : -80.68333,
+		"pleasant_days" : 148
+	},
+	{
+		"id" : "72411353881",
+		"name" : "BLACKSBURG VIRGINIA TECH AIRPORT, VA US",
+		"latitude" : 37.2075,
+		"longitude" : -80.40778,
+		"pleasant_days" : 138
+	},
+	{
+		"id" : "72409754738",
+		"name" : "MORRISTOWN, NJ US",
+		"latitude" : 40.8,
+		"longitude" : -74.41667,
+		"pleasant_days" : 106
+	},
+	{
+		"id" : "72409614706",
+		"name" : "MCGUIRE AFB, NJ US",
+		"latitude" : 40.01667,
+		"longitude" : -74.6,
+		"pleasant_days" : 76
+	},
+	{
+		"id" : "72409454743",
+		"name" : "CALDWELL ESSEX CO AIRPORT, NJ US",
+		"latitude" : 40.87645,
+		"longitude" : -74.28284,
+		"pleasant_days" : 83
+	},
+	{
+		"id" : "72409514792",
+		"name" : "TRENTON MERCER AIRPORT, NJ US",
+		"latitude" : 40.27681,
+		"longitude" : -74.81587,
+		"pleasant_days" : 91
+	},
+	{
+		"id" : "72410013733",
+		"name" : "LYNCHBURG REGIONAL AIRPORT, VA US",
+		"latitude" : 37.32126,
+		"longitude" : -79.20649,
+		"pleasant_days" : 89
+	},
+	{
+		"id" : "72409313764",
+		"name" : "GEORGETOWN DELAWARE COASTAL AIRPORT, DE US",
+		"latitude" : 38.68974,
+		"longitude" : -75.36246,
+		"pleasant_days" : 72
+	},
+	{
+		"id" : "72408813707",
+		"name" : "DOVER AFB, DE US",
+		"latitude" : 39.13333,
+		"longitude" : -75.46667,
+		"pleasant_days" : 87
+	},
+	{
+		"id" : "72405503714",
+		"name" : "LEESBURG EXECUTIVE AIRPORT, VA US",
+		"latitude" : 39.07778,
+		"longitude" : -77.5575,
+		"pleasant_days" : 93
+	},
+	{
+		"id" : "72405663805",
+		"name" : "MOUNTAIN EMPIRE AIRPORT, VA US",
+		"latitude" : 36.89472,
+		"longitude" : -81.34972,
+		"pleasant_days" : 108
+	},
+	{
+		"id" : "72405013743",
+		"name" : "WASHINGTON REAGAN NATIONAL AIRPORT, VA US",
+		"latitude" : 38.84721,
+		"longitude" : -77.03454,
+		"pleasant_days" : 69
+	},
+	{
+		"id" : "72405303717",
+		"name" : "WINCHESTER REGIONAL AIRPORT, VA US",
+		"latitude" : 39.14333,
+		"longitude" : -78.14444,
+		"pleasant_days" : 111
+	},
+	{
+		"id" : "72404303756",
+		"name" : "EASTON NEWMAN FIELD AIRPORT, MD US",
+		"latitude" : 38.80417,
+		"longitude" : -76.06889,
+		"pleasant_days" : 89
+	},
+	{
+		"id" : "72404013721",
+		"name" : "PATUXENT RIVER NAS, MD US",
+		"latitude" : 38.3,
+		"longitude" : -76.41667,
+		"pleasant_days" : 85
+	},
+	{
+		"id" : "72403793728",
+		"name" : "DAVISON ARMY AIR FIELD, VA US",
+		"latitude" : 38.71667,
+		"longitude" : -77.18333,
+		"pleasant_days" : 92
+	},
+	{
+		"id" : "72375600375",
+		"name" : "SEDONA AIRPORT, AZ US",
+		"latitude" : 34.85,
+		"longitude" : -111.783,
+		"pleasant_days" : 58
+	},
+	{
+		"id" : "72357503950",
+		"name" : "LAWTON MUNICIPAL AIRPORT, OK US",
+		"latitude" : 34.55771,
+		"longitude" : -98.4172,
+		"pleasant_days" : 37
+	},
+	{
+		"id" : "72357003948",
+		"name" : "NORMAN UNIVERSITY OF OKLAHOMA WESTHEIMER AIRPORT, OK US",
+		"latitude" : 35.25,
+		"longitude" : -97.46667,
+		"pleasant_days" : 55
+	},
+	{
+		"id" : "72356693950",
+		"name" : "MCALESTER REGIONAL AIRPORT, OK US",
+		"latitude" : 34.88237,
+		"longitude" : -95.78154,
+		"pleasant_days" : 73
+	},
+	{
+		"id" : "72356503959",
+		"name" : "BARTLESVILLE MUNICIPAL AIRPORT, OK US",
+		"latitude" : 36.7664,
+		"longitude" : -96.01292,
+		"pleasant_days" : 71
+	},
+	{
+		"id" : "72355693953",
+		"name" : "MUSKOGEE DAVIS FIELD, OK US",
+		"latitude" : 35.65765,
+		"longitude" : -95.36583,
+		"pleasant_days" : 56
+	},
+	{
+		"id" : "72356013968",
+		"name" : "TULSA INTERNATIONAL AIRPORT, OK US",
+		"latitude" : 36.19854,
+		"longitude" : -95.87825,
+		"pleasant_days" : 47
+	},
+	{
+		"id" : "72356453908",
+		"name" : "TULSA RICHARD L JONES JR AIRPORT, OK US",
+		"latitude" : 36.04243,
+		"longitude" : -95.99016,
+		"pleasant_days" : 66
+	},
+	{
+		"id" : "72354403954",
+		"name" : "OKLAHOMA CITY WILEY POST AIRPORT, OK US",
+		"latitude" : 35.54113,
+		"longitude" : -97.64725,
+		"pleasant_days" : 39
+	},
+	{
+		"id" : "72354503965",
+		"name" : "STILLWATER REGIONAL AIRPORT, OK US",
+		"latitude" : 36.16238,
+		"longitude" : -97.08931,
+		"pleasant_days" : 37
+	},
+	{
+		"id" : "72341813977",
+		"name" : "TEXARKANA WEBB FIELD, AR US",
+		"latitude" : 33.45606,
+		"longitude" : -93.98777,
+		"pleasant_days" : 83
+	},
+	{
+		"id" : "72341793988",
+		"name" : "PINE BLUFF GRIDER FIELD, AR US",
+		"latitude" : 34.17981,
+		"longitude" : -91.93444,
+		"pleasant_days" : 63
+	},
+	{
+		"id" : "72341503962",
+		"name" : "HOT SPRINGS ASOS, AR US",
+		"latitude" : 34.47551,
+		"longitude" : -93.10413,
+		"pleasant_days" : 95
+	},
+	{
+		"id" : "72340953869",
+		"name" : "BLYTHEVILLE MUNICIPAL AIRPORT, AR US",
+		"latitude" : 35.93778,
+		"longitude" : -89.83318,
+		"pleasant_days" : 61
+	},
+	{
+		"id" : "72340503930",
+		"name" : "LITTLE ROCK AFB, AR US",
+		"latitude" : 34.91667,
+		"longitude" : -92.15,
+		"pleasant_days" : 83
+	},
+	{
+		"id" : "72340313963",
+		"name" : "LITTLE ROCK AIRPORT ADAMS FIELD, AR US",
+		"latitude" : 34.72727,
+		"longitude" : -92.2358,
+		"pleasant_days" : 72
+	},
+	{
+		"id" : "72335013877",
+		"name" : "BRISTOL AIRPORT, TN US",
+		"latitude" : 36.47964,
+		"longitude" : -82.39893,
+		"pleasant_days" : 78
+	},
+	{
+		"id" : "72334603811",
+		"name" : "JACKSON MCKELLAR SIPES AIRPORT, TN US",
+		"latitude" : 35.59332,
+		"longitude" : -88.91696,
+		"pleasant_days" : 83
+	},
+	{
+		"id" : "72330753893",
+		"name" : "GOLDEN TRIANGLE, MS US",
+		"latitude" : 33.45,
+		"longitude" : -88.58333,
+		"pleasant_days" : 79
+	},
+	{
+		"id" : "72334013893",
+		"name" : "MEMPHIS INTERNATIONAL AIRPORT, TN US",
+		"latitude" : 35.05639,
+		"longitude" : -89.9864,
+		"pleasant_days" : 63
+	},
+	{
+		"id" : "72328493839",
+		"name" : "MEMPHIS NAS, TN US",
+		"latitude" : 35.35,
+		"longitude" : -89.86667,
+		"pleasant_days" : 79
+	},
+	{
+		"id" : "72248613942",
+		"name" : "MONROE REGIONAL AIRPORT, LA US",
+		"latitude" : 32.51552,
+		"longitude" : -92.02995,
+		"pleasant_days" : 97
+	},
+	{
+		"id" : "72248713935",
+		"name" : "ALEXANDRIA ESLER FIELD, LA US",
+		"latitude" : 31.3963,
+		"longitude" : -92.28278,
+		"pleasant_days" : 101
+	},
+	{
+		"id" : "72248453905",
+		"name" : "SHREVEPORT DOWNTOWN AIRPORT, LA US",
+		"latitude" : 32.53984,
+		"longitude" : -93.74616,
+		"pleasant_days" : 95
+	},
+	{
+		"id" : "72244693987",
+		"name" : "LUFKIN ANGELINA CO AIRPORT, TX US",
+		"latitude" : 31.23593,
+		"longitude" : -94.75468,
+		"pleasant_days" : 105
+	},
+	{
+		"id" : "72244012918",
+		"name" : "HOUSTON WILLIAM P HOBBY AIRPORT, TX US",
+		"latitude" : 29.64586,
+		"longitude" : -95.28212,
+		"pleasant_days" : 95
+	},
+	{
+		"id" : "72243612906",
+		"name" : "HOUSTON ELLINGTON AFB, TX US",
+		"latitude" : 29.61667,
+		"longitude" : -95.16667,
+		"pleasant_days" : 113
+	},
+	{
+		"id" : "72239003931",
+		"name" : "FORT POLK ARMY AIR FIELD, LA US",
+		"latitude" : 31.05,
+		"longitude" : -93.18333,
+		"pleasant_days" : 97
+	},
+	{
+		"id" : "72236900365",
+		"name" : "T P MC CAMPBELL AIRPORT, TX US",
+		"latitude" : 27.917,
+		"longitude" : -97.2,
+		"pleasant_days" : 94
+	},
+	{
+		"id" : "72223513838",
+		"name" : "MOBILE DOWNTOWN AIRPORT, AL US",
+		"latitude" : 30.61465,
+		"longitude" : -88.06301,
+		"pleasant_days" : 105
+	},
+	{
+		"id" : "72222313899",
+		"name" : "PENSACOLA REGIONAL AIRPORT, FL US",
+		"latitude" : 30.47612,
+		"longitude" : -87.18575,
+		"pleasant_days" : 104
+	},
+	{
+		"id" : "72223013894",
+		"name" : "MOBILE REGIONAL AIRPORT, AL US",
+		"latitude" : 30.68819,
+		"longitude" : -88.24598,
+		"pleasant_days" : 88
+	},
+	{
+		"id" : "72222503855",
+		"name" : "PENSACOLA FOREST SHERMAN NAS, FL US",
+		"latitude" : 30.35,
+		"longitude" : -87.31667,
+		"pleasant_days" : 111
+	},
+	{
+		"id" : "72221513884",
+		"name" : "CRESTVIEW FAA AP, FL US",
+		"latitude" : 30.77715,
+		"longitude" : -86.51938,
+		"pleasant_days" : 104
+	},
+	{
+		"id" : "72218113837",
+		"name" : "AUGUSTA DANIEL FIELD AIRPORT, GA US",
+		"latitude" : 33.4668,
+		"longitude" : -82.03847,
+		"pleasant_days" : 102
+	},
+	{
+		"id" : "72206593837",
+		"name" : "JACKSONVILLE NAS, FL US",
+		"latitude" : 30.23333,
+		"longitude" : -81.66667,
+		"pleasant_days" : 102
+	},
+	{
+		"id" : "72206013889",
+		"name" : "JACKSONVILLE INTERNATIONAL AIRPORT, FL US",
+		"latitude" : 30.49529,
+		"longitude" : -81.69374,
+		"pleasant_days" : 105
+	},
+	{
+		"id" : "72205512861",
+		"name" : "OCALA JIM TAYLOR FIELD, FL US",
+		"latitude" : 29.16667,
+		"longitude" : -82.23333,
+		"pleasant_days" : 152
+	},
+	{
+		"id" : "72205453959",
+		"name" : "WEST MEMPHIS MUNICIPAL AIRPORT, AR US",
+		"latitude" : 35.14013,
+		"longitude" : -90.23591,
+		"pleasant_days" : 74
+	},
+	{
+		"id" : "72205712854",
+		"name" : "ORLANDO SANFORD AIRPORT, FL US",
+		"latitude" : 28.77951,
+		"longitude" : -81.24356,
+		"pleasant_days" : 140
+	},
+	{
+		"id" : "72205312841",
+		"name" : "ORLANDO EXECUTIVE AIRPORT, FL US",
+		"latitude" : 28.54653,
+		"longitude" : -81.33544,
+		"pleasant_days" : 155
+	},
+	{
+		"id" : "72205012815",
+		"name" : "ORLANDO INTERNATIONAL AIRPORT, FL US",
+		"latitude" : 28.41822,
+		"longitude" : -81.32413,
+		"pleasant_days" : 133
+	},
+	{
+		"id" : "72204992805",
+		"name" : "POMPANO BEACH AIRPARK, FL US",
+		"latitude" : 26.24636,
+		"longitude" : -80.11105,
+		"pleasant_days" : 190
+	},
+	{
+		"id" : "72203163839",
+		"name" : "CULLMAN FOLSOM FIELD AIRPORT, AL US",
+		"latitude" : 34.26889,
+		"longitude" : -86.85833,
+		"pleasant_days" : 85
+	},
+	{
+		"id" : "72203012844",
+		"name" : "WEST PALM BEACH INTERNATIONAL AIRPORT, FL US",
+		"latitude" : 26.6851,
+		"longitude" : -80.09918,
+		"pleasant_days" : 184
+	},
+	{
+		"id" : "99999913752",
+		"name" : "ANNAPOLIS UNITED STATES NAVAL ACADEMY ASOS, MD US",
+		"latitude" : 38.9913,
+		"longitude" : -76.4891,
+		"pleasant_days" : 110
+	},
+	{
+		"id" : "72326013891",
+		"name" : "KNOXVILLE AIRPORT, TN US",
+		"latitude" : 35.81801,
+		"longitude" : -83.98573,
+		"pleasant_days" : 79
+	},
+	{
+		"id" : "72325003847",
+		"name" : "CROSSVILLE MEMORIAL AIRPORT, TN US",
+		"latitude" : 35.95097,
+		"longitude" : -85.08141,
+		"pleasant_days" : 133
+	},
+	{
+		"id" : "72324013882",
+		"name" : "CHATTANOOGA AIRPORT, TN US",
+		"latitude" : 35.03363,
+		"longitude" : -85.20039,
+		"pleasant_days" : 81
+	},
+	{
+		"id" : "72323513896",
+		"name" : "MUSCLE SHOALS AIRPORT, AL US",
+		"latitude" : 34.74388,
+		"longitude" : -87.59971,
+		"pleasant_days" : 75
+	},
+	{
+		"id" : "72323003856",
+		"name" : "HUNTSVILLE INTNL AIRPORT, AL US",
+		"latitude" : 34.64406,
+		"longitude" : -86.78615,
+		"pleasant_days" : 64
+	},
+	{
+		"id" : "72320093801",
+		"name" : "ROME R B RUSSELL AIRPORT, GA US",
+		"latitude" : 34.34833,
+		"longitude" : -85.16155,
+		"pleasant_days" : 64
+	},
+	{
+		"id" : "72319453872",
+		"name" : "MONROE AIRPORT, NC US",
+		"latitude" : 35.01467,
+		"longitude" : -80.62414,
+		"pleasant_days" : 82
+	},
+	{
+		"id" : "72319393807",
+		"name" : "WINSTON SALEM REYNOLDS AIRPORT, NC US",
+		"latitude" : 36.13347,
+		"longitude" : -80.22441,
+		"pleasant_days" : 96
+	},
+	{
+		"id" : "72319093846",
+		"name" : "ANDERSON REGIONAL AIRPORT, SC US",
+		"latitude" : 34.498,
+		"longitude" : -82.70924,
+		"pleasant_days" : 79
+	},
+	{
+		"id" : "72317493783",
+		"name" : "BURLINGTON ALAMANCE REGIONAL AIRPORT, NC US",
+		"latitude" : 36.04751,
+		"longitude" : -79.47375,
+		"pleasant_days" : 76
+	},
+	{
+		"id" : "72312003870",
+		"name" : "GRNVL SPART INTERNATIONAL AIRPORT, SC US",
+		"latitude" : 34.90614,
+		"longitude" : -82.21253,
+		"pleasant_days" : 77
+	},
+	{
+		"id" : "72311913886",
+		"name" : "GREENVILLE DOWNTOWN AIRPORT, SC US",
+		"latitude" : 34.84872,
+		"longitude" : -82.35006,
+		"pleasant_days" : 79
+	},
+	{
+		"id" : "72311853850",
+		"name" : "CLEMSON OCONEE CO AIRPORT, SC US",
+		"latitude" : 34.67221,
+		"longitude" : -82.88143,
+		"pleasant_days" : 98
+	},
+	{
+		"id" : "72311753871",
+		"name" : "ROCK HILL YORK CO AIRPORT, SC US",
+		"latitude" : 34.9836,
+		"longitude" : -81.05622,
+		"pleasant_days" : 78
+	},
+	{
+		"id" : "72311553854",
+		"name" : "ORANGEBURG MUNICIPAL AIRPORT, SC US",
+		"latitude" : 33.463771,
+		"longitude" : -80.853458,
+		"pleasant_days" : 88
+	},
+	{
+		"id" : "72310993782",
+		"name" : "LAURINBURG MAXTON AIRPORT, NC US",
+		"latitude" : 34.79132,
+		"longitude" : -79.36831,
+		"pleasant_days" : 72
+	},
+	{
+		"id" : "72310613744",
+		"name" : "FLORENCE REGIONAL AIRPORT, SC US",
+		"latitude" : 34.18773,
+		"longitude" : -79.73079,
+		"pleasant_days" : 80
+	},
+	{
+		"id" : "72309013754",
+		"name" : "HAVELOCK CHERRY POINT MCAS, NC US",
+		"latitude" : 34.9,
+		"longitude" : -76.88333,
+		"pleasant_days" : 82
+	},
+	{
+		"id" : "72306013722",
+		"name" : "RALEIGH DURHAM INTERNATIONAL AIRPORT, NC US",
+		"latitude" : 35.89227,
+		"longitude" : -78.78194,
+		"pleasant_days" : 77
+	},
+	{
+		"id" : "72297553141",
+		"name" : "LOS ALAMITOS ARMY AIR FIELD, CA US",
+		"latitude" : 33.79,
+		"longitude" : -118.05194,
+		"pleasant_days" : 244
+	},
+	{
+		"id" : "72295023174",
+		"name" : "LOS ANGELES INTERNATIONAL AIRPORT, CA US",
+		"latitude" : 33.93816,
+		"longitude" : -118.3866,
+		"pleasant_days" : 205
+	},
+	{
+		"id" : "72293453121",
+		"name" : "OCEANSIDE MUNICIPAL AIRPORT, CA US",
+		"latitude" : 33.21946,
+		"longitude" : -117.34962,
+		"pleasant_days" : 238
+	},
+	{
+		"id" : "72293193107",
+		"name" : "SAN DIEGO MIRAMAR NAS, CA US",
+		"latitude" : 32.86667,
+		"longitude" : -117.13333,
+		"pleasant_days" : 208
+	},
+	{
+		"id" : "72292703177",
+		"name" : "CARLSBAD MCCLELLAN PALOMAR AIRPORT, CA US",
+		"latitude" : 33.12993,
+		"longitude" : -117.27651,
+		"pleasant_days" : 297
+	},
+	{
+		"id" : "72290693112",
+		"name" : "NORTH ISLAND NAS, CA US",
+		"latitude" : 32.69219,
+		"longitude" : -117.20983,
+		"pleasant_days" : 277
+	},
+	{
+		"id" : "72290403178",
+		"name" : "SAN DIEGO BROWN FIELD, CA US",
+		"latitude" : 32.57583,
+		"longitude" : -116.99391,
+		"pleasant_days" : 236
+	},
+	{
+		"id" : "72288593197",
+		"name" : "SANTA MONICA MUNICIPAL AIRPORT, CA US",
+		"latitude" : 34.02099,
+		"longitude" : -118.44712,
+		"pleasant_days" : 282
+	},
+	{
+		"id" : "72278623104",
+		"name" : "PHOENIX WILLIAMS GATEWAY AIRPORT, AZ US",
+		"latitude" : 33.3,
+		"longitude" : -111.66667,
+		"pleasant_days" : 62
+	},
+	{
+		"id" : "72252312970",
+		"name" : "SAN ANTONIO STINSON MUNICIPAL AIRPORT, TX US",
+		"latitude" : 29.33896,
+		"longitude" : -98.47198,
+		"pleasant_days" : 86
+	},
+	{
+		"id" : "72252012907",
+		"name" : "LAREDO INTERNATIONAL AIRPORT, TX US",
+		"latitude" : 27.53333,
+		"longitude" : -99.46667,
+		"pleasant_days" : 58
+	},
+	{
+		"id" : "72251012924",
+		"name" : "CORPUS CHRISTI INTERNATIONAL AIRPORT, TX US",
+		"latitude" : 27.77335,
+		"longitude" : -97.51302,
+		"pleasant_days" : 62
+	},
+	{
+		"id" : "72250812957",
+		"name" : "PORT ISABEL CAMERON CO AIRPORT, TX US",
+		"latitude" : 26.15966,
+		"longitude" : -97.33781,
+		"pleasant_days" : 123
+	},
+	{
+		"id" : "72250612959",
+		"name" : "MCALLEN MILLER INTERNATIONAL AIRPORT, TX US",
+		"latitude" : 26.17912,
+		"longitude" : -98.2445,
+		"pleasant_days" : 74
+	},
+	{
+		"id" : "72250512904",
+		"name" : "HARLINGEN RIO GRANDE VALLEY INTERNATIONAL AIRPORT, TX US",
+		"latitude" : 26.2303,
+		"longitude" : -97.65565,
+		"pleasant_days" : 58
+	},
+	{
+		"id" : "72250012919",
+		"name" : "BROWNSVILLE S PADRE ISLAND INTERNATIONAL AIRPORT, TX US",
+		"latitude" : 25.91459,
+		"longitude" : -97.42314,
+		"pleasant_days" : 90
+	},
+	{
+		"id" : "72248953911",
+		"name" : "TERRELL MUNICIPAL AIRPORT, TX US",
+		"latitude" : 32.71311,
+		"longitude" : -96.26878,
+		"pleasant_days" : 70
+	},
+	{
+		"id" : "72243012960",
+		"name" : "HOUSTON INTERCONTINENTAL AIRPORT, TX US",
+		"latitude" : 29.98438,
+		"longitude" : -95.36072,
+		"pleasant_days" : 81
+	},
+	{
+		"id" : "72244453902",
+		"name" : "CONROE MONTGOMERY CO AIRPORT, TX US",
+		"latitude" : 30.36109,
+		"longitude" : -95.41757,
+		"pleasant_days" : 94
+	},
+	{
+		"id" : "72242953910",
+		"name" : "HOUSTON HOOKS MEMORIAL AIRPORT, TX US",
+		"latitude" : 30.06801,
+		"longitude" : -95.55628,
+		"pleasant_days" : 96
+	},
+	{
+		"id" : "72241612971",
+		"name" : "NEW BRAUNFELS MUNICIPAL AIRPORT, TX US",
+		"latitude" : 29.70887,
+		"longitude" : -98.04585,
+		"pleasant_days" : 67
+	},
+	{
+		"id" : "72240513976",
+		"name" : "LAFAYETTE REGIONAL AIRPORT, LA US",
+		"latitude" : 30.19859,
+		"longitude" : -91.98957,
+		"pleasant_days" : 108
+	},
+	{
+		"id" : "72240003937",
+		"name" : "LAKE CHARLES REGIONAL AIRPORT, LA US",
+		"latitude" : 30.12551,
+		"longitude" : -93.22771,
+		"pleasant_days" : 85
+	},
+	{
+		"id" : "72236293937",
+		"name" : "SULPHUR SPRINGS MUNICIPAL AIRPORT, TX US",
+		"latitude" : 33.16667,
+		"longitude" : -95.61667,
+		"pleasant_days" : 71
+	},
+	{
+		"id" : "72235893919",
+		"name" : "MCCOMB AIRPORT, MS US",
+		"latitude" : 31.18228,
+		"longitude" : -90.47207,
+		"pleasant_days" : 108
+	},
+	{
+		"id" : "72235413927",
+		"name" : "JACKSON HAWKINS FIELD, MS US",
+		"latitude" : 32.33756,
+		"longitude" : -90.2214,
+		"pleasant_days" : 105
+	},
+	{
+		"id" : "72235003940",
+		"name" : "JACKSON INTERNATIONAL AIRPORT, MS US",
+		"latitude" : 32.31982,
+		"longitude" : -90.07778,
+		"pleasant_days" : 86
+	},
+	{
+		"id" : "72233154941",
+		"name" : "IOWA FALLS MUNICIPAL AIRPORT, IA US",
+		"latitude" : 42.47138,
+		"longitude" : -93.20707,
+		"pleasant_days" : 87
+	},
+	{
+		"id" : "72233053865",
+		"name" : "SLIDELL AIRPORT, LA US",
+		"latitude" : 30.34355,
+		"longitude" : -89.82237,
+		"pleasant_days" : 115
+	},
+	{
+		"id" : "72231453915",
+		"name" : "NEW IBERIA AIRPORT ACADIANA REGIONAL, LA US",
+		"latitude" : 30.02916,
+		"longitude" : -91.88456,
+		"pleasant_days" : 90
+	},
+	{
+		"id" : "72231012916",
+		"name" : "NEW ORLEANS AIRPORT, LA US",
+		"latitude" : 29.99755,
+		"longitude" : -90.27772,
+		"pleasant_days" : 92
+	},
+	{
+		"id" : "72227553843",
+		"name" : "ANDALUSIA OPP AIRPORT, AL US",
+		"latitude" : 31.30614,
+		"longitude" : -86.39018,
+		"pleasant_days" : 96
+	},
+	{
+		"id" : "72221013858",
+		"name" : "VALPARAISO EGLIN AFB, FL US",
+		"latitude" : 30.48333,
+		"longitude" : -86.51667,
+		"pleasant_days" : 117
+	},
+	{
+		"id" : "72221312819",
+		"name" : "LEESBURG MUNICIPAL AIRPORT, FL US",
+		"latitude" : 28.82143,
+		"longitude" : -81.80963,
+		"pleasant_days" : 154
+	},
+	{
+		"id" : "72218003820",
+		"name" : "AUGUSTA BUSH FIELD AIRPORT, GA US",
+		"latitude" : 33.36517,
+		"longitude" : -81.96353,
+		"pleasant_days" : 67
+	},
+	{
+		"id" : "72074924255",
+		"name" : "WHIDBEY ISLAND NAS, WA US",
+		"latitude" : 48.35,
+		"longitude" : -122.66667,
+		"pleasant_days" : 45
+	},
+	{
+		"id" : "72053200159",
+		"name" : "HARRIET ALEXANDER FIELD AIRPORT, CO US",
+		"latitude" : 38.533,
+		"longitude" : -106.05,
+		"pleasant_days" : 65
+	},
+	{
+		"id" : "72044700437",
+		"name" : "KYLE OAKLEY FIELD AIRPORT, KY US",
+		"latitude" : 36.66458,
+		"longitude" : -88.37277,
+		"pleasant_days" : 89
+	},
+	{
+		"id" : "72228693806",
+		"name" : "TUSCALOOSA AIRPORT ASOS, AL US",
+		"latitude" : 33.21217,
+		"longitude" : -87.61552,
+		"pleasant_days" : 96
+	},
+	{
+		"id" : "72228013876",
+		"name" : "BIRMINGHAM AIRPORT, AL US",
+		"latitude" : 33.56545,
+		"longitude" : -86.7449,
+		"pleasant_days" : 93
+	},
+	{
+		"id" : "72215114794",
+		"name" : "WESTERLY STATE AIRPORT, RI US",
+		"latitude" : 41.35092,
+		"longitude" : -71.80555,
+		"pleasant_days" : 137
+	},
+	{
+		"id" : "72212012833",
+		"name" : "CROSS CITY AIRPORT, FL US",
+		"latitude" : 29.63333,
+		"longitude" : -83.10528,
+		"pleasant_days" : 108
+	},
+	{
+		"id" : "72210492806",
+		"name" : "ST PETERSBURG ALBERT WHITTED AIRPORT, FL US",
+		"latitude" : 27.76847,
+		"longitude" : -82.62568,
+		"pleasant_days" : 176
+	},
+	{
+		"id" : "72208013880",
+		"name" : "CHARLESTON INTL. AIRPORT, SC US",
+		"latitude" : 32.89945,
+		"longitude" : -80.0407,
+		"pleasant_days" : 80
+	},
+	{
+		"id" : "72208593831",
+		"name" : "BEAUFORT MCAS, SC US",
+		"latitude" : 32.48333,
+		"longitude" : -80.71667,
+		"pleasant_days" : 105
+	},
+	{
+		"id" : "72207003822",
+		"name" : "SAVANNAH HILTON HEAD INTERNATIONAL AIRPORT, GA US",
+		"latitude" : 32.13133,
+		"longitude" : -81.2023,
+		"pleasant_days" : 84
+	},
+	{
+		"id" : "72206763823",
+		"name" : "JACKSONVILLE CECIL FIELD AIRPORT, FL US",
+		"latitude" : 30.21861,
+		"longitude" : -81.87639,
+		"pleasant_days" : 131
+	},
+	{
+		"id" : "72203792809",
+		"name" : "HOLLYWOOD NORTH PERRY AIRPORT, FL US",
+		"latitude" : 25.99956,
+		"longitude" : -80.24119,
+		"pleasant_days" : 164
+	},
+	{
+		"id" : "72201012836",
+		"name" : "KEY WEST INTERNATIONAL AIRPORT, FL US",
+		"latitude" : 24.55706,
+		"longitude" : -81.75539,
+		"pleasant_days" : 183
+	},
+	{
+		"id" : "72061400205",
+		"name" : "LINCOLN REGIONAL AIRPORT KARL HARDER FIELD, CA US",
+		"latitude" : 38.909,
+		"longitude" : -121.351,
+		"pleasant_days" : 54
+	},
+	{
+		"id" : "72041500140",
+		"name" : "FREMONT MUNICIPAL AIRPORT, MI US",
+		"latitude" : 43.433,
+		"longitude" : -86.0,
+		"pleasant_days" : 124
+	},
+	{
+		"id" : "72041400139",
+		"name" : "KNOX CO AIRPORT, OH US",
+		"latitude" : 40.333,
+		"longitude" : -82.517,
+		"pleasant_days" : 148
+	},
+	{
+		"id" : "72037154850",
+		"name" : "THREE RIVERS MUNICIPAL DR HAINES AIRPORT, MI US",
+		"latitude" : 41.95972,
+		"longitude" : -85.59333,
+		"pleasant_days" : 137
+	},
+	{
+		"id" : "72036263874",
+		"name" : "GREENVILLE MAC CRENSHAW MEMORIAL AIRPORT, AL US",
+		"latitude" : 31.84675,
+		"longitude" : -86.6141,
+		"pleasant_days" : 88
+	},
+	{
+		"id" : "72035753993",
+		"name" : "CUSHING MUNICIPAL AIRPORT, OK US",
+		"latitude" : 35.95,
+		"longitude" : -96.77306,
+		"pleasant_days" : 73
+	},
+	{
+		"id" : "72036363872",
+		"name" : "EUFAULA WEEDON FIELD AIRPORT, AL US",
+		"latitude" : 31.95163,
+		"longitude" : -85.13122,
+		"pleasant_days" : 104
+	},
+	{
+		"id" : "70272026401",
+		"name" : "ANCHORAGE ELMENDORF AFB, AK US",
+		"latitude" : 61.25306,
+		"longitude" : -149.79361,
+		"pleasant_days" : 46
+	},
+	{
+		"id" : "70259026523",
+		"name" : "KENAI AIRPORT, AK US",
+		"latitude" : 60.57909,
+		"longitude" : -151.24152,
+		"pleasant_days" : 6
+	},
+	{
+		"id" : "99800099999",
+		"name" : "GUANA TOLOMATO MATANZAS, FL US",
+		"latitude" : 29.65,
+		"longitude" : -81.2166666,
+		"pleasant_days" : 191
+	},
+	{
+		"id" : "74467204862",
+		"name" : "LINCOLN LOGAN CO AIRPORT, IL US",
+		"latitude" : 40.15833,
+		"longitude" : -89.33472,
+		"pleasant_days" : 88
+	},
+	{
+		"id" : "72658304941",
+		"name" : "LITCHFIELD MUNICIPAL AIRPORT, MN US",
+		"latitude" : 45.14694,
+		"longitude" : -94.50722,
+		"pleasant_days" : 102
+	},
+	{
+		"id" : "72657294966",
+		"name" : "FERGUS FALLS AIRPORT, MN US",
+		"latitude" : 46.28333,
+		"longitude" : -96.15,
+		"pleasant_days" : 92
+	},
+	{
+		"id" : "72584793230",
+		"name" : "SOUTH LAKE TAHOE AIRPORT, CA US",
+		"latitude" : 38.8983,
+		"longitude" : -119.9947,
+		"pleasant_days" : 7
+	},
+	{
+		"id" : "72540654817",
+		"name" : "BAD AXE HURON CO MEMORIAL AIRPORT, MI US",
+		"latitude" : 43.78028,
+		"longitude" : -82.98556,
+		"pleasant_days" : 120
+	},
+	{
+		"id" : "72525800382",
+		"name" : "TOCCOA RG LETOURNEAU FIELD AIRPORT, GA US",
+		"latitude" : 34.594,
+		"longitude" : -83.296,
+		"pleasant_days" : 96
+	},
+	{
+		"id" : "72483793216",
+		"name" : "BEALE AFB, CA US",
+		"latitude" : 39.13333,
+		"longitude" : -121.43333,
+		"pleasant_days" : 50
+	},
+	{
+		"id" : "72225593842",
+		"name" : "COLUMBUS METROPOLITAN AIRPORT, GA US",
+		"latitude" : 32.51625,
+		"longitude" : -84.94218,
+		"pleasant_days" : 101
+	},
+	{
+		"id" : "72224754785",
+		"name" : "SOMERSET AIRPORT, NJ US",
+		"latitude" : 40.62406,
+		"longitude" : -74.66898,
+		"pleasant_days" : 85
+	},
+	{
+		"id" : "72224303738",
+		"name" : "ROCKINGHAM HAMLET AIRPORT, NC US",
+		"latitude" : 34.89111,
+		"longitude" : -79.75917,
+		"pleasant_days" : 83
+	},
+	{
+		"id" : "72220804224",
+		"name" : "EASTSOUND ORCAS ISLAND AIRPORT, WA US",
+		"latitude" : 48.70833,
+		"longitude" : -122.91056,
+		"pleasant_days" : 96
+	},
+	{
+		"id" : "72220212985",
+		"name" : "GARNER FIELD AIRPORT, TX US",
+		"latitude" : 29.21139,
+		"longitude" : -99.74361,
+		"pleasant_days" : 84
+	},
+	{
+		"id" : "72220012832",
+		"name" : "APALACHICOLA AIRPORT, FL US",
+		"latitude" : 29.72681,
+		"longitude" : -85.02481,
+		"pleasant_days" : 111
+	},
+	{
+		"id" : "72219753819",
+		"name" : "PEACHTREE CITY FALCON FIELD, GA US",
+		"latitude" : 33.35428,
+		"longitude" : -84.56896,
+		"pleasant_days" : 83
+	},
+	{
+		"id" : "72219653863",
+		"name" : "ATLANTA DEKALB PEACHTREE AIRPORT, GA US",
+		"latitude" : 33.87835,
+		"longitude" : -84.29802,
+		"pleasant_days" : 84
+	},
+	{
+		"id" : "72219404896",
+		"name" : "RANTOUL NATIONAL AVIATION CENTER F ELLIOTT FIELD AIRPORT, IL US",
+		"latitude" : 40.29333,
+		"longitude" : -88.14222,
+		"pleasant_days" : 86
+	},
+	{
+		"id" : "72219503888",
+		"name" : "ATLANTA FULTON CO AIRPORT, GA US",
+		"latitude" : 33.77759,
+		"longitude" : -84.52464,
+		"pleasant_days" : 90
+	},
+	{
+		"id" : "72219013874",
+		"name" : "ATLANTA HARTSFIELD JACKSON INTERNATIONAL AIRPORT, GA US",
+		"latitude" : 33.62972,
+		"longitude" : -84.44224,
+		"pleasant_days" : 73
+	},
+	{
+		"id" : "72218793911",
+		"name" : "SHAWNEE MUNICIPAL AIRPORT, OK US",
+		"latitude" : 35.35667,
+		"longitude" : -96.94333,
+		"pleasant_days" : 53
+	},
+	{
+		"id" : "72218553838",
+		"name" : "GAINESVILLE LEE GILMER MEMORIAL AIRPORT, GA US",
+		"latitude" : 34.27209,
+		"longitude" : -83.83045,
+		"pleasant_days" : 88
+	},
+	{
+		"id" : "72218304972",
+		"name" : "SIREN BURNETT CO AIRPORT, WI US",
+		"latitude" : 45.8225,
+		"longitude" : -92.3725,
+		"pleasant_days" : 110
+	},
+	{
+		"id" : "72218204890",
+		"name" : "ROCHELLE MUNICIPAL KORITZ FIELD AIRPORT, IL US",
+		"latitude" : 41.89278,
+		"longitude" : -89.07806,
+		"pleasant_days" : 116
+	},
+	{
+		"id" : "72217904968",
+		"name" : "NEW RICHMOND MUNICIPAL AIRPORT, WI US",
+		"latitude" : 45.15,
+		"longitude" : -92.53333,
+		"pleasant_days" : 109
+	},
+	{
+		"id" : "72217513860",
+		"name" : "WARNER ROBINS AFB, GA US",
+		"latitude" : 32.63333,
+		"longitude" : -83.6,
+		"pleasant_days" : 100
+	},
+	{
+		"id" : "72217003813",
+		"name" : "MACON MIDDLE GA REGIONAL AIRPORT, GA US",
+		"latitude" : 32.68889,
+		"longitude" : -83.65296,
+		"pleasant_days" : 66
+	},
+	{
+		"id" : "72216693845",
+		"name" : "VALDOSTA REGIONAL AIRPORT, GA US",
+		"latitude" : 30.77629,
+		"longitude" : -83.27393,
+		"pleasant_days" : 109
+	},
+	{
+		"id" : "72216013869",
+		"name" : "ALBANY SW GEORGIA REGIONAL AIRPORT, GA US",
+		"latitude" : 31.53642,
+		"longitude" : -84.1958,
+		"pleasant_days" : 85
+	},
+	{
+		"id" : "72215912980",
+		"name" : "WESLACO MID VALLEY AIRPORT, TX US",
+		"latitude" : 26.1775,
+		"longitude" : -97.97306,
+		"pleasant_days" : 88
+	},
+	{
+		"id" : "72214863824",
+		"name" : "STANLY CO AIRPORT, NC US",
+		"latitude" : 35.41667,
+		"longitude" : -80.15056,
+		"pleasant_days" : 88
+	},
+	{
+		"id" : "72214103731",
+		"name" : "LOUISBURG FRANKLIN CO AIRPORT, NC US",
+		"latitude" : 36.02333,
+		"longitude" : -78.33028,
+		"pleasant_days" : 104
+	},
+	{
+		"id" : "72214093805",
+		"name" : "TALLAHASSEE REGIONAL AIRPORT, FL US",
+		"latitude" : 30.39354,
+		"longitude" : -84.35136,
+		"pleasant_days" : 79
+	},
+	{
+		"id" : "72213653883",
+		"name" : "BRUNSWICK GLYNCO JETPORT AIRPORT, GA US",
+		"latitude" : 31.25889,
+		"longitude" : -81.46611,
+		"pleasant_days" : 131
+	},
+	{
+		"id" : "72213463822",
+		"name" : "VIDALIA MUNICIPAL AIRPORT, GA US",
+		"latitude" : 32.1925,
+		"longitude" : -82.37194,
+		"pleasant_days" : 112
+	},
+	{
+		"id" : "72211612873",
+		"name" : "ST PETERSBURG CLEARWATER INTERNATIONAL AIRPORT, FL US",
+		"latitude" : 27.91255,
+		"longitude" : -82.68555,
+		"pleasant_days" : 152
+	},
+	{
+		"id" : "72211512871",
+		"name" : "SARASOTA BRADENTON AIRPORT, FL US",
+		"latitude" : 27.40146,
+		"longitude" : -82.55863,
+		"pleasant_days" : 159
+	},
+	{
+		"id" : "72211353979",
+		"name" : "GIDDINGS LEE CO AIRPORT, TX US",
+		"latitude" : 30.16917,
+		"longitude" : -96.98,
+		"pleasant_days" : 96
+	},
+	{
+		"id" : "72209453984",
+		"name" : "GRAND PRAIRIE MUNICIPAL AIRPORT, TX US",
+		"latitude" : 32.69861,
+		"longitude" : -97.04667,
+		"pleasant_days" : 93
+	},
+	{
+		"id" : "72208994959",
+		"name" : "GALESBURG MUNICIPAL AIRPORT, IL US",
+		"latitude" : 40.93333,
+		"longitude" : -90.43333,
+		"pleasant_days" : 127
+	},
+	{
+		"id" : "72206953853",
+		"name" : "DESTIN FORT WALTON BEACH AIRPORT, FL US",
+		"latitude" : 30.39333,
+		"longitude" : -86.46738,
+		"pleasant_days" : 122
+	},
+	{
+		"id" : "72204012838",
+		"name" : "MELBOURNE INTERNATIONAL AIRPORT, FL US",
+		"latitude" : 28.09969,
+		"longitude" : -80.6356,
+		"pleasant_days" : 175
+	},
+	{
+		"id" : "72202612826",
+		"name" : "HOMESTEAD AFB, FL US",
+		"latitude" : 25.48333,
+		"longitude" : -80.38333,
+		"pleasant_days" : 185
+	},
+	{
+		"id" : "72202412882",
+		"name" : "MIAMI OPA LOCKA AIRPORT, FL US",
+		"latitude" : 25.91017,
+		"longitude" : -80.28283,
+		"pleasant_days" : 151
+	},
+	{
+		"id" : "72202012839",
+		"name" : "MIAMI INTERNATIONAL AIRPORT, FL US",
+		"latitude" : 25.78805,
+		"longitude" : -80.31694,
+		"pleasant_days" : 161
+	},
+	{
+		"id" : "72201512850",
+		"name" : "KEY WEST NAS, FL US",
+		"latitude" : 24.58333,
+		"longitude" : -81.68333,
+		"pleasant_days" : 174
+	},
+	{
+		"id" : "72201412818",
+		"name" : "BROOKSVILLE HERNANDO CO AIRPORT, FL US",
+		"latitude" : 28.47388,
+		"longitude" : -82.45374,
+		"pleasant_days" : 126
+	},
+	{
+		"id" : "72104400448",
+		"name" : "RALPH M HALL ROCKWALL MUNICIPAL AIRPORT, TX US",
+		"latitude" : 32.93059,
+		"longitude" : -96.43548,
+		"pleasant_days" : 67
+	},
+	{
+		"id" : "72096513910",
+		"name" : "ABILENE DYESS AFB, TX US",
+		"latitude" : 32.43333,
+		"longitude" : -99.85,
+		"pleasant_days" : 29
+	},
+	{
+		"id" : "72094200323",
+		"name" : "WAHOO MUNICIPAL AIRPORT, NE US",
+		"latitude" : 41.233,
+		"longitude" : -96.6,
+		"pleasant_days" : 50
+	},
+	{
+		"id" : "72073573805",
+		"name" : "NORTHWEST FLORIDA BEACHES INTERNATIONAL AIRPORT, FL US",
+		"latitude" : 30.34869,
+		"longitude" : -85.78835,
+		"pleasant_days" : 114
+	},
+	{
+		"id" : "72071300251",
+		"name" : "DARKE CO AIRPORT, OH US",
+		"latitude" : 40.204,
+		"longitude" : -84.532,
+		"pleasant_days" : 134
+	},
+	{
+		"id" : "72063400220",
+		"name" : "FAIRFIELD CO AIRPORT, SC US",
+		"latitude" : 34.315,
+		"longitude" : -81.109,
+		"pleasant_days" : 107
+	},
+	{
+		"id" : "72061700208",
+		"name" : "HOUSTON EXECUTIVE AIRPORT, TX US",
+		"latitude" : 29.8,
+		"longitude" : -95.9,
+		"pleasant_days" : 86
+	},
+	{
+		"id" : "72061600207",
+		"name" : "BRANSON AIRPORT, MO US",
+		"latitude" : 36.533,
+		"longitude" : -93.2,
+		"pleasant_days" : 95
+	},
+	{
+		"id" : "72049354758",
+		"name" : "NEWPORT STATE AIRPORT, VT US",
+		"latitude" : 44.88333,
+		"longitude" : -72.23333,
+		"pleasant_days" : 122
+	},
+	{
+		"id" : "72046700148",
+		"name" : "GEORGE R CARR MEMORIAL AIR FIELD, LA US",
+		"latitude" : 30.817,
+		"longitude" : -89.867,
+		"pleasant_days" : 113
+	},
+	{
+		"id" : "72039700131",
+		"name" : "OHIO UNIVERSITY AIRPORT SNYDER FIELD, OH US",
+		"latitude" : 39.217,
+		"longitude" : -82.233,
+		"pleasant_days" : 132
+	},
+	{
+		"id" : "72039100127",
+		"name" : "BEEVILLE MUNICIPAL AIRPORT, TX US",
+		"latitude" : 28.35,
+		"longitude" : -97.717,
+		"pleasant_days" : 94
+	},
+	{
+		"id" : "72038163885",
+		"name" : "GULF SHORES JACK EDWARDS AIRPORT, AL US",
+		"latitude" : 30.29056,
+		"longitude" : -87.67167,
+		"pleasant_days" : 118
+	},
+	{
+		"id" : "72034594086",
+		"name" : "PINEDALE RALPH WENZ FIELD AIRPORT, WY US",
+		"latitude" : 42.79556,
+		"longitude" : -109.80694,
+		"pleasant_days" : 3
+	},
+	{
+		"id" : "72031493983",
+		"name" : "PALESTINE MUNICIPAL AIRPORT, TX US",
+		"latitude" : 31.77972,
+		"longitude" : -95.70639,
+		"pleasant_days" : 94
+	},
+	{
+		"id" : "72029953966",
+		"name" : "MID WAY REGIONAL AIRPORT MIDLOTHIAN WAXAHACHIE, TX US",
+		"latitude" : 32.45611,
+		"longitude" : -96.9125,
+		"pleasant_days" : 69
+	},
+	{
+		"id" : "72027493799",
+		"name" : "WHITEVILLE COLUMBUS CO MUNICIPAL AIRPORT, NC US",
+		"latitude" : 34.27278,
+		"longitude" : -78.71472,
+		"pleasant_days" : 127
+	},
+	{
+		"id" : "72027504872",
+		"name" : "LAMBERTVILLE TOLEDO SUBURBAN AIRPORT, MI US",
+		"latitude" : 41.73583,
+		"longitude" : -83.65528,
+		"pleasant_days" : 126
+	},
+	{
+		"id" : "72015103049",
+		"name" : "ALPINE CASPARIS MUNICIPAL AIRPORT, TX US",
+		"latitude" : 30.38333,
+		"longitude" : -103.68333,
+		"pleasant_days" : 53
+	},
+	{
+		"id" : "72012063837",
+		"name" : "HILTON HEAD ISLAND AIRPORT, SC US",
+		"latitude" : 32.21667,
+		"longitude" : -80.7,
+		"pleasant_days" : 116
+	},
+	{
+		"id" : "72011354829",
+		"name" : "OAKLAND TROY AIRPORT, MI US",
+		"latitude" : 42.54306,
+		"longitude" : -83.17806,
+		"pleasant_days" : 117
+	},
+	{
+		"id" : "70489025616",
+		"name" : "DUTCH HARBOR, AK US",
+		"latitude" : 53.895,
+		"longitude" : -166.5433,
+		"pleasant_days" : 0
+	},
+	{
+		"id" : "70395025325",
+		"name" : "KETCHIKAN AIRPORT, AK US",
+		"latitude" : 55.3586,
+		"longitude" : -131.72196,
+		"pleasant_days" : 7
+	},
+	{
+		"id" : "70387025338",
+		"name" : "WRANGELL AIRPORT, AK US",
+		"latitude" : 56.4732,
+		"longitude" : -132.3874,
+		"pleasant_days" : 51
+	},
+	{
+		"id" : "70371025333",
+		"name" : "SITKA AIRPORT, AK US",
+		"latitude" : 57.04746,
+		"longitude" : -135.36703,
+		"pleasant_days" : 13
+	},
+	{
+		"id" : "70381025309",
+		"name" : "JUNEAU AIRPORT, AK US",
+		"latitude" : 58.354,
+		"longitude" : -134.55606,
+		"pleasant_days" : 14
+	},
+	{
+		"id" : "70362025335",
+		"name" : "SKAGWAY AIRPORT, AK US",
+		"latitude" : 59.45383,
+		"longitude" : -135.32769,
+		"pleasant_days" : 3
+	},
+	{
+		"id" : "70350025501",
+		"name" : "KODIAK AIRPORT, AK US",
+		"latitude" : 57.75071,
+		"longitude" : -152.4881,
+		"pleasant_days" : 0
+	},
+	{
+		"id" : "70341025507",
+		"name" : "HOMER AIRPORT, AK US",
+		"latitude" : 59.64196,
+		"longitude" : -151.49098,
+		"pleasant_days" : 5
+	},
+	{
+		"id" : "70316525617",
+		"name" : "SAND POINT AIRPORT, AK US",
+		"latitude" : 55.31944,
+		"longitude" : -160.52083,
+		"pleasant_days" : 0
+	},
+	{
+		"id" : "70321025513",
+		"name" : "DILLINGHAM AIRPORT, AK US",
+		"latitude" : 59.05,
+		"longitude" : -158.5167,
+		"pleasant_days" : 0
+	},
+	{
+		"id" : "70316025624",
+		"name" : "COLD BAY AIRPORT, AK US",
+		"latitude" : 55.22068,
+		"longitude" : -162.7323,
+		"pleasant_days" : 0
+	},
+	{
+		"id" : "72744404979",
+		"name" : "TWO HARBORS RICHARD B HELGESON AIRPORT, MN US",
+		"latitude" : 47.04917,
+		"longitude" : -91.745,
+		"pleasant_days" : 83
+	},
+	{
+		"id" : "72688304113",
+		"name" : "HERMISTON MUNICIPAL AIRPORT, OR US",
+		"latitude" : 45.82583,
+		"longitude" : -119.26111,
+		"pleasant_days" : 35
+	},
+	{
+		"id" : "72643794940",
+		"name" : "SPARTA FORT MCCOY, WI US",
+		"latitude" : 43.96667,
+		"longitude" : -90.73333,
+		"pleasant_days" : 97
+	},
+	{
+		"id" : "72537714804",
+		"name" : "MOUNT CLEMENS ANG BASE, MI US",
+		"latitude" : 42.6083,
+		"longitude" : -82.8183,
+		"pleasant_days" : 121
+	},
+	{
+		"id" : "72314653892",
+		"name" : "JEFFERSON ASHE CO AIRPORT, NC US",
+		"latitude" : 36.43222,
+		"longitude" : -81.41944,
+		"pleasant_days" : 156
+	},
+	{
+		"id" : "72310503858",
+		"name" : "EASTOVER MCENTIRE ANG, SC US",
+		"latitude" : 33.96667,
+		"longitude" : -80.8,
+		"pleasant_days" : 87
+	},
+	{
+		"id" : "72308793735",
+		"name" : "FORT EUSTIS FELKER ARMY AIR FIELD, VA US",
+		"latitude" : 37.13333,
+		"longitude" : -76.6,
+		"pleasant_days" : 101
+	},
+	{
+		"id" : "72031153962",
+		"name" : "MOUNT PLEASANT AIRPORT, TX US",
+		"latitude" : 33.09556,
+		"longitude" : -94.96139,
+		"pleasant_days" : 89
+	},
+	{
+		"id" : "72030804992",
+		"name" : "MILLARD AIRPORT OMAHA, NE US",
+		"latitude" : 41.19611,
+		"longitude" : -96.11194,
+		"pleasant_days" : 80
+	},
+	{
+		"id" : "72026853882",
+		"name" : "BAINBRIDGE DECATUR CO INDUSTRIAL AIR PARK AIRPORT, GA US",
+		"latitude" : 30.98333,
+		"longitude" : -84.63333,
+		"pleasant_days" : 100
+	},
+	{
+		"id" : "72026563833",
+		"name" : "ALEXANDER CITY THOMAS C RUSSELL FIELD AIRPORT, AL US",
+		"latitude" : 32.91472,
+		"longitude" : -85.96278,
+		"pleasant_days" : 99
+	},
+	{
+		"id" : "99419099999",
+		"name" : "DEVILS ISLAND WI, WI US",
+		"latitude" : 47.08,
+		"longitude" : -90.73,
+		"pleasant_days" : 57
+	},
+	{
+		"id" : "74504893210",
+		"name" : "OROVILLE MUNICIPAL AIRPORT, CA US",
+		"latitude" : 39.49,
+		"longitude" : -121.61833,
+		"pleasant_days" : 75
+	},
+	{
+		"id" : "72646854913",
+		"name" : "PHILLIPS PRICE CO AIRPORT, WI US",
+		"latitude" : 45.70889,
+		"longitude" : -90.40222,
+		"pleasant_days" : 114
+	},
+	{
+		"id" : "72574424027",
+		"name" : "ROCK SPRINGS AIRPORT, WY US",
+		"latitude" : 41.59466,
+		"longitude" : -109.05296,
+		"pleasant_days" : 21
+	},
+	{
+		"id" : "72445703938",
+		"name" : "WAYNESVILLE REGIONAL AIRPORT FORNEY FIELD, MO US",
+		"latitude" : 37.75,
+		"longitude" : -92.15,
+		"pleasant_days" : 83
+	},
+	{
+		"id" : "72398093720",
+		"name" : "SALISBURY WICOMICO REGIONAL AIRPORT, MD US",
+		"latitude" : 38.34083,
+		"longitude" : -75.51325,
+		"pleasant_days" : 79
+	},
+	{
+		"id" : "72341993992",
+		"name" : "EL DORADO GOODWIN FIELD, AR US",
+		"latitude" : 33.2208,
+		"longitude" : -92.8141,
+		"pleasant_days" : 92
+	},
+	{
+		"id" : "72253912979",
+		"name" : "SAN MARCOS MUNICIPAL AIRPORT, TX US",
+		"latitude" : 29.89083,
+		"longitude" : -97.86444,
+		"pleasant_days" : 77
+	},
+	{
+		"id" : "72253312962",
+		"name" : "HONDO MUNICIPAL AIRPORT, TX US",
+		"latitude" : 29.3601,
+		"longitude" : -99.1742,
+		"pleasant_days" : 64
+	},
+	{
+		"id" : "72251712932",
+		"name" : "ALICE INTERNATIONAL AIRPORT, TX US",
+		"latitude" : 27.74111,
+		"longitude" : -98.02472,
+		"pleasant_days" : 69
+	},
+	{
+		"id" : "72227653820",
+		"name" : "EVERGREEN MIDDLETON FIELD, AL US",
+		"latitude" : 31.41556,
+		"longitude" : -87.04417,
+		"pleasant_days" : 96
+	},
+	{
+		"id" : "72212604879",
+		"name" : "CHICAGO LANSING MUNICIPAL AIRPORT, IL US",
+		"latitude" : 41.53972,
+		"longitude" : -87.53194,
+		"pleasant_days" : 109
+	},
+	{
+		"id" : "72065500235",
+		"name" : "CRYSTAL RIVER AIRPORT, FL US",
+		"latitude" : 28.867,
+		"longitude" : -82.567,
+		"pleasant_days" : 182
+	},
+	{
+		"id" : "72056100467",
+		"name" : "WILLIAM R POGUE MUNICIPAL AIRPORT, OK US",
+		"latitude" : 36.17527,
+		"longitude" : -96.15183,
+		"pleasant_days" : 84
+	},
+	{
+		"id" : "72039500130",
+		"name" : "PLEASANTON MUNICIPAL AIRPORT, TX US",
+		"latitude" : 28.95,
+		"longitude" : -98.517,
+		"pleasant_days" : 101
+	},
+	{
+		"id" : "72034354852",
+		"name" : "WAUPACA MUNICIPAL AIRPORT, WI US",
+		"latitude" : 44.33333,
+		"longitude" : -89.01972,
+		"pleasant_days" : 94
+	},
+	{
+		"id" : "72032104893",
+		"name" : "CHEBOYGAN CO AIRPORT, MI US",
+		"latitude" : 45.65361,
+		"longitude" : -84.51917,
+		"pleasant_days" : 96
+	},
+	{
+		"id" : "72030653879",
+		"name" : "LEES SUMMIT MUNICIPAL AIRPORT, MO US",
+		"latitude" : 38.95972,
+		"longitude" : -94.37139,
+		"pleasant_days" : 60
+	},
+	{
+		"id" : "72029653945",
+		"name" : "JASPER CO BELL FIELD AIRPORT, TX US",
+		"latitude" : 30.88556,
+		"longitude" : -94.03472,
+		"pleasant_days" : 115
+	},
+	{
+		"id" : "72028803711",
+		"name" : "HENDERSON OXFORD AIRPORT, NC US",
+		"latitude" : 36.36139,
+		"longitude" : -78.52889,
+		"pleasant_days" : 103
+	},
+	{
+		"id" : "72029153970",
+		"name" : "MESQUITE METRO AIRPORT, TX US",
+		"latitude" : 32.74694,
+		"longitude" : -96.53056,
+		"pleasant_days" : 72
+	},
+	{
+		"id" : "72028753967",
+		"name" : "GRAYSON CO AIRPORT SHERMAN DENISON, TX US",
+		"latitude" : 33.71417,
+		"longitude" : -96.67361,
+		"pleasant_days" : 66
+	},
+	{
+		"id" : "72028404877",
+		"name" : "CHARLOTTE FITCH H BEACH AIRPORT, MI US",
+		"latitude" : 42.57444,
+		"longitude" : -84.81139,
+		"pleasant_days" : 127
+	},
+	{
+		"id" : "72028203736",
+		"name" : "KILL DEVIL HILLS FIRST FLIGHT AIRPORT, NC US",
+		"latitude" : 36.01833,
+		"longitude" : -75.67139,
+		"pleasant_days" : 103
+	},
+	{
+		"id" : "72017553919",
+		"name" : "MONTICELLO MUNICIPAL AIRPORT, AR US",
+		"latitude" : 33.63602,
+		"longitude" : -91.7555,
+		"pleasant_days" : 96
+	},
+	{
+		"id" : "99465099999",
+		"name" : "KEATON BEACH, FL US",
+		"latitude" : 29.82,
+		"longitude" : -83.59,
+		"pleasant_days" : 124
+	},
+	{
+		"id" : "74795012867",
+		"name" : "COCOA BEACH PATRICK AFB, FL US",
+		"latitude" : 28.23333,
+		"longitude" : -80.6,
+		"pleasant_days" : 189
+	},
+	{
+		"id" : "74780413824",
+		"name" : "SAVANNAH HUNTER FIELD, GA US",
+		"latitude" : 32.01667,
+		"longitude" : -81.13333,
+		"pleasant_days" : 115
+	},
+	{
+		"id" : "74776003818",
+		"name" : "MARIANNA MUNICIPAL AIRPORT, FL US",
+		"latitude" : 30.83556,
+		"longitude" : -85.18389,
+		"pleasant_days" : 95
+	},
+	{
+		"id" : "72508854733",
+		"name" : "BEVERLY MUNICIPAL AIRPORT, MA US",
+		"latitude" : 42.58417,
+		"longitude" : -70.9175,
+		"pleasant_days" : 109
+	},
+	{
+		"id" : "72450503923",
+		"name" : "WICHITA MCCONNELL AFB, KS US",
+		"latitude" : 37.61667,
+		"longitude" : -97.26667,
+		"pleasant_days" : 41
+	},
+	{
+		"id" : "72427653859",
+		"name" : "DAYTON WRIGHT BROTHERS AIRPORT, OH US",
+		"latitude" : 39.59361,
+		"longitude" : -84.22639,
+		"pleasant_days" : 99
+	},
+	{
+		"id" : "72411763802",
+		"name" : "WISE LONESOME PINE AIRPORT, VA US",
+		"latitude" : 36.9875,
+		"longitude" : -82.53,
+		"pleasant_days" : 152
+	},
+	{
+		"id" : "72408594732",
+		"name" : "NORTHEAST PHILADELPHIA AIRPORT, PA US",
+		"latitude" : 40.07892,
+		"longitude" : -75.01341,
+		"pleasant_days" : 79
+	},
+	{
+		"id" : "72261022010",
+		"name" : "DEL RIO INTERNATIONAL AIRPORT, TX US",
+		"latitude" : 29.3784,
+		"longitude" : -100.927,
+		"pleasant_days" : 56
+	},
+	{
+		"id" : "72259513911",
+		"name" : "FORT WORTH NAS, TX US",
+		"latitude" : 32.76667,
+		"longitude" : -97.45,
+		"pleasant_days" : 59
+	},
+	{
+		"id" : "72248803996",
+		"name" : "TALLULAH VICKSBURG REGIONAL AIRPORT, LA US",
+		"latitude" : 32.35,
+		"longitude" : -91.02778,
+		"pleasant_days" : 88
+	},
+	{
+		"id" : "72240612927",
+		"name" : "HOUMA TERREBONNE AIRPORT, LA US",
+		"latitude" : 29.56639,
+		"longitude" : -90.66028,
+		"pleasant_days" : 122
+	},
+	{
+		"id" : "72235112953",
+		"name" : "WHARTON REGIONAL AIRPORT, TX US",
+		"latitude" : 29.26611,
+		"longitude" : -96.0075,
+		"pleasant_days" : 93
+	},
+	{
+		"id" : "72231203908",
+		"name" : "HAMMOND MUNICIPAL AIRPORT, LA US",
+		"latitude" : 30.52083,
+		"longitude" : -90.4175,
+		"pleasant_days" : 120
+	},
+	{
+		"id" : "72027312981",
+		"name" : "BAY CITY MUNICIPAL AIRPORT, TX US",
+		"latitude" : 28.97306,
+		"longitude" : -95.86333,
+		"pleasant_days" : 133
+	},
+	{
+		"id" : "72644404963",
+		"name" : "PRAIRIE DU CHIEN MUNICIPAL AIRPORT, WI US",
+		"latitude" : 43.01917,
+		"longitude" : -91.12361,
+		"pleasant_days" : 124
+	},
+	{
+		"id" : "72534213809",
+		"name" : "LAWRENCEVILLE VINCENNES INTERNATIONAL AIRPORT, IL US",
+		"latitude" : 38.76417,
+		"longitude" : -87.60556,
+		"pleasant_days" : 57
+	},
+	{
+		"id" : "72520804855",
+		"name" : "MARION MUNICIPAL AIRPORT, OH US",
+		"latitude" : 40.61611,
+		"longitude" : -83.06361,
+		"pleasant_days" : 91
+	},
+	{
+		"id" : "72507364708",
+		"name" : "PROVINCETOWN MUNICIPAL AIRPORT, MA US",
+		"latitude" : 42.07194,
+		"longitude" : -70.22111,
+		"pleasant_days" : 101
+	},
+	{
+		"id" : "70308025713",
+		"name" : "SAINT PAUL ISLAND AIRPORT, AK US",
+		"latitude" : 57.1552,
+		"longitude" : -170.2222,
+		"pleasant_days" : 0
+	},
+	{
+		"id" : "72227099999",
+		"name" : "MARIETTA DOBBINS AF, GA US",
+		"latitude" : 33.917,
+		"longitude" : -84.517,
+		"pleasant_days" : 117
+	},
+	{
+		"id" : "72221099999",
+		"name" : "VALPARAISO EGLIN AF, FL US",
+		"latitude" : 30.483,
+		"longitude" : -86.517,
+		"pleasant_days" : 105
+	},
+	{
+		"id" : "72534804831",
+		"name" : "ROMEOVILLE WEATHER FORECAST OFFICE, IL US",
+		"latitude" : 41.60413,
+		"longitude" : -88.08497,
+		"pleasant_days" : 105
+	},
+	{
+		"id" : "72446713930",
+		"name" : "WHITEMAN AFB, MO US",
+		"latitude" : 38.71667,
+		"longitude" : -93.55,
+		"pleasant_days" : 60
+	},
+	{
+		"id" : "72401703707",
+		"name" : "FARMVILLE REGIONAL AIRPORT, VA US",
+		"latitude" : 37.3575,
+		"longitude" : -78.43778,
+		"pleasant_days" : 74
+	},
+	{
+		"id" : "72236423903",
+		"name" : "TUNICA MUNICIPAL AIRPORT, MS US",
+		"latitude" : 34.68111,
+		"longitude" : -90.34667,
+		"pleasant_days" : 63
+	},
+	{
+		"id" : "72028503734",
+		"name" : "MIDDLE PENINSULA REGIONAL AIRPORT, VA US",
+		"latitude" : 37.52111,
+		"longitude" : -76.76472,
+		"pleasant_days" : 87
+	},
+	{
+		"id" : "72027803704",
+		"name" : "EMPORIA GREENSVILLE REGIONAL AIRPORT, VA US",
+		"latitude" : 36.68667,
+		"longitude" : -77.48278,
+		"pleasant_days" : 93
+	},
+	{
+		"id" : "74598099999",
+		"name" : "LANGLEY AFB HAMPTON, VA US",
+		"latitude" : 37.083,
+		"longitude" : -76.35,
+		"pleasant_days" : 115
+	},
+	{
+		"id" : "74594099999",
+		"name" : "ANDREWS AFB CAMP SP, MD US",
+		"latitude" : 38.817,
+		"longitude" : -76.85,
+		"pleasant_days" : 119
+	},
+	{
+		"id" : "72546194988",
+		"name" : "MARSHALLTOWN MUNICIPAL AIRPORT, IA US",
+		"latitude" : 42.11056,
+		"longitude" : -92.91611,
+		"pleasant_days" : 94
+	},
+	{
+		"id" : "72410753895",
+		"name" : "TWIN CO AIRPORT, VA US",
+		"latitude" : 36.76611,
+		"longitude" : -80.82333,
+		"pleasant_days" : 153
+	},
+	{
+		"id" : "72206603853",
+		"name" : "MAYPORT PILOT STATION, FL US",
+		"latitude" : 30.4,
+		"longitude" : -81.41667,
+		"pleasant_days" : 131
+	},
+	{
+		"id" : "72074100269",
+		"name" : "BOULDER CITY MUNICIPAL AIRPORT, NV US",
+		"latitude" : 35.947,
+		"longitude" : -114.861,
+		"pleasant_days" : 64
+	},
+	{
+		"id" : "72026654809",
+		"name" : "WARSAW MUNICIPAL AIRPORT, IN US",
+		"latitude" : 41.27472,
+		"longitude" : -85.84,
+		"pleasant_days" : 121
+	},
+	{
+		"id" : "70389425367",
+		"name" : "KLAWOCK AIRPORT, AK US",
+		"latitude" : 55.58,
+		"longitude" : -133.075,
+		"pleasant_days" : 61
+	},
+	{
+		"id" : "74509023244",
+		"name" : "MOFFETT FEDERAL AIRFIELD, CA US",
+		"latitude" : 37.4058,
+		"longitude" : -122.0481,
+		"pleasant_days" : 196
+	},
+	{
+		"id" : "72745204912",
+		"name" : "CROOKSTON MUNICIPAL KIRKWOOD FIELD AIRPORT, MN US",
+		"latitude" : 47.84167,
+		"longitude" : -96.62139,
+		"pleasant_days" : 88
+	},
+	{
+		"id" : "72655804914",
+		"name" : "CLOQUET CARLTON CO AIRPORT, MN US",
+		"latitude" : 46.7025,
+		"longitude" : -92.50417,
+		"pleasant_days" : 99
+	},
+	{
+		"id" : "72405853818",
+		"name" : "ABINGDON VIRGINIA HIGHLANDS AIRPORT, VA US",
+		"latitude" : 36.68333,
+		"longitude" : -82.03333,
+		"pleasant_days" : 133
+	},
+	{
+		"id" : "72295503174",
+		"name" : "TORRANCE, CA US",
+		"latitude" : 33.80338,
+		"longitude" : -118.33961,
+		"pleasant_days" : 249
+	},
+	{
+		"id" : "72220404996",
+		"name" : "SAVANNA TRI TOWNSHIP AIRPORT, IL US",
+		"latitude" : 42.04583,
+		"longitude" : -90.10806,
+		"pleasant_days" : 97
+	},
+	{
+		"id" : "72218604892",
+		"name" : "BEAVER ISLAND AIRPORT, MI US",
+		"latitude" : 45.68889,
+		"longitude" : -85.56611,
+		"pleasant_days" : 98
+	},
+	{
+		"id" : "72200754828",
+		"name" : "CARO TUSCOLA AREA AIRPORT, MI US",
+		"latitude" : 43.45889,
+		"longitude" : -83.44556,
+		"pleasant_days" : 124
+	},
+	{
+		"id" : "72054200166",
+		"name" : "LAGO VISTA RUSTY ALLEN AIRPORT, TX US",
+		"latitude" : 30.5,
+		"longitude" : -97.967,
+		"pleasant_days" : 102
+	},
+	{
+		"id" : "72650754907",
+		"name" : "MINERAL POINT IOWA CO AIRPORT, WI US",
+		"latitude" : 42.88667,
+		"longitude" : -90.23611,
+		"pleasant_days" : 111
+	},
+	{
+		"id" : "99435099999",
+		"name" : "WEST POINT WA, US",
+		"latitude" : 47.66,
+		"longitude" : -122.44,
+		"pleasant_days" : 6
+	},
+	{
+		"id" : "99426099999",
+		"name" : "SABINE TX, US",
+		"latitude" : 29.67,
+		"longitude" : -94.05,
+		"pleasant_days" : 114
+	},
+	{
+		"id" : "74693993785",
+		"name" : "CHAPEL HILL WILLIAMS AIRPORT, NC US",
+		"latitude" : 35.93333,
+		"longitude" : -79.06417,
+		"pleasant_days" : 98
+	},
+	{
+		"id" : "74251353937",
+		"name" : "DURANT EAKER FIELD AIRPORT, OK US",
+		"latitude" : 33.94222,
+		"longitude" : -96.39444,
+		"pleasant_days" : 78
+	},
+	{
+		"id" : "72353753913",
+		"name" : "GUTHRIE MUNICIPAL AIRPORT, OK US",
+		"latitude" : 35.8517,
+		"longitude" : -97.4142,
+		"pleasant_days" : 54
+	},
+	{
+		"id" : "72058400181",
+		"name" : "ZAPATA CO AIRPORT, TX US",
+		"latitude" : 26.967,
+		"longitude" : -99.25,
+		"pleasant_days" : 77
+	},
+	{
+		"id" : "70398025308",
+		"name" : "ANNETTE AIRPORT, AK US",
+		"latitude" : 55.0389,
+		"longitude" : -131.5787,
+		"pleasant_days" : 34
+	},
+	{
+		"id" : "99401099999",
+		"name" : "SOUTHWEST PASS LA, US",
+		"latitude" : 28.9,
+		"longitude" : -89.43,
+		"pleasant_days" : 103
+	},
+	{
+		"id" : "72030253963",
+		"name" : "CLARKSVILLE RED RIVER CO AIRPORT, TX US",
+		"latitude" : 33.59306,
+		"longitude" : -95.06361,
+		"pleasant_days" : 91
+	},
+	{
+		"id" : "74718603164",
+		"name" : "CAMPO ASOS, CA US",
+		"latitude" : 32.6261,
+		"longitude" : -116.4681,
+		"pleasant_days" : 6
+	},
+	{
+		"id" : "72248513944",
+		"name" : "SHREVEPORT BARKSDALE AFB, LA US",
+		"latitude" : 32.5,
+		"longitude" : -93.66667,
+		"pleasant_days" : 83
+	},
+	{
+		"id" : "72479723176",
+		"name" : "MILFORD MUNICIPAL AIRPORT, UT US",
+		"latitude" : 38.41667,
+		"longitude" : -113.01667,
+		"pleasant_days" : 5
+	},
+	{
+		"id" : "72220912986",
+		"name" : "CALHOUN CO AIRPORT, TX US",
+		"latitude" : 28.65417,
+		"longitude" : -96.68139,
+		"pleasant_days" : 106
+	},
+	{
+		"id" : "72310813776",
+		"name" : "LUMBERTON REGIONAL AIRPORT, NC US",
+		"latitude" : 34.608,
+		"longitude" : -79.0591,
+		"pleasant_days" : 77
+	},
+	{
+		"id" : "72240312968",
+		"name" : "SALT POINT, LA US",
+		"latitude" : 29.56222,
+		"longitude" : -91.52556,
+		"pleasant_days" : 132
+	},
+	{
+		"id" : "72380523179",
+		"name" : "NEEDLES AIRPORT, CA US",
+		"latitude" : 34.7675,
+		"longitude" : -114.6188,
+		"pleasant_days" : 35
+	},
+	{
+		"id" : "72538694898",
+		"name" : "PORT HOPE, MI US",
+		"latitude" : 44.02194,
+		"longitude" : -82.79306,
+		"pleasant_days" : 120
+	},
+	{
+		"id" : "72282263903",
+		"name" : "FORT POLK SELF STRIP, LA US",
+		"latitude" : 31.1136,
+		"longitude" : -92.9656,
+		"pleasant_days" : 96
+	},
+	{
+		"id" : "72255353928",
+		"name" : "BRENHAM MUNICIPAL AIRPORT, TX US",
+		"latitude" : 30.21889,
+		"longitude" : -96.37417,
+		"pleasant_days" : 105
+	},
+	{
+		"id" : "74694313786",
+		"name" : "ELIZABETH CITY COAST GUARD AIR STATION, NC US",
+		"latitude" : 36.26056,
+		"longitude" : -76.175,
+		"pleasant_days" : 94
+	},
+	{
+		"id" : "72503504781",
+		"name" : "ISLIP LI MACARTHUR AIRPORT, NY US",
+		"latitude" : 40.79388,
+		"longitude" : -73.10189,
+		"pleasant_days" : 121
+	},
+	{
+		"id" : "72423603889",
+		"name" : "JACKSON JULIAN CARROLL AIRPORT, KY US",
+		"latitude" : 37.59139,
+		"longitude" : -83.31444,
+		"pleasant_days" : 135
+	},
+	{
+		"id" : "72404593720",
+		"name" : "SALISBURY WICOMICO REGIONAL AIRPORT, MD US",
+		"latitude" : 38.34083,
+		"longitude" : -75.51325,
+		"pleasant_days" : 107
+	},
+	{
+		"id" : "72213513870",
+		"name" : "ALMA BACON CO AIRPORT, GA US",
+		"latitude" : 31.5358,
+		"longitude" : -82.5067,
+		"pleasant_days" : 107
+	},
+	{
+		"id" : "72205612834",
+		"name" : "DAYTONA BEACH INTERNATIONAL AIRPORT, FL US",
+		"latitude" : 29.1828,
+		"longitude" : -81.0483,
+		"pleasant_days" : 167
+	},
+	{
+		"id" : "69023024255",
+		"name" : "WHIDBEY ISLAND NAS, WA US",
+		"latitude" : 48.35,
+		"longitude" : -122.66667,
+		"pleasant_days" : 14
+	},
+	{
+		"id" : "72252099999",
+		"name" : "LAREDO INTERNATIONAL AIRPORT, TX US",
+		"latitude" : 27.55,
+		"longitude" : -99.467,
+		"pleasant_days" : 57
+	},
+	{
+		"id" : "91197599999",
+		"name" : "KONA INTERNATIONAL AT KEAHOL, HI US",
+		"latitude" : 19.733,
+		"longitude" : -156.033,
+		"pleasant_days" : 153
+	},
+	{
+		"id" : "72506314756",
+		"name" : "NANTUCKET MEMORIAL AIRPORT, MA US",
+		"latitude" : 41.25306,
+		"longitude" : -70.06083,
+		"pleasant_days" : 85
+	},
+	{
+		"id" : "72782624141",
+		"name" : "EPHRATA AIRPORT, WA US",
+		"latitude" : 47.3078,
+		"longitude" : -119.5154,
+		"pleasant_days" : 50
+	},
+	{
+		"id" : "72524614891",
+		"name" : "MANSFIELD LAHM REGIONAL AIRPORT, OH US",
+		"latitude" : 40.8204,
+		"longitude" : -82.5178,
+		"pleasant_days" : 105
+	},
+	{
+		"id" : "72493623254",
+		"name" : "CONCORD BUCHANAN FIELD, CA US",
+		"latitude" : 37.9917,
+		"longitude" : -122.055,
+		"pleasant_days" : 72
+	},
+	{
+		"id" : "72493593228",
+		"name" : "HAYWARD AIR TERMINAL, CA US",
+		"latitude" : 37.6542,
+		"longitude" : -122.115,
+		"pleasant_days" : 129
+	},
+	{
+		"id" : "72439693989",
+		"name" : "QUINCY REGIONAL AIRPORT, IL US",
+		"latitude" : 39.9369,
+		"longitude" : -91.1919,
+		"pleasant_days" : 104
+	},
+	{
+		"id" : "72348903935",
+		"name" : "CAPE GIRARDEAU MUNICIPAL AIRPORT, MO US",
+		"latitude" : 37.2252,
+		"longitude" : -89.5705,
+		"pleasant_days" : 85
+	},
+	{
+		"id" : "72326503847",
+		"name" : "CROSSVILLE MEMORIAL AIRPORT, TN US",
+		"latitude" : 35.9509,
+		"longitude" : -85.0813,
+		"pleasant_days" : 148
+	},
+	{
+		"id" : "72318313877",
+		"name" : "BRISTOL AIRPORT, TN US",
+		"latitude" : 36.47967,
+		"longitude" : -82.39898,
+		"pleasant_days" : 116
+	},
+	{
+		"id" : "72273593026",
+		"name" : "DOUGLAS BISBEE INTERNATIONAL AIRPORT, AZ US",
+		"latitude" : 31.4583,
+		"longitude" : -109.6061,
+		"pleasant_days" : 20
+	},
+	{
+		"id" : "72231713970",
+		"name" : "BATON ROUGE METRO AIRPORT, LA US",
+		"latitude" : 30.5372,
+		"longitude" : -91.1469,
+		"pleasant_days" : 108
+	},
+	{
+		"id" : "72204512843",
+		"name" : "VERO BEACH INTERNATIONAL AIRPORT, FL US",
+		"latitude" : 27.651,
+		"longitude" : -80.4199,
+		"pleasant_days" : 185
+	},
+	{
+		"id" : "72408913781",
+		"name" : "WILMINGTON NEW CASTLE CO AIRPORT, DE US",
+		"latitude" : 39.6744,
+		"longitude" : -75.60567,
+		"pleasant_days" : 106
+	},
+	{
+		"id" : "72793899999",
+		"name" : "TACOMA NARROWS, WA US",
+		"latitude" : 47.267,
+		"longitude" : -122.567,
+		"pleasant_days" : 95
+	},
+	{
+		"id" : "72312593846",
+		"name" : "ANDERSON FAA AIRPORT, SC US",
+		"latitude" : 34.4977,
+		"longitude" : -82.7097,
+		"pleasant_days" : 98
+	},
+	{
+		"id" : "72243512918",
+		"name" : "HOUSTON WILLIAM P HOBBY AIRPORT, TX US",
+		"latitude" : 29.63806,
+		"longitude" : -95.28194,
+		"pleasant_days" : 112
+	},
+	{
+		"id" : "72235913978",
+		"name" : "GREENWOOD LEFLORE AIRPORT, MS US",
+		"latitude" : 33.4963,
+		"longitude" : -90.0866,
+		"pleasant_days" : 88
+	},
+	{
+		"id" : "72214612816",
+		"name" : "GAINESVILLE REGIONAL AIRPORT, FL US",
+		"latitude" : 29.6919,
+		"longitude" : -82.2755,
+		"pleasant_days" : 120
+	},
+	{
+		"id" : "72206853860",
+		"name" : "JACKSONVILLE CRAIG MUNICIPAL AIRPORT, FL US",
+		"latitude" : 30.3361,
+		"longitude" : -81.5147,
+		"pleasant_days" : 124
+	},
+	{
+		"id" : "72202512849",
+		"name" : "FORT LAUDERDALE INTERNATIONAL AIRPORT, FL US",
+		"latitude" : 26.07875,
+		"longitude" : -80.16217,
+		"pleasant_days" : 192
+	},
+	{
+		"id" : "72344613971",
+		"name" : "HARRISON BOONE CO AIRPORT, AR US",
+		"latitude" : 36.2668,
+		"longitude" : -93.1566,
+		"pleasant_days" : 94
+	},
+	{
+		"id" : "74794699999",
+		"name" : "NASA SHUTTLE LANDING, FL US",
+		"latitude" : 28.615,
+		"longitude" : -80.694,
+		"pleasant_days" : 177
+	},
+	{
+		"id" : "72788599999",
+		"name" : "WILLIAM R FAIRCHILD, WA US",
+		"latitude" : 48.117,
+		"longitude" : -123.5,
+		"pleasant_days" : 27
+	},
+	{
+		"id" : "72511514711",
+		"name" : "MIDDLETOWN HARRISBURG INTERNATIONAL AIRPORT, PA US",
+		"latitude" : 40.1962,
+		"longitude" : -76.7724,
+		"pleasant_days" : 101
+	},
+	{
+		"id" : "72503394728",
+		"name" : "NY CITY CENTRAL PARK, NY US",
+		"latitude" : 40.77898,
+		"longitude" : -73.96925,
+		"pleasant_days" : 119
+	},
+	{
+		"id" : "72491723233",
+		"name" : "SALINAS AIRPORT, CA US",
+		"latitude" : 36.6636,
+		"longitude" : -121.6081,
+		"pleasant_days" : 51
+	},
+	{
+		"id" : "72314503810",
+		"name" : "HICKORY FAA AIRPORT, NC US",
+		"latitude" : 35.74207,
+		"longitude" : -81.38229,
+		"pleasant_days" : 110
+	},
+	{
+		"id" : "72301313748",
+		"name" : "WILMINGTON INTERNATIONAL AIRPORT, NC US",
+		"latitude" : 34.2675,
+		"longitude" : -77.8997,
+		"pleasant_days" : 101
+	},
+	{
+		"id" : "72259613961",
+		"name" : "FORT WORTH MEACHAM FIELD, TX US",
+		"latitude" : 32.81917,
+		"longitude" : -97.36139,
+		"pleasant_days" : 59
+	},
+	{
+		"id" : "72258313960",
+		"name" : "DALLAS FAA AIRPORT, TX US",
+		"latitude" : 32.8519,
+		"longitude" : -96.8555,
+		"pleasant_days" : 59
+	},
+	{
+		"id" : "72244503904",
+		"name" : "COLLEGE STATION EASTERWOOD FIELD, TX US",
+		"latitude" : 30.58917,
+		"longitude" : -96.36472,
+		"pleasant_days" : 78
+	},
+	{
+		"id" : "72698699999",
+		"name" : "PORTLAND HILLSBORO, OR US",
+		"latitude" : 45.533,
+		"longitude" : -122.95,
+		"pleasant_days" : 86
+	},
+	{
+		"id" : "72286099999",
+		"name" : "RIVERSIDE MARCH AFB, CA US",
+		"latitude" : 33.9,
+		"longitude" : -117.25,
+		"pleasant_days" : 79
+	},
+	{
+		"id" : "72257699999",
+		"name" : "ROBERT GRAY ARMY AIR FIELD, TX US",
+		"latitude" : 31.067,
+		"longitude" : -97.833,
+		"pleasant_days" : 68
+	},
+	{
+		"id" : "72483899999",
+		"name" : "YUBA CO, CA US",
+		"latitude" : 39.1,
+		"longitude" : -121.567,
+		"pleasant_days" : 35
+	},
+	{
+		"id" : "72356499999",
+		"name" : "RICHARD LLOYD JONES, OK US",
+		"latitude" : 36.033,
+		"longitude" : -95.983,
+		"pleasant_days" : 76
+	},
+	{
+		"id" : "72292799999",
+		"name" : "MC CLELLAN PALOMAR, CA US",
+		"latitude" : 33.128,
+		"longitude" : -117.28,
+		"pleasant_days" : 241
+	},
+	{
+		"id" : "72290399999",
+		"name" : "MONTGOMERY FIELD, CA US",
+		"latitude" : 32.816,
+		"longitude" : -117.14,
+		"pleasant_days" : 224
+	},
+	{
+		"id" : "72491599999",
+		"name" : "MONTEREY PENINSULA, CA US",
+		"latitude" : 36.583,
+		"longitude" : -121.833,
+		"pleasant_days" : 74
+	},
+	{
+		"id" : "72605599999",
+		"name" : "PEASE INTERNATIONAL TRADEPOR, NH US",
+		"latitude" : 43.083,
+		"longitude" : -70.817,
+		"pleasant_days" : 112
+	},
+	{
+		"id" : "72537899999",
+		"name" : "LIVINGSTON CO, MI US",
+		"latitude" : 42.633,
+		"longitude" : -83.983,
+		"pleasant_days" : 109
+	},
+	{
+		"id" : "72506799999",
+		"name" : "BARNSTABLE MUNICIPAL BOA, MA US",
+		"latitude" : 41.667,
+		"longitude" : -70.267,
+		"pleasant_days" : 106
+	},
+	{
+		"id" : "72341599999",
+		"name" : "MEMORIAL FIELD, AR US",
+		"latitude" : 34.467,
+		"longitude" : -93.083,
+		"pleasant_days" : 92
+	},
+	{
+		"id" : "72340799999",
+		"name" : "JONESBORO MUNICIPAL, AR US",
+		"latitude" : 35.833,
+		"longitude" : -90.633,
+		"pleasant_days" : 76
+	},
+	{
+		"id" : "72286899999",
+		"name" : "PALM SPRINGS INTERNATIONAL, CA US",
+		"latitude" : 33.833,
+		"longitude" : -116.5,
+		"pleasant_days" : 78
+	},
+	{
+		"id" : "72211699999",
+		"name" : "ST PETERSBURG CLEAR, FL US",
+		"latitude" : 27.9,
+		"longitude" : -82.683,
+		"pleasant_days" : 135
+	},
+	{
+		"id" : "72202699999",
+		"name" : "HOMESTEAD ARB, FL US",
+		"latitude" : 25.483,
+		"longitude" : -80.383,
+		"pleasant_days" : 200
+	},
+	{
+		"id" : "72445899999",
+		"name" : "JEFFERSON CITY MEM, MO US",
+		"latitude" : 38.583,
+		"longitude" : -92.15,
+		"pleasant_days" : 86
+	},
+	{
+		"id" : "72295699999",
+		"name" : "JACK NORTHROP FIELD H, CA US",
+		"latitude" : 33.917,
+		"longitude" : -118.333,
+		"pleasant_days" : 317
+	}
+]
