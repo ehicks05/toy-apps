@@ -30,13 +30,11 @@ const TransactionTable = ({ transactions }: Props) => {
 							key={transaction.signature}
 						>
 							<GeneralInfo transaction={transaction} />
-							<div>
-								<div className="flex flex-col gap-2">
-									<Accounts accounts={message.accountKeys} meta={meta} />
-									<Instructions instructions={message.instructions} />
-									<LogMessages logMessages={meta?.logMessages || undefined} />
-									<TransactionMetaTable meta={meta} />
-								</div>
+							<div className="flex flex-col gap-2 w-full">
+								<Accounts accounts={message.accountKeys} meta={meta} />
+								<Instructions instructions={message.instructions} />
+								<LogMessages logMessages={meta?.logMessages || undefined} />
+								<TransactionMetaTable meta={meta} />
 							</div>
 						</div>
 					);

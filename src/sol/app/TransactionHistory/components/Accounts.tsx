@@ -101,7 +101,7 @@ const Accounts = ({ accounts, meta }: AccountsProps) => {
 			<tbody>
 				{accounts.map((accountKey, i) => (
 					<tr key={accountKey.pubkey.toBase58()}>
-						<td>
+						<td className='p-2'>
 							<ByteString input={accountKey.pubkey} />
 						</td>
 

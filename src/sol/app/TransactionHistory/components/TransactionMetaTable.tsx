@@ -23,7 +23,7 @@ const TransactionMetaTable = ({ meta }: Props) => {
 			</thead>
 			<tbody>
 				<tr>
-					<td>
+					<td className='p-2'>
 						<div className="flex flex-col gap-2">
 							{computeUnitsConsumed && (
 								<div>computeUnitsConsumed: {computeUnitsConsumed}</div>

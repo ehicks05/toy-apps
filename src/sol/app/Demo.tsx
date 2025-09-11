@@ -13,7 +13,6 @@ import {
 } from '../services/solana-web3-api';
 import type { SignatureWithTransaction } from '../types/types';
 import { toSol } from '../utils/utils';
-import Nfts from './Nfts';
 import TransactionHistory from './TransactionHistory/TransactionHistory';
 
 export const Demo = () => {
@@ -145,7 +144,6 @@ export const Demo = () => {
 			<div className="bg-sky-800 p-4 font-bold">Balance: {toSol(balance)} Sol</div>
 			Note: only able to fetch one transaction atm.
 			<TransactionHistory transactions={parsedTransactions} />
-			{publicKey && <Nfts publicKey={publicKey} />}
 		</div>
 	);
 };
