@@ -4,10 +4,4 @@ import Instructions from './Instructions';
 import LogMessages from './LogMessages';
 import TransactionMetaTable from './TransactionMetaTable';
 
-export {
-  Accounts,
-  GeneralInfo,
-  Instructions,
-  LogMessages,
-  TransactionMetaTable,
-};
+export { Accounts, GeneralInfo, Instructions, LogMessages, TransactionMetaTable };

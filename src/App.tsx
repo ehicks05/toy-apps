@@ -8,6 +8,7 @@ import Jikan from './jikan/Jikan';
 import { LogicalFitness } from './logical-fitness/main';
 import { UnitedStatesOfFood } from './united-states-of-food';
 import { Jobbies } from './jobbies';
+import { Sol } from './sol/App';
 
 const MainMenu = () => {
 	document.title = 'toy apps';
@@ -27,6 +28,7 @@ const MainMenu = () => {
 				united-states-of-food - signature foods in each state
 			</Link>
 			<Link to={'/jobbies'}>jobbies - incomplete job app tracker</Link>
+			<Link to={'/sol'}>sol - play with solana api</Link>
 		</div>
 	);
 };
@@ -46,6 +48,7 @@ export function App() {
 					<Route path="/eric-idle/*" element={<EricIdle />} />
 					<Route path="/united-states-of-food/*" element={<UnitedStatesOfFood />} />
 					<Route path="/jobbies/*" element={<Jobbies />} />
+					<Route path="/sol/*" element={<Sol />} />
 				</Routes>
 			</div>
 			<div>
