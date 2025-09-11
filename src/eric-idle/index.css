@@ -1,7 +1,6 @@
 @import url("https://fonts.googleapis.com/css?family=Nunito:400,700");
 @import "tailwindcss";
-
-@plugin "tw-animate-css";
+@import "tw-animate-css";
 
 @custom-variant dark (&:is(.dark *));
 
