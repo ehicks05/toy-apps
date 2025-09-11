@@ -5,10 +5,11 @@ import Eordle from './eordle/Eordle';
 import { EricIdle } from './eric-idle/EricIdle';
 import { Hootch } from './hootch';
 import Jikan from './jikan/Jikan';
-import { LogicalFitness } from './logical-fitness/main';
-import { UnitedStatesOfFood } from './united-states-of-food';
 import { Jobbies } from './jobbies';
+import { LogicalFitness } from './logical-fitness/main';
 import { Sol } from './sol/App';
+import { UnitedStatesOfFood } from './united-states-of-food';
+import { Weatherman } from './weatherman';
 
 const MainMenu = () => {
 	document.title = 'toy apps';
@@ -29,6 +30,7 @@ const MainMenu = () => {
 			</Link>
 			<Link to={'/jobbies'}>jobbies - incomplete job app tracker</Link>
 			<Link to={'/sol'}>sol - play with solana api</Link>
+			<Link to={'/weatherman'}>weatherman - nice climate map</Link>
 		</div>
 	);
 };
@@ -49,6 +51,7 @@ export function App() {
 					<Route path="/united-states-of-food/*" element={<UnitedStatesOfFood />} />
 					<Route path="/jobbies/*" element={<Jobbies />} />
 					<Route path="/sol/*" element={<Sol />} />
+					<Route path="/weatherman/*" element={<Weatherman />} />
 				</Routes>
 			</div>
 			<div>
