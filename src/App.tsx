@@ -2,11 +2,10 @@ import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Circle, MapContainer, Polygon, Popup, TileLayer } from 'react-leaflet';
 import { Map } from 'leaflet';
 import Voronoi from 'voronoi';
-import { useQueryParams } from 'use-query-params';
 import { useWindowSize } from 'usehooks-ts';
 import { Header, Footer } from './core-components';
 import stationData from './us_stations.json';
-import { DEFAULTS, QUERY_PARAMS } from './queryParams';
+import { DEFAULTS } from './constants';
 
 const zoom = 5;
 
@@ -58,7 +57,6 @@ function DisplayPosition({ map }: { map: Map }) {
 
 function App() {
   const [map, setMap] = useState<Map | null>(null);
-  const [params, setParams] = useQueryParams(QUERY_PARAMS);
   const { width, height } = useWindowSize();
 
   const zoom = width < 640 ? 3 : width < 1200 ? 4 : 5;
@@ -70,7 +68,7 @@ function App() {
     () => (
       <MapContainer
         style={{ height: `${height * 0.75}px` }}
-        center={[params.lat, params.long]}
+        center={[DEFAULTS.lat, DEFAULTS.long]}
         zoom={zoom}
         scrollWheelZoom
         ref={setMap}
@@ -122,7 +120,7 @@ function App() {
         })}
       </MapContainer>
     ),
-    [height, map, params.lat, params.long, zoom],
+    [height, map, DEFAULTS.lat, DEFAULTS.long, zoom],
   );
 
   return (
