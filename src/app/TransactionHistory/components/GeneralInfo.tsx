@@ -1,6 +1,5 @@
 import { ByteString } from '../../../core-components';
 import { SignatureWithTransaction } from '../../../types/types';
-import { format } from 'date-fns';
 import { nf } from '../../../utils/utils';
 
 interface GeneralInfoProps {
@@ -15,17 +14,14 @@ const GeneralInfo = ({
     transaction: { message },
   } = transaction;
 
-  const blockDatetime = {
-    date: format(new Date((blockTime || 0) * 1000), 'yyyy-MM-dd'),
-    time: format(new Date((blockTime || 0) * 1000), 'hh:mm:ssa'),
-  };
+  const blockDatetime = new Date((blockTime || 0) * 1000).toISOString();
 
   return (
     <div className="flex flex-col justify-items-start gap-2 bg-sky-900 p-2">
       <div>
         <div>
-          <div>{blockDatetime.date}</div>
-          <div>{blockDatetime.time}</div>
+          <div>{blockDatetime.slice(0, 10)}</div>
+          <div>{blockDatetime.slice(11)}</div>
         </div>
       </div>
       <div>
