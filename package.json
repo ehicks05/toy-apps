@@ -7,7 +7,6 @@
     "dev": "vite dev"
   },
   "dependencies": {
-    "@metaplex-foundation/js": "^0.17.6",
     "@solana/spl-token": "^0.3.6",
     "@solana/wallet-adapter-base": "^0.9.18",
     "@solana/wallet-adapter-react": "^0.15.24",
