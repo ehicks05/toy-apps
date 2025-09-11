@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useMemo, useState } from 'react';
 import { Circle, MapContainer, Polygon, Popup, TileLayer } from 'react-leaflet';
 import { Map } from 'leaflet';
-import Voronoi from 'voronoi';
+import Voronoi from '@/weatherman/voronoi';
 import { useWindowSize } from 'usehooks-ts';
 import { Header, Footer } from './core-components';
 import stationData from './us_stations.json';
