@@ -11,7 +11,6 @@ const zoom = 5;
 
 const purpleOptions = { color: 'purple' };
 
-const voronoi = new Voronoi();
 const bbox = {
   xl: Math.min(...stationData.map(station => station.longitude)),
   xr: Math.max(...stationData.map(station => station.longitude)),
@@ -27,6 +26,7 @@ const sites = stationData.map(station => ({
 // Voronoi object will add a unique 'voronoiId' property to all
 // sites. The 'voronoiId' can be used as a key to lookup the associated cell
 // in diagram.cells.
+const voronoi = new Voronoi();
 const diagram = voronoi.compute(sites, bbox);
 
 function DisplayPosition({ map }: { map: Map }) {
@@ -62,7 +62,9 @@ function App() {
   const zoom = width < 640 ? 3 : width < 1200 ? 4 : 5;
 
   const matchStationToDiagram = ({ x, y }: { x: number; y: number }) =>
-    stationData.find(s => s.longitude === x && s.latitude === y);
+    stationData.find(s => s.longitude === x && s.latitude === y) || {
+      id: 0, name: 'unknown', pleasant_days: 0
+    };
 
   const displayMap = useMemo(
     () => (
@@ -95,12 +97,10 @@ function App() {
           return (
             <React.Fragment key={`${cell.site.x},${cell.site.y}`}>
               <Polygon
-                center={[cell.site.y, cell.site.x]}
                 positions={cell.halfedges.flatMap(halfedge => [
                   [halfedge.getStartpoint().y, halfedge.getStartpoint().x],
                   [halfedge.getEndpoint().y, halfedge.getEndpoint().x],
                 ])}
-                radius={3000}
                 weight={1}
                 fillColor={`hsl(${hue}, 100%, 50%)`}
                 fillOpacity={0.3}
