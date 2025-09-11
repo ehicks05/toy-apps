@@ -3,16 +3,18 @@ import {
   PartiallyDecodedInstruction,
 } from '@solana/web3.js';
 import { TbTable, TbTableOff } from 'react-icons/tb';
-import { useToggle } from 'react-use';
 import { ByteString, JsonTable } from '../../../core-components';
 import { shortenRecur } from '../../../utils/utils';
+import { useState } from 'react';
 
 interface InstructionProps {
   instruction: ParsedInstruction | PartiallyDecodedInstruction;
 }
 
 const Instruction = ({ instruction }: InstructionProps) => {
-  const [isTableView, toggleIsTableView] = useToggle(false);
+  const [isTableView, setIsTableView] = useState(false);
+  const toggleIsTableView = () => setIsTableView(isTableView => !isTableView);
+
   const icon = isTableView ? (
     <TbTable className="text-green-500" onClick={toggleIsTableView} size={24} />
   ) : (
