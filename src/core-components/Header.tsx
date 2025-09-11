@@ -1,4 +1,3 @@
-import { FaThermometerHalf } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Header = () => (
@@ -9,7 +8,6 @@ const Header = () => (
       to="/"
     >
       WeatherMan
-      <FaThermometerHalf className="inline text-green-500" />
     </Link>
   </div>
 );

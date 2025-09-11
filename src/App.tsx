@@ -3,8 +3,7 @@ import { Circle, MapContainer, Polygon, Popup, TileLayer } from 'react-leaflet';
 import { Map } from 'leaflet';
 import Voronoi from 'voronoi';
 import { useQueryParams } from 'use-query-params';
-import { useWindowSize } from 'react-use';
-import { sortBy } from 'lodash';
+import { useWindowSize } from 'usehooks-ts';
 import { Header, Footer } from './core-components';
 import stationData from './us_stations.json';
 import { DEFAULTS, QUERY_PARAMS } from './queryParams';
@@ -144,8 +143,7 @@ function App() {
             </tr>
           </thead>
           <tbody>
-            {sortBy(stationData, o => o.pleasant_days)
-              .reverse()
+            {stationData.toSorted((o1, o2) => o2.pleasant_days - o1.pleasant_days)
               .map((s, i) => (
                 <tr key={s.id}>
                   <td className="text-right">{i + 1}. </td>

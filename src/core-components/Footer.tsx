@@ -1,23 +1,21 @@
 import React, { FC, ReactNode } from 'react';
-import { HiOutlineHome } from 'react-icons/hi2';
-import { VscGithub } from 'react-icons/vsc';
 
 const LINKS = [
   {
-    icon: VscGithub,
+    text: 'github',
     url: 'https://www.github.com/ehicks05/weatherman-frontend',
   },
   {
-    icon: HiOutlineHome,
+    text: 'home',
     url: 'https://ehicks.net',
   },
 ];
 
 const Footer = () => (
   <footer className="flex justify-end gap-4 p-4">
-    {LINKS.map(({ url, icon: Icon }) => (
+    {LINKS.map(({ url, text }) => (
       <Link href={url} key={url}>
-        <Icon className="text-3xl text-green-500 hover:text-green-400" />
+        <div className="text-green-500 hover:text-green-400">{text}</div>
       </Link>
     ))}
   </footer>
