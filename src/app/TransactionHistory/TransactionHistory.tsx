@@ -43,6 +43,8 @@ const TransactionTable = ({ transactions }: Props) => {
             </div>
           );
         })}
+
+        {transactions.length === 0 && "Nothing here..."}
       </div>
     </div>
   );

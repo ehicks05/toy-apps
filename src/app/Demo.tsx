@@ -3,8 +3,8 @@ import {
   WalletMultiButton,
   WalletDisconnectButton,
 } from '@solana/wallet-adapter-react-ui';
-import { ConfirmedSignatureInfo } from '@solana/web3.js';
-import React, { FC, useEffect, useState } from 'react';
+import { ConfirmedSignatureInfo, PublicKey } from '@solana/web3.js';
+import React, { useState } from 'react';
 import { Button } from '../core-components';
 import { SignatureWithTransaction } from '../types/types';
 import TransactionHistory from './TransactionHistory/TransactionHistory';
@@ -12,17 +12,29 @@ import {
   handleSendToRandomAddress,
   requestAirdrop,
 } from '../services/solana-web3-api';
-import Nfts from './Nfts';
 import { TbRefresh } from 'react-icons/tb';
 import { toSol } from '../utils/utils';
+import Nfts from './Nfts';
 
-export const Demo: FC = () => {
+export const Demo = () => {
   const { connection } = useConnection();
-  const { publicKey, sendTransaction } = useWallet();
+  const { publicKey: walletPK, sendTransaction } = useWallet();
+  const [readOnlyPK, setReadOnlyPK] = useState("7EcDhSYGxXyscszYEp35KHN8vvw3svAuLKTzXwCFLtV");
+
+  let publicKey = walletPK;
+  
+  if (!publicKey) {
+    try {
+      publicKey = new PublicKey(readOnlyPK);
+    } catch (e) {
+      console.log(e)
+    }
+  }
+
   const [balance, setBalance] = useState(0);
   const [signatures, setSignatures] = useState<ConfirmedSignatureInfo[]>();
   const [parsedTransactions, setParsedTransactions] =
-    useState<SignatureWithTransaction[]>();
+    useState<SignatureWithTransaction[]>([]);
 
   const getBalance = async () => {
     const balance = publicKey ? await connection.getBalance(publicKey) : 0;
@@ -42,31 +54,18 @@ export const Demo: FC = () => {
       return;
     }
 
+    const slice = signatures.slice(0, 1);
+
     const parsedTransactions = await connection.getParsedTransactions(
-      signatures.map((o) => o.signature),
+      slice.map((o) => o.signature),
     );
     setParsedTransactions(
-      signatures.map((signature, i) => ({
+      slice.map((signature, i) => ({
         ...signature,
         transaction: parsedTransactions[i]!,
       })),
     );
   };
-
-  const refreshAll = async () => {
-    await getBalance();
-    await getSignatures();
-    await getParsedTransactions();
-  };
-
-  useEffect(() => {
-    getBalance();
-    getSignatures();
-  }, [publicKey]);
-
-  useEffect(() => {
-    getParsedTransactions();
-  }, [signatures]);
 
   const handleRequestAirdrop = async () => {
     await requestAirdrop(connection, publicKey);
@@ -78,49 +77,77 @@ export const Demo: FC = () => {
   return (
     <div className="m-auto flex max-w-screen-xl flex-col gap-4">
       <div className="flex flex-wrap gap-2">
-        <WalletMultiButton />
-        <WalletDisconnectButton />
+        <WalletMultiButton disabled={!!readOnlyPK} />
+        <WalletDisconnectButton disabled={!!readOnlyPK} />
+        <input className='rounded px-6 h-12 w-full bg-[#512da8] font-semibold'
+          disabled={!!walletPK}
+          value={readOnlyPK}
+          onChange={(e) => setReadOnlyPK(e.target.value)} />
       </div>
-      <div className="flex flex-wrap gap-2">
-        <Button
-          className="wallet-adapter-button wallet-adapter-button-trigger w-full whitespace-pre"
-          disabled={!publicKey}
-          onClick={refreshAll}
-        >
-          <div className="flex items-center gap-2">
-            <TbRefresh size={24} />
-            Refresh
-          </div>
-        </Button>
-        <Button
-          className="wallet-adapter-button wallet-adapter-button-trigger w-full whitespace-pre"
-          disabled={!publicKey}
-          onClick={() =>
-            handleSendToRandomAddress(connection, publicKey, sendTransaction)
-          }
-        >
-          Send SOL to a rand address
-        </Button>
-        <Button
-          className="wallet-adapter-button wallet-adapter-button-trigger w-full whitespace-pre"
-          disabled={!publicKey}
-          onClick={handleRequestAirdrop}
-        >
-          Request Airdrop
-        </Button>
+      <div className="flex flex-col gap-4">
+        <div className="flex flex-wrap gap-2">
+          <Button
+            className="wallet-adapter-button wallet-adapter-button-trigger"
+            disabled={!publicKey}
+            onClick={getBalance}
+            >
+            <div className="flex items-center gap-2">
+              <TbRefresh size={24} />
+              Get Balance
+            </div>
+          </Button>
+          <Button
+            className="wallet-adapter-button wallet-adapter-button-trigger"
+            disabled={!publicKey}
+            onClick={getSignatures}
+            >
+            <div className="flex items-center gap-2">
+              <TbRefresh size={24} />
+              Get Signatures
+            </div>
+          </Button>
+          <Button
+            className="wallet-adapter-button wallet-adapter-button-trigger"
+            disabled={!publicKey || !signatures}
+            onClick={getParsedTransactions}
+            >
+            <div className="flex items-center gap-2">
+              <TbRefresh size={24} />
+              Get Transactions
+            </div>
+          </Button>
+        </div>
+        <div className="flex flex-wrap gap-2">
+          <Button
+            className="wallet-adapter-button wallet-adapter-button-trigger"
+            disabled={!publicKey}
+            onClick={() =>
+              handleSendToRandomAddress(connection, publicKey, sendTransaction)
+            }
+            >
+            Send SOL to a rand address
+          </Button>
+          <Button
+            className="wallet-adapter-button wallet-adapter-button-trigger"
+            disabled={!publicKey}
+            onClick={handleRequestAirdrop}
+            >
+            Request Airdrop
+          </Button>
+        </div>
       </div>
-      {/* <div className="bg-sky-800 p-4 font-bold">
+      <div className="bg-sky-800 p-4 font-bold">
         PK: {publicKey?.toBase58()}
-      </div> */}
+      </div>
       <div className="bg-sky-800 p-4 font-bold">
         Balance: {toSol(balance)} Sol
       </div>
 
-      {publicKey && <Nfts publicKey={publicKey} />}
+      
+      Note: only able to fetch one transaction atm.
+      <TransactionHistory transactions={parsedTransactions} />
 
-      {parsedTransactions && (
-        <TransactionHistory transactions={parsedTransactions} />
-      )}
+      {publicKey && <Nfts publicKey={publicKey} />}
     </div>
   );
 };
