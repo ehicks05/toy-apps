@@ -1,6 +1,6 @@
 import { PublicKey } from '@solana/web3.js';
 import { isSolId } from '../utils/utils';
-import { ByteString } from './';
+import { ByteString } from '.';
 
 const determineType = (value: unknown) => {
   if (!value) return 'falsy';
