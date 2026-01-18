@@ -8,29 +8,37 @@ import Jikan from './jikan/Jikan';
 import { Jobbies } from './jobbies';
 import { LogicalFitness } from './logical-fitness/main';
 import { Sol } from './sol/App';
-import { UnitedStatesOfFood } from './united-states-of-food';
+import { UnitedStatesOfFood as FoodMap } from './united-states-of-food';
 import { Weatherman } from './weatherman';
+
+const APPS = [
+	{ name: 'jikan', description: 'clock, timer, stopwatch', component: Jikan },
+	{ name: 'eordle', description: 'wordle clone', component: Eordle },
+	{ name: 'hootch', description: 'booze math', component: Hootch },
+	{ name: 'covid-charts', description: 'charts and tables', component: CovidCharts },
+	{ name: 'cal-el', description: 'calendar', component: CalElDemo },
+	{
+		name: 'logical-fitness',
+		description: 'fitness levels',
+		component: LogicalFitness,
+	},
+	{ name: 'eric-idle', description: 'idle game', component: EricIdle },
+	{ name: 'food-map', description: 'map of state foods', component: FoodMap },
+	{ name: 'jobbies', description: 'job app tracker', component: Jobbies },
+	{ name: 'sol', description: 'play with solana apis', component: Sol },
+	{ name: 'weatherman', description: 'nice climate map', component: Weatherman },
+];
 
 const MainMenu = () => {
 	document.title = 'toy apps';
 
 	return (
 		<div className="flex flex-col">
-			<Link to={'/jikan'}>jikan - clock, timer, stopwatch</Link>
-			<Link to={'/eordle'}>eordle - wordle clone</Link>
-			<Link to={'/hootch'}>hootch - booze math</Link>
-			<Link to={'/covid'}>covid-charts - charts and tables</Link>
-			<Link to={'/cal-el'}>cal-el - calendar</Link>
-			<Link to={'/logical-fitness'}>
-				logical-fitness - logical increments for fitness
-			</Link>
-			<Link to={'/eric-idle'}>eric-idle - incomplete idle game</Link>
-			<Link to={'/united-states-of-food'}>
-				united-states-of-food - signature foods in each state
-			</Link>
-			<Link to={'/jobbies'}>jobbies - incomplete job app tracker</Link>
-			<Link to={'/sol'}>sol - play with solana api</Link>
-			<Link to={'/weatherman'}>weatherman - nice climate map</Link>
+			{APPS.map((app) => (
+				<Link key={app.name} to={`/${app.name}`}>
+					{app.name} - {app.description}
+				</Link>
+			))}
 		</div>
 	);
 };
@@ -41,17 +49,14 @@ export function App() {
 			<div className="flex-grow flex flex-col h-full">
 				<Routes>
 					<Route path="/" element={<MainMenu />} />
-					<Route path="/jikan/*" element={<Jikan />} />
-					<Route path="/eordle/*" element={<Eordle />} />
-					<Route path="/hootch/*" element={<Hootch />} />
-					<Route path="/covid/*" element={<CovidCharts />} />
-					<Route path="/cal-el/*" element={<CalElDemo />} />
-					<Route path="/logical-fitness/*" element={<LogicalFitness />} />
-					<Route path="/eric-idle/*" element={<EricIdle />} />
-					<Route path="/united-states-of-food/*" element={<UnitedStatesOfFood />} />
-					<Route path="/jobbies/*" element={<Jobbies />} />
-					<Route path="/sol/*" element={<Sol />} />
-					<Route path="/weatherman/*" element={<Weatherman />} />
+
+					{APPS.map((app) => (
+						<Route
+							key={app.name}
+							path={`/${app.name}/*`}
+							element={<app.component />}
+						/>
+					))}
 				</Routes>
 			</div>
 			<div>
