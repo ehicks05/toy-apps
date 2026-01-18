@@ -92,15 +92,15 @@ interface Props {
 
 const AppItem = ({ name, description, iconUrl, icon }: Props) => {
 	return (
-		<Link key={name} to={`/${name}`}>
+		<Link key={name} to={`/${name}`} className='w-full'>
 			<div className="flex gap-2 items-center p-2 border border-neutral-700 rounded-lg">
-				<div className="size-8">
+				<div className="size-8 shrink-0">
 					{iconUrl && <img src={iconUrl} alt="icon" className="size-full rounded" />}
 					{icon && icon}
 				</div>
 				<div>
 					<div>{name}</div>
-					<div>{description}</div>
+					<div className='whitespace-nowrap'>{description}</div>
 				</div>
 			</div>
 		</Link>
@@ -112,7 +112,7 @@ const MainMenu = () => {
 	useFavicon('/eordle/icon.png');
 
 	return (
-		<div className="grid grid-cols-2 sm:grid-cols-3 gap-2 p-2">
+		<div className="grid min-[480px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 p-2">
 			{APPS.map((app) => (
 				<AppItem
 					key={app.name}
