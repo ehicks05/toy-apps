@@ -59,7 +59,7 @@ const APPS = [
 	},
 	{
 		name: 'jikan',
-		description: 'clock, timer, stopwatch',
+		description: 'clocks and timers',
 		component: Jikan,
 		iconUrl: '/jikan/icon-color.svg',
 	},
@@ -112,7 +112,7 @@ const MainMenu = () => {
 	useFavicon('/eordle/icon.png');
 
 	return (
-		<div className="grid grid-cols-3 gap-2 p-2">
+		<div className="grid grid-cols-2 sm:grid-cols-3 gap-2 p-2">
 			{APPS.map((app) => (
 				<AppItem
 					key={app.name}
