@@ -93,7 +93,7 @@ interface Props {
 const AppItem = ({ name, description, iconUrl, icon }: Props) => {
 	return (
 		<Link key={name} to={`/${name}`} className="w-full">
-			<div className="flex gap-2 items-center p-2 border border-neutral-700 rounded-lg">
+			<div className="flex gap-2 items-center p-2 border border-neutral-700 rounded-lg hover:bg-neutral-800">
 				<div className="size-8 shrink-0">
 					{iconUrl && <img src={iconUrl} alt="icon" className="size-full rounded" />}
 					{icon && icon}
@@ -112,18 +112,20 @@ const MainMenu = () => {
 	useFavicon('/eordle/icon.png');
 
 	return (
-		<div className="grid min-[480px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 p-2">
-			<div className="text-4xl">Toy Apps</div>
+		<div>
+			<div className="text-4xl text-center p-4 font-extrabold">Toy Apps</div>
 
-			{APPS.map((app) => (
-				<AppItem
-					key={app.name}
-					name={app.name}
-					description={app.description}
-					iconUrl={app.iconUrl}
-					icon={app.icon}
-				/>
-			))}
+			<div className="grid min-[480px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 p-2">
+				{APPS.map((app) => (
+					<AppItem
+						key={app.name}
+						name={app.name}
+						description={app.description}
+						iconUrl={app.iconUrl}
+						icon={app.icon}
+					/>
+				))}
+			</div>
 		</div>
 	);
 };

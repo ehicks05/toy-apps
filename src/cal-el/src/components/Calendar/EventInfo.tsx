@@ -15,7 +15,7 @@ export const EventInfo = ({ event, enableEditMode, close }: EventInfoProps) => {
 	const datetimeLabel = getTimeIntervalLabel(event);
 
 	return (
-		<div className="flex flex-col gap-2">
+		<div className="flex flex-col gap-2 text-neutral-300">
 			<div className="flex justify-end gap-2">
 				<button type="button" onClick={enableEditMode}>
 					<Edit size={16} />
