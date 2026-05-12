@@ -92,7 +92,7 @@ interface Props {
 
 const AppItem = ({ name, description, iconUrl, icon }: Props) => {
 	return (
-		<Link key={name} to={`/${name}`} className='w-full'>
+		<Link key={name} to={`/${name}`} className="w-full">
 			<div className="flex gap-2 items-center p-2 border border-neutral-700 rounded-lg">
 				<div className="size-8 shrink-0">
 					{iconUrl && <img src={iconUrl} alt="icon" className="size-full rounded" />}
@@ -100,7 +100,7 @@ const AppItem = ({ name, description, iconUrl, icon }: Props) => {
 				</div>
 				<div>
 					<div>{name}</div>
-					<div className='whitespace-nowrap'>{description}</div>
+					<div className="whitespace-nowrap">{description}</div>
 				</div>
 			</div>
 		</Link>
@@ -113,6 +113,8 @@ const MainMenu = () => {
 
 	return (
 		<div className="grid min-[480px]:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-2 p-2">
+			<div className="text-4xl">Toy Apps</div>
+
 			{APPS.map((app) => (
 				<AppItem
 					key={app.name}
@@ -141,7 +143,7 @@ const AppRoutes = () => {
 export function App() {
 	return (
 		<div className="flex flex-col min-h-screen">
-			<div className="flex-grow flex flex-col h-full">
+			<div className="grow flex flex-col h-full">
 				<AppRoutes />
 			</div>
 			<div className="p-2">

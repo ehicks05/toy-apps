@@ -48,7 +48,7 @@
     "zustand": "^5.0.8"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.2.3",
+    "@biomejs/biome": "2.4.14",
     "@tailwindcss/postcss": "^4.1.11",
     "@types/papaparse": "^5.3.16",
     "@types/react": "^19.1.12",
