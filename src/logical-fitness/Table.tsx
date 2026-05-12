@@ -82,7 +82,7 @@ const UserRow = ({
 	);
 };
 
-function Table() {
+export function Table() {
 	const [user, setUser] = useUser();
 
 	return (
@@ -98,5 +98,3 @@ function Table() {
 		</div>
 	);
 }
-
-export default Table;
